@@ -1,0 +1,91 @@
+<html>
+    <script>
+   
+//    Longest Substring Without Repeating Characters
+
+// function longestSubstringWithoutRepeatingCharacters(s) {
+//     let maxLength = 0;
+//     let start = 0;
+//     let charIndexMap = {};
+
+//     for (let end = 0; end < s.length; end++) {
+//         let char = s[end];
+        
+//         if (charIndexMap[char] !== undefined && charIndexMap[char] >= start) {
+//             start = charIndexMap[char] + 1;
+//         }
+
+//         charIndexMap[char] = end;
+//         maxLength = Math.max(maxLength, end - start + 1);
+//     }
+
+//     return maxLength;
+// }
+// function lengthOfLongestSubstring(str) {
+//     let maxLength = 0;
+//     let start = 0 ;
+//     let end = 0 ;
+//     let substr = new Set();
+//     while(end < str.length){
+//         if(!substr.has((str[end]))){
+//             substr.add(str[end])
+//             end++;
+//             maxLength = Math.max(maxLength, end - start);
+
+//         }else{
+//          substr.delete(str[start]);
+//             start++;
+//         }
+//     }
+//     return maxLength;
+// }
+
+// console.log(lengthOfLongestSubstring("abcabcbb"));
+// console.log(lengthOfLongestSubstring("bbbbb"));
+// console.log(lengthOfLongestSubstring("abcdef"));
+// console.log(lengthOfLongestSubstring(""));
+// console.log(heh("GEEKSFORGEEKS"));
+// console.log(heh("pwwkew"));
+// console.log(lengthOfLongestSubstring("GEEKSFORGEEKS"));
+
+// Median of Two Sorted Arrays
+
+// let nums1 = [1,2];
+// let nums2 = [3,4];
+// let mergedArray=[]
+// i=0;
+// j=0;
+// k=0;
+// while(i < nums1.length && j < nums2.length){
+//     if(nums1[i] < nums2[j]){
+//         mergedArray[k]=nums1[i]
+//         i++
+//     }else{
+//         mergedArray[k]=nums2[j]
+//         j++;
+//     }
+//     k++
+// }
+// while(i < nums1.length){
+//     mergedArray[k]=nums1[i]
+//     k++;
+//     i++;
+// }
+// while(j < nums2.length){
+//     mergedArray[k]=nums2[j]
+//     k++;
+//     j++;
+// }
+// let median;
+// if(mergedArray){
+//     let mid = Math.floor(mergedArray.length/2);
+//     if(mergedArray.length % 2===0){
+//         median =(mergedArray[mid-1] + mergedArray[mid])/2
+//     }else{
+//         median= mergedArray[mid];
+//     }
+// }
+// console.log(median);
+   </script>
+
+</html>
