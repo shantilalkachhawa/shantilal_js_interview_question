@@ -100,50 +100,50 @@
     // console.log(l3)
 
     // Optimsie
-    let  l1 = [2,8,3,2,2,67]
-    let  l2 = [5,6,4,8,6,44]
-    let i= 0;
-    let str='';
-    let carryValue =0;
-    let firstArr=l1.length
-    let secArr=l2.length
-    let treveseLength = 0;
+//     let  l1 = [2,8,3,2,2,67]
+//     let  l2 = [5,6,4,8,6,44]
+//     let i= 0;
+//     let str='';
+//     let carryValue =0;
+//     let firstArr=l1.length
+//     let secArr=l2.length
+//     let treveseLength = 0;
 
 
-    if(firstArr > secArr) {
-        treveseLength=firstArr;
-    }else{
-        treveseLength=secArr;
-    }
-    while(i < treveseLength ){
-    let sum = (l1[i] ||0) + (l2[i]||0) + carryValue;
-    if(sum >=10){
-        carryValue=Math.floor(sum/10);
-        sum=sum%10
-    }else{
-        carryValue=0;
-    }
-    str+=sum;
-    // 67 + 67 =134
-//    when last carry value is greater then carryValue
-    if(treveseLength-1 === i && carryValue > 0){
-        if(carryValue < 9){
-            str+=carryValue;
-            carryValue=0;
-        }else{
-            while(carryValue!=0){
-                str+=carryValue%10;
-                carryValue=Math.floor(carryValue/10);
-            }
-        }
-        // console.log(carryValue,'carryValue');
+//     if(firstArr > secArr) {
+//         treveseLength=firstArr;
+//     }else{
+//         treveseLength=secArr;
+//     }
+//     while(i < treveseLength ){
+//     let sum = (l1[i] ||0) + (l2[i]||0) + carryValue;
+//     if(sum >=10){
+//         carryValue=Math.floor(sum/10);
+//         sum=sum%10
+//     }else{
+//         carryValue=0;
+//     }
+//     str+=sum;
+//     // 67 + 67 =134
+// //    when last carry value is greater then carryValue
+//     if(treveseLength-1 === i && carryValue > 0){
+//         if(carryValue < 9){
+//             str+=carryValue;
+//             carryValue=0;
+//         }else{
+//             while(carryValue!=0){
+//                 str+=carryValue%10;
+//                 carryValue=Math.floor(carryValue/10);
+//             }
+//         }
+//         // console.log(carryValue,'carryValue');
        
-    }
-    i++;
+//     }
+//     i++;
    
 
-    }
-    console.log(str);
+//     }
+//     console.log(str);
     
 
 
