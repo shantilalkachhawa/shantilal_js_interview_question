@@ -61,3 +61,41 @@
 
 // console.log(output);
 // [ 1, 2, 3, <3 empty items>, 10 ] o/p is create are empty item space
+
+
+// 5 array 
+// var output = [1,2,3];
+// output[6]=10
+
+// console.log(output);
+// [ 1, 2, 3, <3 empty items>, 10 ] o/p is create are empty item space
+
+
+// customs slider 
+// var array =['s','h','a','n']
+// let lenght = array.length
+// var index = 0;
+
+// function slider(){
+//     console.log(array[index]);
+//     index = (index + 1)% lenght
+// }
+// setInterval(slider,1000)
+
+// 
+// function show(a){
+
+//     console.log(a);
+//     if(a >0){
+//         show(a-1);
+//     }
+//     console.log(a);
+// }
+// show(5)
+
+// 
+// let a= [1,2,3,4,5];
+// a[a.length-1]++;
+
+// console.log(a);
+// [1,2,3,4,6]
