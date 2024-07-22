@@ -140,12 +140,21 @@
        
 //     }
 //     i++;
-   
+    
 
 //     }
 //     console.log(str);
-    
+// 5. Longest Palindromic Substring
 
+// function LongestPalindromic(str){
+
+//     console.log(str,'str');
+
+// }
+// let str='babad'
+// let str='cbbd'
+// expand from  center
+LongestPalindromic(str)
 
     
 

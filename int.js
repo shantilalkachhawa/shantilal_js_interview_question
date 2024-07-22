@@ -417,20 +417,16 @@
 
 //     for (let index = 0; index < n; index++) {
 //         let  currentChar = array[index];
-
 //         if(charIndex[currentChar] !== undefined && charIndex[currentChar] >= start){
 //             start=  charIndex[currentChar]+1;
-
 //         }
 //         charIndex[currentChar]=index;
 //         if(index - start + 1 > maxLength){
 //             maxLength = index-start+1;
 //             bestStart  = start;
 //         }
-        
 //     }
 //     return array.substr(bestStart,maxLength)
-
 // }
 // const input1 = "GEEKSFORGEEKS";
 // console.log(rotatedSubstring(input1)); // Output: "EKSFORG"
