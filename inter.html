@@ -149,10 +149,115 @@
 //  s = "babad"
 // ----------------------------------------------------------------
 
-function longestCommonSubstring(){
-    
-}
 
-   </script>
+// Find enven value s form array, Make double og every eleent and find array length
+// function evenNumber(arr){
+//     let newarr = [];
+//     let j=0;
+
+//     for(let i=0; i <arr.length; i++){
+//         if(arr[i]%2 === 0){
+//             newarr[j] = arr[i]*2;
+//         j++;
+//         }
+
+//     }
+//     return {newarr,j};
+// }
+// let a =[6,5.10,13,14,16,17]
+// console.log(evenNumber(a));
+
+// Check string are anagram
+// check- both length are same ,repeat chart
+
+//  function isAnagram(str1, str2) {
+//     if(str1.length !== str2.length){
+//         return false;
+//     }
+//     let charCount1 = {};
+//     for(let i = 0; i < str1.length; i++){
+//     charCount1[str1[i]] = (charCount1[str1[i]] || 0) + 1;
+//     }
+//     for(let i = 0; i < str2.length; i++){
+//     if(!charCount1[str2[i]]){
+//     return   false
+//     }
+//     charCount1[str2[i]]--;
+// if(charCount[str[i]]){
+//             charCount[str[i]]++;
+//         } else{
+//             charCount[str[i]] = 1;
+//         }
+// }
+// return true
+// }
+// let str1 ='cat';
+// let str2 ='tsc'
+// console.log(isAnagram(str1,str2));
+
+// Check string is Palendrome
+// function checkPalendromeString(str){
+    // let reversedStr = str.split('').reverse().join('');
+    // if(str === reversedStr){ 
+    //     return true;
+    // }else{
+    //     return false;
+    // }
+
+    // let index = 0;
+    // let j = str.length - 1;
+    // for (let index = 0; index < str.length; index++) {
+    //     if(str[index]!==str[j]){
+    //         return false;
+    //     }
+    //     j--;
+    // }
+    // return true
+
+    // let start=0;
+    // let end=str.length-1;
+    // let result = true
+    // while(start < end){
+    //     if(str[start]!== str[end]){
+    //         result = false;
+    //         break;
+    //     }
+    //     start++;
+    //     end--;
+    // }
+    // return result;
+// }
+// let str='level'
+// console.log(checkPalendromeString(str));
+
+// Maximum occuring characters in a string
+// function maxOccurringCharacter(str) {
+//     let charCount = {};
+//     let maxCount = 0;
+//     let maxChar = '';
+
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i];
+//         if (charCount[char]) {
+//             charCount[char]++;
+//         } else {
+//             charCount[char] = 1;
+//         }
+//         if (charCount[char] > maxCount) {
+//             maxCount = charCount[char];
+//             maxChar = char;
+//         }
+//     }
+
+//     return {maxChar,maxCount};
+// }
+
+// let srt='hello world'
+// console.log(maxOccurringCharacter(srt));
+
+// Object (Hash Table) DS in js
+
+
+ </script>
 
 </html>
