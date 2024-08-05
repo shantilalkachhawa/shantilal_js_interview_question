@@ -1,4 +1,4 @@
-//-------JS-------//
+//Create BY Shantilal kachhawa-------JS-------//
 
 // conver to the number 
 // " 33"=>33
@@ -491,3 +491,16 @@
 
 // const result = capitalizeFirstLetterWithoutMethods(a);
 // console.log(result);
+
+
+
+
+// let strig = 'su*pe%rsou#rci@ng$%'
+// let s=''
+// for(let i=0;i<strig.length;i++){
+// //   console.log(strig[i]," strig[i]")
+// //       console.log(i," i")
+//   if(strig[i]>='a' &&  strig[i]<='z' || strig[i]>='A' && strig[i]<='Z' ){
+//     s=s+strig[i];
+//   }
+// }
