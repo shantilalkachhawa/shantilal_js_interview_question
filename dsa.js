@@ -223,8 +223,6 @@
 // console.log(output);
 // }
 
-
-
 //Print a palindromic number pyramid.
 //       1
 //      212
