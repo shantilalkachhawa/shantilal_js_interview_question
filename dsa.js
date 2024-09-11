@@ -66,6 +66,185 @@
 
 // }
 
-// inverted half peramid 180
+// inverted half peramid 180 - 4*4
 
-// *****
+//    *
+//   **
+//  ***
+//*****
+// let row=4;
+// for(let  i=1;i<= row; i++){
+//     let output='';
+//     for(let j=1;j<=row-i;j++){
+//         output+=' ';
+//     }
+//     for(let k=1;k<=i;k++){
+//         output+='*';
+//     }
+//     console.log(output);
+// }
+
+// Half pyramin with number 
+// 1
+// 12
+// 123
+// 1234
+// 12345
+// let row= 5
+// for(let i=1;i<=row;i++){
+//     let output='';
+//     for(let j=1;j<=i; j++){ 
+//         output+=j;
+//     }
+//     console.log(output);
+// }
+
+// Inverted Half pyramin with number 
+
+// let row=5;
+// for(let i=row;i>=1;i--){
+//     let output='';
+//     // n-i+1
+//     for(let j=1;j<=i; j++){
+//         output+= j;
+//     }
+//     console.log(output);
+
+// }
+
+// second type
+
+// let n=5;
+// for(let i=1;i<=5;i++){
+//     let output='';
+//     // n-i+1
+//     for(let j=1;j<=n-i+1; j++){
+//         output+= j;
+//     }
+//     console.log(output);
+// }
+
+
+// floyd tringle 
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+ 
+// let n = 5;
+// let number = 1;
+
+// for (let i = 1; i <= n; i++) {
+//     let output = '';
+//     for (let j = 1; j <= i; j++) {
+//         output += number + ' ';     
+//         number++;
+//     }
+//     console.log(output);
+// }
+// second option
+//  let n = 5;
+
+//  for (let i = 1; i <= n; i++) {
+//     let output = '';
+//      for (let j = 0; j <i; j++) {
+//            let num = ((i *(i-1))/2)+(j +1);
+//         output += num + ' ';     
+//              }
+//    console.log(output);
+// }
+
+
+
+// 0-1 tringle 
+// 1
+// 01
+// 101
+// 0101
+// 10101
+
+// i+j=even then 1
+// i+j=odd then 0
+
+
+// let n=5;
+// for(let i=1;i <= n; i++) {
+//     let output=''
+//     for(let j =1;j <= i; j++) {
+//     const sum=i+j;
+//         if(sum %2==0 ){
+//             output+='1' + ' ';
+//         }else{
+//             output+='0' +' ';
+//         }
+//     }
+//     console.log(output);
+// }
+
+
+// Print a solid rhombus
+
+//     +++++
+//    +++++ 
+//   +++++  
+//  +++++   
+// +++++    
+
+// let row= 5;
+// let col =9;
+// for(let i=1;i< row;i++){
+//     let output='';
+//     for(let j=1;j<row-i;j++){
+//         output+=' ';
+//     }
+//     for(let j=1;j<=row;j++){
+//         output+='*';
+//     }
+// console.log(output);
+// }
+//Print a number pyramid.
+
+//     1
+//    2 2
+//   3 3 3
+//  4 4 4 4 
+// 5 5 5 5 5 5
+// let row=5
+// let col=5
+// for(let i=1;i<=row;i++){
+//     let output='';
+//     for(let j=1;j <=col-i;j++){
+//         output+=' '
+//     }
+//     for(let j=1;j<=i;j++){
+//         output+=i+' '
+//     }
+// console.log(output);
+// }
+
+
+
+//Print a palindromic number pyramid.
+//       1
+//      212
+//     32123
+//    4321234
+//   543212345
+//   let n=5;
+//   for(let i=1;i<=n;i++){
+//     let output='';
+//     for(let j=0;j<=n-i-1;j++){
+//         output+=' ';
+//     }
+//     for(let j=i;j>=1;j--){
+//         output+=j;
+//     }
+//     for(let j=2;j<=i;j++){
+//         output+=j;
+//     }
+//     console.log(output);
+//   }
+
+
+
