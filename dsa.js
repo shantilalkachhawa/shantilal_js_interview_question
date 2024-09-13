@@ -203,6 +203,7 @@
 //     }
 // console.log(output);
 // }
+
 //Print a number pyramid.
 
 //     1
@@ -213,8 +214,8 @@
 // let row=5
 // let col=5
 // for(let i=1;i<=row;i++){
-//     let output='';
-//     for(let j=1;j <=col-i;j++){
+//     let output=''; 
+//     for(let j=1;j <=row-i;j++){
 //         output+=' '
 //     }
 //     for(let j=1;j<=i;j++){
@@ -244,5 +245,70 @@
 //     console.log(output);
 //   }
 
+// Butter Fly patterns
+//  *             *
+//  * *         * *
+//  * * *     * * *
+//  * * * * * * * *
+//  * * * * * * * * 
+//  * * *   * * * *
+//  * *         * *
+//  *             *
+//  let n=4;
 
+// for(let i=1;i <=n;i++) {
+//     let output='';
+//     for(let j=1;j<=i;j++) {
+//         output+='*';
+//     }
+//     for(let j=1;j<=2*(n-i);j++) {
+//         output+=' ';
+//     }
+//     for(let j=1;j<=i;j++){
+//         output+='*';
+//     }
+//     console.log(output);
+// }
+// for(let i=n;i >=1;i--) {
+//     let output='';
+//     for(let j=1;j<=i;j++) {
+//         output+='*';
+//     }
+//     for(let j=1;j<=2*(n-i);j++) {
+//         output+=' ';
+//     }
+//     for(let j=1;j<=i;j++){
+//         output+='*';
+//     }
+//     console.log(output);
+// }
 
+// Diamond pattern
+//     *
+//    ***
+//   *****
+//  *******
+
+// let n=4;
+// for(let i=1;i<=n;i++){
+//     let output=' '
+//     for(let j=1;j <=n-i; j++){
+//         output+=' ';
+//     }
+//     for(let j=1;j<= 2*i-1 ; j++){
+//         output+='*';
+//     }
+//     console.log(output);
+    
+// }
+// for(let i=n;i>=1;i--){
+//     let output=' '
+//     for(let j=1;j <=n-i; j++){
+//         output+=' ';
+//     }
+//     for(let j=1;j<= 2*i-1 ; j++){
+//         output+='*';
+//     }
+//     console.log(output);
+    
+// }
