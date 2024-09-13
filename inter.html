@@ -290,31 +290,58 @@
 // const longestPalindromicSubstring = longestPalindrome(inputString);
 // console.log(longestPalindromicSubstring); // Output: "bab" or "aba"
 
-function longestPallindrome(str) {
-    let string = str.toLowerCase();
-    let pallindrome = '';
+// function longestPallindrome(str) {
+//     let string = str.toLowerCase();
+//     let pallindrome = '';
     
-    function strReverser(start, end) {
-        const rev = string.substr(start, end).split('').reverse().join('');
-        return rev;
-    }
+//     function strReverser(start, end) {
+//         const rev = string.substr(start, end).split('').reverse().join('');
+//         return rev;
+//     }
     
-    for(let i=0; i<=string.length; i++) {
-        for(let j=i; j<=string.length; j++) {
-            if(string.substr(i,j) == strReverser(i,j)) {
-                if(string.substr(i,j).length > pallindrome.length) {
-                    pallindrome = string.substr(i,j);
-                }
-            }
-        }
-    }
+//     for(let i=0; i<=string.length; i++) {
+//         for(let j=i; j<=string.length; j++) {
+//             if(string.substr(i,j) == strReverser(i,j)) {
+//                 if(string.substr(i,j).length > pallindrome.length) {
+//                     pallindrome = string.substr(i,j);
+//                 }
+//             }
+//         }
+//     }
     
-    if(pallindrome != null) {
-        return pallindrome;
-    }
-}
-let result1 = longestPallindrome('My mom is called annnna')
-let result2 = longestPallindrome('My dad is a racecar athelete')
+//     if(pallindrome != null) {
+//         return pallindrome;
+//     }
+// }
+// let result1 = longestPallindrome('My mom is called annnna')
+// let result2 = longestPallindrome('My dad is a racecar athelete')
+
+
+
+// let a='secure'
+// let b ='rescue'
+
+// let sortedA = a.split('').sort().join('');
+// let sortedB = b.split('').sort().join('');
+
+// console.log(sortedA==sortedB)
+
+// let n =10;
+// febonaSeries(n)
+// function febonaSeries(n){
+//     let a=0;
+//     let b=1;
+//     let c;
+//     console.log(a)
+//     console.log(b)
+//     for(i=0;i<n;i++){
+//         c=a+b;
+//         a=b;
+//         b=c;
+//         console.log(c)
+//     }
+     
+// }
 
 
  </script>
