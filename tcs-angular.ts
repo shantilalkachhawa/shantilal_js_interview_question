@@ -107,4 +107,4 @@
 // subject.next(2); // Dono Subscriber 1 aur Subscriber 2 ko value 2 milegi
 
 
-
+// Standalone Components: Angular 15 introduced fully standalone components, allowing developers to create components without needing NgModules, simplifying the structure and dependencies of applications.
