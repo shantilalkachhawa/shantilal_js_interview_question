@@ -312,3 +312,37 @@
 //     console.log(output);
     
 // }
+
+// New key have used to be created memory sapce.
+
+// Print matrix
+// let data=[
+//     [1, 2, 3,0],
+//     [4, 5, 6,0],
+//     [7, 8, 9,0]
+// ]
+// let rows=data.length
+// let col=data[0].length
+// for (let i = 0; i < rows; i++) {
+//     let output = '';
+//     for (let j = 0; j < col; j++) {
+//         output += data[i][j] + ' '; 
+//     }
+//     console.log(output);  
+// }
+
+
+// Reverse string
+let str='shantilal kachhawa'
+let n = Math.floor(str.length/2)
+let arr = str.split('');
+
+for(let i=0; i<n; i++) {
+    let temp=arr[i];
+    arr[i]=arr[arr.length-1-i];
+    arr[arr.length-1-i]=temp;
+
+}
+str = arr.join('');
+console.log(str)
+

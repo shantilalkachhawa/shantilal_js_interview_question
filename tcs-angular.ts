@@ -108,3 +108,58 @@
 
 
 // Standalone Components: Angular 15 introduced fully standalone components, allowing developers to create components without needing NgModules, simplifying the structure and dependencies of applications.
+
+
+
+// 1. Callback:
+// A callback is a function that you pass into another function as an argument. The second function (the one you passed the callback to) will "call back" or execute the passed-in function after it finishes its own work.
+
+// ex-
+// function readFile(callback) {
+//     setTimeout(() => {
+//       console.log("File is read");
+//       callback();  // Execute the callback after reading the file
+//     }, 1000);  // Simulate reading a file with a 1-second delay
+//   }
+  
+//   function afterReading() {
+//     console.log("This is the file content.");
+//   }
+  
+//   readFile(afterReading);  // Pass the callback function
+  
+
+// A Promise is a special JavaScript object that represents the eventual completion or failure of an asynchronous operation. It can be in one of three states:
+
+// Pending: The operation is still ongoing.
+// Fulfilled: The operation completed successfully.
+// Rejected: The operation failed.
+
+// ex-
+// function readFile() {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         const success = true;  // Simulate success or failure
+//         if (success) {
+//           console.log("File is read");
+//           resolve("This is the file content.");  // Operation succeeded
+//         } else {
+//           reject("Error reading the file.");  // Operation failed
+//         }
+//       }, 1000);
+//     });
+//   }
+  
+    
+//   readFile()
+//     .then((content) => {
+//       console.log(content);  // Handle success
+//     })
+//     .catch((error) => {
+//       console.log(error);  // Handle error
+//     });
+  
+
+
+// Callback: You pass a function to another function.
+// Promise: It’s an object that eventually returns a result (success or failure) and provides cleaner syntax (then, catch).
