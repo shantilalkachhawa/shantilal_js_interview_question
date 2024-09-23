@@ -333,16 +333,51 @@
 
 
 // Reverse string
-let str='shantilal kachhawa'
-let n = Math.floor(str.length/2)
-let arr = str.split('');
+// let str='shantilal kachhawa'
+// let n = Math.floor(str.length/2)
+// let arr = str.split('');
 
-for(let i=0; i<n; i++) {
-    let temp=arr[i];
-    arr[i]=arr[arr.length-1-i];
-    arr[arr.length-1-i]=temp;
+// for(let i=0; i<n; i++) {
+//     let temp=arr[i];
+//     arr[i]=arr[arr.length-1-i];
+//     arr[arr.length-1-i]=temp;
 
+// }
+// str = arr.join('');
+// console.log(str)
+
+
+// let a=10;
+// let b=0;
+// b=a++; // use/assign value and change value
+
+// console.log(a); // 11
+// console.log(b); // 10
+
+// b=++a; // change value and use/assign value
+
+// console.log(a); // 11
+// console.log(b); // 11
+
+
+// Buble Sort
+
+function bubleShort(arr){
+
+    for(let i=0; i<arr.length; i++){
+// Shorted element are moved to the right side
+        for(let j=0; j<arr.length-i-1; j++){
+            if(arr[j]> arr[j+1]){
+                // swap the elements of inner Loop
+                let temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    return arr;
 }
-str = arr.join('');
-console.log(str)
+let arr=[7,23,8,2,8,1,4]
 
+bubleShort(arr);
+console.log(bubleShort(arr))
