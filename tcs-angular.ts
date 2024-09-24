@@ -113,7 +113,6 @@
 
 // 1. Callback:
 // A callback is a function that you pass into another function as an argument. The second function (the one you passed the callback to) will "call back" or execute the passed-in function after it finishes its own work.
-
 // ex-
 // function readFile(callback) {
 //     setTimeout(() => {
@@ -121,7 +120,6 @@
 //       callback();  // Execute the callback after reading the file
 //     }, 1000);  // Simulate reading a file with a 1-second delay
 //   }
-  
 //   function afterReading() {
 //     console.log("This is the file content.");
 //   }
@@ -163,3 +161,25 @@
 
 // Callback: You pass a function to another function.
 // Promise: It’s an object that eventually returns a result (success or failure) and provides cleaner syntax (then, catch).
+
+// ********
+// Diff Lazy loading & eager loading
+// Syntex of pipe
+// Interceptore
+// Module.ts
+// View child syntex
+// Data shareding without parents and chan
+// Flow chart of angular
+// what is standalone
+// Can a apllication run without modules
+// what is app config.ts
+// How to subscribe observable and error define 
+// what is observable
+// Hositing 
+// slice and splice
+//  view component ref and template ref
+// how to use interceptor in module
+// why are using bearer in token 
+// diff btw can activated and can deactivate
+// angular material latest version
+// how can check observable has emitted latest value
