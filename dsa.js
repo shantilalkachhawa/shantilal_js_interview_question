@@ -362,22 +362,87 @@
 
 // Buble Sort
 
-function bubleShort(arr){
-
-    for(let i=0; i<arr.length; i++){
-// Shorted element are moved to the right side
-        for(let j=0; j<arr.length-i-1; j++){
-            if(arr[j]> arr[j+1]){
-                // swap the elements of inner Loop
-                let temp=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
-            }
-        }
-    }
-    return arr;
-}
+// function bubleShort(arr){
+//     for(let i=0; i<arr.length; i++){
+// // Shorted element are moved to the right side
+//         for(let j=0; j<arr.length-i-1; j++){
+//             if(arr[j]> arr[j+1]){
+//                 // swap the elements of inner Loop
+//                 let temp=arr[j];
+//                 arr[j]=arr[j+1];
+//                 arr[j+1]=temp;
+//             }
+//         }
+//     }
+//     return arr;
+// }
 let arr=[7,23,8,2,8,1,4]
 
-bubleShort(arr);
-console.log(bubleShort(arr))
+// bubleShort(arr);
+// console.log(bubleShort(arr))
+
+
+// selection sort
+
+// function selectionSorting(arr){
+//     for(let i=0; i<arr.length-1; i++){
+//         let smallest = i;
+//         for(let j=i+1;j < arr.length; j++){
+//             if(arr[j] < arr[smallest]){
+//                 smallest = j;
+//             }
+//         }
+//         var temp = arr[smallest];
+//         arr[smallest] = arr[i];
+//         arr[i] = temp;
+//     }
+//     return arr;
+
+// }
+// selectionSorting(arr);
+// console.log(selectionSorting(arr))
+// Diveder into two parts 1 shorted & 2 unsorted
+// function inseration(arr){
+// // 7,8
+//     for(let i=1; i<arr.length; i++){
+//         let key = arr[i];
+//         let j = i-1;
+//         while(j>=0 && arr[j] > key){
+//             arr[j+1] = arr[j];
+//             j--;
+//         }
+//         // placement
+//         arr[j+1]=key;
+//     }
+//     return arr;
+
+// }
+
+// console.log(inseration(arr));
+
+
+
+// ************** Recursion 
+
+// function countNumber(n){
+//     if(n==0){
+//         return
+//     }
+//     console.log('Count is',n)
+//     return countNumber(n-1)
+// }
+// console.log(countNumber(5))
+
+
+function sumOfNumbers(i,n,sum){
+
+    
+    if(i==n){
+        console.log(sum+=i)
+        return ;
+    }
+    sum+=i;
+    return sumOfNumbers(i+1,n,sum)
+}
+
+console.log(sumOfNumbers(1,5,0)); // 15
