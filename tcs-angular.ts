@@ -183,3 +183,7 @@
 // diff btw can activated and can deactivate
 // angular material latest version
 // how can check observable has emitted latest value
+
+
+
+// https://daily.dev/blog/angular-17-everything-you-need-to-know-in-one-place
