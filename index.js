@@ -78,7 +78,7 @@
 
 // function slider(){
 //     console.log(array[index]);
-//     index = (index + 1)% lenght
+//     index = (index + 1)% lenght;
 // }
 // setInterval(slider,1000)
 

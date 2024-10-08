@@ -434,15 +434,15 @@ let arr=[7,23,8,2,8,1,4]
 // console.log(countNumber(5))
 
 
-function sumOfNumbers(i,n,sum){
+// function sumOfNumbers(i,n,sum){
 
     
-    if(i==n){
-        console.log(sum+=i)
-        return ;
-    }
-    sum+=i;
-    return sumOfNumbers(i+1,n,sum)
-}
+//     if(i==n){
+//         console.log(sum+=i)
+//         return ;
+//     }
+//     sum+=i;
+//     return sumOfNumbers(i+1,n,sum)
+// }
 
-console.log(sumOfNumbers(1,5,0)); // 15
+// console.log(sumOfNumbers(1,5,0)); // 15
