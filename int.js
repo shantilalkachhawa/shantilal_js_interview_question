@@ -172,7 +172,7 @@
 
     // function isPalindrome(arr){
 
-    //     let cleanStr= arr.replace(/[^a-zA-Z0-9]/g,'').toLowerCase();
+    //     let cleanStr= arr.replace(/[^    -zA-Z0-9]/g,'').toLowerCase();
     //     for(let i=0, j = cleanStr.length - 1; i < j; i++,j--){
     //         if(cleanStr[i] !== cleanStr[j]){
     //             return false;
@@ -518,3 +518,55 @@
     
 // })
 //  console.log(element,length)
+
+
+
+// ******************OPPS
+
+// polymerfizm
+// run time polyfism - use can use on inheritence 
+// show error on run time
+
+
+// complile time polyfism - function loading time we can use
+// show error on compile time
+// we can use use same function with different-2 purposes  that is complile time polyfism
+
+// Inheritance 
+// single level inheritance
+// multiple levels inheritance
+// hirarchy inheritance
+// hybrid inheritance
+
+// base class/perent class/superclass - child class/subclass
+//  one class  inherits properties and behaviors  from another class. It allows for code reuse and the creation of a hierarchy between classes
+// get value from the another class inherits properties and behaviors.
+
+
+// encapsulation - packages/access modifications
+
+// combination of data , function and method  that is call encapsulation
+// bundling of data (variables) and methods (functions) that operate on the data into a single unit,
+
+// Abstractions - show user to imporatant item 
+// we can use 2 typeof methods  abstract keyword or classes and interfaces
+// we can abstract methods,non abstract class
+// can not be instantiated (not created objects)
+
+// interface -
+// intercae ke constructor nh hote h
+// non abstract function nh hota h like nameFun(){ }
+
+// interface ko extent nh karte h implements karte h 
+// interface nameOfInterface {
+//     nameFun(): void; 
+//     nameFun(){
+
+//     //  }wrong
+// }
+// like class Horese implement nameOfInterface {
+
+// }
+// NOTE:-  multiple  inheritance only  use to in interface not class 
+
+// Static
