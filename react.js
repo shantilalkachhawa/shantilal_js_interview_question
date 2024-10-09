@@ -185,3 +185,211 @@
 // Simplicity: If your state management is simple, use useState.
 // Complexity: If your state management is complex, consider using useReducer.
 // Global State: If you need to manage global state across multiple components, use useReducer with a context provider.
+
+
+
+
+// *********
+
+// virtual Dom and Real Dom 
+// The Virtual DOM is a JavaScript object stored in memory that serves as a lightweight copy of the real DOM. React uses the Virtual DOM to efficiently update the real DOM, which improves performance. The Virtual DOM detects changes and applies only the necessary updates to the real DOM, making React applications faster and smoother
+
+// Lazy loading-
+// Lazy loading in React is a technique where components are loaded only when they are needed,
+// Lazy loading in React delays the loading of components until they are needed, improving performance.
+
+// Suspense-
+// The component might take some time to load, Suspense is used to show a fallback (like a loading spinner or message) while the lazy-loaded component is being fetched 
+
+// Error boundaries catch errors in child components and display fallback UI, preventing the whole app from crashing.
+
+
+
+// Use useRef for directly DOM manupulating ex we can use from color,validations.
+
+// Use useRef for accessing and interacting with the DOM, or for persisting mutable values.
+// It can be used to store a mutable value that does not cause a re-render when updated.
+
+
+// The useMemo and useCallback Hooks are similar.
+
+// The main difference is that useMemo returns a memoized value and useCallback returns a memoized function
+// useMemo Hook only runs when one of its dependencies update.
+// useMemo stop calling unnecessary function .
+
+
+
+// Use useCallback for memoizing callback functions, particularly when passing them as props to child components.
+
+
+// forEach is for performing side effects and does not return a new array.
+// map is for transforming the array and returns a new array.
+
+// Throttling -
+// Throttling is a technique to control how often a function is executed.
+// Use cases include handling scrolling, resizing, or any frequently occurring event.
+// Ex- Imagine a scenario where an event like window resizing or scrolling is triggered very frequently. Without throttling, the function handling these events may be called hundreds of times in a second, leading to performance issues like a slow or freezing UI. Throttling helps prevent this by limiting the number of times the function is executed.
+
+// function onScroll() {
+//     console.log('Scroll event triggered');
+// }
+
+// // Throttle function ko 500ms ka interval denge
+// window.addEventListener('scroll', throttle(onScroll, 500));
+
+// function throttle(func, limit) {
+//   let lastCall = 0;
+  
+//   return function(...args) {
+//     const now = Date.now();
+
+//     if (now - lastCall >= limit) {
+//       lastCall = now;
+//       func.apply(this, args);
+//     }
+//   };
+// }
+
+
+
+
+// continuous user actions can significantly delay the callback function's execution if we use debounce.
+// Difference between Throttling and Debouncing:
+// Throttling: Function ko limited interval par run karo, chahe event baar baar trigger ho.
+// Debouncing: Function ko sirf event ke stop hone ke baad run karo, ek delay ke baad.ex search
+
+// On the other hand, throttle uses the time delay to execute the callback function at regular intervals until the event trigger is active.
+
+// Currying in JavaScript transforms a function with multiple arguments into a nested series of functions, each taking a single argument. Currying helps you avoid passing the same variable multiple times, and it helps you create a higher order function.
+// ex-
+// function curriedAdd(a) {
+//     return function(b) {
+//         return function(c) {
+//             return a + b + c;
+//         };
+//     };
+// }
+// console.log(curriedAdd(1)(2)(3));  // Output: 6
+
+
+// const addOne = curriedAdd(1);  // a is fixed to 1
+// console.log(addOne(2)(3));     // Output: 6
+// console.log(addOne(5)(7));     // Output: 13
+
+
+
+// CLouser are a function that have  access to varaibles from an outer funnction .
+// this is lexical scope
+// function outer(){
+//     let value = 'shantilal'
+//     console(innervalue) // not getting  
+//     function inner(){
+//         let innervalue ='kachhawa'
+//         console.log(value);
+//     }
+//     function innerTwo(){
+//         console.log(value);
+//     }
+// }
+
+// // clouser
+// function makFun(){
+//     let myVar = 'hello'
+//      function innerFun(){
+//         console.log(myVar);
+//     }
+//     return innerFun;
+// }
+// const value =makFun()
+// value();
+// Note : fully return laxical scope
+
+// practical clouser ex-
+
+// we two button or more buttons, we want to change bg color to on click so that the we have used clouser
+// function clickHandler(color){
+//     return function(){
+//         document.body.style.backgroundColor = color
+//     }
+// }
+// clickHandler('green')
+// clickHandler('red')
+
+// hosting is used to when funtion or varible can be used before declaration.
+// JavaScript behind the scenes function declaration ko upar le jata hai, to sayHello function ko call kiya ja sakta hai pehle.
+// JavaScript hoisting me var ko declaration upar le jata hai, par initialization nahi.
+// ex-
+// console.log(myVar);  // Output: undefined
+// var myVar = 10;
+// var myVar;           // Hoisted declaration
+// console.log(myVar);  // Output: undefined
+// myVar = 10;          // Initialization after log
+
+// let aur const variables ko hoist kiya jata hai, lekin wo "temporal dead zone" me rehte hain
+// console.log(myLet);  // ReferenceError: Cannot access 'myLet' before initialization
+// let myLet = 20;
+
+
+
+
+// A higher order function is a function that takes one or more functions as arguments, or returns a function as its result.
+// function callbackFunction(){
+//     console.log('I am  a callback function');
+// }
+
+// // higher order function
+// function higherOrderFunction(func){
+//     console.log('I am higher order function')
+//     func()
+// }
+
+// higherOrderFunction(callbackFunction);
+
+// Event bubbling is the process where an event triggers on the innermost target element first and then successively triggers on ancestors (parents) in the same nesting hierarchy up to the outermost DOM element.
+
+// captering is same oopsite of bulling.
+
+// Event delegation is a technique where you attach  an  event listener to a parent element insted of individual child element.   
+
+// var- function scoped-variable ,reassigned the value.	
+// let- block scoped-variable   element ,reassigned the value.
+// const- block scoped-variable  element, cannot be reassign the value.
+
+
+// New Features in ES6
+// The let keyword
+// The const keyword
+// Arrow Functions
+// The ... Operator
+// For/of
+// Map Objects
+// Set Objects
+// Classes
+// Promises
+// Symbol
+// Default Parameters
+// Function Rest Parameter
+// String.includes()
+// String.startsWith()
+// String.endsWith()
+// Array.from()
+// Array keys()
+// Array find()
+// Array findIndex()
+// New Math Methods
+// New Number Properties
+// New Number Methods
+// New Global Methods
+// Object entries
+// JavaScript Modules
+
+// null represent absense of any object value while undefined represend absense of value and an unitialized variable .
+
+// prototype property allows you to add new properties or methods to object constructors
+
+// call ,bind ,apply
+
+
+
+
+
