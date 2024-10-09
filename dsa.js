@@ -401,6 +401,7 @@ let arr=[7,23,8,2,8,1,4]
 // }
 // selectionSorting(arr);
 // console.log(selectionSorting(arr))
+
 // Diveder into two parts 1 shorted & 2 unsorted
 // function inseration(arr){
 // // 7,8
