@@ -389,6 +389,14 @@
 
 // call ,bind ,apply
 
+// splice()
+// The  method adds and/or removes array elements.
+// The  method overwrites the original array.
+
+//slice()
+//  method returns selected elements in an array, as a new array.
+//  method selects from a given start, up to a (not inclusive) given end.
+//  method does not change the original array.
 
 
 
