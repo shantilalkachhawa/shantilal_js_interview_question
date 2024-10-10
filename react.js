@@ -11,7 +11,7 @@
 // Skipping expensive recalculations
 // Skipping re-rendering of components
 // Preventing an Effect from firing too often
-// Memoizing a dependency of another Hook
+// Memoizing a dependency of another Hook       
 // Memoizing a function
 // Troubleshooting
 // My calculation runs twice on every re-render

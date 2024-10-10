@@ -38,10 +38,10 @@
 
 // 3 OLX
 
-// function result(){
-//     this.name = 'shanti'
-//     return this
-// }
+function result(){
+    this.name = 'shanti'
+    return this
+}
 
 
 // const result = ()=>{
@@ -49,8 +49,8 @@
 // return this 
 // }
 
-// const output =new result()
-// console.log(output);
+const output =new result()
+console.log(output);
 // Normal fun are return value but arraow fun are return error is constructor cuz arrow not supprot this key word.
 
 
