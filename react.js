@@ -11,16 +11,16 @@
 // Skipping expensive recalculations
 // Skipping re-rendering of components
 // Preventing an Effect from firing too often
-// Memoizing a dependency of another Hook       
+// Memoizing a dependency of another Hook
 // Memoizing a function
 // Troubleshooting
 // My calculation runs twice on every re-render
-// My useMemo call is supposed to return an object, but returns undefined
-// Every time my component renders, the calculation in useMemo re-runs
-// I need to call useMemo for each list item in a loop, but it’s not allowed
+// My useMemo call is supposed to return an object,but returns undefined.
+// Every time my component renders, the calculation in useMemo re-runs.
+// I need to call useMemo for each list item in a loop, but It’s not allowed.
 
 
-// 3 React features
+// 3 React features:-
 // Component-Based Architecture
 // Reusability: React applications are made up of components, which are small, reusable, and independent pieces of UI
 // Separation of Concerns: Components allow you to break down complex UIs into smaller, manageable pieces. This makes code more modular, maintainable, and easier to test.
@@ -279,6 +279,7 @@
 
 
 // CLouser are a function that have  access to varaibles from an outer funnction .
+// Closures are functions that remember the lexical scope in which they were defined, allowing them to access variables from that scope even after the outer function has finished executing
 // this is lexical scope
 // function outer(){
 //     let value = 'shantilal'
@@ -312,10 +313,12 @@
 //         document.body.style.backgroundColor = color
 //     }
 // }
-// clickHandler('green')
+// clickHandler('green') 
+
 // clickHandler('red')
 
 // hosting is used to when funtion or varible can be used before declaration.
+// Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compile phase. However, only the declarations are hoisted, not the initializations.
 // JavaScript behind the scenes function declaration ko upar le jata hai, to sayHello function ko call kiya ja sakta hai pehle.
 // JavaScript hoisting me var ko declaration upar le jata hai, par initialization nahi.
 // ex-
@@ -356,14 +359,14 @@
 // const- block scoped-variable  element, cannot be reassign the value.
 
 
-// New Features in ES6
-// The let keyword
-// The const keyword
-// Arrow Functions
-// The ... Operator
-// For/of
-// Map Objects
-// Set Objects
+// New Features in ES6 :-
+// The let keyword,
+// The const keyword,
+// Arrow Functions,
+// The ... Operator,
+// For/of,
+// Map Objects,
+// Set Objects,
 // Classes
 // Promises
 // Symbol
@@ -383,12 +386,175 @@
 // Object entries
 // JavaScript Modules
 
+// this refers to the object to which the current code context belongs. Its value is determined by how a function is called.
+//  current execution context
+
+// const obj = {
+//     name: 'pushpendra',
+//     greet: function() {
+//         console.log(`Hello, ${this.name}!`);
+//     }
+// };
+// obj.greet(); // Output: Hello, pushpendra! 
+
 // null represent absense of any object value while undefined represend absense of value and an unitialized variable .
 
 // prototype property allows you to add new properties or methods to object constructors
 
 // call ,bind ,apply
 
+// call => call allows you to invoke a function with a specified this value and arguments provided individually.
+
+// function greet(age) {
+//     console.log(`Hello, ${this.name}, ${age} years old.`);
+// }
+
+// const person = { name: 'Pushpendra' };
+
+// greet.call(person, '26'); // Output: Hello, Pushpendra, 26 years old.
+
+
+
+// apply => apply is similar to call, but it accepts arguments as an array.
+
+// greet.apply(person, ['26']); // Output: Hello, Pushpendra, 26 years old.
+
+
+
+// bind => bind creates a new function with a specified this value and initial arguments. It doesn't immediately execute the function.
+
+// greet.bind(person, ['26'])(); // Output: Hello, Pushpendra, 26 years old
+// greet.bind(person, '26')(); // Output: Hello, Pushpendra, 26 years old 
+
+
+ 
+
+// Promises are objects representing the eventual completion or failure of an asynchronous operation. They simplify asynchronous programming, offering a cleaner alternative to callback functions.
+
+// const fetchData = () => {
+//     return new Promise((resolve, reject) => {
+//         // Asynchronous operation
+//         if (success) {
+//             resolve(data);
+//         } else {
+//             reject(error);
+//         }
+//     });
+// };
+// Promises provide better control flow and error handling compared to callbacks, avoiding callback hell and enabling easier chaining of asynchronous operations.
+
+// Example using promises
+// function fetchData() {
+//     return new Promise((resolve, reject) => {
+//       // Simulating an asynchronous operation
+//       setTimeout(() => {
+//         const data = 'Some fetched data';
+//         resolve(data); // Resolve the promise with the fetched data
+//       }, 2000);
+//     });
+//   }
+  
+//   // Call fetchData and handle the resolved value using then
+//   fetchData()
+//     .then(data => {
+//       console.log('Processing data:', data);
+//     })
+//     .catch(error => {
+//       console.error('Error occurred:', error);
+//     })
+// Observables are a technique for event handling, asynchronous programming, and handling multiple values emitted over time.
+// A callback function in JavaScript is a function passed as an argument to another function, to be executed later, often after an asynchronous task completes.
+
+// function fetchData(callback) {
+//     setTimeout(function () {
+//       const data = "Fetched data";
+//       callback(data); // invoking the callback function with the fetched data
+//     }, 1000); // Delay of 1 second
+//   }
+  
+//   // Using the callback function
+//   fetchData(function (result) {
+//     console.log(result); // Output: Fetched data
+//   }); 
+
+// Generators are functions that can be paused and resumed, allowing for the generation of a sequence of values lazily. Iterators are objects that implement the Iterable protocol, enabling iteration over collections such as arrays and sets.
+
+// function* generatorFunction() { // Here the * is important
+//     yield 1;
+//     yield 2;
+//     yield 3;
+// }
+// const iterator = generatorFunction();
+// console.log(iterator.next()); // Output: { value: 1, done: false }
+// console.log(iterator.next()); // Output: { value: 2, done: false }
+// console.log(iterator.next()); // Output: { value: 3, done: false }
+// console.log(iterator.next()); // Output: { value: undefined, done: ture } 
+
+
+
+
+// EVENT LOOP
+// The event loop is a mechanism that allows JavaScript to perform non-blocking I/O operations by offloading tasks to the browser's APIs and queuing up events in a loop. This ensures that JavaScript remains responsive to user interactions.
+
+
+// function task2() {
+//     console.log("Task 2");
+//     setTimeout(task2, 2000); // Recursive setTimeout to call task2 every 2000ms
+// }
+
+// function microtask1() {
+//     console.log("Microtask 1");
+// }
+
+// function microtask2() {
+//     console.log("Microtask 2");
+// }
+
+// task1(); // Assuming task1 is defined elsewhere
+// task2(); // Calling task2 to initiate its execution
+
+// // Scheduling microtasks using Promise.resolve().then();
+// Promise.resolve().then(microtask1); // Schedules microtask1 to be executed as a microtask
+// Promise.resolve().then(microtask2); // Schedules microtask2 to be executed as a microtask 
+
+// Synchronous operations are executed sequentially, blocking further execution until they complete, while asynchronous operations allow the program to continue executing while waiting for a response.
+
+// console.log("Start");
+// function synchronousTask() {
+//   for (let i = 0; i < 3; i++) {
+//     console.log("Synchronous Task");
+//   }
+// }
+
+// synchronousTask();
+
+// console.log("End");
+
+// It will run like:
+// Start
+// Synchronous Task
+// End
+
+
+// console.log("Start");
+
+// function asynchronousTask() {
+//   setTimeout(function() {
+//     console.log("Asynchronous Task");
+//   }, 2000); // Executes after 2 seconds
+// }
+
+// asynchronousTask();
+
+// console.log("End");
+
+
+// It will run like 
+// Start
+// End
+// Asynchronous Task
+ 
+ 
 // splice()
 // The  method adds and/or removes array elements.
 // The  method overwrites the original array.
@@ -397,6 +563,66 @@
 //  method returns selected elements in an array, as a new array.
 //  method selects from a given start, up to a (not inclusive) given end.
 //  method does not change the original array.
+
+
+// Map => It's a function that applies another function to all the values in a given array and returns a new array with the modified values.
+
+// const numbers = [1, 2, 3, 4, 5];
+// const squared = numbers.map(x => x ** 2);
+// console.log(squared); // Output: [1, 4, 9, 16, 25]
+// console.log(numbers,'numbers'); // Output: [1, 4, 9, 16, 25]
+//  numbers.forEach(x => x + 2);
+// // console.log(squared); // Output: [1, 4, 9, 16, 25]
+// console.log(numbers,'numbers'); // Output: [1, 4, 9, 16, 25]
+
+
+// Filter => Create a new array with elements that pass the test implemented by the provided function.
+
+// const num = [1, 2, 3, 4, 5];
+// const evens = num.filter(x => x % 2 === 0);
+// console.log(evens); // Output: [2, 4]
+
+// Reduce => Apply a function to each element of an array (from left to right) to reduce it to a single value.
+
+// const array = [1, 2, 3, 4, 5];
+// const product = array.reduce((x, y) => x * y); // Here the x value will be 0 (default)
+// console.log(product); // Output: 120  
+
+
+// Arrow functions are a concise way to write functions in JavaScript, with implicit return and lexical this. Function expressions define functions as values assigned to variables.
+
+// const square = x => x * x;
+// const add = (a, b) => a + b;
+// const greet = name => `Hello, ${name}!`;
+
+// // Here is no need to do return
+
+// console.log(square(2));
+// console.log(add(2, 4));
+// console.log(greet('pushpendra'));
+
+
+// Rest parameters allow a function to accept an indefinite number of arguments as an array, while spread operators allow an array to be expanded into individual elements. 
+
+// function sum(...numbers) {
+//     return numbers.reduce((acc, val) => acc + val, 0);
+//   }
+   
+// console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+
+
+// // And it is the suitable expmple of spread operator
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+
+// const mergedArray = [...arr1, ...arr2]; // Here we are merging both of arrays
+// console.log(mergedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+// function Type
+// expression
+// declaration
+ 
 
 
 
