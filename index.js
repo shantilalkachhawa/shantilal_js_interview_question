@@ -99,3 +99,19 @@ console.log(output);
 
 // console.log(a);
 // [1,2,3,4,6]
+
+
+// My name is Shantilal Kachhawa, and I have over 3 years of experience in Frontend development. I have worked on a variety of projects across different domains and have strong skills in React, Angular, Redux, TypeScript, JavaScript, and responsive design.
+
+
+// in famihives
+// - Famehives is a family organization management web app. 
+// - Users can signup/signin and add their family memebers.
+// - Users can visualize their family in a tree structure
+// - I have built a custom solution to make family tree, and developed my own npm package and published it.
+// - I have also developed a customer management portal for the system, where admin can see some analytics like users information, control master content, add/update terms & condition / policy
+// preserve your family history with our family tree management
+// Implemented push notification while using one signal and real-time chat with socket,
+// manage RBAC role-based access control user ,
+// added switch laguage functionality ,
+// also create user management portal ,
