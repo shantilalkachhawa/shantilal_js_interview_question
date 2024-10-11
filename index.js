@@ -115,3 +115,15 @@ console.log(output);
 // manage RBAC role-based access control user ,
 // added switch laguage functionality ,
 // also create user management portal ,
+
+
+// Public JOb
+// In this project, users can view jobs based on their role and easily apply for those positions through the web application.
+//  Additionally, ATS (Applicant Tracking System) features are implemented to manage the hiring process. For example, if a job requires 1 or 2 candidates but receives multiple resumes, AI is used to compare the resumes with the job description (JD).
+//  The system then returns a resume score, highlighting both the candidate's strong and weak areas, aiding in the decision-making process.
+
+
+
+
+
+

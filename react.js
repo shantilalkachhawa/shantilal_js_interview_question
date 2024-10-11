@@ -622,8 +622,30 @@
 // function Type
 // expression
 // declaration
+// Anonymous function
+// An anonymous function in JavaScript is a function without a name. It is typically used in situations where a function is only required once or passed as an argument to other functions. Here's an example of how you can use an anonymous function:
  
 
+// A function declaration defines a named function, and it is hoisted, meaning it can be called before it is defined in the code.
+// // Function Declaration
+// function greet() {
+//     console.log("Hello, World!");
+// }
 
+// greet(); // Outputs: Hello, World!
+
+// A function expression is when a function is assigned to a variable. This function can be anonymous or named, and it is not hoisted, meaning it cannot be used before it is defined.
+// // Function Expression
+// const greet = function() {
+//     console.log("Hello, World!");
+// };
+
+// greet(); // Outputs: Hello, World
+
+
+// Event Propagation!
+// Capturing Phase (Event Capturing): The event starts from the window (the topmost element) and moves down to the target element (from parent to child).
+// Bubbling Phase (Event Bubbling): The event starts from the target element and bubbles up to the window (from child to parent).
+// Event delegation: one listener for all <li> elements
 
 
