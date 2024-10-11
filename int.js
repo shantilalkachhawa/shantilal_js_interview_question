@@ -535,7 +535,7 @@
 // Inheritance 
 // single level inheritance
 // multiple levels inheritance
-// hirarchy inheritance
+// hirarchy inheritancetscoo
 // hybrid inheritance
 
 // base class/perent class/superclass - child class/subclass
