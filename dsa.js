@@ -447,3 +447,78 @@ let arr=[7,23,8,2,8,1,4]
 // }
 
 // console.log(sumOfNumbers(1,5,0)); // 15
+
+// function factorial(n){
+//     if(n==1){
+//         return 1;
+//     }
+//     let fact =factorial(n-1);
+//     return n*fact;
+// }
+// console.log(factorial(5)); // 15
+
+// function fibanacceSerice(a,b,n){
+//     let c=a+b;
+//     if(n==1){
+//         return ;
+//     }
+//     console.log(c)
+//     return fibanacceSerice(b,c,n-1)
+// }
+// let n=7;
+// let a=0;
+// let b=1;
+//  console.log(a);
+//     console.log(b);
+// console.log(fibanacceSerice(a,b,n))
+
+// function calPower(x,n){
+//     if(n==0){
+//         return 1;
+//     }
+//     if(x==0){
+//         return 1;
+//     }
+//     console.log(x,n)
+//     let power = calPower(x,n-1);
+//     console.log(power,'power')
+//     return x*power;
+// }
+// OR
+
+// function calPower(x,n){
+//     if(n==0){
+//         return 1;
+//     }
+//     if(n==1){
+//         return x;
+//     }
+//     let half = calPower(x,Math.floor(n/2));
+//     if(n%2==0){
+//         return half*half;
+//     }else {
+//         return x*half*half;
+//     }
+// }
+
+// console.log(calPower(2,3)); // 8
+
+// Tower of honoi
+
+function diskTransform(n,src,help,dest)
+{
+    // Base case
+    if(n == 1)
+    {
+        console.log(`Move disk ${n} from ${src} to ${dest} `);
+        return;
+    }
+
+    diskTransform(n-1,src,dest,help)
+    console.log(`Move disk ${n} from ${src} to ${dest} `);
+
+    diskTransform(n-1,help,src,dest)
+
+}
+let n=2;
+console.log(diskTransform(n,'S','H',"D"));

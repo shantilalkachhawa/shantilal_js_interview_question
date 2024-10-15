@@ -602,7 +602,7 @@
 // console.log(greet('pushpendra'));
 
 
-// Rest parameters allow a function to accept an indefinite number of arguments as an array, while spread operators allow an array to be expanded into individual elements. 
+// Rest parameters allow a function to accept an indefinite number of arguments as an array, while spread operators allow an array to be expanded into individual elements.
 
 // function sum(...numbers) {
 //     return numbers.reduce((acc, val) => acc + val, 0);
@@ -627,7 +627,7 @@
  
 
 // A function declaration defines a named function, and it is hoisted, meaning it can be called before it is defined in the code.
-// // Function Declaration
+// // Function Declaration 
 // function greet() {
 //     console.log("Hello, World!");
 // }
@@ -647,5 +647,59 @@
 // Capturing Phase (Event Capturing): The event starts from the window (the topmost element) and moves down to the target element (from parent to child).
 // Bubbling Phase (Event Bubbling): The event starts from the target element and bubbles up to the window (from child to parent).
 // Event delegation: one listener for all <li> elements
+
+
+
+
+
+
+// ******************OPPS
+
+// polymerfizm
+// run time polyfism - use can use on inheritence 
+// show error on run time
+
+
+// complile time polyfism - function loading time we can use
+// show error on compile time
+// we can use use same function with different-2 purposes  that is complile time polyfism
+
+// Inheritance 
+// single level inheritance
+// multiple levels inheritance
+// hirarchy inheritancetscoo
+// hybrid inheritance
+
+// base class/perent class/superclass - child class/subclass
+//  one class  inherits properties and behaviors  from another class. It allows for code reuse and the creation of a hierarchy between classes
+// get value from the another class inherits properties and behaviors.
+
+
+// encapsulation - packages/access modifications
+
+// combination of data , function and method  that is call encapsulation
+// bundling of data (variables) and methods (functions) that operate on the data into a single unit,
+
+// Abstractions - show user to imporatant item 
+// we can use 2 typeof methods  abstract keyword or classes and interfaces
+// we can abstract methods,non abstract class
+// can not be instantiated (not created objects)
+
+// interface -
+// intercae ke constructor nh hote h
+// non abstract function nh hota h like nameFun(){ }
+
+// interface ko extent nh karte h implements karte h 
+// interface nameOfInterface {
+//     nameFun(): void; 
+//     nameFun(){
+
+//     //  }wrong
+// }
+// like class Horese implement nameOfInterface {
+
+// }
+// NOTE:-  multiple  inheritance only  use to in interface not class 
+
 
 
