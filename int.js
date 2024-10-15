@@ -521,52 +521,54 @@
 
 
 
-// ******************OPPS
+// let a='secure'
+// let b ='rescue'
 
-// polymerfizm
-// run time polyfism - use can use on inheritence 
-// show error on run time
+// let sortedA = a.split('').sort().join('');
+// let sortedB = b.split('').sort().join('');
 
+// console.log(sortedA==sortedB)
 
-// complile time polyfism - function loading time we can use
-// show error on compile time
-// we can use use same function with different-2 purposes  that is complile time polyfism
-
-// Inheritance 
-// single level inheritance
-// multiple levels inheritance
-// hirarchy inheritancetscoo
-// hybrid inheritance
-
-// base class/perent class/superclass - child class/subclass
-//  one class  inherits properties and behaviors  from another class. It allows for code reuse and the creation of a hierarchy between classes
-// get value from the another class inherits properties and behaviors.
-
-
-// encapsulation - packages/access modifications
-
-// combination of data , function and method  that is call encapsulation
-// bundling of data (variables) and methods (functions) that operate on the data into a single unit,
-
-// Abstractions - show user to imporatant item 
-// we can use 2 typeof methods  abstract keyword or classes and interfaces
-// we can abstract methods,non abstract class
-// can not be instantiated (not created objects)
-
-// interface -
-// intercae ke constructor nh hote h
-// non abstract function nh hota h like nameFun(){ }
-
-// interface ko extent nh karte h implements karte h 
-// interface nameOfInterface {
-//     nameFun(): void; 
-//     nameFun(){
-
-//     //  }wrong
+// let n =10;
+// febonaSeries(n)
+// function febonaSeries(n){
+//     let a=0;
+//     let b=1;
+//     let c;
+//     console.log(a)
+//     console.log(b)
+//     for(i=0;i<n;i++){
+//         c=a+b;
+//         a=b;
+//         b=c;
+//         console.log(c)
+//     }
+     
 // }
-// like class Horese implement nameOfInterface {
 
-// }
-// NOTE:-  multiple  inheritance only  use to in interface not class 
+// console.log(lengthOfLongestSubstring("abcabcbb"));
+    console.log(lengthOfLongestSubstring("bbbbbb"));
+// console.log(lengthOfLongestSubstring("abcdef"));
+// console.log(lengthOfLongestSubstring(""));
+// console.log(heh("GEEKSFORGEEKS"));
+// console.log(heh("pwwkew"));
+// console.log(lengthOfLongestSubstring("GEEKSFORGEEKS"));
 
-// Static
+    function lengthOfLongestSubstring(str){
+        let length=0;
+        let maxStr =''
+
+        for (let i = 0; i < str.length; i++) {
+            for (let j = i + 1; j <= str.length; j++) {
+                let subs = str.substring(i, j);
+                let rev = subs.split('').reverse().join('');
+                if (subs === rev) {
+                    if (subs.length > length) {
+                        length = subs.length;
+                        maxStr = rev;  // Update maxStr here
+                    }
+                }
+            }
+        }
+        return {length ,maxStr}
+    }

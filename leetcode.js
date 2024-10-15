@@ -158,19 +158,19 @@
 
     
 // Best LongestPalindromic string
-// let str='geeksforgeeks'
-// let lenght=0;
-// let values ;
+let str='bbbbb'
+let lenght=0;
+let values ;
 
-// for(let i=0;i<str.length;i++){
-//     for(j=i+1;j<str.length;j++){
-//         let subs = str.substring(i,j)
-//         let rev = subs.split('').reverse().join('')
-//         if(subs == rev){
-//             lenght=lenght > subs.length ? lenght :subs.length;
-//             values=lenght > subs.length ? values :rev
-//         }
-//     }
-// }
+for(let i=0;i<str.length;i++){
+    for(j=i+1;j<str.length;j++){
+        let subs = str.substring(i,j)
+        let rev = subs.split('').reverse().join('')
+        if(subs == rev){
+            lenght=lenght > subs.length ? lenght :subs.length;
+            values=lenght > subs.length ? values :rev
+        }
+    }
+}
 
-// console.log(values)
+console.log(values)
