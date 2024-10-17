@@ -505,20 +505,262 @@ let arr=[7,23,8,2,8,1,4]
 
 // Tower of honoi
 
-function diskTransform(n,src,help,dest)
-{
-    // Base case
-    if(n == 1)
-    {
-        console.log(`Move disk ${n} from ${src} to ${dest} `);
-        return;
-    }
+// function diskTransform(n,src,help,dest)
+// {
+//     // Base case
+//     if(n == 1)
+//     {
+//         console.log(`Move disk ${n} from ${src} to ${dest} `);
+//         return;
+//     }
+ 
+//     diskTransform(n-1,src,dest,help)
+//     console.log(`Move disk ${n} from ${src} to ${dest} `);
 
-    diskTransform(n-1,src,dest,help)
-    console.log(`Move disk ${n} from ${src} to ${dest} `);
+//     diskTransform(n-1,help,src,dest)
+ 
+// }
+// let n=3;
+// console.log(diskTransform(n,'S','H',"D"));
 
-    diskTransform(n-1,help,src,dest)
 
-}
-let n=2;
-console.log(diskTransform(n,'S','H',"D"));
+// reverse string using recursion
+// function reverseString(str,n){
+//     if(n==0){
+//         return str[n];
+//     }
+//     return  str[n] + reverseString(str,n-1);
+    
+
+// }
+
+// let str='shantilal'
+// let n = str.length-1
+// console.log(reverseString(str,n));
+
+// find the first and last value occurence of the given string
+// let str = 'bbaecaabffab'
+// let firstOc=-1;
+// let lastOc=-1;
+// let element ='a'
+
+
+// for(let i=0,j=str.length-1; i< j;i++,j--){
+//     console.log('loop')
+//     if(str[i] == element && firstOc === -1){
+//             firstOc = i; 
+//     }
+//     if(str[j] == element && lastOc === -1){
+//         lastOc = j;
+//     }
+// }
+// console.log(firstOc);
+// console.log(lastOc)
+
+// recursion
+// let firstOcc=-1; 
+// let lastOcc=-1; 
+// function findOccurence(str,n,element){
+//     if(n === str.length){
+//         return {firstOcc, lastOcc};
+//     }
+//   if(str[n] === element){
+//     if(firstOcc === -1){
+//         firstOcc = n;
+//     }else{
+//         lastOcc = n;
+//     }
+//   }
+//    return findOccurence(str,n+1 ,element);
+// }
+// let str='bbaecaabffab'
+// console.log(findOccurence(str,0,'a'));
+
+
+// is Array is sorted or not
+// function arraySort(a){
+//     let sorted =true ;
+//     for(let i=0;i<a.length ; i++){
+//         if(a[i] > a[i+1]){
+//             sorted =false;
+//             break;
+//         }
+//     }
+//     return sorted;
+// }
+// let a =[1,6,3,4,5,6]
+// console.log(arraySort(a))
+// function arraySort(a,n){
+//     if(n === a.length-1){
+//         return true;
+//     }
+//     // if(a[n] < a[n+1]){
+//     //     return arraySort(a,n+1);
+//     // }else{
+//     //     return false;
+//     // }
+// OR
+//     if(a[n] >= a[n+1]){
+//         return false;
+//     }else{
+//         return arraySort(a,n+1);
+//     }
+// }
+// let a =[1,2,3,4,5,6]
+// console.log(arraySort(a,0))
+
+// Move all X in end of the string
+// let newStr=''
+// function moveAllX(str,index,count){
+//     if(index === str.length){
+//         console.log(count,'count');
+        
+//         for(let i=0;i<count.length;i++){
+//             console.log(i,'inn');
+//             newStr+='x';
+//         }
+//     return newStr ;
+//     }
+//    if(str[index]=='x'){
+//     count++;
+//     return moveAllX(str,index+1,count)
+//    } else{
+//     newStr+=str[index];
+//     return  moveAllX(str,index+1,count)
+//    }
+
+// }
+// let str ='axbcxxdsx'
+// console.log(moveAllX(str,0,0));
+
+// let str ='aaxxbbaaxx';
+// let newStr='';
+// let count = 0;
+// for(let i=0;i< str.length-1;i++){
+//     if(str[i]==='x'){
+//         count++
+//     }else{
+//        newStr+=str[i] 
+//     }
+// }
+// for(let i=0;i <= count;i++){
+//     newStr+='x' 
+// }
+// newStr += 'x'.repeat(count);
+
+// remove duplicate in string
+// let str ='aaxxbbaaxx';
+// let newStr='';
+
+// for(let i=0;i< str.length-1;i++){
+//     if(!newStr.includes(str[i])){
+//        newStr+=str[i]
+//     }
+// }
+
+// console.log(newStr)
+// let newStr = '';
+// let map = new Array(26).fill(false); // Create a boolean array to track characters
+// function removeDuplicates(str, index) {
+//     if (index === str.length) {
+//         return newStr;
+//     }
+
+//     let charIndex = str[index].charCodeAt(0) - 'a'.charCodeAt(0); // Get index for current character in the alphabet
+//     console.log(charIndex,'charIndex')
+
+//     if (!map[charIndex]) {  // If the character hasn't been seen before
+//         newStr += str[index];
+//         map[charIndex] = true;  // Mark this character as seen
+//     }
+//     console.log(map); // update my original array
+    
+
+//     return removeDuplicates(str, index + 1); // Recur for the next character
+// }
+
+// let str = 'aaxxbbaaxx';
+// console.log(removeDuplicates(str, 0));
+
+// print all the subsequesnce in the string // ana chata h ya nh us string m like abc,ab_,a_c,a_ _,_bc,-b-,--c,---,
+
+
+// function subsequesnce(str, index,newStr) {
+
+//     if (index === str.length) {
+//         console.log('newStr',newStr);
+//         return newStr;
+//     }
+//     const currentChar =str[index]
+//     // to be add
+//     subsequesnce(str, index + 1,newStr+currentChar);
+//     // to be not added
+//     subsequesnce(str, index + 1,newStr);
+
+// }
+// let a='abc'
+// let newStr=''
+// console.log(subsequesnce(a,0,newStr));
+
+// print all the uniqe subsequesnce in the string
+
+// function subsequence(str, index, newStr, resultSet) {
+//     if (index === str.length) {
+//         resultSet.add(newStr); // Add the current subsequence to the set
+//         return;
+//     }
+
+//     const currentChar = str[index];
+
+//     // Include the current character
+//     subsequence(str, index + 1, newStr + currentChar, resultSet);
+
+//     // Exclude the current character
+//     subsequence(str, index + 1, newStr, resultSet);
+// }
+
+// function getAllUniqueSubsequences(str) {
+//     let resultSet = new Set();
+//     subsequence(str, 0, "", resultSet);
+//     return Array.from(resultSet);  // Convert Set to Array for the result
+// }
+
+// let a = 'aaa'; // Example string
+// let uniqueSubsequences = getAllUniqueSubsequences(a);
+// console.log(uniqueSubsequences);
+
+// Print keyPad combnation
+// const keyMap = {
+//     '1':'.',
+//     '2': 'abc',
+//     '3': 'def',
+//     '4': 'ghi',
+//     '5': 'jkl',
+//     '6': 'mno',
+//     '7': 'pqrs',
+//     '8': 'tuv',
+//     '9': 'wxyz'
+// };
+// function keypadCombination(digits, index, currentCombination) {
+//     // Base case: when we reach the end of the digits
+//     if (index === digits.length) {
+//         console.log(currentCombination);  // Print the current combination
+//         return;
+//     }
+
+//     // Get the letters corresponding to the current digit
+//     let letters = keyMap[digits[index]];
+
+//     // If the current digit has valid mapped letters
+//     if (letters) {
+//         // Recurse for each letter corresponding to the current digit
+//         for (let i = 0; i < letters.length; i++) {
+//             keypadCombination(digits, index + 1, currentCombination + letters[i]);
+//         }
+//     }
+// }
+// let digits ='23'
+// console.log(keypadCombination(digits, 0, ""));
+
+
+// Print all permutation of a string (All posible  combination of letter)
