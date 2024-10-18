@@ -764,3 +764,56 @@ let arr=[7,23,8,2,8,1,4]
 
 
 // Print all permutation of a string (All posible  combination of letter)
+// function permutation(str,perStr){
+//     if(str.length ==0 ){
+//         console.log(perStr)
+//         return perStr;
+//     }
+//     for(let i=0;i<str.length;i++){
+//         let currentchar= str[i];
+//         let subStr =str.substring(0,i) + str.substring(i+1);
+//         //  console.log(subStr,'subStr');
+//          permutation(subStr,perStr+currentchar);
+//     }
+// }
+
+// console.log(permutation('abc',''))
+
+//CountPathMaze  Count total path in a maze to move from (0,0) to (m,n)
+
+// function countPathMaze(i,j,m,n){
+//     if(i==m || j==n){
+//         return 0;
+//     }
+//     if(i == m-1 && j == n-1  ){
+//         return 1;
+//     }
+    
+//     // down move
+//     let downMove = countPathMaze(i+1,j,m,n);
+    
+//     // let move 
+//     let leftMove = countPathMaze(i,j+1,m,n);
+//     return leftMove + downMove;
+    
+// }
+// console.log(countPathMaze(0,0,3,4))
+
+// Place size of tiles of size 1xm in a floor of size n*m
+// n=4,m=2
+
+// function placeTiles(n,m){
+//     if(n==m){
+//         return 2;
+//     }
+//     if(n < m){
+//         return 1;
+//     }
+//     // vertical 
+//     let vertPlace = placeTiles(n-m,m);
+//     // horizantol
+//     let horPlace = placeTiles(n-1,m);
+//     return vertPlace+horPlace;
+// }
+
+// console.log(placeTiles(4,2))

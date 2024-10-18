@@ -372,7 +372,7 @@
 // Symbol
 // Default Parameters
 // Function Rest Parameter
-// String.includes()
+// String.includes() 
 // String.startsWith()
 // String.endsWith()
 // Array.from()
