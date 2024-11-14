@@ -817,3 +817,97 @@ let arr=[7,23,8,2,8,1,4]
 // }
 
 // console.log(placeTiles(4,2))
+
+// Nqueen Place
+// 
+//Sudoku solver -- Recursion backtraking
+
+// merge sort (sorted or unsorted)time complexity[--O(nlogn)--]
+//  aproch (divide-conquer )
+// 5 2 4 1 3 6
+// 5 2 4---1 3 6
+// 5 2 -- 4....1 3 --6
+// 5--2--4--1--3--6
+// 2--4--5--1--3--6
+// 1--2--3--4--5--6
+
+
+// function mergeSort(arr,left = 0, right = arr.length - 1){
+//     if(left >= right){
+//         return [arr[left]];
+//     }
+//     const mid = Math.floor((left + right)/2);
+//     const leftSorted =mergeSort(arr,left,mid);
+//     const rightSorted =mergeSort(arr,mid+1,right);
+//     return marge(leftSorted,rightSorted);
+//     // Merge the two sorted halves
+// }
+// function marge(leftArr,rightArr){
+//     let result =[];
+//         let i = 0, j = 0;
+//     // Compare elements from leftArr and rightArr and add to result in sorted order
+//      while (i < leftArr.length && j < rightArr.length) {
+//         if (leftArr[i] <= rightArr[j]) {
+//             result.push(leftArr[i++]);
+//         } else {
+//             result.push(rightArr[j++]);
+//         }
+//     }
+//   // Add remaining elements from leftArr
+//     while (i < leftArr.length) {
+//         result.push(leftArr[i++]);
+//     }
+
+//     // // Add remaining elements from rightArr
+//     while (j < rightArr.length) {
+//         result.push(rightArr[j++]);
+//     }
+
+//     return result;
+
+    
+// }
+// const array = [38, 27, 43, 3, 9, 82, 10];
+// console.log("Sorted array:", mergeSort(array));
+
+// Diff merge sort used to extra memory space but quck sort not use 
+// Quick sort (Pivot and partition) (TIme COmpli avg case -0(nlogn) worst case- 0(n^2) )
+// IMP Note :- worst case occure when pviot is always smallest and largent (when array are sorted)---n^2
+// Pivot - center point of the array like number travel pivot point,
+// aproch ex- supose make a pivot number like radom element,mid element ,first element, last element
+// let we have use last element
+
+// function QuickSort(arr,low=0, high=arr.length-1){
+    
+//     // console.log(pviot)
+//     if(low < high){
+//         let pviotIdx = partition(arr,low,high)
+//         // console.log(pviotIdx,'pviotIdx')
+//          QuickSort(arr,low,pviotIdx-1);
+//          QuickSort(arr,pviotIdx+1,high);
+//     }
+//     return arr;
+    
+// }
+// function partition(arr,low,high){
+//    const pviotEle = arr[high]; 
+//    let i = low-1;
+//    for(let j = low;j < high; j++){
+//        if(arr[j] < pviotEle){
+//            i++;
+//             //   [arr[i], arr[j]] = [arr[j], arr[i]];
+//            const temp = arr[i];
+//            arr[i]=arr[j];
+//            arr[j]=temp
+//        }
+//    }
+// //   Pviot value
+// i++;
+// const temp = arr[i];
+// arr[i]=pviotEle;
+// arr[high]=temp
+// //  [arr[i], arr[high]] = [arr[high], arr[i]];
+// return i // pviotIdx
+// }
+// const arr=[6,3,2,5,4,8]
+// console.log(QuickSort(arr))
