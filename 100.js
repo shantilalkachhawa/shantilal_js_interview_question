@@ -48,6 +48,7 @@
 //     return arr;
 // }
 // console.log(fibonacciNumber(7))
+// 3-TribonacciNumber series
 // function TribonacciNumber(n){
 //     if (n === 0) return 0; 
 //     if (n === 1) return 1; 
@@ -66,3 +67,18 @@
 //     return arr;
 // }
 // console.log(TribonacciNumber(7))
+
+// 5- water bottle giver num of bottle and exchagebottle
+
+// function waterBotle(numOfBotle,exchagebottle){
+//     let total = numOfBotle;
+//     while(numOfBotle >= exchagebottle){
+//         let  newBotle = Math.floor(numOfBotle / exchagebottle);
+//         let  remBotle = numOfBotle % exchagebottle;
+//         total +=newBotle;
+//         numOfBotle = newBotle + remBotle;
+//     }
+//     return total;
+
+// }
+// console.log(waterBotle(22,4))
