@@ -33,7 +33,7 @@
 // console.log(powerOfTwo(16))
 // console.log(powerOfTwo(10))
 
-// function fibonacciNumber(n){
+//3 function fibonacciNumber(n){
 //     if (n === 0) return 0; 
 //     if (n === 1) return 1; 
 //     let arr=[0];
@@ -48,7 +48,7 @@
 //     return arr;
 // }
 // console.log(fibonacciNumber(7))
-// 3-TribonacciNumber series
+// 4-TribonacciNumber series
 // function TribonacciNumber(n){
 //     if (n === 0) return 0; 
 //     if (n === 1) return 1; 
@@ -71,7 +71,7 @@
 // 5- water bottle giver num of bottle and exchagebottle
 
 // function waterBotle(numOfBotle,exchagebottle){
-//     let total = numOfBotle;
+//     let total = numOfBotle;  
 //     while(numOfBotle >= exchagebottle){
 //         let  newBotle = Math.floor(numOfBotle / exchagebottle);
 //         let  remBotle = numOfBotle % exchagebottle;
@@ -82,3 +82,60 @@
 
 // }
 // console.log(waterBotle(22,4))
+// Two sum
+// function twoSum(arr,value){
+//     for(let i = 0; i < arr.length; i++){
+//         for(let j=i+1; j <arr.length ; j++){
+//             if(arr[i]+arr[j  ] === value){
+//                 return [i,j];
+//             }
+//         }
+//     }
+// }
+// const arr =[2,4,5,1,7]
+// console.log(twoSum(arr,11))
+
+// 6 Add to Array form of integer
+// function addArrayToInteger(arr,k){
+//     let pointer = arr.length;
+//     let carry =  0;
+
+//     while( pointer > 0 || k > 0){
+//         let  lastDigit = k % 10
+//         let remDigit = Math.floor(k/10);
+
+
+//     }
+
+
+// }
+// console.log(addArrayToInteger([1,2,4,5],999))
+// 7- Merge two shortest list
+// function mergeSortedArr(arr1,arr2){
+//     let result =[];
+//     let i = 0;
+//     let j = 0;
+//     while(i < arr1.length && j < arr2.length ){
+//         if(arr1[i] < arr2[j]){
+//             result.push(arr1[i]);
+//             i++;
+//         }else{
+//             result.push(arr2[j]);
+//             j++;
+//         }
+//     }
+//     while(i <arr1.length){
+//         result.push(arr1[i]);
+//         i++;
+//     }
+//     while(j < arr2.length ){
+//         result.push(arr2[j]);
+//         j++
+//     }
+//     return result;
+
+
+// }
+// const arr1 =[1,3,5,6,7,8]
+// const arr2 =[2,4,7,9]
+// console.log(mergeSortedArr(arr1,arr2))
