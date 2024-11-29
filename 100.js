@@ -97,19 +97,49 @@
 
 // 6 Add to Array form of integer
 // function addArrayToInteger(arr,k){
-//     let pointer = arr.length;
+//     let p = arr.length-1;
 //     let carry =  0;
+//     let result =[];
 
-//     while( pointer > 0 || k > 0){
-//         let  lastDigit = k % 10
-//         let remDigit = Math.floor(k/10);
-
-
+//     while( p >= 0 || k > 0 ){
+//         let numVal = 0;
+//         if(p >=0){
+//             numVal = arr[p];
+//         }
+//         let  lastDigit = k % 10; 
+//         let sum = numVal + lastDigit + carry;
+//         // sum = sum % 10;// is  not working
+//         carry = Math.floor(sum / 10);
+//         result.push(sum);
+//         k = Math.floor(sum % 10);
+//         p--;
 //     }
-
+//     if(carry > 0){
+//         result.push(carry);
+//     }
+// return result;
 
 // }
 // console.log(addArrayToInteger([1,2,4,5],999))
+// 8- Maximum product of two numbers
+// function addTwoProduct(arr){
+//     let firstMax=-1;
+//     let secondMax=-1;
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i]> firstMax){
+//             secondMax = firstMax;
+//             firstMax =arr[i];
+
+//         }
+//     }
+//     console.log(firstMax,secondMax)
+//     let result = 0;
+//     result = ((firstMax- 1)* (secondMax - 1));
+//     return result;
+// }
+// console.log(addTwoProduct([2,3,4,5]))
+// console.log(addTwoProduct([2,3,4,7,6,5]))
+
 // 7- Merge two shortest list
 // function mergeSortedArr(arr1,arr2){
 //     let result =[];
