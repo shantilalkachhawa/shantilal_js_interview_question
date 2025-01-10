@@ -68,7 +68,7 @@
 // }
 // console.log(TribonacciNumber(7))
 
-// 5- water bottle giver num of bottle and exchagebottle
+// 5- water bottle giver num of bottle and exchage bottle
 
 // function waterBotle(numOfBotle,exchagebottle){
 //     let total = numOfBotle;  
@@ -86,7 +86,7 @@
 // function twoSum(arr,value){
 //     for(let i = 0; i < arr.length; i++){
 //         for(let j=i+1; j <arr.length ; j++){
-//             if(arr[i]+arr[j  ] === value){
+//             if(arr[i]+arr[j] === value){
 //                 return [i,j];
 //             }
 //         }
@@ -268,3 +268,33 @@
 
 
 
+
+
+
+
+// Bulb swicher 
+// 15 Largest number at least of twise of other 
+function largestTwiseofOther(arr){
+    let n = arr.length;
+    let largestNum=-1;
+    let secondMax =-1
+    for(let i=0 ; i < n; i++){
+        if(arr[i] > largestNum){
+            secondMax = largestNum;
+            largestNum = arr[i];
+        }else if(arr[i] > secondMax){
+            secondMax = arr[i]
+        }
+
+    }
+     let checkTwise = secondMax *2
+     if(checkTwise <= largestNum){
+        return true;
+     }else{
+        return false;
+     }
+    
+
+}
+console.log(largestTwiseofOther([3,6,1,0]));
+console.log(largestTwiseofOther([1,2,3,4]));
