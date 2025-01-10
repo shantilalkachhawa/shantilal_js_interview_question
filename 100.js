@@ -126,11 +126,14 @@
 //     let firstMax=-1;
 //     let secondMax=-1;
 //     for(let i = 0; i < arr.length; i++){
-//         if(arr[i]> firstMax){
-//             secondMax = firstMax;
-//             firstMax =arr[i];
-
-//         }
+    // if (arr[i] > firstMax) {
+    //     // Update secondMax before changing firstMax
+    //     secondMax = firstMax;
+    //     firstMax = arr[i];
+    // } else if (arr[i] > secondMax) {
+    //     // Update secondMax if current value is less than firstMax but greater than secondMax
+    //     secondMax = arr[i];
+    // }
 //     }
 //     console.log(firstMax,secondMax)
 //     let result = 0;
@@ -162,6 +165,11 @@
 //         result.push(arr2[j]);
 //         j++
 //     }
+
+//     const  m = Math.floor(result.length / 2)
+//     const median = m %2=== 0?  (result[m-1]+result[m])/2 : result[m] ;
+//     console.log(median,'median')
+    
 //     return result;
 
 
@@ -169,3 +177,94 @@
 // const arr1 =[1,3,5,6,7,8]
 // const arr2 =[2,4,7,9]
 // console.log(mergeSortedArr(arr1,arr2))
+
+// Day 9 Meadian of two shorted Arrays
+// console.log(mergeSortedArr([1,3],[2]));
+// console.log(mergeSortedArr([1,3],[2,4]));
+
+// Day 10  Missing Number of Arrays (0,n)
+
+// function missNumber(array){
+//     let n  = array.length;
+//     let arraySum = 0;
+//     for(let i =0 ; i < n; i++){
+//         arraySum += array[i];
+//     }
+//     let expectedSum = (n*(n+1))/2;
+//     let  missingNum = expectedSum - arraySum  ;
+//     return missingNum;
+
+
+// }
+// // n number of sum and array of sum subtract then outcome will get missing number
+// // subtracting the sum of the array from the expected sum of the first n natural numbers.
+// console.log(missNumber([3,0,1]));//Range [0,3]
+// console.log(missNumber([0,1]));//Range[0,2]
+// console.log(missNumber([9,6,4,2,3,5,7,0,1]));//Range [0 ,9]
+
+// Day 11  Remove the  Number of Arrays
+
+// function removeTheNumberOfArrays(arr,k){
+//     let pointer =0;
+//     let outcome = 0;
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i]!= k){
+//             console.log(arr[i]);
+            
+//             arr[pointer]= arr[i];
+//         }else{
+//             outcome ++;
+//         }
+//     }
+//     return outcome;
+// }
+// console.log(removeTheNumberOfArrays([3,2,2,3],3));//[2,2,-,-]
+// console.log(removeTheNumberOfArrays([0,1,2,2,3,0,4,2],2))//[0,1,3,0,4,-,-,-]
+
+// Day 12  Square of the  Sorted Arrays o(n) not use nlogn
+// function SquareOfArray(arr){
+//     let newArr =[];
+//     let start =0 ;
+//     let end =arr.length -1 ;
+//     let ptr = arr.length -1;
+//     while(start <= end){
+//         let ss = (arr[start]*arr[start]);
+//         let es = (arr[end]*arr[end]);
+//         if(ss > es){
+//             newArr[ptr]=ss;
+//             start++;
+//             ptr--;
+//         }else{
+//             newArr[ptr]=es;
+//             end--;
+//             ptr--;
+//         }
+//     }
+// return newArr;
+// }
+// console.log(SquareOfArray([-7,-4,3,0,1,2]));
+// console.log(SquareOfArray([-7,-3,2,3,11]));
+// console.log(SquareOfArray([4,-1,0,3,10]));
+
+// Day 14  Two sum 2   // Hamesha sorted array ki value increse j hoti index increse hone par
+// Optimise solution
+// function twoSum(arr, target) {
+//     let start = 0;
+//     let end = arr.length-1;
+//     while(start < end){
+//         let sum  = arr[start]+arr[end];
+//         if(sum == target){
+//             return [start,end];
+//         }else if( sum > target){
+//             end --;
+
+//         }else{
+//             start++;
+//         }
+//     }
+// }
+// console.log(twoSum([2,7,11,15],9));
+// console.log(twoSum([2,3,4],6));
+
+
+

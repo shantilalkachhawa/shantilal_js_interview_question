@@ -911,3 +911,40 @@ let arr=[7,23,8,2,8,1,4]
 // }
 // const arr=[6,3,2,5,4,8]
 // console.log(QuickSort(arr))
+
+// ARRAY LIST ------------------------------
+// List interface
+                  //  list
+        //1           2         3
+ //  Array list   link list    vetor
+ //                                 |
+ //                                stack   
+
+// Queue  interface (fifo)
+            //  queue
+        //1           2         3
+ //Priority queue   link list    deque(double ended queue)
+ //                                 |
+ //                              array queue
+
+
+
+//  set intraface
+            //  set
+        //1           2         3
+ //  hash set   link hash set    sorted set
+ //                                 |
+ //                              tree set
+
+
+//  Map interface
+            //  map
+        //1           2         3                 4
+ //  hash map   link hash map    sorted map    hash table
+  //                                 |
+ //                              tree map
+
+
+//  NOTE- 
+// For search use array list 
+// For insert use link list 
