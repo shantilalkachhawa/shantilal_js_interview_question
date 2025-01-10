@@ -274,27 +274,30 @@
 
 // Bulb swicher 
 // 15 Largest number at least of twise of other 
-function largestTwiseofOther(arr){
-    let n = arr.length;
-    let largestNum=-1;
-    let secondMax =-1
-    for(let i=0 ; i < n; i++){
-        if(arr[i] > largestNum){
-            secondMax = largestNum;
-            largestNum = arr[i];
-        }else if(arr[i] > secondMax){
-            secondMax = arr[i]
-        }
+// function largestTwiseofOther(arr){
+//     let n = arr.length;
+//     let largestNum=-1;
+//     let secondMax =-1
+//     for(let i=0 ; i < n; i++){
+//         if(arr[i] > largestNum){
+//             secondMax = largestNum;
+//             largestNum = arr[i];
+//         }else if(arr[i] > secondMax){
+//             secondMax = arr[i]
+//         }
 
-    }
-     let checkTwise = secondMax *2
-     if(checkTwise <= largestNum){
-        return true;
-     }else{
-        return false;
-     }
+//     }
+//      let checkTwise = secondMax *2
+//      if(checkTwise <= largestNum){
+//         return true;
+//      }else{
+//         return false;
+//      }
     
 
-}
-console.log(largestTwiseofOther([3,6,1,0]));
-console.log(largestTwiseofOther([1,2,3,4]));
+// }
+// console.log(largestTwiseofOther([3,6,1,0]));
+// console.log(largestTwiseofOther([1,2,3,4]));
+
+// 16 Container with most water
+
