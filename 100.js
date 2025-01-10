@@ -301,3 +301,86 @@
 
 // 16 Container with most water
 
+// function waterSol(arr){
+//     let start =0;
+//     let end = arr.length-1;
+//     let maxCap = 0;
+//     while(start < end){
+//         let height = Math.min(arr[start],arr[end]);
+//         let width = end - start;
+//         let currCap = height * width;
+//         maxCap = Math.max(maxCap,currCap);
+//         if(arr[start] < arr[end]){
+//             start++;
+//         }else{
+//             end --;
+//         }
+//     }
+//     return maxCap;
+// }
+// console.log(waterSol([4,7,3,8,1]));
+// console.log(waterSol([1,8,6,2,5,4,8,3,7]));
+// console.log(waterSol([1,1]));
+
+
+
+// Increasing Triplet Subsequence|
+// 0(n3) time complexicity
+// function increTripletSub(arr){
+
+//     for(let i=0; i < arr.length; i ++){
+//         for(let j=i+1; j < arr.length; j++){
+//             for(let k=j+1; k < arr.length ; k++){
+//                 if( arr[i]< arr[j] && arr[j] < arr[k]){
+//                     return true;
+//                 }
+//             }
+//         }
+//     }
+//     return false;
+
+// }
+
+// 0(n)
+// function increTripletSub(arr){
+//     for(let i=0 ; i < arr.length; i ++){
+//         let frstIndx = -1;
+//         let scndIndx =-1;
+//         let trdIndx = -1;
+//            frstIndx = arr[i]
+//            scndIndx = arr[i+1]
+//            trdIndx = arr[i+2]
+//            if(frstIndx < scndIndx &&  scndIndx < trdIndx ){
+//             return true;
+//            }
+
+//     }
+//     return false;
+//     }
+//     function increTripletSub(arr){
+//         let frstIndx = Infinity; //Max value 
+//         let scndIndx =Infinity;
+//         let trdIndx = Infinity;
+//         for(let i=0 ; i < arr.length; i ++){
+//                let ele = arr[i];
+//                if(frstIndx >= ele){
+//                 frstIndx = ele;
+//                }else if(scndIndx >= ele){
+//                 scndIndx = ele;
+//                }else{
+//                 trdIndx =ele;
+//                 return true;
+//                }
+//         }
+//         return false;
+//         }
+// console.log(increTripletSub([1,2,3,4,5]));
+// console.log(increTripletSub([5,4,3,2,1]));
+// console.log(increTripletSub([2,1,5,0,4,6]));
+
+
+
+// Maximum Ascending Subarray Sum| Day19 
+
+
+
