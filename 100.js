@@ -380,7 +380,210 @@
 
 
 
-// Maximum Ascending Subarray Sum| Day19 
+// Maximum Ascending Subarray Sum| Day19  
+
+// function maxAscendingSubarray(arr){
+//     let currSum = arr[0];
+//     let maxSum = arr[0];
+//     for(let i =1; i < arr.length; i++){
+//         if (arr[i] > arr[i - 1]) {
+//             currSum += arr[i];
+//         } else {
+//             currSum = arr[i];
+//         }
+//         maxSum = Math.max(maxSum, currSum);
+//     }
+//     return maxSum;
+// }
+// console.log(maxAscendingSubarray([10,20,30,5,10,50]))
+// console.log(maxAscendingSubarray([10,20,30,40,50]))
+// console.log(maxAscendingSubarray([10,20,30,5,10,50]))
+
+
+// Find lucky Integer in An Array | Day20
+// OR find the frequencies of array equal to the its value 
+// Using Hash map 
+// function luckyInteger(arr) {
+//     let numCount = {};
+//     let luckyInt = -1;
+//     for (let num of arr) {
+//         numCount[num] = (numCount[num] || 0) + 1;
+//     }
+//     console.log(numCount, 'numCount');
+//     // Check for lucky integers
+//     for (let num in numCount) {
+//         if (parseInt(num) === numCount[num]) {
+//             luckyInt = Math.max(luckyInt, parseInt(num)); // Update to the largest lucky integer
+//         }
+//     }
+//     return luckyInt;
+// }
+// console.log(luckyInteger([2, 2, 3, 4])); // Output: 2
+// console.log(luckyInteger([1, 2, 2, 3, 3, 3])); // Output: 3
+// console.log(luckyInteger([2, 2, 2, 3, 3])); // Output: -1
+
+
+
+// Binary search two wordd like sorted and l  Day21
+// Binary search time comlexity is logN
+
+// function binarySearch(arr,target){
+//     let  start = 0;
+//     let  end = arr.length - 1;
+//     while(start <= end){
+//         let mid = Math.floor((start + end)/2);
+//         if(arr[mid] == target){
+//             return mid;
+//         }else if(arr[mid] < target){
+//             start = mid + 1
+//         }else{
+//             end = mid - 1;
+//         }
+//     }
+//     return -1;
+   
+//  }
+// console.log(binarySearch([-1,0,3,5,9,12],9));
+// console.log(binarySearch([-1,0,3,5,9,12],4));
+
+
+// FInd the first and last postion on element in Sorted  Day22
+
+// function findElement(arr, target) {
+//     let first = firstOccurrence(arr, target);
+//     let last = lastOccurrence(arr, target);
+//     return [first, last];
+// }
+// function firstOccurrence(arr, target) {
+//     let start = 0;
+//     let end = arr.length - 1;
+//     let firstIndex = -1;
+
+//     while (start <= end) {
+//         let mid = Math.floor((start + end) / 2);
+//         if (arr[mid] === target) {
+//             firstIndex = mid; // Store the current index
+//             end = mid - 1;    // Continue searching in the left half
+//         } else if (arr[mid] < target) {
+//             start = mid + 1;
+//         } else {
+//             end = mid - 1;
+//         }
+//     }
+
+//     return firstIndex;
+// }
+// function lastOccurrence(arr, target) {
+//     let start = 0;
+//     let end = arr.length - 1;
+//     let lastIndex = -1;
+
+//     while (start <= end) {
+//         let mid = Math.floor((start + end) / 2);
+//         if (arr[mid] === target) {
+//             lastIndex = mid; // Store the current index
+//             start = mid + 1; // Continue searching in the right half
+//         } else if (arr[mid] < target) {
+//             start = mid + 1;
+//         } else {
+//             end = mid - 1;
+//         }
+//     }
+
+//     return lastIndex;
+// }
+
+// // Test Cases
+// console.log(findElement([5, 7, 7, 8, 8, 10], 8)); // Output: [3, 4]
+// console.log(findElement([5, 7, 7, 8, 8, 10], 6)); // Output: [-1, -1]
+// console.log(findElement([], 0));                  // Output: [-1, -1]
+
+// Search in Rotated Sorted Array   Day23
+
+// function searchRotedArray(arr,target){
+//     let start =0;
+//     let end = arr.length - 1;
+//     while(start <= end){
+//         let mid = Math.floor((start + end)/2);
+//         if(arr[mid] === target){
+//             return mid;
+//         }else if( arr[mid] >= arr[start]){ // Check part is 1st part id sorted 
+//             if( target >= arr[start] && target <= arr[mid]){
+//                 end = mid - 1;
+//             }else{
+//                 start = mid + 1;
+//             }
+//         }else{
+//             if(target >= arr[mid] && target <= arr[end]){
+//                 start = mid + 1;
+//             }else{
+//                 end = mid - 1;
+//             }
+//         }
+//     }
+//     return -1;
+// }
+// console.log(searchRotedArray([4,5,6,7,0,1,2],0));
+// console.log(searchRotedArray([4,5,6,7,0,1,2],3));
+
+// Find minmum in Rotated Sorted Array   Day24
+// function findMinValue(arr) {
+//     if (arr.length === 1) {
+//         return arr[0]; // Single element array
+//     }
+//     // If the array is already sorted
+//     if (arr[0] < arr[arr.length - 1]) {
+//         return arr[0];
+//     }
+//     let start = 0;
+//     let end = arr.length - 1;
+//     while (start < end) {
+//         let mid = Math.floor((start + end) / 2);
+
+//         // If mid element is greater than end, minimum is in the right half
+//         if (arr[mid] > arr[end]) {
+//             start = mid + 1;
+//         } else {
+//             // Otherwise, it's in the left half
+//             end = mid;
+//         }
+//     }
+
+//     // At this point, start points to the minimum element
+//     return arr[start];
+// }
+
+// // Test Cases
+// console.log(findMinValue([3, 4, 5, 1, 2])); // Output: 1
+// console.log(findMinValue([4, 5, 6, 7, 0, 1, 2])); // Output: 0
+// console.log(findMinValue([11, 13, 15, 17])); // Output: 11
+
+
+// function findMinValue(arr){
+//     if(arr.length ===1){
+//         return arr[0];
+//     }else if(arr[0] < arr[arr.length -1]){
+//         return arr[0];
+//     }
+//     let start = 0;
+//     let end = arr.length - 1;
+//     while(start < end){
+//         let mid = Math.floor((start + end)/2);
+//         if(arr[mid] > arr[end]){
+//             start = mid + 1;
+//         } else{
+//             end = mid;
+//         }
+//     }
+//     return arr[start]; // At this point, start will hold the minimum value.
+// }
+// console.log(findMinValue([3,4,5,1,2]));
+// console.log(findMinValue([4,5,6,7,0,1,2]));
+
+
+
+
+
 
 
 
