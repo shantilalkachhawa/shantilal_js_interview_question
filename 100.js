@@ -611,6 +611,18 @@
 // console.log(findPeakElement([1,2,1,3,5,6,4]))
 
 
+// Search Insert Position | Day 26
+
+function searchInserationPosition(arr,target){
+    console.log(target,arr);
+    
+
+}
+console.log(searchInserationPosition([1,3,5,6],5));
+console.log(searchInserationPosition([1,3,5,6],2));// if not avialable else available which postion
+console.log(searchInserationPosition([1,3,5,6],7)); // if not avialable else available which postion
+
+
 
 
 
