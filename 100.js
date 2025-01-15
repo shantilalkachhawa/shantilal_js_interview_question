@@ -581,7 +581,34 @@
 // console.log(findMinValue([4,5,6,7,0,1,2]));
 
 
+// Find Peak Element | Day 25  right and left side both side greter value
 
+// function findPeakElement(num){
+//     if(num.length == 1){
+//         return 0;
+//     }else if(num[0] > num[1]){
+//         return 0;
+//     }else if(num[num.length-1] > num[num.length-2]){
+//         return num.length-1;
+//     }else{
+//         let start = 1;
+//         let end = num.length - 2;
+//         while(start <=end){
+//             let mid = Math.floor((start+end)/2)
+//             if(num[mid] > num[mid + 1] && num[mid] > num[mid-1]){
+//                 return mid;
+//             }else if(num[mid] < num[mid+1]){
+//                 start=mid+1;
+//             }else{
+//                 end = mid-1;
+//             }
+//         }
+//         return -1;
+//     }
+
+// }
+// console.log(findPeakElement([1,2,3,1]))
+// console.log(findPeakElement([1,2,1,3,5,6,4]))
 
 
 
