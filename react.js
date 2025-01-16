@@ -778,5 +778,12 @@ const handleClick = () => console.log('Clicked!');
 // };
 
 
+// 7. Use Context API Wisely
+// Avoid overusing context as it can lead to propagation of re-renders.
+// Use tools like Zustand, Recoil, or Jotai for state management when Context becomes complex.
+
+// 8. Enable Lazy Image Loading (Next.js Example)
+// Benefit: Prevents loading all images at once, improving performance.
+
 
 
