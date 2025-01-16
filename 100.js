@@ -613,16 +613,121 @@
 
 // Search Insert Position | Day 26
 
-function searchInserationPosition(arr,target){
-    console.log(target,arr);
+// function searchInserationPosition(arr,target){
+
+//     let start=0;
+//     let end = arr.length -1;
+//     while(start <= end){
+//         let mid = Math.floor((start + end)/2)
+//         if(arr[mid]== target){
+//             return mid;
+//         }else if(target >  arr[mid]){
+//             start = mid +1;
+//         }else{
+//             end =mid - 1;
+//         }
+//     }
+//     return start;
     
 
+// }
+// console.log(searchInserationPosition([1,3,5,6],5));
+// console.log(searchInserationPosition([1,3,5,6],2));// if not avialable else available which postion
+// console.log(searchInserationPosition([1,3,5,6],7)); // if not avialable else available which postion
+
+// Single Element in a Sorted Array | Day 27
+// o(logn) & 0(1) [no space]
+
+// function nonDuplicate(num){
+//     if(num.length ===1){
+//         return num[num.length]
+//     }
+//     else if(num[0] != num[1]){
+//         return num[0];
+//     }else if(num[num.length -1] != num[num.length -2]){
+//         return num[num.length-1];
+//     }else{
+//         let start =1;
+//         let end = num.length - 2;
+//         while(start <= end){
+//             let mid =Math.floor((start+end)/2)
+//             if(num[mid] != num[mid-1] &&  num[mid] != num[mid +1]){
+//                 return num[mid];
+//             }else if(mid % 2 ===1){ // index is odd
+//                 if(num[mid] == num[mid-1]){
+//                     start= mid +1;
+//                 }else{
+//                     end = mid -1;
+//                 }
+
+//             }else{ // index is even
+//                 if(num[mid] == num[mid+1]){
+//                     start= mid +1;
+//                 }else{
+//                     end = mid -1;
+//                 }
+//             }
+
+//         }
+//         return -1;
+//     }
+
+// }
+// // trick left & right are not same 
+// // Squencce odd & even 
+// console.log(nonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
+// console.log(nonDuplicate([3, 3, 4, 4, 7, 10, 10]));  
+
+//  Sort Colors | Day 28 // dutch national flag //red ,blue,white 
+
+// function sortColor(arr){
+//     function swap(num,i,j){
+//         let temp = num[i];
+//         num[i]=num[j];
+//         num[j]=temp;
+//     }
+//     let low =0;
+//     let mid =0;
+//     let high =arr.length -1;
+//     while(mid <= high){
+//         if(arr[mid] == 0){
+//             swap(arr,low,mid)
+//             low++;
+//             mid++;
+//         }else if(arr[mid] ==1){
+//             mid++;clearInterval
+//         }else{
+//             swap(arr,high,mid)
+//               high--;
+//         }
+//     }
+//     return arr;
+
+// }
+// console.log(sortColor([2,0,2,1,1,0]))
+// console.log(sortColor([2,0,1]))
+
+
+// Maximum Subarray | Day 29  OR Kadane’s Algorithm
+// Maximum Subarray using O(n^2) approach
+function maxSubArr(arr){
+    let maxSum = -Infinity;
+    for(let i = 0; i < arr.length; i++){
+        let currSum = 0;
+        for(let j = i ; j < arr.length; j++){
+            currSum +=arr[j];
+            if(currSum > maxSum){
+                maxSum = currSum;
+            }
+        }
+    }
+    return maxSum;
 }
-console.log(searchInserationPosition([1,3,5,6],5));
-console.log(searchInserationPosition([1,3,5,6],2));// if not avialable else available which postion
-console.log(searchInserationPosition([1,3,5,6],7)); // if not avialable else available which postion
-
-
-
-
+// Maximum Subarray using optomise approach
+function maxSubArr(arr){
+  
+}
+console.log(maxSubArr([-2,1,-3,4,-1,2,1,-5,4]))
+console.log(maxSubArr([1]))
+console.log(maxSubArr([5,4,-1,7,8]))
 
