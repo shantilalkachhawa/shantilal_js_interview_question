@@ -702,4 +702,81 @@
 // NOTE:-  multiple  inheritance only  use to in interface not class 
 
 
+// React Performance Optimization Techniques
+
+//1 Use React.memo for Component Memoization
+
+// When a component's output depends only on props and doesn't need frequent updates
+// import React from 'react';
+
+// const Button = React.memo(({ label, onClick }) => {
+//     console.log("Button rendered");
+//     return <button onClick={onClick}>{label}</button>;
+// });
+
+// export default Button;
+
+
+
+
+
+//2 Use useCallback and useMemo Hooks
+// When passing functions to child components to avoid unnecessary re-creation.
+// import React, { useState, useCallback } from 'react';
+
+// const Counter = () => {
+//     const [count, setCount] = useState(0);
+
+//     const increment = useCallback(() => {
+//         setCount((prev) => prev + 1);
+//     }, []);
+
+//     return <button onClick={increment}>Count: {count}</button>;
+// };
+
+// export default Counter;
+
+
+//3 Code Splitting with React.lazy and Suspense
+// Break the application into smaller bundles to reduce initial load time.
+
+
+// import React, { lazy, Suspense } from 'react';
+
+// const HeavyComponent = lazy(() => import('./HeavyComponent'));
+
+// const App = () => (
+//     <Suspense fallback={<div>Loading...</div>}>
+//         <HeavyComponent />
+//     </Suspense>
+// );
+
+// export default App;
+
+// 4. Avoid Inline Functions and Object Creation in JSX
+// Bad
+{/* <button onClick={() => console.log('Clicked!')}>Click</button>
+
+// Good
+const handleClick = () => console.log('Clicked!');
+<button onClick={handleClick}>Click</button> */}
+
+// 5. Optimize Rendering with Key Prop in Lists [when during of map method]
+// Always provide a unique key prop when rendering lists to help React identify changes efficiently.
+
+
+// 6. Avoid Unnecessary State and Props
+// Unnecessary state
+// const App = () => {
+//     const [isLoggedIn, setIsLoggedIn] = useState(true);
+//     return <Dashboard isLoggedIn={isLoggedIn} />;
+// };
+
+// // Better approach using context or conditional rendering
+// const App = () => {
+//     return <Dashboard />;
+// };
+
+
+
 
