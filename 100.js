@@ -723,8 +723,8 @@
 //     return arr;
 
 // }
-// console.log(sortColor([2,0,2,1,1,0]))
-// console.log(sortColor([2,0,1]))
+// console.log(sortColor([2,0,2,1,1,0])) //[ 0, 0, 1, 1, 2, 2 ]
+// console.log(sortColor([2,0,1])) //[ 0, 1, 2 ]
 
 
 // Maximum Subarray | Day 29  OR Kadane’s Algorithm
@@ -742,11 +742,87 @@
 //     }
 //     return maxSum;
 // }
-// // Maximum Subarray using optomise approach
+// Maximum Subarray using optomise approach
 // function maxSubArr(arr){
+//     let currSum=arr[0];
+//     let max=arr[0];
+//     for(let i = 1; i < arr.length ; i++){
+//         if((currSum + arr[i]) > arr[i]){
+//             currSum += arr[i];
+//         }else{
+//             currSum = arr[i];
+//         }
+//         max = Math.max(max,currSum);
+//     }
+//     return max;
+
   
 // }
 // console.log(maxSubArr([-2,1,-3,4,-1,2,1,-5,4]))
 // console.log(maxSubArr([1]))
 // console.log(maxSubArr([5,4,-1,7,8]))
+
+//  Trapping Rain Water | Day 30  ******************************************************
+
+// function trapWater(heights) {
+//     let n = heights.length;
+//     if (n === 0) return 0; // No heights, no water
+
+//     let left = 0;
+//     let right = n - 1;
+//     let leftMax = 0;
+//     let rightMax = 0;
+//     let trappedWater = 0;
+
+//     while (left <= right) {
+//         if (heights[left] <= heights[right]) {
+//             if (heights[left] >= leftMax) {
+//                 leftMax = heights[left];
+//             } else {
+//                 trappedWater += leftMax - heights[left];
+//             }
+//             left++;
+//         } else {
+//             if (heights[right] >= rightMax) {
+//                 rightMax = heights[right];
+//             } else {
+//                 trappedWater += rightMax - heights[right];
+//             }
+//             right--;
+//         }
+//     }
+
+//     return trappedWater;
+// }
+
+// console.log(trapWater([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])); // 6
+// console.log(trapWater([4, 2, 0, 3, 2, 4])); // 9
+
+
+// Find Target Indices After Sorting Array | Day 31 
+
+// function targetIndices(arr,target){
+//     let num =0;
+//     let targetCount =0;
+//     let result =[];
+
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i] === target){
+//             targetCount++;
+//         }else if(arr[i] < target){
+//             num++;
+//         }
+//     }
+//     console.log(num,'num');
+//     for (let i = 0; i < targetCount; i++) {
+        
+//         result.push(num + i);
+//     }
+//     return result;
+    
+
+// }
+// console.log(targetIndices([1,2,5,2,3],2));
+// console.log(targetIndices([1,2,5,2,3],3));
+// console.log(targetIndices([1,2,5,2,3],5));
 
