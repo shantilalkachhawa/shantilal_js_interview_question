@@ -1,9 +1,9 @@
-// 1- Palindrome 
+// // 1- Palindrome 
 // function palindromic(n){
 //     if(n<0){
 //         return false;
 //     }
-//     let original = n; // Store the original number for comparison.
+//     let original = n; 
 //     let reversed = 0;
 //     while(n > 0){
 //         let digit = n % 10;
@@ -12,11 +12,20 @@
 //     }
 //     return original === reversed;
 // }
-// console.log(palindromic(121))
-// console.log(palindromic(-121))
-// console.log(palindromic(123))
+// console.log(palindromic(121)) //ture
+// console.log(palindromic(-121)) // false
+// console.log(palindromic(123)) //false
+// //OR
+// function palindromeCheck(num) {
+//     let numStr = num.toString();
+//     let result = numStr.split('').reverse().join('');
+//     return numStr === result;
+// }
+// console.log(palindromeCheck(121)); // true
+// console.log(palindromeCheck(123)); // false
 
 // 2-Power of two -
+// Time Complexity: O(log n)
 // function powerOfTwo(n){
 //     if(n <= 0){
 //         return false
@@ -29,9 +38,19 @@
 //     }
 //     return true;
 // }
-// console.log(powerOfTwo(20))
-// console.log(powerOfTwo(16))
-// console.log(powerOfTwo(10))
+// // Using Bitwise AND | Time Complexity: O(1)
+// function powerOfTwo(n) {
+//     return n > 0 && (n & (n - 1)) === 0;
+// }
+// // Using Math Logarithm | Time Complexity: O(1)
+// function powerOfTwo(n) {
+//     return n > 0 && Math.log2(n) % 1 === 0;
+// }
+// console.log(powerOfTwo(20)); // false
+// console.log(powerOfTwo(16)); // true
+// console.log(powerOfTwo(10)); // false
+
+
 
 //3 function fibonacciNumber(n){
 //     if (n === 0) return 0; 
