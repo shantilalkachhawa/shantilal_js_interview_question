@@ -1,9 +1,9 @@
-// 1- Palindrome 
+// // 1- Palindrome 
 // function palindromic(n){
 //     if(n<0){
 //         return false;
 //     }
-//     let original = n; // Store the original number for comparison.
+//     let original = n; 
 //     let reversed = 0;
 //     while(n > 0){
 //         let digit = n % 10;
@@ -12,11 +12,20 @@
 //     }
 //     return original === reversed;
 // }
-// console.log(palindromic(121))
-// console.log(palindromic(-121))
-// console.log(palindromic(123))
+// console.log(palindromic(121)) //ture
+// console.log(palindromic(-121)) // false
+// console.log(palindromic(123)) //false
+// //OR
+// function palindromeCheck(num) {
+//     let numStr = num.toString();
+//     let result = numStr.split('').reverse().join('');
+//     return numStr === result;
+// }
+// console.log(palindromeCheck(121)); // true
+// console.log(palindromeCheck(123)); // false
 
 // 2-Power of two -
+// Time Complexity: O(log n)
 // function powerOfTwo(n){
 //     if(n <= 0){
 //         return false
@@ -29,9 +38,19 @@
 //     }
 //     return true;
 // }
-// console.log(powerOfTwo(20))
-// console.log(powerOfTwo(16))
-// console.log(powerOfTwo(10))
+// // Using Bitwise AND | Time Complexity: O(1)
+// function powerOfTwo(n) {
+//     return n > 0 && (n & (n - 1)) === 0;
+// }
+// // Using Math Logarithm | Time Complexity: O(1)
+// function powerOfTwo(n) {
+//     return n > 0 && Math.log2(n) % 1 === 0;
+// }
+// console.log(powerOfTwo(20)); // false
+// console.log(powerOfTwo(16)); // true
+// console.log(powerOfTwo(10)); // false
+
+
 
 //3 function fibonacciNumber(n){
 //     if (n === 0) return 0; 
@@ -710,24 +729,24 @@
 
 // Maximum Subarray | Day 29  OR Kadane’s Algorithm
 // Maximum Subarray using O(n^2) approach
-function maxSubArr(arr){
-    let maxSum = -Infinity;
-    for(let i = 0; i < arr.length; i++){
-        let currSum = 0;
-        for(let j = i ; j < arr.length; j++){
-            currSum +=arr[j];
-            if(currSum > maxSum){
-                maxSum = currSum;
-            }
-        }
-    }
-    return maxSum;
-}
-// Maximum Subarray using optomise approach
-function maxSubArr(arr){
+// function maxSubArr(arr){
+//     let maxSum = -Infinity;
+//     for(let i = 0; i < arr.length; i++){
+//         let currSum = 0;
+//         for(let j = i ; j < arr.length; j++){
+//             currSum +=arr[j];
+//             if(currSum > maxSum){
+//                 maxSum = currSum;
+//             }
+//         }
+//     }
+//     return maxSum;
+// }
+// // Maximum Subarray using optomise approach
+// function maxSubArr(arr){
   
-}
-console.log(maxSubArr([-2,1,-3,4,-1,2,1,-5,4]))
-console.log(maxSubArr([1]))
-console.log(maxSubArr([5,4,-1,7,8]))
+// }
+// console.log(maxSubArr([-2,1,-3,4,-1,2,1,-5,4]))
+// console.log(maxSubArr([1]))
+// console.log(maxSubArr([5,4,-1,7,8]))
 
