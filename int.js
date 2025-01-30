@@ -572,3 +572,13 @@
         }
         return {length ,maxStr}
     }
+
+
+
+    // Subject &    BehaviorSubject
+    // BehaviorSubject
+    // Retains last value
+    // Emits latest value to new subscribers
+    // Initial value required
+// Subject
+    // Subject, which does not retain the last emitted value
