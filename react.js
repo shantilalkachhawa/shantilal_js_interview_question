@@ -31,7 +31,13 @@
 // Props and State: Parent components pass data to child components using props, and each component manages its own state.
 
 // 4 useRef 
-// Refs in React allow you to directly access DOM elements or React components, providing a way to interact with elements outside of React’s virtual DOM system. They are typically used for managing focus, handling animations, or integrating with third-party libraries. While powerful, refs should be used sparingly and only when necessary, as React's declarative nature is usually sufficient for most UI interactions.
+// Refs in React allow you to directly access DOM elements or React components, providing a way to interact with elements outside of React’s virtual DOM system.
+//  They are typically used for managing focus, handling animations, or integrating with third-party libraries. While powerful, refs should be used sparingly and only when necessary,
+//  as React's declarative nature is usually sufficient for most UI interactions.
+// DOM access: Referring to and interacting with DOM elements.
+// Storing mutable values: Tracking values that don’t require a re-render.
+// Timers and intervals: Managing timers without causing re-renders.
+// Previous state or props: Storing previous values of state or props.
 
 // 5 forwardRef
 
@@ -700,7 +706,7 @@
 
 // }
 // NOTE:-  multiple  inheritance only  use to in interface not class 
-
+// *******************************************************************new **************************************************************************
 
 // React Performance Optimization Techniques
 
@@ -786,4 +792,105 @@ const handleClick = () => console.log('Clicked!');
 // Benefit: Prevents loading all images at once, improving performance.
 
 
+// QUE
+// console.log(this) 
+// Global Scope (Browser)
+// --In a browser, this refers to the global object, which is window.
+// Inside a Function (Non-Strict Mode)
+// --In non-strict mode, this still refers to the global object (window in browsers, global in Node.js).
+// ---EX - in browser Window {...} & node js Object [global] {...}
 
+// Inside a Function (Strict Mode)
+// --In strict mode, this will be undefined.
+//  Inside an Object Method
+// --Here, this refers to obj, because the function is a method of obj.
+
+//QUE 
+// How does "this" behave in Node.js? Is it the same as in a browser console?
+// In Node.js, this in the global scope refers to an empty object {}, not global.
+// this Inside a Function -In Node.js, calling a regular function in non-strict mode sets this to the global object (global). In strict mode ("use strict"), this is undefined
+// In a browser, this in the global scope refers to the window object.
+// Conclusion
+// this behaves differently in the global scope in Node.js ({}) vs. browsers (window).
+// Inside functions, this refers to global in Node.js, while in browsers, it's window.
+// Arrow functions inherit this from the surrounding scope in both environments.
+// Inside a module, this in Node.js refers to module.exports.
+
+
+// Que 
+// If you receive 5000 records in one API call, how would you efficiently display them in a dropdown?
+// - 1. Use Virtual Scrolling (Lazy Rendering)
+// 2. Implement Search & Filtering
+// 3. Pagination or Infinite Scrolling
+// 4. Asynchronous Dropdown Loading
+
+// In package.json, the caret (^) and tilde (~) are version specifiers that define how updates are handled when installing dependencies
+// - 1. Caret (^) - Allows Minor and Patch Updates
+//    ex- Installs 4.17.21 or any newer minor or patch version like 4.18.0 or 4.17.30,  Does NOT install 5.x.x (major version change).
+// 2. Tilde (~) - Allows Only Patch Updates
+//    ex- Installs 4.17.21 or any newer patch version like 4.17.30,Does NOT install 4.18.0 or 5.x.x (no minor or major updates).
+
+
+// Que Write code for mul(2)(3)(4) = 24  Curried Function
+// function multi(a){
+//     return function(b){
+//         return function(c){
+//             return a*b*c;
+//         }
+//     }
+// }
+// console.log(multi(2)(3)(4))
+// const add = a => b => c=>a*b*c; Arrow Function
+// console.log(add(2)(3)(4))
+
+// QUE
+// Have you worked with Axios? What are interceptors in Axios?
+// Yes, I have worked with Axios! It’s a popular HTTP client used to make requests from a web browser or Node.js environment. 
+// Axios is great for interacting with APIs due to its simplicity and support for handling requests and responses.
+
+// Interceptors in Axios are functions that allow you to modify the request or response before it is sent or after it is received, respectively.
+//  They are useful for adding functionality like logging, authentication, error handling, or transforming the data.
+
+
+// QUE
+// What are synthetic events in react ?
+// Common Synthetic Event Methods and Properties
+// event.preventDefault():
+// Prevents the default action associated with the event (e.g., preventing form submission, link navigation).
+// event.stopPropagation():
+// Prevents the event from bubbling up to parent elements (stops the event from propagating).
+// event.target:
+// The DOM element that triggered the event (similar to the native event.target).
+// event.currentTarget:
+// The DOM element that the event handler is currently attached to (this is useful in event delegation).
+// event.type:
+// The type of the event (e.g., click, submit, change).
+// event.persist():
+// Call this method to remove an event from the React event pool. This allows you to access the event properties asynchronously,
+//  for example, after a setTimeout or when handling a promise.
+// Types of Events in React:
+// React’s synthetic event system works with various types of events, such as:
+
+// Mouse Events: onClick, onDoubleClick, onMouseEnter, onMouseLeave, etc.
+// Keyboard Events: onKeyDown, onKeyUp, onKeyPress, etc.
+// Form Events: onChange, onSubmit, onFocus, onBlur, etc.
+// Focus Events: onFocus, onBlur, etc.
+// Touch Events: onTouchStart, onTouchMove, onTouchEnd, etc.
+// Clipboard Events: onCopy, onPaste, etc.
+// Media Events: onPlay, onPause, onVolumeChange, etc.
+
+// Advantages of Synthetic Events:
+// Cross-Browser Consistency: Since Synthetic Events normalize event behavior, you don’t have to worry about handling browser-specific issues.
+// Event Delegation: React handles the delegation of events, 
+// making it easier to manage event listeners, especially in applications with many dynamic components.
+// Performance: Synthetic Events improve performance by reusing event objects and reducing the number of event listeners in the DOM.
+// Cleaner Code: Since React abstracts away browser inconsistencies, you can focus on writing cleaner and more reliable code for event handling.
+
+// QUES
+// Disadvantages of Prop Drilling
+// Difficult to Maintain:
+// Increased Complexity:
+// Unnecessary Renders:
+// Low Reusability:
+// Hard to Debug:
+// Limited Flexibility:
