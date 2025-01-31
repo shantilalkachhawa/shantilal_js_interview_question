@@ -52,7 +52,7 @@
 
 
 
-//3 function fibonacciNumber(n){
+//  function fibonacciSeries(n){
 //     if (n === 0) return 0; 
 //     if (n === 1) return 1; 
 //     let arr=[0];
@@ -66,6 +66,9 @@
 //     }
 //     return arr;
 // }
+
+// console.log(fibonacciSeries(7)); // [0, 1, 1, 2, 3, 5, 8, 13]
+
 // console.log(fibonacciNumber(7))
 // 4-TribonacciNumber series
 // function TribonacciNumber(n){
@@ -88,7 +91,8 @@
 // console.log(TribonacciNumber(7))
 
 // 5- water bottle giver num of bottle and exchage bottle
-
+// Using Division & Modulus
+// 	Time Complexity O(log N) & Space Complexity O(log N)
 // function waterBotle(numOfBotle,exchagebottle){
 //     let total = numOfBotle;  
 //     while(numOfBotle >= exchagebottle){
@@ -98,8 +102,27 @@
 //         numOfBotle = newBotle + remBotle;
 //     }
 //     return total;
-
 // }
+// console.log(waterBotle(22, 4)); // Output: 29
+// Mathematical Approach (No Loops, No Recursion) 
+// // 	Time Complexity O(1) & Space Complexity O(1)
+// function waterBottleMath(numOfBottle, exchangeBottle) {
+//     return numOfBottle + Math.floor((numOfBottle - 1) / (exchangeBottle - 1));
+// }
+// console.log(waterBottleMath(22, 4)); // Output: 29
+// Total Bottles=Initial Bottles+ ( Exchange Bottles−1 /Initial Bottles−1)
+
+// Recursive Approach // Clean but uses extra memory
+// // 	Time Complexity O(log N) & Space Complexity O(log N)
+// function waterBottleRecursive(numOfBottle, exchangeBottle, total = 0) {
+//     if (numOfBottle < exchangeBottle) return total + numOfBottle;
+//     let newBottle = Math.floor(numOfBottle / exchangeBottle);
+//     let remBottle = numOfBottle % exchangeBottle;
+//     return waterBottleRecursive(newBottle + remBottle, exchangeBottle, total + newBottle);
+// }
+// console.log(waterBottleRecursive(22, 4)); // Output: 29
+
+
 // console.log(waterBotle(22,4))
 // Two sum
 // function twoSum(arr,value){
@@ -747,7 +770,7 @@
 //     let currSum=arr[0];
 //     let max=arr[0];
 //     for(let i = 1; i < arr.length ; i++){
-//         if((currSum + arr[i]) > arr[i]){
+//         if((currSum +    arr[i]) > arr[i]){
 //             currSum += arr[i];
 //         }else{
 //             currSum = arr[i];
