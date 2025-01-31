@@ -849,3 +849,67 @@
 // console.log(targetIndices([1,2,5,2,3],3));
 // console.log(targetIndices([1,2,5,2,3],5));
 
+
+// Largest Number | Day 32 // Given a list of non negative integer // lexicographically sort 
+
+// function largerNumber(arr){
+//     for(let i = 0; i <arr.length ; i++){
+//         arr[i]=arr[i] +''
+//     }
+//     arr.sort((a, b) => (b + a).localeCompare(a + b));
+//     if (arr[0] === '0') return '0';
+
+//     // Join sorted strings and return the result
+//     return arr.join('');
+    
+
+// }
+// console.log(largerNumber([10,2]))
+// console.log(largerNumber([3,30,34,5,9]))
+// console.log(largerNumber([2,3,31,5,9]))
+
+// Maximum count of Positive and Negative Integer | Day 33 
+// O(n) but need to O(logn)
+
+function maxMumCount(arr){
+    let positiveInt =0;
+    let negInt =0;
+    for(let i =0; i < arr.length; i++){
+        if(arr[i] > 0 ){
+            positiveInt++
+        }else if(arr[i] < 0){
+            negInt++ 
+        }
+    } 
+
+    
+    return Math.max(positiveInt, negInt);
+
+}
+
+
+function maxMumCount(arr) {
+    let n = arr.length;
+
+    // Find the first non-negative number using binary search
+    let left = 0, right = n - 1;
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (arr[mid] < 0) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    // `left` now points to the first non-negative number
+    let negCount = left; // All elements before `left` are negative
+    let posCount = n - left; // All elements from `left` onward are positive
+
+    // Return the maximum count
+    return Math.max(negCount, posCount);
+}
+
+console.log(maxMumCount([-2,-1,-1,1,2,3]))
+console.log(maxMumCount([-3,-2,-1,0,0,1,2]))
+console.log(maxMumCount([5,20,66,1314]))
