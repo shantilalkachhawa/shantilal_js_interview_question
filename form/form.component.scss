@@ -1,0 +1,49 @@
+
+  #image-upload {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    border: 1px dashed var(--secondry-color);
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    text-align: center;
+}
+
+#image-upload::before {
+    content: "Drop file here or click to upload";
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+#image-upload input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.img-sec{
+    position: relative;
+    .img-fluid {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .delete-icon{
+        position: absolute;
+        right: 0;
+        top: -8px;
+        background: gray;
+        padding: 4px;
+        border-radius: 30px;
+        color: white;
+    }
+}

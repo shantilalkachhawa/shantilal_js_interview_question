@@ -887,45 +887,114 @@
 // Maximum count of Positive and Negative Integer | Day 33 
 // O(n) but need to O(logn)
 
-function maxMumCount(arr){
-    let positiveInt =0;
-    let negInt =0;
-    for(let i =0; i < arr.length; i++){
-        if(arr[i] > 0 ){
-            positiveInt++
-        }else if(arr[i] < 0){
-            negInt++ 
-        }
-    } 
+// function maxMumCount(arr){
+//     let positiveInt =0;
+//     let negInt =0;
+//     for(let i =0; i < arr.length; i++){
+//         if(arr[i] > 0 ){
+//             positiveInt++
+//         }else if(arr[i] < 0){
+//             negInt++ 
+//         }
+//     } 
 
     
-    return Math.max(positiveInt, negInt);
+//     return Math.max(positiveInt, negInt);
 
-}
+// }
 
 
-function maxMumCount(arr) {
-    let n = arr.length;
+// function maxMumCount(arr) {
+//     let n = arr.length;
 
-    // Find the first non-negative number using binary search
-    let left = 0, right = n - 1;
-    while (left <= right) {
-        let mid = Math.floor((left + right) / 2);
-        if (arr[mid] < 0) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
-    }
+//     // Find the first non-negative number using binary search
+//     let left = 0, right = n - 1;
+//     while (left <= right) {
+//         let mid = Math.floor((left + right) / 2);
+//         if (arr[mid] < 0) {
+//             left = mid + 1;
+//         } else {
+//             right = mid - 1;
+//         }
+//     }
 
-    // `left` now points to the first non-negative number
-    let negCount = left; // All elements before `left` are negative
-    let posCount = n - left; // All elements from `left` onward are positive
+//     // `left` now points to the first non-negative number
+//     let negCount = left; // All elements before `left` are negative
+//     let posCount = n - left; // All elements from `left` onward are positive
 
-    // Return the maximum count
-    return Math.max(negCount, posCount);
-}
+//     // Return the maximum count
+//     return Math.max(negCount, posCount);
+// }
 
-console.log(maxMumCount([-2,-1,-1,1,2,3]))
-console.log(maxMumCount([-3,-2,-1,0,0,1,2]))
-console.log(maxMumCount([5,20,66,1314]))
+// console.log(maxMumCount([-2,-1,-1,1,2,3]))
+// console.log(maxMumCount([-3,-2,-1,0,0,1,2]))
+// console.log(maxMumCount([5,20,66,1314]))
+
+
+// Plus One | Day 34
+
+// function plusOne(arr) {
+//     let n = arr.length;
+//     // option for not going inside of condition 
+//     if (arr[n-1] !== 9) {
+//         arr[n-1] += 1;
+//         return arr; 
+//     }
+//     arr[n-1] = 0;
+//     for (let i = n - 1; i >= 0; i--) {
+//         if (arr[i] !== 9) {
+//             arr[i] += 1;
+//             return arr; 
+//         }
+//         arr[i] = 0;  
+//     }
+    
+
+//     let result = new Array(n + 1).fill(0);
+//     result[0] = 1;
+//     return result;
+// }
+
+
+// console.log(plusOne([1, 2, 3]));   // Output: [1, 2, 4]
+// console.log(plusOne([4, 3, 2, 1])); // Output: [4, 3, 2, 2]
+// console.log(plusOne([9]));          // Output: [1, 0]
+// console.log(plusOne([9, 9, 9])); 
+
+
+// Kth Largest Element in an Array | Day 35 //Without sorting method // We have used priority Queue
+// function findKthLargestElement(nums, k) {
+//     for (let i = 0; i < k; i++) {
+//         let maxIndex = 0;
+
+//         // Find the max element in the array
+//         for (let j = 1; j < nums.length; j++) {
+//             if (nums[j] > nums[maxIndex]) {
+//                 maxIndex = j;
+//             }
+//         }
+
+//         // If it's the k-th time, return the max element
+//         if (i === k - 1) {
+//             return nums[maxIndex];
+//         }
+
+//         // Remove the max element by setting it to a very small value
+//         nums[maxIndex] = -Infinity;
+//     }
+// }
+
+// // Test cases
+// console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
+// console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
+
+// function findKthLargestElement(nums, k) {
+//     nums.sort((a, b) => b - a); // Sort in descending order
+//     return nums[k - 1]; // Get the kth largest element
+// }
+
+// // Test cases
+// console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
+// console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
+
+
