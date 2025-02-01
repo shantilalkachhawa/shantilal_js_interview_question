@@ -1,0 +1,35 @@
+<div class="modal-overlay row">
+  <div class="model-container col-sm-11 col-md-4 col-lg-4" >
+    <div class=" custom-modal" >
+      <div class="modal-header-section d-flex justify-content-between">
+        <h5 class="popup-header">{{ config.heading }}</h5>
+        <i class="fa fa-times text-muted pointer" (click)="handleClose()"></i>
+      </div>
+
+      <div class="modal-content pt-2 pb-2">
+        <ng-content></ng-content>
+      </div>
+
+      <div class="footer-section mt-4">
+        @if (config.heading !== 'Payment Details') {
+          <div class="d-flex justify-content-center flex-row gap-2">
+            @if (config.primaryBtnName) {
+              <div>
+                <button type="submit" class="btn btn-secondary" (click)="handleClose()">
+                  {{ config.primaryBtnName }}
+                </button>
+              </div>
+            }
+            @if (config.secondaryBtnName) {
+              <div>
+                <button type="submit" class="btn btn-primary" (click)="handleSubmit()">
+                  {{ config.secondaryBtnName }}
+                </button>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
