@@ -1,0 +1,22 @@
+<div class="login-section row">
+    <div class="col-11 col-lg-8 col-xl-6 mx-auto">
+        @if (currentUrl==='login') {
+            <h2>Login</h2>
+        }@else if(currentUrl==='sign-up'){
+            <h2>SignUp</h2>
+        }@else {
+            <h2>Otp</h2>
+        }
+        <app-form [inputFormJson]="currentUrl==='login' ? inputFormLogin : currentUrl==='sign-up' ? inputFormSignUp : inputFormOtp" (formSubmit)="onFormSubmit($event)">
+            @if (currentUrl==='login') {
+                <div class="fw-500">Don't have an account? <a  [routerLink]="'/auth/sign-up'">Sign up here.</a> </div>
+            }@else if(currentUrl==='sign-up') {
+                <div class="fw-500">Already have an account? <a  [routerLink]="'/auth/login'">Log in here.</a> </div>
+            }
+            <button type="submit" class="btn btn-primary sign-up-btn mt-2" >Submit</button>
+            @if (currentUrl==='otp') {
+                <button type="button" class="btn btn-secondary sign-up-btn mt-2 ms-4" (click)="onBack()">Back</button>
+            }
+        </app-form>
+    </div>
+</div>

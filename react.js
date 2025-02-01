@@ -6,7 +6,8 @@
 
 
 // 2 What is useMemo
-// useMemo is a useful hook to prevent unnecessary recalculations, which helps improve the performance of your React app by memoizing results based on dependencies.
+// useMemo is a useful hook to prevent unnecessary recalculations,
+//  which helps improve the performance of your React app by memoizing results based on dependencies.
 // Usage
 // Skipping expensive recalculations
 // Skipping re-rendering of components
@@ -32,7 +33,8 @@
 
 // 4 useRef 
 // Refs in React allow you to directly access DOM elements or React components, providing a way to interact with elements outside of React’s virtual DOM system.
-//  They are typically used for managing focus, handling animations, or integrating with third-party libraries. While powerful, refs should be used sparingly and only when necessary,
+//  They are typically used for managing focus, handling animations, or integrating with third-party libraries. 
+// While powerful, refs should be used sparingly and only when necessary,
 //  as React's declarative nature is usually sufficient for most UI interactions.
 // DOM access: Referring to and interacting with DOM elements.
 // Storing mutable values: Tracking values that don’t require a re-render.
@@ -42,7 +44,9 @@
 // 5 forwardRef
 
 
-// forwardRef in React is a function that allows a parent component to pass a ref down to one of its child components. Normally, refs are used to access DOM elements or child components directly from a parent component, but sometimes you may want to pass a ref to a component that wraps other elements or components. This is where forwardRef becomes useful
+// forwardRef in React is a function that allows a parent component to pass a ref down to one of its child components.
+//  Normally, refs are used to access DOM elements or child components directly from a parent component, 
+// but sometimes you may want to pass a ref to a component that wraps other elements or components. This is where forwardRef becomes useful
 
 
 // 6 Prop drilling 
@@ -54,11 +58,13 @@
 
 
 // 7 Pure Components
-// A React component should always have pure rendering logic. This means that it must return the same output if its props, state, and context haven't changed.
+// A React component should always have pure rendering logic.
+//  This means that it must return the same output if its props, state, and context haven't changed.
 
 
 // 8 Higer Order Components
-// Higher Order Components (HOCs) are a powerful pattern in React for reusing component logic. They are functions that take a component as input and return a new component with enhanced functionality.
+// Higher Order Components (HOCs) are a powerful pattern in React for reusing component logic. 
+// They are functions that take a component as input and return a new component with enhanced functionality.
 
 // Common Use Cases:
 // Authentication: Implementing authentication logic for protected routes.
