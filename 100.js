@@ -125,6 +125,22 @@
 
 // console.log(waterBotle(22,4))
 // Two sum
+// 	Time Complexity O(n)
+// function twoSum(arr, target) {
+//     let map = {}; 
+
+//     for (let i = 0; i < arr.length; i++) {
+//         let complement = target - arr[i];
+//         if (map[complement] !== undefined) {
+//             return [map[complement], i]; 
+//         }
+//         map[arr[i]] = i; 
+//     }
+//     return [];
+// }
+
+// console.log(twoSum([2, 4, 5, 1, 7], 11)); // Output: [2, 4]
+// 	Time Complexity O(n*2)
 // function twoSum(arr,value){
 //     for(let i = 0; i < arr.length; i++){
 //         for(let j=i+1; j <arr.length ; j++){
@@ -135,7 +151,7 @@
 //     }
 // }
 // const arr =[2,4,5,1,7]
-// console.log(twoSum(arr,11))
+// console.log(twoSum(arr,11))// Output: [2, 4]
 
 // 6 Add to Array form of integer
 // function addArrayToInteger(arr,k){
