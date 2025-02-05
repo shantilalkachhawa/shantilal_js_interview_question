@@ -153,7 +153,7 @@
 // const arr =[2,4,5,1,7]
 // console.log(twoSum(arr,11))// Output: [2, 4]
 
-// 6 Add to Array form of integer
+// // 6 Add to Array form of integer
 // function addArrayToInteger(arr,k){
 //     let p = arr.length-1;
 //     let carry =  0;
@@ -180,28 +180,37 @@
 // }
 // console.log(addArrayToInteger([1,2,4,5],999))
 // 8- Maximum product of two numbers
+// 	Time Complexity O(n)
 // function addTwoProduct(arr){
 //     let firstMax=-1;
 //     let secondMax=-1;
 //     for(let i = 0; i < arr.length; i++){
-    // if (arr[i] > firstMax) {
-    //     // Update secondMax before changing firstMax
-    //     secondMax = firstMax;
-    //     firstMax = arr[i];
-    // } else if (arr[i] > secondMax) {
-    //     // Update secondMax if current value is less than firstMax but greater than secondMax
-    //     secondMax = arr[i];
-    // }
+//     if (arr[i] > firstMax) {
+//         secondMax = firstMax;
+//         firstMax = arr[i];
+//     } else if (arr[i] > secondMax) {
+//         secondMax = arr[i];
 //     }
-//     console.log(firstMax,secondMax)
+//     }
 //     let result = 0;
 //     result = ((firstMax- 1)* (secondMax - 1));
 //     return result;
 // }
-// console.log(addTwoProduct([2,3,4,5]))
-// console.log(addTwoProduct([2,3,4,7,6,5]))
+// console.log(addTwoProduct([2,3,4,5])) //12 
+// console.log(addTwoProduct([2,3,4,7,6,5])) //30
+// // 	Time Complexity O(n log n)
+// function addTwoProductSort(arr) {
+//     arr.sort((a, b) => a - b); // Sort in ascending order
+//     let n = arr.length;
+//     return (arr[n - 1] - 1) * (arr[n - 2] - 1);
+// }
+
+// console.log(addTwoProductSort([2, 3, 4, 5])); // 12
+// console.log(addTwoProductSort([2, 3, 4, 7, 6, 5])); // 30
+
 
 // 7- Merge two shortest list
+// Time Complexity O(n+m)
 // function mergeSortedArr(arr1,arr2){
 //     let result =[];
 //     let i = 0;
@@ -232,6 +241,27 @@
 
 
 // }
+// Time Complexity O(n+m)
+// Space Complexity O(n+m)
+// function mergeSortedArr(arr1, arr2) {
+//     let result = [];
+//     let i = 0, j = 0;
+
+//     while (i < arr1.length && j < arr2.length) {
+//         if (arr1[i] < arr2[j]) {
+//             result.push(arr1[i++]);
+//         } else {
+//             result.push(arr2[j++]);
+//         }
+//     }
+
+//     while (i < arr1.length) result.push(arr1[i++]);
+//     while (j < arr2.length) result.push(arr2[j++]);
+
+//     const n = result.length;
+//     return n % 2 === 0 ? (result[n / 2 - 1] + result[n / 2]) / 2 : result[Math.floor(n / 2)];
+// }
+
 // const arr1 =[1,3,5,6,7,8]
 // const arr2 =[2,4,7,9]
 // console.log(mergeSortedArr(arr1,arr2))
@@ -241,7 +271,7 @@
 // console.log(mergeSortedArr([1,3],[2,4]));
 
 // Day 10  Missing Number of Arrays (0,n)
-
+// Time Complexity O(n)
 // function missNumber(array){
 //     let n  = array.length;
 //     let arraySum = 0;
@@ -251,9 +281,21 @@
 //     let expectedSum = (n*(n+1))/2;
 //     let  missingNum = expectedSum - arraySum  ;
 //     return missingNum;
-
-
 // }
+// console.log(missNumber([3,0,1]));//Range [0,3] // Output 2
+// console.log(missNumber([0,1]));//Range[0,2] // Output 2
+// console.log(missNumber([9,6,4,2,3,5,7,0,1]));//Range [0 ,9] // Output 8
+// Time Complexity O(n)
+// function missNumber(array) {
+//     let n = array.length;
+//     let arraySum = array.reduce((sum, num) => sum + num, 0);
+//     let expectedSum = (n * (n + 1)) / 2;
+//     return expectedSum - arraySum;
+// }
+// console.log(missNumber([3,0,1]));//Range [0,3] // Output 2
+// console.log(missNumber([0,1]));//Range[0,2] // Output 2
+// console.log(missNumber([9,6,4,2,3,5,7,0,1]));//Range [0 ,9] // Output 8
+
 // // n number of sum and array of sum subtract then outcome will get missing number
 // // subtracting the sum of the array from the expected sum of the first n natural numbers.
 // console.log(missNumber([3,0,1]));//Range [0,3]
@@ -261,23 +303,40 @@
 // console.log(missNumber([9,6,4,2,3,5,7,0,1]));//Range [0 ,9]
 
 // Day 11  Remove the  Number of Arrays
+// Time Complexity O(n)
+function removeTheNumberOfArrays(arr, k) {
+    let pointer = 0;
+    let outcome = 0;
 
-// function removeTheNumberOfArrays(arr,k){
-//     let pointer =0;
-//     let outcome = 0;
-//     for(let i = 0; i < arr.length; i++){
-//         if(arr[i]!= k){
-//             console.log(arr[i]);
-            
-//             arr[pointer]= arr[i];
-//         }else{
-//             outcome ++;
-//         }
-//     }
-//     return outcome;
-// }
-// console.log(removeTheNumberOfArrays([3,2,2,3],3));//[2,2,-,-]
-// console.log(removeTheNumberOfArrays([0,1,2,2,3,0,4,2],2))//[0,1,3,0,4,-,-,-]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== k) {
+            arr[pointer] = arr[i]; 
+            pointer++;
+        } else {
+            outcome++;
+        }
+    }
+    for (let i = pointer; i < arr.length; i++) {
+        arr[i] = '-';
+    }
+    return arr; 
+}
+
+console.log(removeTheNumberOfArrays([3, 2, 2, 3], 3)); // Output: [2, 2, '-', '-']
+console.log(removeTheNumberOfArrays([0, 1, 2, 2, 3, 0, 4, 2], 2)); // Output: [0, 1, 3, 0, 4, '-', '-', '-']
+
+// Time Complexity O(n)
+function removeTheNumberOfArrays(arr, k) {
+    let filteredArr = arr.filter(num => num !== k); 
+    let missingCount = arr.length - filteredArr.length; 
+    return filteredArr.concat(Array(missingCount).fill('-')); 
+}
+
+console.log(removeTheNumberOfArrays([3, 2, 2, 3], 3)); // Output: [2, 2, '-', '-']
+
+console.log(removeTheNumberOfArrays([0, 1, 2, 2, 3, 0, 4, 2], 2)); // Output: [0, 1, 3, 0, 4, '-', '-', '-']
+
+
 
 // Day 12  Square of the  Sorted Arrays o(n) not use nlogn
 // function SquareOfArray(arr){
