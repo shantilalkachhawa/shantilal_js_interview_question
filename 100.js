@@ -304,41 +304,42 @@
 
 // Day 11  Remove the  Number of Arrays
 // Time Complexity O(n)
-function removeTheNumberOfArrays(arr, k) {
-    let pointer = 0;
-    let outcome = 0;
+// function removeTheNumberOfArrays(arr, k) {
+//     let pointer = 0;
+//     let outcome = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] !== k) {
-            arr[pointer] = arr[i]; 
-            pointer++;
-        } else {
-            outcome++;
-        }
-    }
-    for (let i = pointer; i < arr.length; i++) {
-        arr[i] = '-';
-    }
-    return arr; 
-}
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] !== k) {
+//             arr[pointer] = arr[i]; 
+//             pointer++;
+//         } else {
+//             outcome++;
+//         }
+//     }
+//     for (let i = pointer; i < arr.length; i++) {
+//         arr[i] = '-';
+//     }
+//     return arr; 
+// }
 
-console.log(removeTheNumberOfArrays([3, 2, 2, 3], 3)); // Output: [2, 2, '-', '-']
-console.log(removeTheNumberOfArrays([0, 1, 2, 2, 3, 0, 4, 2], 2)); // Output: [0, 1, 3, 0, 4, '-', '-', '-']
+// console.log(removeTheNumberOfArrays([3, 2, 2, 3], 3)); // Output: [2, 2, '-', '-']
+// console.log(removeTheNumberOfArrays([0, 1, 2, 2, 3, 0, 4, 2], 2)); // Output: [0, 1, 3, 0, 4, '-', '-', '-']
 
-// Time Complexity O(n)
-function removeTheNumberOfArrays(arr, k) {
-    let filteredArr = arr.filter(num => num !== k); 
-    let missingCount = arr.length - filteredArr.length; 
-    return filteredArr.concat(Array(missingCount).fill('-')); 
-}
+// // Time Complexity O(n)
+// function removeTheNumberOfArrays(arr, k) {
+//     let filteredArr = arr.filter(num => num !== k); 
+//     let missingCount = arr.length - filteredArr.length; 
+//     return filteredArr.concat(Array(missingCount).fill('-')); 
+// }
 
-console.log(removeTheNumberOfArrays([3, 2, 2, 3], 3)); // Output: [2, 2, '-', '-']
+// console.log(removeTheNumberOfArrays([3, 2, 2, 3], 3)); // Output: [2, 2, '-', '-']
 
-console.log(removeTheNumberOfArrays([0, 1, 2, 2, 3, 0, 4, 2], 2)); // Output: [0, 1, 3, 0, 4, '-', '-', '-']
+// console.log(removeTheNumberOfArrays([0, 1, 2, 2, 3, 0, 4, 2], 2)); // Output: [0, 1, 3, 0, 4, '-', '-', '-']
 
 
 
 // Day 12  Square of the  Sorted Arrays o(n) not use nlogn
+// Time Complexity O(n)
 // function SquareOfArray(arr){
 //     let newArr =[];
 //     let start =0 ;
@@ -359,12 +360,23 @@ console.log(removeTheNumberOfArrays([0, 1, 2, 2, 3, 0, 4, 2], 2)); // Output: [0
 //     }
 // return newArr;
 // }
-// console.log(SquareOfArray([-7,-4,3,0,1,2]));
-// console.log(SquareOfArray([-7,-3,2,3,11]));
-// console.log(SquareOfArray([4,-1,0,3,10]));
+// console.log(SquareOfArray([-7,-4,3,0,1,2])); //[ 0, 1, 4, 9, 16, 49 ]
+// console.log(SquareOfArray([-7,-3,2,3,11]));//[ 4, 9, 9, 49, 121 ]
+// console.log(SquareOfArray([4,-1,0,3,10]));//[ 0, 1, 9, 16, 100 ]
+// Mapping (map()): O(N)
+// Sorting (sort()): O(N log N)
+//Overall Time Complexity O(nlongn)
+// function SquareOfArray(arr){
+//     return arr.map(num=>num*num).sort((a,b)=>a-b)    
+
+// }
+// console.log(SquareOfArray([-7,-4,3,0,1,2])); //[ 0, 1, 4, 9, 16, 49 ]
+// console.log(SquareOfArray([-7,-3,2,3,11]));//[ 4, 9, 9, 49, 121 ]
+// console.log(SquareOfArray([4,-1,0,3,10]));//[ 0, 1, 9, 16, 100 ]
 
 // Day 14  Two sum 2   // Hamesha sorted array ki value increse j hoti index increse hone par
 // Optimise solution
+// // Time Complexity: O(N)
 // function twoSum(arr, target) {
 //     let start = 0;
 //     let end = arr.length-1;
@@ -380,14 +392,20 @@ console.log(removeTheNumberOfArrays([0, 1, 2, 2, 3, 0, 4, 2], 2)); // Output: [0
 //         }
 //     }
 // }
-// console.log(twoSum([2,7,11,15],9));
-// console.log(twoSum([2,3,4],6));
-
-
-
-
-
-
+// console.log(twoSum([2,7,11,15],9));//[ 0, 1,]
+// console.log(twoSum([2,3,4],6)); // [0,2]
+// // Time Complexity: O(N*2)
+// function twoSumBruteForce(arr, target) {
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] + arr[j] === target) {
+//                 return [i, j];
+//             }
+//         }
+//     }
+// }
+// console.log(twoSumBruteForce([2,7,11,15],9));//[ 0, 1,]
+// console.log(twoSumBruteForce([2,3,4],6));// [0,2]
 
 // Bulb swicher 
 // 15 Largest number at least of twise of other 
