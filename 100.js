@@ -409,30 +409,62 @@
 
 // Bulb swicher 
 // 15 Largest number at least of twise of other 
-// function largestTwiseofOther(arr){
-//     let n = arr.length;
-//     let largestNum=-1;
-//     let secondMax =-1
-//     for(let i=0 ; i < n; i++){
-//         if(arr[i] > largestNum){
-//             secondMax = largestNum;
-//             largestNum = arr[i];
-//         }else if(arr[i] > secondMax){
-//             secondMax = arr[i]
-//         }
+//Time Complexity O(n)
+function largestTwiceOfOther(arr) {
+    let n = arr.length;
+    if (n < 2) return false; 
 
-//     }
-//      let checkTwise = secondMax *2
-//      if(checkTwise <= largestNum){
-//         return true;
-//      }else{
-//         return false;
-//      }
-    
+    let largestNum = -1;
+    let secondMax = -1;
 
-// }
-// console.log(largestTwiseofOther([3,6,1,0]));
-// console.log(largestTwiseofOther([1,2,3,4]));
+    for (let i = 0; i < n; i++) {
+        if (arr[i] > largestNum) {
+            secondMax = largestNum;
+            largestNum = arr[i];
+        } else if (arr[i] > secondMax) {
+            secondMax = arr[i];
+        }
+    }
+
+    return largestNum >= secondMax * 2;
+}
+console.log(largestTwiceOfOther([3, 6, 1, 0])); // true (6 is at least twice of all other numbers)
+console.log(largestTwiceOfOther([1, 2, 3, 4])); // false (4 is not at least twice of 3)
+console.log(largestTwiceOfOther([10, 5, 2]));   // true (10 is at least twice of 5 and 2)
+console.log(largestTwiceOfOther([1]));          // false (only one element)
+console.log(largestTwiceOfOther([]));           // false (empty array)
+//Time Complexity O(n log n)
+function largestTwiceOfOther(arr) {
+    if (arr.length < 2) return false; 
+
+    arr.sort((a, b) => a - b);
+    return arr[arr.length - 1] >= arr[arr.length - 2] * 2;
+}
+
+console.log(largestTwiceOfOther([3, 6, 1, 0])); // true
+console.log(largestTwiceOfOther([1, 2, 3, 4])); // false
+console.log(largestTwiceOfOther([10, 5, 2]));   // true
+console.log(largestTwiceOfOther([1]));          // false
+console.log(largestTwiceOfOther([]));           // false
+//Time Complexity O(n)
+function largestTwiceOfOther(arr) {
+    if (arr.length < 2) return false;
+
+    let largestNum = Math.max(...arr);
+    let filteredArr = arr.filter(num => num !== largestNum); // Remove largest number
+    let secondMax = filteredArr.length ? Math.max(...filteredArr) : 0; // Get second max
+
+    return largestNum >= secondMax * 2;
+}
+
+console.log(largestTwiceOfOther([3, 6, 1, 0])); // true
+console.log(largestTwiceOfOther([1, 2, 3, 4])); // false
+console.log(largestTwiceOfOther([10, 5, 2]));   // true
+console.log(largestTwiceOfOther([1]));          // false
+console.log(largestTwiceOfOther([]));           // false
+
+
+
 
 // 16 Container with most water
 
