@@ -409,65 +409,65 @@
 
 // Bulb swicher 
 // 15 Largest number at least of twise of other 
-//Time Complexity O(n)
-function largestTwiceOfOther(arr) {
-    let n = arr.length;
-    if (n < 2) return false; 
+// //Time Complexity O(n)
+// function largestTwiceOfOther(arr) {
+//     let n = arr.length;
+//     if (n < 2) return false; 
 
-    let largestNum = -1;
-    let secondMax = -1;
+//     let largestNum = -1;
+//     let secondMax = -1;
 
-    for (let i = 0; i < n; i++) {
-        if (arr[i] > largestNum) {
-            secondMax = largestNum;
-            largestNum = arr[i];
-        } else if (arr[i] > secondMax) {
-            secondMax = arr[i];
-        }
-    }
+//     for (let i = 0; i < n; i++) {
+//         if (arr[i] > largestNum) {
+//             secondMax = largestNum;
+//             largestNum = arr[i];
+//         } else if (arr[i] > secondMax) {
+//             secondMax = arr[i];
+//         }
+//     }
 
-    return largestNum >= secondMax * 2;
-}
-console.log(largestTwiceOfOther([3, 6, 1, 0])); // true (6 is at least twice of all other numbers)
-console.log(largestTwiceOfOther([1, 2, 3, 4])); // false (4 is not at least twice of 3)
-console.log(largestTwiceOfOther([10, 5, 2]));   // true (10 is at least twice of 5 and 2)
-console.log(largestTwiceOfOther([1]));          // false (only one element)
-console.log(largestTwiceOfOther([]));           // false (empty array)
-//Time Complexity O(n log n)
-function largestTwiceOfOther(arr) {
-    if (arr.length < 2) return false; 
+//     return largestNum >= secondMax * 2;
+// }
+// console.log(largestTwiceOfOther([3, 6, 1, 0])); // true (6 is at least twice of all other numbers)
+// console.log(largestTwiceOfOther([1, 2, 3, 4])); // false (4 is not at least twice of 3)
+// console.log(largestTwiceOfOther([10, 5, 2]));   // true (10 is at least twice of 5 and 2)
+// console.log(largestTwiceOfOther([1]));          // false (only one element)
+// console.log(largestTwiceOfOther([]));           // false (empty array)
+// //Time Complexity O(n log n)
+// function largestTwiceOfOther(arr) {
+//     if (arr.length < 2) return false; 
 
-    arr.sort((a, b) => a - b);
-    return arr[arr.length - 1] >= arr[arr.length - 2] * 2;
-}
+//     arr.sort((a, b) => a - b);
+//     return arr[arr.length - 1] >= arr[arr.length - 2] * 2;
+// }
 
-console.log(largestTwiceOfOther([3, 6, 1, 0])); // true
-console.log(largestTwiceOfOther([1, 2, 3, 4])); // false
-console.log(largestTwiceOfOther([10, 5, 2]));   // true
-console.log(largestTwiceOfOther([1]));          // false
-console.log(largestTwiceOfOther([]));           // false
-//Time Complexity O(n)
-function largestTwiceOfOther(arr) {
-    if (arr.length < 2) return false;
+// console.log(largestTwiceOfOther([3, 6, 1, 0])); // true
+// console.log(largestTwiceOfOther([1, 2, 3, 4])); // false
+// console.log(largestTwiceOfOther([10, 5, 2]));   // true
+// console.log(largestTwiceOfOther([1]));          // false
+// console.log(largestTwiceOfOther([]));           // false
+// //Time Complexity O(n)
+// function largestTwiceOfOther(arr) {
+//     if (arr.length < 2) return false;
 
-    let largestNum = Math.max(...arr);
-    let filteredArr = arr.filter(num => num !== largestNum); // Remove largest number
-    let secondMax = filteredArr.length ? Math.max(...filteredArr) : 0; // Get second max
+//     let largestNum = Math.max(...arr);
+//     let filteredArr = arr.filter(num => num !== largestNum); // Remove largest number
+//     let secondMax = filteredArr.length ? Math.max(...filteredArr) : 0; // Get second max
 
-    return largestNum >= secondMax * 2;
-}
+//     return largestNum >= secondMax * 2;
+// }
 
-console.log(largestTwiceOfOther([3, 6, 1, 0])); // true
-console.log(largestTwiceOfOther([1, 2, 3, 4])); // false
-console.log(largestTwiceOfOther([10, 5, 2]));   // true
-console.log(largestTwiceOfOther([1]));          // false
-console.log(largestTwiceOfOther([]));           // false
+// console.log(largestTwiceOfOther([3, 6, 1, 0])); // true
+// console.log(largestTwiceOfOther([1, 2, 3, 4])); // false
+// console.log(largestTwiceOfOther([10, 5, 2]));   // true
+// console.log(largestTwiceOfOther([1]));          // false
+// console.log(largestTwiceOfOther([]));           // false
 
 
 
 
 // 16 Container with most water
-
+// Time Complexity O(n)
 // function waterSol(arr){
 //     let start =0;
 //     let end = arr.length-1;
@@ -488,27 +488,44 @@ console.log(largestTwiceOfOther([]));           // false
 // console.log(waterSol([4,7,3,8,1]));
 // console.log(waterSol([1,8,6,2,5,4,8,3,7]));
 // console.log(waterSol([1,1]));
+// // Time Complexity O(n^2)
+// function waterSolBruteForce(arr) {
+//     let maxCap = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             let height = Math.min(arr[i], arr[j]);
+//             let width = j - i;
+//             let currCap = height * width;
+//             maxCap = Math.max(maxCap, currCap);
+//         }
+//     }
+//     return maxCap;
+// }
+// console.log(waterSolBruteForce([4,7,3,8,1])); 
+// console.log(waterSolBruteForce([1,8,6,2,5,4,8,3,7])); 
+// console.log(waterSolBruteForce([1,1])); 
+
 
 
 
 // Increasing Triplet Subsequence|
-// 0(n3) time complexicity
-// function increTripletSub(arr){
+//Time Complexicity 0(n^3) 
+// Using Nested Loops (Brute Force) 
+function increTripletSub(arr){
+    for(let i=0; i < arr.length; i ++){
+        for(let j=i+1; j < arr.length; j++){
+            for(let k=j+1; k < arr.length ; k++){
+                if( arr[i]< arr[j] && arr[j] < arr[k]){
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
 
-//     for(let i=0; i < arr.length; i ++){
-//         for(let j=i+1; j < arr.length; j++){
-//             for(let k=j+1; k < arr.length ; k++){
-//                 if( arr[i]< arr[j] && arr[j] < arr[k]){
-//                     return true;
-//                 }
-//             }
-//         }
-//     }
-//     return false;
-
-// }
-
-// 0(n)
+}
+// Optimized Linear Scan
+// Time Complexicity 0(n)
 // function increTripletSub(arr){
 //     for(let i=0 ; i < arr.length; i ++){
 //         let frstIndx = -1;
@@ -524,47 +541,75 @@ console.log(largestTwiceOfOther([]));           // false
 //     }
 //     return false;
 //     }
-//     function increTripletSub(arr){
-//         let frstIndx = Infinity; //Max value 
-//         let scndIndx =Infinity;
-//         let trdIndx = Infinity;
-//         for(let i=0 ; i < arr.length; i ++){
-//                let ele = arr[i];
-//                if(frstIndx >= ele){
-//                 frstIndx = ele;
-//                }else if(scndIndx >= ele){
-//                 scndIndx = ele;
-//                }else{
-//                 trdIndx =ele;
-//                 return true;
-//                }
+
+
+// console.log(increTripletSub([1, 2, 3, 4, 5])); // true (1 < 2 < 3)
+// console.log(increTripletSub([5, 4, 3, 2, 1])); // false
+// console.log(increTripletSub([2, 1, 5, 0, 4, 6])); // true (1 < 4 < 6)
+
+// // Time Complexicity 0(n) 
+// function increTripletSub(arr) {
+//     let first = Infinity;
+//     let second = Infinity;
+//     for (let num of arr) {
+//         if (num <= first) {
+//             first = num; 
+//         } else if (num <= second) {
+//             second = num; 
+//         } else {
+//             console.log(`Triplet found: ${first}, ${second}, ${num}`);
+//             return true; 
 //         }
+//     }
+//     return false;
+// }
+
+// function increTripletSub(arr) {
+//     let first = Infinity, second = Infinity;
+
+//     return arr.some(num => {
+//         if (num <= first) first = num;
+//         else if (num <= second) second = num;
+//         else return true; // Found valid triplet
 //         return false;
-//         }
-// console.log(increTripletSub([1,2,3,4,5]));
-// console.log(increTripletSub([5,4,3,2,1]));
-// console.log(increTripletSub([2,1,5,0,4,6]));
+//     });
+// }
+
+// console.log(increTripletSub([1, 2, 3, 4, 5])); // true
+// console.log(increTripletSub([5, 4, 3, 2, 1])); // false
+// console.log(increTripletSub([2, 1, 5, 0, 4, 6])); // true
+// console.log(increTripletSub([1, 2, -1, -2, 3])); // true
+// console.log(increTripletSub([3, 2, 1, 5, 0, 4, 6])); // true
+// console.log(increTripletSub([1, 1, 1, 1])); // false
+
+
 
 
 
 // Maximum Ascending Subarray Sum| Day19  
 
-// function maxAscendingSubarray(arr){
-//     let currSum = arr[0];
-//     let maxSum = arr[0];
-//     for(let i =1; i < arr.length; i++){
+// function maxAscendingSubarray(arr) {
+//     if (arr.length === 0) return 0;
+
+//     let currSum = arr[0]; 
+//     let maxSum = arr[0]; 
+//     for (let i = 1; i < arr.length; i++) {
 //         if (arr[i] > arr[i - 1]) {
-//             currSum += arr[i];
+//             currSum += arr[i]; 
 //         } else {
-//             currSum = arr[i];
+//             currSum = arr[i]; 
 //         }
-//         maxSum = Math.max(maxSum, currSum);
+//         maxSum = Math.max(maxSum, currSum); 
 //     }
 //     return maxSum;
 // }
-// console.log(maxAscendingSubarray([10,20,30,5,10,50]))
-// console.log(maxAscendingSubarray([10,20,30,40,50]))
-// console.log(maxAscendingSubarray([10,20,30,5,10,50]))
+
+// console.log(maxAscendingSubarray([10, 20, 30, 5, 10, 50]));  // Output: 65 (10+20+30)
+// console.log(maxAscendingSubarray([10, 20, 30, 40, 50]));    // Output: 150 (entire array)
+// console.log(maxAscendingSubarray([12, 17, 15, 13, 10, 11, 12])); // Output: 29 (10+11+12)
+// console.log(maxAscendingSubarray([100, 10, 1]));            // Output: 100 (single max element)
+// console.log(maxAscendingSubarray([]));                      // Output: 0 (empty array)
+
 
 
 // Find lucky Integer in An Array | Day20
@@ -577,10 +622,9 @@ console.log(largestTwiceOfOther([]));           // false
 //         numCount[num] = (numCount[num] || 0) + 1;
 //     }
 //     console.log(numCount, 'numCount');
-//     // Check for lucky integers
 //     for (let num in numCount) {
 //         if (parseInt(num) === numCount[num]) {
-//             luckyInt = Math.max(luckyInt, parseInt(num)); // Update to the largest lucky integer
+//             luckyInt = Math.max(luckyInt, parseInt(num)); 
 //         }
 //     }
 //     return luckyInt;
@@ -593,7 +637,7 @@ console.log(largestTwiceOfOther([]));           // false
 
 // Binary search two wordd like sorted and l  Day21
 // Binary search time comlexity is logN
-
+// Time Comlexity is O(log N)
 // function binarySearch(arr,target){
 //     let  start = 0;
 //     let  end = arr.length - 1;
@@ -612,10 +656,33 @@ console.log(largestTwiceOfOther([]));           // false
 //  }
 // console.log(binarySearch([-1,0,3,5,9,12],9));
 // console.log(binarySearch([-1,0,3,5,9,12],4));
-
+// Time Complexity: O(log N)
+// function binarySearchRecursive(arr, target, start = 0, end = arr.length - 1) {
+//     if (start > end) return -1;
+//     let mid = Math.floor((start + end) / 2);
+//     if (arr[mid] === target) return mid;
+//     if (arr[mid] < target) return binarySearchRecursive(arr, target, mid + 1, end);
+//     return binarySearchRecursive(arr, target, start, mid - 1);
+// }
+// console.log(binarySearch([-1,0,3,5,9,12],9));
+// console.log(binarySearch([-1,0,3,5,9,12],4));
+// Time Complexity: O(N)
+// function binarySearchFindIndex(arr, target) {
+//     let start = 0, end = arr.length - 1;
+//     return arr.findIndex((_, idx) => {
+//         if (start > end) return false;
+//         let mid = Math.floor((start + end) / 2);
+//         if (arr[mid] === target) return true;
+//         if (arr[mid] < target) start = mid + 1;
+//         else end = mid - 1;
+//         return false;
+//     });
+// }
+// console.log(binarySearch([-1,0,3,5,9,12],9));
+// console.log(binarySearch([-1,0,3,5,9,12],4));
 
 // FInd the first and last postion on element in Sorted  Day22
-
+// Time Complexity O(log n)
 // function findElement(arr, target) {
 //     let first = firstOccurrence(arr, target);
 //     let last = lastOccurrence(arr, target);
@@ -660,15 +727,24 @@ console.log(largestTwiceOfOther([]));           // false
 //     return lastIndex;
 // }
 
-// // Test Cases
 // console.log(findElement([5, 7, 7, 8, 8, 10], 8)); // Output: [3, 4]
 // console.log(findElement([5, 7, 7, 8, 8, 10], 6)); // Output: [-1, -1]
 // console.log(findElement([], 0));                  // Output: [-1, -1]
 
-// Search in Rotated Sorted Array   Day23
+// // Time Complexity O(n)
+// function findElement(arr, target) {
+//     return [arr.indexOf(target), arr.lastIndexOf(target)];
+// }
 
+// console.log(findElement([5, 7, 7, 8, 8, 10], 8)); // Output: [3, 4]
+// console.log(findElement([5, 7, 7, 8, 8, 10], 6)); // Output: [-1, -1]
+// console.log(findElement([], 0)); // Output: [-1, -1]
+
+
+// Search in Rotated Sorted Array   Day23
+// Time Complexity O(logN)
 // function searchRotedArray(arr,target){
-//     let start =0;
+//     let start =0;   
 //     let end = arr.length - 1;
 //     while(start <= end){
 //         let mid = Math.floor((start + end)/2);
@@ -693,59 +769,102 @@ console.log(largestTwiceOfOther([]));           // false
 // console.log(searchRotedArray([4,5,6,7,0,1,2],0));
 // console.log(searchRotedArray([4,5,6,7,0,1,2],3));
 
+// // Time Complexity O(n)
+// function searchLinear(arr, target) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === target) {
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+// console.log(searchLinear([4,5,6,7,0,1,2], 0));
+// console.log(searchLinear([4,5,6,7,0,1,2], 3));
+
+
 // Find minmum in Rotated Sorted Array   Day24
-// function findMinValue(arr) {
-//     if (arr.length === 1) {
-//         return arr[0]; // Single element array
-//     }
-//     // If the array is already sorted
-//     if (arr[0] < arr[arr.length - 1]) {
-//         return arr[0];
-//     }
-//     let start = 0;
-//     let end = arr.length - 1;
-//     while (start < end) {
-//         let mid = Math.floor((start + end) / 2);
+// Time Complexity O(logN)
+function findMinValue(arr) {
+    if (arr.length === 1) {
+        return arr[0]; // Single element array
+    }
+    if (arr[0] < arr[arr.length - 1]) {
+        return arr[0];
+    }
+    let start = 0;
+    let end = arr.length - 1;
+    while (start < end) {
+        let mid = Math.floor((start + end) / 2);
+        if (arr[mid] > arr[end]) {
+            start = mid + 1;
+        } else {
+            end = mid;
+        }
+    }
 
-//         // If mid element is greater than end, minimum is in the right half
-//         if (arr[mid] > arr[end]) {
-//             start = mid + 1;
-//         } else {
-//             // Otherwise, it's in the left half
-//             end = mid;
-//         }
-//     }
-
-//     // At this point, start points to the minimum element
-//     return arr[start];
-// }
-
-// // Test Cases
-// console.log(findMinValue([3, 4, 5, 1, 2])); // Output: 1
-// console.log(findMinValue([4, 5, 6, 7, 0, 1, 2])); // Output: 0
-// console.log(findMinValue([11, 13, 15, 17])); // Output: 11
+    return arr[start];
+}
 
 
-// function findMinValue(arr){
-//     if(arr.length ===1){
-//         return arr[0];
-//     }else if(arr[0] < arr[arr.length -1]){
-//         return arr[0];
-//     }
-//     let start = 0;
-//     let end = arr.length - 1;
-//     while(start < end){
-//         let mid = Math.floor((start + end)/2);
-//         if(arr[mid] > arr[end]){
-//             start = mid + 1;
-//         } else{
-//             end = mid;
-//         }
-//     }
-//     return arr[start]; // At this point, start will hold the minimum value.
-// }
-// console.log(findMinValue([3,4,5,1,2]));
-// console.log(findMinValue([4,5,6,7,0,1,2]));
+console.log(findMinValue([3, 4, 5, 1, 2])); // Output: 1
+console.log(findMinValue([4, 5, 6, 7, 0, 1, 2])); // Output: 0
+console.log(findMinValue([11, 13, 15, 17])); // Output: 11
+
+// Time Complexity O(logN)
+function findMinValueRecursive(arr, start = 0, end = arr.length - 1) {
+    if (start === end) {
+        return arr[start];
+    }
+
+    let mid = Math.floor((start + end) / 2);
+
+    if (arr[mid] > arr[end]) {
+        return findMinValueRecursive(arr, mid + 1, end);
+    } else {
+        return findMinValueRecursive(arr, start, mid);
+    }
+}
+
+console.log(findMinValueRecursive([3, 4, 5, 1, 2])); // Output: 1
+console.log(findMinValueRecursive([4, 5, 6, 7, 0, 1, 2])); // Output: 0
+console.log(findMinValueRecursive([11, 13, 15, 17])); // Output: 11
+
+// Time Complexity O(n)
+function findMinValueLinear(arr) {
+    let minVal = arr[0]; 
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < minVal) {
+            minVal = arr[i];
+        }
+    }
+    return minVal;
+}
+
+console.log(findMinValueLinear([3, 4, 5, 1, 2])); // Output: 1
+console.log(findMinValueLinear([4, 5, 6, 7, 0, 1, 2])); // Output: 0
+console.log(findMinValueLinear([11, 13, 15, 17])); // Output: 11
+
+
+function findMinValue(arr){
+    if(arr.length ===1){
+        return arr[0];
+    }else if(arr[0] < arr[arr.length -1]){
+        return arr[0];
+    }
+    let start = 0;
+    let end = arr.length - 1;
+    while(start < end){
+        let mid = Math.floor((start + end)/2);
+        if(arr[mid] > arr[end]){
+            start = mid + 1;
+        } else{
+            end = mid;
+        }
+    }
+    return arr[start]; 
+}
+console.log(findMinValue([3,4,5,1,2]));
+console.log(findMinValue([4,5,6,7,0,1,2]));
 
 
 // Find Peak Element | Day 25  right and left side both side greter value
