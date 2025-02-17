@@ -784,118 +784,150 @@ function increTripletSub(arr){
 
 // Find minmum in Rotated Sorted Array   Day24
 // Time Complexity O(logN)
-function findMinValue(arr) {
-    if (arr.length === 1) {
-        return arr[0]; // Single element array
-    }
-    if (arr[0] < arr[arr.length - 1]) {
-        return arr[0];
-    }
-    let start = 0;
-    let end = arr.length - 1;
-    while (start < end) {
-        let mid = Math.floor((start + end) / 2);
-        if (arr[mid] > arr[end]) {
-            start = mid + 1;
-        } else {
-            end = mid;
-        }
-    }
+// function findMinValue(arr) {
+//     if (arr.length === 1) {
+//         return arr[0]; // Single element array
+//     }
+//     if (arr[0] < arr[arr.length - 1]) {
+//         return arr[0];
+//     }
+//     let start = 0;
+//     let end = arr.length - 1;
+//     while (start < end) {
+//         let mid = Math.floor((start + end) / 2);
+//         if (arr[mid] > arr[end]) {
+//             start = mid + 1;
+//         } else {
+//             end = mid;
+//         }
+//     }
 
-    return arr[start];
-}
-
-
-console.log(findMinValue([3, 4, 5, 1, 2])); // Output: 1
-console.log(findMinValue([4, 5, 6, 7, 0, 1, 2])); // Output: 0
-console.log(findMinValue([11, 13, 15, 17])); // Output: 11
-
-// Time Complexity O(logN)
-function findMinValueRecursive(arr, start = 0, end = arr.length - 1) {
-    if (start === end) {
-        return arr[start];
-    }
-
-    let mid = Math.floor((start + end) / 2);
-
-    if (arr[mid] > arr[end]) {
-        return findMinValueRecursive(arr, mid + 1, end);
-    } else {
-        return findMinValueRecursive(arr, start, mid);
-    }
-}
-
-console.log(findMinValueRecursive([3, 4, 5, 1, 2])); // Output: 1
-console.log(findMinValueRecursive([4, 5, 6, 7, 0, 1, 2])); // Output: 0
-console.log(findMinValueRecursive([11, 13, 15, 17])); // Output: 11
-
-// Time Complexity O(n)
-function findMinValueLinear(arr) {
-    let minVal = arr[0]; 
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] < minVal) {
-            minVal = arr[i];
-        }
-    }
-    return minVal;
-}
-
-console.log(findMinValueLinear([3, 4, 5, 1, 2])); // Output: 1
-console.log(findMinValueLinear([4, 5, 6, 7, 0, 1, 2])); // Output: 0
-console.log(findMinValueLinear([11, 13, 15, 17])); // Output: 11
+//     return arr[start];
+// }
 
 
-function findMinValue(arr){
-    if(arr.length ===1){
-        return arr[0];
-    }else if(arr[0] < arr[arr.length -1]){
-        return arr[0];
-    }
-    let start = 0;
-    let end = arr.length - 1;
-    while(start < end){
-        let mid = Math.floor((start + end)/2);
-        if(arr[mid] > arr[end]){
-            start = mid + 1;
-        } else{
-            end = mid;
-        }
-    }
-    return arr[start]; 
-}
-console.log(findMinValue([3,4,5,1,2]));
-console.log(findMinValue([4,5,6,7,0,1,2]));
+// console.log(findMinValue([3, 4, 5, 1, 2])); // Output: 1
+// console.log(findMinValue([4, 5, 6, 7, 0, 1, 2])); // Output: 0
+// console.log(findMinValue([11, 13, 15, 17])); // Output: 11
+
+// // Time Complexity O(logN)
+// function findMinValueRecursive(arr, start = 0, end = arr.length - 1) {
+//     if (start === end) {
+//         return arr[start];
+//     }
+
+//     let mid = Math.floor((start + end) / 2);
+
+//     if (arr[mid] > arr[end]) {
+//         return findMinValueRecursive(arr, mid + 1, end);
+//     } else {
+//         return findMinValueRecursive(arr, start, mid);
+//     }
+// }
+
+// console.log(findMinValueRecursive([3, 4, 5, 1, 2])); // Output: 1
+// console.log(findMinValueRecursive([4, 5, 6, 7, 0, 1, 2])); // Output: 0
+// console.log(findMinValueRecursive([11, 13, 15, 17])); // Output: 11
+
+// // Time Complexity O(n)
+// function findMinValueLinear(arr) {
+//     let minVal = arr[0]; 
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] < minVal) {
+//             minVal = arr[i];
+//         }
+//     }
+//     return minVal;
+// }
+
+// console.log(findMinValueLinear([3, 4, 5, 1, 2])); // Output: 1
+// console.log(findMinValueLinear([4, 5, 6, 7, 0, 1, 2])); // Output: 0
+// console.log(findMinValueLinear([11, 13, 15, 17])); // Output: 11
+
+
+// function findMinValue(arr){
+//     if(arr.length ===1){
+//         return arr[0];
+//     }else if(arr[0] < arr[arr.length -1]){
+//         return arr[0];
+//     }
+//     let start = 0;
+//     let end = arr.length - 1;
+//     while(start < end){
+//         let mid = Math.floor((start + end)/2);
+//         if(arr[mid] > arr[end]){
+//             start = mid + 1;
+//         } else{
+//             end = mid;
+//         }
+//     }
+//     return arr[start]; 
+// }
+// console.log(findMinValue([3,4,5,1,2]));
+// console.log(findMinValue([4,5,6,7,0,1,2]));
 
 
 // Find Peak Element | Day 25  right and left side both side greter value
+//Time complexity O(log n)
+function findPeakElement(num){
+    if(num.length == 1){
+        return 0;
+    }else if(num[0] > num[1]){
+        return 0;
+    }else if(num[num.length-1] > num[num.length-2]){
+        return num.length-1;
+    }else{
+        let start = 1;
+        let end = num.length - 2;
+        while(start <=end){
+            let mid = Math.floor((start+end)/2)
+            if(num[mid] > num[mid + 1] && num[mid] > num[mid-1]){
+                return mid;
+            }else if(num[mid] < num[mid+1]){
+                start=mid+1;
+            }else{
+                end = mid-1;
+            }
+        }
+        return -1;
+    }
 
-// function findPeakElement(num){
-//     if(num.length == 1){
-//         return 0;
-//     }else if(num[0] > num[1]){
-//         return 0;
-//     }else if(num[num.length-1] > num[num.length-2]){
-//         return num.length-1;
-//     }else{
-//         let start = 1;
-//         let end = num.length - 2;
-//         while(start <=end){
-//             let mid = Math.floor((start+end)/2)
-//             if(num[mid] > num[mid + 1] && num[mid] > num[mid-1]){
-//                 return mid;
-//             }else if(num[mid] < num[mid+1]){
-//                 start=mid+1;
-//             }else{
-//                 end = mid-1;
-//             }
-//         }
-//         return -1;
-//     }
+}
+console.log(findPeakElement([1,2,3,1]))
+console.log(findPeakElement([1,2,1,3,5,6,4]))
 
-// }
-// console.log(findPeakElement([1,2,3,1]))
-// console.log(findPeakElement([1,2,1,3,5,6,4]))
+//Time complexity O(log n)
+function findPeakElementRecursive(nums, left = 0, right = nums.length - 1) {
+    if (left === right) return left; 
+    let mid = Math.floor((left + right) / 2);
 
+    if (nums[mid] > nums[mid + 1]) {
+        return findPeakElementRecursive(nums, left, mid); // Move left
+    } else {
+        return findPeakElementRecursive(nums, mid + 1, right); // Move right
+    }
+}
+
+console.log(findPeakElementRecursive([1, 2, 3, 1])); // Output: 2
+console.log(findPeakElementRecursive([1, 2, 1, 3, 5, 6, 4])); // Output: 5
+
+//Time complexity O(n)
+function findPeakElementLinear(nums) {
+    let n = nums.length;
+    if (n === 1) return 0;
+    if (nums[0] > nums[1]) return 0;
+    if (nums[n - 1] > nums[n - 2]) return n - 1;
+
+    for (let i = 1; i < n - 1; i++) {
+        if (nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+console.log(findPeakElementLinear([1, 2, 3, 1])); // Output: 2
+console.log(findPeakElementLinear([1, 2, 1, 3, 5, 6, 4])); // Output: 5
 
 // Search Insert Position | Day 26
 
