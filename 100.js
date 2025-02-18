@@ -869,65 +869,65 @@ function increTripletSub(arr){
 
 // Find Peak Element | Day 25  right and left side both side greter value
 //Time complexity O(log n)
-function findPeakElement(num){
-    if(num.length == 1){
-        return 0;
-    }else if(num[0] > num[1]){
-        return 0;
-    }else if(num[num.length-1] > num[num.length-2]){
-        return num.length-1;
-    }else{
-        let start = 1;
-        let end = num.length - 2;
-        while(start <=end){
-            let mid = Math.floor((start+end)/2)
-            if(num[mid] > num[mid + 1] && num[mid] > num[mid-1]){
-                return mid;
-            }else if(num[mid] < num[mid+1]){
-                start=mid+1;
-            }else{
-                end = mid-1;
-            }
-        }
-        return -1;
-    }
+// function findPeakElement(num){
+//     if(num.length == 1){
+//         return 0;
+//     }else if(num[0] > num[1]){
+//         return 0;
+//     }else if(num[num.length-1] > num[num.length-2]){
+//         return num.length-1;
+//     }else{
+//         let start = 1;
+//         let end = num.length - 2;
+//         while(start <=end){
+//             let mid = Math.floor((start+end)/2)
+//             if(num[mid] > num[mid + 1] && num[mid] > num[mid-1]){
+//                 return mid;
+//             }else if(num[mid] < num[mid+1]){
+//                 start=mid+1;
+//             }else{
+//                 end = mid-1;
+//             }
+//         }
+//         return -1;
+//     }
 
-}
-console.log(findPeakElement([1,2,3,1]))
-console.log(findPeakElement([1,2,1,3,5,6,4]))
+// }
+// console.log(findPeakElement([1,2,3,1]))
+// console.log(findPeakElement([1,2,1,3,5,6,4]))
 
 //Time complexity O(log n)
-function findPeakElementRecursive(nums, left = 0, right = nums.length - 1) {
-    if (left === right) return left; 
-    let mid = Math.floor((left + right) / 2);
+// function findPeakElementRecursive(nums, left = 0, right = nums.length - 1) {
+//     if (left === right) return left; 
+//     let mid = Math.floor((left + right) / 2);
 
-    if (nums[mid] > nums[mid + 1]) {
-        return findPeakElementRecursive(nums, left, mid); // Move left
-    } else {
-        return findPeakElementRecursive(nums, mid + 1, right); // Move right
-    }
-}
+//     if (nums[mid] > nums[mid + 1]) {
+//         return findPeakElementRecursive(nums, left, mid); // Move left
+//     } else {
+//         return findPeakElementRecursive(nums, mid + 1, right); // Move right
+//     }
+// }
 
-console.log(findPeakElementRecursive([1, 2, 3, 1])); // Output: 2
-console.log(findPeakElementRecursive([1, 2, 1, 3, 5, 6, 4])); // Output: 5
+// console.log(findPeakElementRecursive([1, 2, 3, 1])); // Output: 2
+// console.log(findPeakElementRecursive([1, 2, 1, 3, 5, 6, 4])); // Output: 5
 
-//Time complexity O(n)
-function findPeakElementLinear(nums) {
-    let n = nums.length;
-    if (n === 1) return 0;
-    if (nums[0] > nums[1]) return 0;
-    if (nums[n - 1] > nums[n - 2]) return n - 1;
+// //Time complexity O(n)
+// function findPeakElementLinear(nums) {
+//     let n = nums.length;
+//     if (n === 1) return 0;
+//     if (nums[0] > nums[1]) return 0;
+//     if (nums[n - 1] > nums[n - 2]) return n - 1;
 
-    for (let i = 1; i < n - 1; i++) {
-        if (nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) {
-            return i;
-        }
-    }
-    return -1;
-}
+//     for (let i = 1; i < n - 1; i++) {
+//         if (nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) {
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
 
-console.log(findPeakElementLinear([1, 2, 3, 1])); // Output: 2
-console.log(findPeakElementLinear([1, 2, 1, 3, 5, 6, 4])); // Output: 5
+// console.log(findPeakElementLinear([1, 2, 3, 1])); // Output: 2
+// console.log(findPeakElementLinear([1, 2, 1, 3, 5, 6, 4])); // Output: 5
 
 // Search Insert Position | Day 26
 
@@ -949,52 +949,137 @@ console.log(findPeakElementLinear([1, 2, 1, 3, 5, 6, 4])); // Output: 5
     
 
 // }
-// console.log(searchInserationPosition([1,3,5,6],5));
-// console.log(searchInserationPosition([1,3,5,6],2));// if not avialable else available which postion
-// console.log(searchInserationPosition([1,3,5,6],7)); // if not avialable else available which postion
+// console.log(searchInserationPosition([1,3,5,6],5));// o/p - 2
+// console.log(searchInserationPosition([1,3,5,6],2));// o/p -1
+// console.log(searchInserationPosition([1,3,5,6],7)); // o/p -4
+// // Time Complexity O(n)
+// function searchInsertionPositionLinear(arr, target) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] >= target) {
+//             return i;
+//         }
+//     }
+//     return arr.length; // Insert at the end
+// }
+
+// console.log(searchInsertionPositionLinear([1, 3, 5, 6], 5)); // Output: 2
+// console.log(searchInsertionPositionLinear([1, 3, 5, 6], 2)); // Output: 1
+// console.log(searchInsertionPositionLinear([1, 3, 5, 6], 7)); // Output: 4
+// console.log(searchInsertionPositionLinear([1, 3, 5, 6], 0)); // Output: 0
+
+// // Time Complexity O(logN)
+// function searchInsertionPositionRecursive(arr, target, start = 0, end = arr.length - 1) {
+//     if (start > end) return start; // Return the insertion position
+
+//     let mid = Math.floor((start + end) / 2);
+
+//     if (arr[mid] === target) return mid;
+//     if (target > arr[mid]) {
+//         return searchInsertionPositionRecursive(arr, target, mid + 1, end);
+//     } else {
+//         return searchInsertionPositionRecursive(arr, target, start, mid - 1);
+//     }
+// }
+
+// console.log(searchInsertionPositionRecursive([1, 3, 5, 6], 5)); // Output: 2
+// console.log(searchInsertionPositionRecursive([1, 3, 5, 6], 2)); // Output: 1
+// console.log(searchInsertionPositionRecursive([1, 3, 5, 6], 7)); // Output: 4
+// console.log(searchInsertionPositionRecursive([1, 3, 5, 6], 0)); // Output: 0
+
 
 // Single Element in a Sorted Array | Day 27
 // o(logn) & 0(1) [no space]
 
-// function nonDuplicate(num){
-//     if(num.length ===1){
-//         return num[num.length]
-//     }
-//     else if(num[0] != num[1]){
-//         return num[0];
-//     }else if(num[num.length -1] != num[num.length -2]){
-//         return num[num.length-1];
-//     }else{
-//         let start =1;
-//         let end = num.length - 2;
-//         while(start <= end){
-//             let mid =Math.floor((start+end)/2)
-//             if(num[mid] != num[mid-1] &&  num[mid] != num[mid +1]){
-//                 return num[mid];
-//             }else if(mid % 2 ===1){ // index is odd
-//                 if(num[mid] == num[mid-1]){
-//                     start= mid +1;
-//                 }else{
-//                     end = mid -1;
-//                 }
+function nonDuplicate(num){
+    if(num.length ===1){
+        return num[num.length]
+    }
+    else if(num[0] != num[1]){
+        return num[0];
+    }else if(num[num.length -1] != num[num.length -2]){
+        return num[num.length-1];
+    }else{
+        let start =1;
+        let end = num.length - 2;
+        while(start <= end){
+            let mid =Math.floor((start+end)/2)
+            if(num[mid] != num[mid-1] &&  num[mid] != num[mid +1]){
+                return num[mid];
+            }else if(mid % 2 ===1){ // index is odd
+                if(num[mid] == num[mid-1]){
+                    start= mid +1;
+                }else{
+                    end = mid -1;
+                }
 
-//             }else{ // index is even
-//                 if(num[mid] == num[mid+1]){
-//                     start= mid +1;
-//                 }else{
-//                     end = mid -1;
-//                 }
-//             }
+            }else{ // index is even
+                if(num[mid] == num[mid+1]){
+                    start= mid +1;
+                }else{
+                    end = mid -1;
+                }
+            }
 
-//         }
-//         return -1;
-//     }
+        }
+        return -1;
+    }
 
-// }
-// // trick left & right are not same 
-// // Squencce odd & even 
-// console.log(nonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
-// console.log(nonDuplicate([3, 3, 4, 4, 7, 10, 10]));  
+}
+// trick left & right are not same 
+// Squencce odd & even 
+console.log(nonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
+console.log(nonDuplicate([3, 3, 4, 4, 7, 10, 10])); 
+//Time Complexity O(n)
+function nonDuplicateLinear(nums) {
+    for (let i = 0; i < nums.length; i += 2) {
+        if (i === nums.length - 1 || nums[i] !== nums[i + 1]) {
+            return nums[i];
+        }
+    }
+    return -1;
+}
+
+console.log(nonDuplicateLinear([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
+console.log(nonDuplicateLinear([3, 3, 4, 4, 7, 10, 10])); // Output: 7
+
+// Bit Manipulation (O(n)) – XOR Trick
+
+function nonDuplicateXOR(nums) {
+    let result = 0;
+    for (let num of nums) {
+        result ^= num;
+    }
+    return result;
+}
+
+console.log(nonDuplicateXOR([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
+console.log(nonDuplicateXOR([3, 3, 4, 4, 7, 10, 10])); // Output: 7
+
+function nonDuplicateRecursive(nums, start = 0, end = nums.length - 1) {
+    if (start === end) return nums[start]; // Base case: only one element left
+
+    let mid = Math.floor((start + end) / 2);
+
+    if (mid % 2 === 0) {
+        if (nums[mid] === nums[mid + 1]) {
+            return nonDuplicateRecursive(nums, mid + 2, end);
+        } else {
+            return nonDuplicateRecursive(nums, start, mid);
+        }
+    } else {
+        if (nums[mid] === nums[mid - 1]) {
+            return nonDuplicateRecursive(nums, mid + 1, end);
+        } else {
+            return nonDuplicateRecursive(nums, start, mid - 1);
+        }
+    }
+}
+
+console.log(nonDuplicateRecursive([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
+console.log(nonDuplicateRecursive([3, 3, 4, 4, 7, 10, 10])); // Output: 7
+
+
+
 
 //  Sort Colors | Day 28 // dutch national flag //red ,blue,white 
 
