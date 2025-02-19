@@ -990,99 +990,99 @@ function increTripletSub(arr){
 // Single Element in a Sorted Array | Day 27
 // o(logn) & 0(1) [no space]
 
-function nonDuplicate(num){
-    if(num.length ===1){
-        return num[num.length]
-    }
-    else if(num[0] != num[1]){
-        return num[0];
-    }else if(num[num.length -1] != num[num.length -2]){
-        return num[num.length-1];
-    }else{
-        let start =1;
-        let end = num.length - 2;
-        while(start <= end){
-            let mid =Math.floor((start+end)/2)
-            if(num[mid] != num[mid-1] &&  num[mid] != num[mid +1]){
-                return num[mid];
-            }else if(mid % 2 ===1){ // index is odd
-                if(num[mid] == num[mid-1]){
-                    start= mid +1;
-                }else{
-                    end = mid -1;
-                }
+// function nonDuplicate(num){
+//     if(num.length ===1){
+//         return num[num.length]
+//     }
+//     else if(num[0] != num[1]){
+//         return num[0];
+//     }else if(num[num.length -1] != num[num.length -2]){
+//         return num[num.length-1];
+//     }else{
+//         let start =1;
+//         let end = num.length - 2;
+//         while(start <= end){
+//             let mid =Math.floor((start+end)/2)
+//             if(num[mid] != num[mid-1] &&  num[mid] != num[mid +1]){
+//                 return num[mid];
+//             }else if(mid % 2 ===1){ // index is odd
+//                 if(num[mid] == num[mid-1]){
+//                     start= mid +1;
+//                 }else{
+//                     end = mid -1;
+//                 }
 
-            }else{ // index is even
-                if(num[mid] == num[mid+1]){
-                    start= mid +1;
-                }else{
-                    end = mid -1;
-                }
-            }
+//             }else{ // index is even
+//                 if(num[mid] == num[mid+1]){
+//                     start= mid +1;
+//                 }else{
+//                     end = mid -1;
+//                 }
+//             }
 
-        }
-        return -1;
-    }
+//         }
+//         return -1;
+//     }
 
-}
-// trick left & right are not same 
-// Squencce odd & even 
-console.log(nonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
-console.log(nonDuplicate([3, 3, 4, 4, 7, 10, 10])); 
+// }
+// // trick left & right are not same 
+// // Squencce odd & even 
+// console.log(nonDuplicate([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
+// console.log(nonDuplicate([3, 3, 4, 4, 7, 10, 10])); 
 //Time Complexity O(n)
-function nonDuplicateLinear(nums) {
-    for (let i = 0; i < nums.length; i += 2) {
-        if (i === nums.length - 1 || nums[i] !== nums[i + 1]) {
-            return nums[i];
-        }
-    }
-    return -1;
-}
+// function nonDuplicateLinear(nums) {
+//     for (let i = 0; i < nums.length; i += 2) {
+//         if (i === nums.length - 1 || nums[i] !== nums[i + 1]) {
+//             return nums[i];
+//         }
+//     }
+//     return -1;
+// }
 
-console.log(nonDuplicateLinear([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
-console.log(nonDuplicateLinear([3, 3, 4, 4, 7, 10, 10])); // Output: 7
+// console.log(nonDuplicateLinear([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
+// console.log(nonDuplicateLinear([3, 3, 4, 4, 7, 10, 10])); // Output: 7
 
 // Bit Manipulation (O(n)) – XOR Trick
 
-function nonDuplicateXOR(nums) {
-    let result = 0;
-    for (let num of nums) {
-        result ^= num;
-    }
-    return result;
-}
+// function nonDuplicateXOR(nums) {
+//     let result = 0;
+//     for (let num of nums) {
+//         result ^= num;
+//     }
+//     return result;
+// }
 
-console.log(nonDuplicateXOR([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
-console.log(nonDuplicateXOR([3, 3, 4, 4, 7, 10, 10])); // Output: 7
+// console.log(nonDuplicateXOR([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
+// console.log(nonDuplicateXOR([3, 3, 4, 4, 7, 10, 10])); // Output: 7
 
-function nonDuplicateRecursive(nums, start = 0, end = nums.length - 1) {
-    if (start === end) return nums[start]; // Base case: only one element left
+// function nonDuplicateRecursive(nums, start = 0, end = nums.length - 1) {
+//     if (start === end) return nums[start]; // Base case: only one element left
 
-    let mid = Math.floor((start + end) / 2);
+//     let mid = Math.floor((start + end) / 2);
 
-    if (mid % 2 === 0) {
-        if (nums[mid] === nums[mid + 1]) {
-            return nonDuplicateRecursive(nums, mid + 2, end);
-        } else {
-            return nonDuplicateRecursive(nums, start, mid);
-        }
-    } else {
-        if (nums[mid] === nums[mid - 1]) {
-            return nonDuplicateRecursive(nums, mid + 1, end);
-        } else {
-            return nonDuplicateRecursive(nums, start, mid - 1);
-        }
-    }
-}
+//     if (mid % 2 === 0) {
+//         if (nums[mid] === nums[mid + 1]) {
+//             return nonDuplicateRecursive(nums, mid + 2, end);
+//         } else {
+//             return nonDuplicateRecursive(nums, start, mid);
+//         }
+//     } else {
+//         if (nums[mid] === nums[mid - 1]) {
+//             return nonDuplicateRecursive(nums, mid + 1, end);
+//         } else {
+//             return nonDuplicateRecursive(nums, start, mid - 1);
+//         }
+//     }
+// }
 
-console.log(nonDuplicateRecursive([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
-console.log(nonDuplicateRecursive([3, 3, 4, 4, 7, 10, 10])); // Output: 7
-
-
+// console.log(nonDuplicateRecursive([1, 1, 2, 3, 3, 4, 4, 8, 8])); // Output: 2
+// console.log(nonDuplicateRecursive([3, 3, 4, 4, 7, 10, 10])); // Output: 7
 
 
-//  Sort Colors | Day 28 // dutch national flag //red ,blue,white 
 
+
+//  Sort Colors | Day 28  //red ,blue,white 
+// dutch national flag
 // function sortColor(arr){
 //     function swap(num,i,j){
 //         let temp = num[i];
@@ -1090,7 +1090,7 @@ console.log(nonDuplicateRecursive([3, 3, 4, 4, 7, 10, 10])); // Output: 7
 //         num[j]=temp;
 //     }
 //     let low =0;
-//     let mid =0;
+//     let mid =0; 
 //     let high =arr.length -1;
 //     while(mid <= high){
 //         if(arr[mid] == 0){
@@ -1110,6 +1110,34 @@ console.log(nonDuplicateRecursive([3, 3, 4, 4, 7, 10, 10])); // Output: 7
 // console.log(sortColor([2,0,2,1,1,0])) //[ 0, 0, 1, 1, 2, 2 ]
 // console.log(sortColor([2,0,1])) //[ 0, 1, 2 ]
 
+// //Time Complexity O(n log n)
+// function sortColorQuickSort(arr) {
+//     return arr.sort((a, b) => a - b);
+// }
+
+// console.log(sortColorQuickSort([2, 0, 2, 1, 1, 0])); // Output: [0, 0, 1, 1, 2, 2]
+// console.log(sortColorQuickSort([2, 0, 1]));         // Output: [0, 1, 2]
+
+// //Time Complexity O(n)
+// function sortColorRecursive(arr, low = 0, mid = 0, high = arr.length - 1) {
+//     if (mid > high) return arr; // Base case
+
+//     if (arr[mid] === 0) {
+//         [arr[low], arr[mid]] = [arr[mid], arr[low]];
+//         return sortColorRecursive(arr, low + 1, mid + 1, high);
+//     } else if (arr[mid] === 1) {
+//         return sortColorRecursive(arr, low, mid + 1, high);
+//     } else {
+//         [arr[mid], arr[high]] = [arr[high], arr[mid]];
+//         return sortColorRecursive(arr, low, mid, high - 1);
+//     }
+// }
+
+// console.log(sortColorRecursive([2, 0, 2, 1, 1, 0])); // Output: [0, 0, 1, 1, 2, 2]
+// console.log(sortColorRecursive([2, 0, 1]));         // Output: [0, 1, 2]
+
+
+
 
 // Maximum Subarray | Day 29  OR Kadane’s Algorithm
 // Maximum Subarray using O(n^2) approach
@@ -1126,7 +1154,10 @@ console.log(nonDuplicateRecursive([3, 3, 4, 4, 7, 10, 10])); // Output: 7
 //     }
 //     return maxSum;
 // }
-// Maximum Subarray using optomise approach
+// console.log(maxSubArr([-2,1,-3,4,-1,2,1,-5,4]))
+// console.log(maxSubArr([1]))
+// console.log(maxSubArr([5,4,-1,7,8]))
+// // Kadane’s Algorithm (O(n))
 // function maxSubArr(arr){
 //     let currSum=arr[0];
 //     let max=arr[0];
@@ -1139,8 +1170,6 @@ console.log(nonDuplicateRecursive([3, 3, 4, 4, 7, 10, 10])); // Output: 7
 //         max = Math.max(max,currSum);
 //     }
 //     return max;
-
-  
 // }
 // console.log(maxSubArr([-2,1,-3,4,-1,2,1,-5,4]))
 // console.log(maxSubArr([1]))
@@ -1182,33 +1211,113 @@ console.log(nonDuplicateRecursive([3, 3, 4, 4, 7, 10, 10])); // Output: 7
 // console.log(trapWater([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])); // 6
 // console.log(trapWater([4, 2, 0, 3, 2, 4])); // 9
 
+// function trapWater(heights) {
+//     let n = heights.length;
+//     let trappedWater = 0;
+
+//     for (let i = 0; i < n; i++) {
+//         let leftMax = 0, rightMax = 0;
+
+//         // Find the maximum height to the left
+//         for (let j = i; j >= 0; j--) {
+//             leftMax = Math.max(leftMax, heights[j]);
+//         }
+
+//         // Find the maximum height to the right
+//         for (let j = i; j < n; j++) {
+//             rightMax = Math.max(rightMax, heights[j]);
+//         }
+
+//         trappedWater += Math.min(leftMax, rightMax) - heights[i];
+//     }
+
+//     return trappedWater;
+// }
+
+// console.log(trapWater([0,1,0,2,1,0,1,3,2,1,2,1])); // 6
+// console.log(trapWater([4,2,0,3,2,4])); // 9
+
+
 
 // Find Target Indices After Sorting Array | Day 31 
 
-// function targetIndices(arr,target){
-//     let num =0;
-//     let targetCount =0;
-//     let result =[];
+function targetIndices(arr,target){
+    let num =0;
+    let targetCount =0;
+    let result =[];
 
-//     for(let i = 0; i < arr.length; i++){
-//         if(arr[i] === target){
-//             targetCount++;
-//         }else if(arr[i] < target){
-//             num++;
-//         }
-//     }
-//     console.log(num,'num');
-//     for (let i = 0; i < targetCount; i++) {
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] === target){
+            targetCount++;
+        }else if(arr[i] < target){
+            num++;
+        }
+    }
+    console.log(num,'num');
+    for (let i = 0; i < targetCount; i++) {
         
-//         result.push(num + i);
-//     }
-//     return result;
+        result.push(num + i);
+    }
+    return result;
     
 
-// }
-// console.log(targetIndices([1,2,5,2,3],2));
-// console.log(targetIndices([1,2,5,2,3],3));
-// console.log(targetIndices([1,2,5,2,3],5));
+}
+console.log(targetIndices([1,2,5,2,3],2));
+console.log(targetIndices([1,2,5,2,3],3));
+console.log(targetIndices([1,2,  5,2,3],5));
+
+// Time Complexity O(nlogn)
+function targetIndices(arr, target) {
+    return arr
+        .sort((a, b) => a - b)
+        .map((num, i) => (num === target ? i : -1))
+        .filter(index => index !== -1);
+}
+console.log(targetIndices([1,2,5,2,3],2));
+console.log(targetIndices([1,2,5,2,3],3));
+console.log(targetIndices([1,2,5,2,3],5));
+
+// Time Complexity O(nlogn)
+function targetIndices(arr, target) {
+    arr.sort((a, b) => a - b); // Step 1: Sort the array
+    let result = [];
+    
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            result.push(i);
+        }
+    }
+    
+    return result;
+}
+console.log(targetIndices([1,2,5,2,3],2));
+console.log(targetIndices([1,2,5,2,3],3));
+console.log(targetIndices([1,2,5,2,3],5));
+
+function targetIndicesRecursive(arr, target, smaller = 0, count = 0, index = 0) {
+    // Base Case: If index reaches the end, generate indices
+    if (index === arr.length) {
+        return Array.from({ length: count }, (_, i) => smaller + i);
+    }
+
+    // Count elements smaller than target
+    if (arr[index] < target) {
+        smaller++;
+    }
+    // Count occurrences of the target
+    if (arr[index] === target) {
+        count++;
+    }
+
+    // Recursive call
+    return targetIndicesRecursive(arr, target, smaller, count, index + 1);
+}
+
+// Test cases
+console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 2)); // [1,2]
+console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 3)); // [3]
+console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 5)); // [4]
+
 
 
 // Largest Number | Day 32 // Given a list of non negative integer // lexicographically sort 
