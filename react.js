@@ -900,3 +900,45 @@ const handleClick = () => console.log('Clicked!');
 // Low Reusability:
 // Hard to Debug:
 // Limited Flexibility:
+
+
+// Diff btw varibles & function 
+// Purpose: A variable stores data, while a function performs actions or computations.
+// Action: A variable can hold a value that can change, while a function can take inputs, process them, and return results.
+// Usage: Variables are used to store and retrieve data, and functions are used to group reusable logic.
+
+// Advantages of hooks and customs hooks
+
+// React Hooks:
+
+// Simplify state management and side effects in functional components.
+// Make code more readable and maintainable.
+// Eliminate the need for class components.
+// Improve performance and reduce boilerplate.
+// Custom Hooks:
+
+// Encapsulate reusable logic for cleaner code.
+// Allow easy sharing of stateful logic and side effects across components.
+// Improve separation of concerns.
+// Reduce prop drilling and make testing easier.
+
+// Differences Functional Components & Class Components
+// Functional
+// A simple JavaScript function returning JSX
+// With useState (hooks)
+// With useEffect (hooks)
+// Generally more efficient (lightweight)
+// Simpler syntax, more concise
+// Fully supports hooks (useState, useEffect, etc.)
+// No this keyword
+// With useContext and useRef (hooks)
+
+// Class Components
+// A class extending React.Component
+// Using this.state and this.setState
+// componentDidMount, componentWillUnmount, etc.
+// May have more overhead due to class structure
+// More verbose and complex
+// Does not support hooks
+// Requires this keyword to access state and props
+// Using this.context and this.refs

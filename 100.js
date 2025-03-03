@@ -1241,82 +1241,82 @@ function increTripletSub(arr){
 
 // Find Target Indices After Sorting Array | Day 31 
 
-function targetIndices(arr,target){
-    let num =0;
-    let targetCount =0;
-    let result =[];
+// function targetIndices(arr,target){
+//     let num =0;
+//     let targetCount =0;
+//     let result =[];
 
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] === target){
-            targetCount++;
-        }else if(arr[i] < target){
-            num++;
-        }
-    }
-    console.log(num,'num');
-    for (let i = 0; i < targetCount; i++) {
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i] === target){
+//             targetCount++;
+//         }else if(arr[i] < target){
+//             num++;
+//         }
+//     }
+//     console.log(num,'num');
+//     for (let i = 0; i < targetCount; i++) {
         
-        result.push(num + i);
-    }
-    return result;
+//         result.push(num + i);
+//     }
+//     return result;
     
 
-}
-console.log(targetIndices([1,2,5,2,3],2));
-console.log(targetIndices([1,2,5,2,3],3));
-console.log(targetIndices([1,2,  5,2,3],5));
+// }
+// console.log(targetIndices([1,2,5,2,3],2));
+// console.log(targetIndices([1,2,5,2,3],3));
+// console.log(targetIndices([1,2,  5,2,3],5));
 
-// Time Complexity O(nlogn)
-function targetIndices(arr, target) {
-    return arr
-        .sort((a, b) => a - b)
-        .map((num, i) => (num === target ? i : -1))
-        .filter(index => index !== -1);
-}
-console.log(targetIndices([1,2,5,2,3],2));
-console.log(targetIndices([1,2,5,2,3],3));
-console.log(targetIndices([1,2,5,2,3],5));
+// // Time Complexity O(nlogn)
+// function targetIndices(arr, target) {
+//     return arr
+//         .sort((a, b) => a - b)
+//         .map((num, i) => (num === target ? i : -1))
+//         .filter(index => index !== -1);
+// }
+// console.log(targetIndices([1,2,5,2,3],2));
+// console.log(targetIndices([1,2,5,2,3],3));
+// console.log(targetIndices([1,2,5,2,3],5));
 
-// Time Complexity O(nlogn)
-function targetIndices(arr, target) {
-    arr.sort((a, b) => a - b); // Step 1: Sort the array
-    let result = [];
+// // Time Complexity O(nlogn)
+// function targetIndices(arr, target) {
+//     arr.sort((a, b) => a - b); // Step 1: Sort the array
+//     let result = [];
     
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === target) {
-            result.push(i);
-        }
-    }
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === target) {
+//             result.push(i);
+//         }
+//     }
     
-    return result;
-}
-console.log(targetIndices([1,2,5,2,3],2));
-console.log(targetIndices([1,2,5,2,3],3));
-console.log(targetIndices([1,2,5,2,3],5));
+//     return result;
+// }
+// console.log(targetIndices([1,2,5,2,3],2));
+// console.log(targetIndices([1,2,5,2,3],3));
+// console.log(targetIndices([1,2,5,2,3],5));
 
-function targetIndicesRecursive(arr, target, smaller = 0, count = 0, index = 0) {
-    // Base Case: If index reaches the end, generate indices
-    if (index === arr.length) {
-        return Array.from({ length: count }, (_, i) => smaller + i);
-    }
+// function targetIndicesRecursive(arr, target, smaller = 0, count = 0, index = 0) {
+//     // Base Case: If index reaches the end, generate indices
+//     if (index === arr.length) {
+//         return Array.from({ length: count }, (_, i) => smaller + i);
+//     }
 
-    // Count elements smaller than target
-    if (arr[index] < target) {
-        smaller++;
-    }
-    // Count occurrences of the target
-    if (arr[index] === target) {
-        count++;
-    }
+//     // Count elements smaller than target
+//     if (arr[index] < target) {
+//         smaller++;
+//     }
+//     // Count occurrences of the target
+//     if (arr[index] === target) {
+//         count++;
+//     }
 
-    // Recursive call
-    return targetIndicesRecursive(arr, target, smaller, count, index + 1);
-}
+//     // Recursive call
+//     return targetIndicesRecursive(arr, target, smaller, count, index + 1);
+// }
 
-// Test cases
-console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 2)); // [1,2]
-console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 3)); // [3]
-console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 5)); // [4]
+// // Test cases
+// console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 2)); // [1,2]
+// console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 3)); // [3]
+// console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 5)); // [4]
 
 
 
@@ -1450,5 +1450,52 @@ console.log(targetIndicesRecursive([1, 2, 5, 2, 3], 5)); // [4]
 // // Test cases
 // console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
 // console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
+
+
+//  Average Salary | Day 36
+
+// function averageSalary(arr) {
+//     if (arr.length <= 2) {
+//         return 0; 
+//     }
+
+//     let maxValue = arr[0];
+//     let minValue = arr[0];
+//     let sum = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//         if (arr[i] > maxValue) {
+//             maxValue = arr[i];
+//         }
+//         if (arr[i] < minValue) {
+//             minValue = arr[i];
+//         }
+//     }
+
+//     sum -= (maxValue + minValue);
+
+//     let average = sum / (arr.length - 2);
+//     return average;
+// }
+
+// console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
+// console.log(averageSalary([3000, 1000, 2000]));       //  2000
+
+// // Time Complexity   O(n)
+// function averageSalary(arr) {
+//     const maxValue = Math.max(...arr);     
+//     const minValue = Math.min(...arr);    
+//     const sum = arr.reduce((acc, val) => acc + val, 0); 
+
+//     const adjustedSum = sum - maxValue - minValue; 
+//     const average = adjustedSum / (arr.length - 2); 
+
+//     return average.toFixed(5); 
+// }
+// console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
+// console.log(averageSalary([3000, 1000, 2000]));       //  2000
+
+// Min Stack | Day 37 
 
 
