@@ -1497,5 +1497,286 @@ function increTripletSub(arr){
 // console.log(averageSalary([3000, 1000, 2000]));       //  2000
 
 // Min Stack | Day 37 
+// Time Complexity 
+// push → O(1)
+// pop → O(1)
+// top → O(1)
+// getMin → O(1)
+// class MinStack {
+//     constructor() {
+//         this.stack = [];
+//         this.minStack = [];
+//     }
+
+//     push(val) {
+//         this.stack.push(val);
+//         // Push to minStack if it's empty or val is smaller than the current min
+//         if (this.minStack.length === 0 || val <= this.minStack[this.minStack.length - 1]) {
+//             this.minStack.push(val);
+//         }
+//     }
+
+//     pop() {
+//         if (this.stack.length === 0) return;
+//         const popped = this.stack.pop();
+//         if (popped === this.minStack[this.minStack.length - 1]) {
+//             this.minStack.pop();
+//         }
+//     }
+
+//     top() {
+//         if (this.stack.length === 0) return null;
+//         return this.stack[this.stack.length - 1];
+//     }
+
+//     getMin() {
+//         if (this.minStack.length === 0) return null;
+//         return this.minStack[this.minStack.length - 1];
+//     }
+// }
+
+// // Example usage:
+// const minStack = new MinStack();
+// minStack.push(-2);
+// minStack.push(0);
+// minStack.push(-3);
+// console.log(minStack.getMin()); // Returns -3
+// minStack.pop();
+// console.log(minStack.top());    // Returns 0
+// console.log(minStack.getMin()); // Returns -2
+
+// Implement Stack using Queues | Day 38
+
+// Stack to maintain LIFO (Last In First Out) order
+
+// class MyStack {
+//     constructor() {
+//         this.mainQueue = [];
+//         this.helperQueue = [];
+//     }
+//     push(val) {
+//         // Step 1: Push the new element into the helper queue
+//         this.helperQueue.push(val);
+//         // Step 2: Move all elements from mainQueue to helperQueue
+//         while (this.mainQueue.length > 0) {
+//             this.helperQueue.push(this.mainQueue.shift());
+//         }
+//         // Step 3: Swap the queues
+//         [this.mainQueue, this.helperQueue] = [this.helperQueue, this.mainQueue];
+//     }
+
+//     pop() {
+//         return this.mainQueue.shift(); // Remove and return top element
+//     }
+
+//     top() {
+//         return this.mainQueue[0]; // Return top element
+//     }
+
+//     empty() {
+//         return this.mainQueue.length === 0;
+//     }
+// }
+
+// // Example Usage:
+// const stack = new MyStack();
+// stack.push(1);
+// stack.push(2);
+// stack.push(3);
+// console.log(stack.top());   // Returns 3
+// console.log(stack.pop());   // Returns 3
+// console.log(stack.top());   // Returns 2
+// console.log(stack.empty()); // Returns false
+
+
+// Implement Queue using Stacks | Day 39
+// Queue to maintain FIFO (First In First Out) order
+// class MyQueue {
+//     constructor() {
+//         this.inStack = [];
+//         this.outStack = [];
+//     }
+
+//     enqueue(val) {
+//         this.inStack.push(val);
+//     }
+
+//     dequeue() {
+//         if (this.outStack.length === 0) {
+//             while (this.inStack.length > 0) {
+//                 this.outStack.push(this.inStack.pop());
+//             }
+//         }
+//         return this.outStack.pop();
+//     }
+
+//     front() {
+//         if (this.outStack.length === 0) {
+//             while (this.inStack.length > 0) {
+//                 this.outStack.push(this.inStack.pop());
+//             }
+//         }
+//         return this.outStack[this.outStack.length - 1];
+//     }
+
+//     empty() {
+//         return this.inStack.length === 0 && this.outStack.length === 0;
+//     }
+// }
+
+// // Example Usage:
+// const queue = new MyQueue();
+// queue.enqueue(1);
+// queue.enqueue(2);
+// queue.enqueue(3);
+// console.log(queue.front());  // Returns 1
+// console.log(queue.dequeue()); // Returns 1
+// console.log(queue.front());  // Returns 2
+// console.log(queue.empty());  // Returns false
+
+// Longest Consecutive Sequence | Day 40
+
+// function longestConsecutive(arr) {
+//     const numSet = new Set(arr);
+//     let longestStreak = 0;
+
+//     for (let num of arr) {
+//         // Check if it's the start of a sequence
+//         if (!numSet.has(num - 1)) { 
+//             let currentNum = num;
+//             let currentStreak = 1;
+
+//             // Count the consecutive sequence
+//             while (numSet.has(currentNum + 1)) {
+//                 currentNum += 1;
+//                 currentStreak += 1;
+//             }
+
+//             longestStreak = Math.max(longestStreak, currentStreak);
+//         }
+//     }
+
+//     return longestStreak;
+// }
+
+// // Example test cases
+// console.log(longestConsecutive([100, 4, 200, 1, 3, 2])); // Output: 4 (1,2,3,4)
+// console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1])); // Output: 9 (0,1,2,3,4,5,6,7,8)
+
+// Time Complexity: O(n log n)
+// function longestConsecutive(arr) {
+//     if (arr.length === 0) return 0;
+
+//     arr.sort((a, b) => a - b); // Sort in ascending order
+//     let longestStreak = 1;
+//     let currentStreak = 1;
+
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] === arr[i - 1]) {
+//             // Skip duplicates
+//             continue;
+//         } else if (arr[i] === arr[i - 1] + 1) {
+//             // Consecutive number found
+//             currentStreak += 1;
+//         } else {
+//             // Reset streak counter
+//             longestStreak = Math.max(longestStreak, currentStreak);
+//             currentStreak = 1;
+//         }
+//     }
+
+//     // Final update after loop
+//     return Math.max(longestStreak, currentStreak);
+// }
+
+// // Example test cases
+// console.log(longestConsecutive([100, 4, 200, 1, 3, 2])); // Output: 4 (1,2,3,4)
+// console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1])); // Output: 9 (0,1,2,3,4,5,6,7,8)
+
+
+
+// Find the Duplicate Number | Day 41
+// Time Complexity: O(n log n) 
+// function findDuplicate(arr) {
+//     arr.sort((a, b) => a - b);
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] === arr[i - 1]) {
+//             return arr[i];
+//         }
+//     }
+//     return -1; // If no duplicate found
+// }
+
+// console.log(findDuplicate([1, 4, 3, 2, 2])); // Output: 2
+// console.log(findDuplicate([3, 1, 34, 2]));   // Output: -1 (No duplicate)
+
+// // Using HashSet (O(n))
+// function findDuplicate(arr) {
+//     let seen = new Set();
+//     for (let num of arr) {
+//         if (seen.has(num)) {
+//             return num;
+//         }
+//         seen.add(num);
+//     }
+//     return -1; // If no duplicate found
+// }
+
+// console.log(findDuplicate([1, 4, 3, 2, 2])); // Output: 2
+// console.log(findDuplicate([3, 1, 34, 2]));   // Output: -1 (No duplicate)
+
+// // Floyd’s Algorithm
+// // Time Complexity: O(n)
+// // Space Complexity: O(1) 
+// function findDuplicate(arr) {
+//     let slow = arr[0];
+//     let fast = arr[0];
+
+//     // Step 1: Detect cycle (Use a regular while loop)
+//     while (true) {
+//         slow = arr[slow];       
+//         fast = arr[arr[fast]];  
+
+//         if (slow === fast) break; // Break when cycle is found
+//     }
+
+//     // Step 2: Find the duplicate number (Cycle start)
+//     slow = arr[0]; 
+//     while (slow !== fast) {
+//         slow = arr[slow];
+//         fast = arr[fast];
+//     }
+
+//     return slow; 
+// }
+
+// // Example test cases
+// console.log(findDuplicate([1, 4, 3, 2, 2])); // Output: 2
+// console.log(findDuplicate([3, 1, 3, 4, 2])); // Output: 3
+
+function findDuplicate(arr) {
+    let ans = 0;
+    
+    for (let i = 0; i < arr.length; i++) {
+        let ele = Math.abs(arr[i]); 
+        
+        if (arr[ele] > 0) {
+            arr[ele] = -arr[ele]; 
+        } else {
+            ans = ele; 
+            break;
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = Math.abs(arr[i]);
+    }
+
+    return ans; 
+}
+
+console.log(findDuplicate([1, 4, 3, 2, 2])); // Output: 2
+console.log(findDuplicate([3, 1, 3, 4, 2])); // Output: 3
+
 
 
