@@ -1336,73 +1336,67 @@ function increTripletSub(arr){
 
 // Maximum count of Positive and Negative Integer | Day 33 
 // O(n) but need to O(logn)
-function maxMumCount(arr){
-    let positiveInt =0;
-    let negInt =0;
-    for(let i =0; i < arr.length; i++){
-        if(arr[i] > 0 ){
-            positiveInt++
-        }else if(arr[i] < 0){
-            negInt++ 
-        }
-    } 
-    return Math.max(positiveInt, negInt);
-}
-console.log(maxMumCount([-2,-1,-1,1,2,3]))
-console.log(maxMumCount([-3,-2,-1,0,0,1,2]))
-console.log(maxMumCount([5,20,66,1314]))
+// function maxMumCount(arr){
+//     let positiveInt =0;
+//     let negInt =0;
+//     for(let i =0; i < arr.length; i++){
+//         if(arr[i] > 0 ){
+//             positiveInt++
+//         }else if(arr[i] < 0){
+//             negInt++ 
+//         }
+//     } 
+//     return Math.max(positiveInt, negInt);
+// }
+// console.log(maxMumCount([-2,-1,-1,1,2,3]))
+// console.log(maxMumCount([-3,-2,-1,0,0,1,2]))
+// console.log(maxMumCount([5,20,66,1314]))
 
-function maxMumCount(arr) {
-    let n = arr.length;
-    let left = 0, right = n - 1;
-    while (left <= right) {
-        let mid = Math.floor((left + right) / 2);
-        if (arr[mid] < 0) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
-    }
-    // `left` now points to the first non-negative number
-    let negCount = left; // All elements before `left` are negative
-    let posCount = n - left; // All elements from `left` onward are positive
-    return Math.max(negCount, posCount);
-}
+// function maxMumCount(arr) {
+//     let n = arr.length;
+//     let left = 0, right = n - 1;
+//     while (left <= right) {
+//         let mid = Math.floor((left + right) / 2);
+//         if (arr[mid] < 0) {
+//             left = mid + 1;
+//         } else {
+//             right = mid - 1;
+//         }
+//     }
+//     // `left` now points to the first non-negative number
+//     let negCount = left; // All elements before `left` are negative
+//     let posCount = n - left; // All elements from `left` onward are positive
+//     return Math.max(negCount, posCount);
+// }
 
-console.log(maxMumCount([-2,-1,-1,1,2,3]))
-console.log(maxMumCount([-3,-2,-1,0,0,1,2]))
-console.log(maxMumCount([5,20,66,1314]))
+// console.log(maxMumCount([-2,-1,-1,1,2,3]))
+// console.log(maxMumCount([-3,-2,-1,0,0,1,2]))
+// console.log(maxMumCount([5,20,66,1314]))
 
 
 // Plus One | Day 34
 
-// function plusOne(arr) {
-//     let n = arr.length;
-//     // option for not going inside of condition 
-//     if (arr[n-1] !== 9) {
-//         arr[n-1] += 1;
-//         return arr; 
-//     }
-//     arr[n-1] = 0;
-//     for (let i = n - 1; i >= 0; i--) {
-//         if (arr[i] !== 9) {
-//             arr[i] += 1;
-//             return arr; 
-//         }
-//         arr[i] = 0;  
-//     }
-    
+function plusOne(arr) { 
+    let n = arr.length;
 
-//     let result = new Array(n + 1).fill(0);
-//     result[0] = 1;
-//     return result;
-// }
+    for (let i = n - 1; i >= 0; i--) {
+        if (arr[i] !== 9) {
+            arr[i] += 1;
+            return arr;  
+        }
+        arr[i] = 0; 
+    }
+    // If all digits were 9, create a new array with leading 1
+    let result = new Array(n + 1).fill(0);
+    result[0] = 1;
+    return result;
+}
 
+console.log(plusOne([1, 2, 3]));   // Output: [1, 2, 4]
+console.log(plusOne([4, 3, 2, 1])); // Output: [4, 3, 2, 2]
+console.log(plusOne([9]));          // Output: [1, 0]
+console.log(plusOne([9, 9, 9]));    // Output: [1, 0, 0, 0]
 
-// console.log(plusOne([1, 2, 3]));   // Output: [1, 2, 4]
-// console.log(plusOne([4, 3, 2, 1])); // Output: [4, 3, 2, 2]
-// console.log(plusOne([9]));          // Output: [1, 0]
-// console.log(plusOne([9, 9, 9])); 
 
 
 // Kth Largest Element in an Array | Day 35 //Without sorting method // We have used priority Queue
