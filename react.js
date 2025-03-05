@@ -24,15 +24,19 @@
 // 3 React features:-
 // Component-Based Architecture
 // Reusability: React applications are made up of components, which are small, reusable, and independent pieces of UI
-// Separation of Concerns: Components allow you to break down complex UIs into smaller, manageable pieces. This makes code more modular, maintainable, and easier to test.
+// Separation of Concerns: Components allow you to break down complex UIs into smaller, manageable pieces. This makes code more modular,
+//  maintainable, and easier to test.
 // Virtual DOM
-// Optimized Rendering: Only the components that actually change are re-rendered, which improves performance, especially in large applications.
-// Simplified State Management: You don’t need to worry about manually updating the DOM; React automatically updates the UI based on changes in component state and props.
+// Optimized Rendering: Only the components that actually change are re-rendered, which improves performance,
+//  especially in large applications.
+// Simplified State Management: You don’t need to worry about manually updating the DOM; 
+// React automatically updates the UI based on changes in component state and props.
 // Unidirectional Data Flow-
 // Props and State: Parent components pass data to child components using props, and each component manages its own state.
 
 // 4 useRef 
-// Refs in React allow you to directly access DOM elements or React components, providing a way to interact with elements outside of React’s virtual DOM system.
+// Refs in React allow you to directly access DOM elements or React components,
+//  providing a way to interact with elements outside of React’s virtual DOM system.
 //  They are typically used for managing focus, handling animations, or integrating with third-party libraries. 
 // While powerful, refs should be used sparingly and only when necessary,
 //  as React's declarative nature is usually sufficient for most UI interactions.
@@ -50,7 +54,8 @@
 
 
 // 6 Prop drilling 
-// Prop drilling in React is the process of passing data, or props, from a parent component to its child components through multiple layers of the component tree
+// Prop drilling in React is the process of passing data, or props,
+// from a parent component to its child components through multiple layers of the component tree
 // Disadvatages 
 // Performance
 // Code complexity
@@ -116,20 +121,25 @@
 // Chaining: Promises allow for chaining asynchronous operations, making code more sequential and easier to follow.
 // Better Control: Promises give you more control over asynchronous operations compared to callbacks.
 
-// Async/Await: Modern JavaScript introduced the async/await syntax, which provides a more synchronous-like way to work with Promises, making asynchronous code even easier to read and write.
+// Async/Await: Modern JavaScript introduced the async/await syntax, which provides a more synchronous-like way to work with Promises, 
+// making asynchronous code even easier to read and write.
 // Promise.all: The Promise.all method allows you to wait for multiple Promises to resolve simultaneously.
-// Promise.race: The Promise.race method returns a Promise that resolves or rejects as soon as the first of the input Promises resolves or rejects.
+// Promise.race: The Promise.race method returns a Promise that resolves or rejects as soon as
+//  the first of the input Promises resolves or rejects.
 
 
 // 13  useMemo and useCallback
 
-// useMemo is a React hook that memoizes the result of a function. It caches the result of the function and returns the cached value on subsequent renders if the dependencies haven't changed.
+// useMemo is a React hook that memoizes the result of a function. It caches the result of the function and 
+// returns the cached value on subsequent renders if the dependencies haven't changed.
 
-// Callback Memoization: useCallback is a React hook that memoizes a callback function. It returns a memoized version of the callback function that only changes if the dependencies change
+// Callback Memoization: useCallback is a React hook that memoizes a callback function. It returns a memoized version of 
+// the callback function that only changes if the dependencies change
 
 // Best Practices:
 
-// Use useMemo for Expensive Calculations: Use useMemo for calculations that are expensive to compute and don't need to be re-calculated on every render.
+// Use useMemo for Expensive Calculations: Use useMemo for calculations that are expensive to compute and 
+// don't need to be re-calculated on every render.
 // Use useCallback for Callbacks: Use useCallback for callbacks that are passed as props to child components or for creating custom hooks.
 
 // 14 Key in react js
@@ -143,7 +153,8 @@
 // Reduced Bundle Size
 
 // 16 Suspense
-//  handle loading states and error boundaries within your components. It provides a more elegant and structured way to manage asynchronous operations like data fetching or code splitting.
+//  handle loading states and error boundaries within your components. It provides a more elegant and structured way to manage
+//  asynchronous operations like data fetching or code splitting.
 
 // 17 Custom Hooks in React JS
 // create reusable stateful logic within your component.
@@ -942,3 +953,127 @@ const handleClick = () => console.log('Clicked!');
 // Does not support hooks
 // Requires this keyword to access state and props
 // Using this.context and this.refs
+
+
+// Diff btw Memoization (General) & useMemo (React Hook)
+// Memoization-
+// Scope - General programming concept
+// Use Case - Optimize expensive function calls.
+// Storage	- Can store data globally or locally.
+// Trigger for Recalculation - Usually based on function input
+// Example Usage- Fibonacci calculation, caching API calls.
+
+// useMemo (React Hook) -
+// Scope - React-specific implementation.
+// Use Case - Optimize performance in React components.
+// Storage	- 	Stores computed values within the React component.
+// Trigger for Recalculation - Depends on the dependency array
+// Example Usage- Preventing unnecessary re-renders in React
+
+
+// Dispatchers in Redux
+// What is a Dispatcher?
+// The dispatcher is a mechanism that sends actions to the store.
+// In Redux, store.dispatch(action) is the way to trigger a state update.
+
+// How it Works:
+
+// A component or middleware dispatches an action.
+// The store receives the action and passes it to the reducer.
+// The reducer processes the action and returns the updated state.
+// The store updates the state and notifies subscribed components.
+
+
+
+// useState	- Manages component state	Form inputs, toggles, counters
+// useEffect -	Handles side effects	Fetching data, event listeners
+// useReducer - Manages complex state logic	Authentication, forms
+// useCallback - Memoizes functions	Preventing unnecessary re-renders
+// useContext -	Shares global state	Theme, authentication
+// useRef -	References DOM elements, persists values	Focus input, storing previous values
+
+
+// Set, WeakSet, and WeakMap in JavaScript
+// JavaScript provides Set, WeakSet, and WeakMap for handling collections of unique values and key-value pairs efficiently.
+// When to Use What?
+// Use Set when you need a collection of unique values.
+// Use WeakSet when you need a set of objects that should be garbage collected.
+// Use WeakMap when you need key-value pairs where keys should be garbage collected.
+// Set (Unique Collection of Values)-
+// What is it?
+// A Set is a collection of unique values.
+// Can store any data type (primitive or object).
+// Maintains insertion order.
+// 🔹 Methods
+// Method	Description
+// add(value)	Adds a new value to the Set
+// delete(value)	Removes a value
+// has(value)	Checks if the value exists
+// size	Returns the number of elements
+// clear()	Removes all values
+
+// const mySet = new Set();
+// mySet.add(1);
+// mySet.add(2);
+// mySet.add(2); // Duplicate values are ignored
+// console.log(mySet); // Set { 1, 2 }
+
+// console.log(mySet.has(1)); // true
+// console.log(mySet.size); // 2
+
+// mySet.delete(1);
+// console.log(mySet); // Set { 2 }
+
+// mySet.clear();
+// console.log(mySet); // Set {}
+
+
+// const numbers = [1, 2, 2, 3, 4, 4, 5];
+// const uniqueNumbers = [...new Set(numbers)];
+// console.log(uniqueNumbers); // [1, 2, 3, 4, 5]
+
+
+// WeakSet (Collection of Objects)
+// ✅ What is it?
+// A WeakSet is similar to Set, but only stores objects.
+// Objects are stored weakly (garbage-collected if no references exist).
+// Cannot be iterated (forEach, size, values() don’t work).
+// 🔹 Methods
+// Method	Description
+// add(value)	Adds an object
+// delete(value)	Removes an object
+// has(value)	Checks if an object exists
+
+// const obj1 = { name: "Alice" };
+// const obj2 = { name: "Bob" };
+
+// const weakSet = new WeakSet();
+// weakSet.add(obj1);
+// weakSet.add(obj2);
+
+// console.log(weakSet.has(obj1)); // true
+
+// weakSet.delete(obj1);
+// console.log(weakSet.has(obj1)); // false
+
+// WeakMap (Key-Value Pairs with Weak Keys)
+// ✅ What is it?
+// A WeakMap is like a Map, but keys must be objects.
+// The keys are weakly held (automatically removed if no references exist).
+// Cannot be iterated (forEach, size, keys() don’t work).
+// 🔹 Methods
+// Method	Description
+// set(key, value)	Sets a key-value pair
+// get(key)	Retrieves a value
+// delete(key)	Removes a key-value pair
+// has(key)	Checks if a key exists
+// const weakMap = new WeakMap();
+
+// let obj = { id: 1 };
+// weakMap.set(obj, "User Data");
+
+// console.log(weakMap.get(obj)); // "User Data"
+
+// weakMap.delete(obj);
+// console.log(weakMap.has(obj)); // false
+
