@@ -1376,108 +1376,100 @@ function increTripletSub(arr){
 
 // Plus One | Day 34
 
-function plusOne(arr) { 
-    let n = arr.length;
+// function plusOne(arr) { 
+//     let n = arr.length;
 
-    for (let i = n - 1; i >= 0; i--) {
-        if (arr[i] !== 9) {
-            arr[i] += 1;
-            return arr;  
-        }
-        arr[i] = 0; 
-    }
-    // If all digits were 9, create a new array with leading 1
-    let result = new Array(n + 1).fill(0);
-    result[0] = 1;
-    return result;
-}
+//     for (let i = n - 1; i >= 0; i--) {
+//         if (arr[i] !== 9) {
+//             arr[i] += 1;
+//             return arr;  
+//         }
+//         arr[i] = 0; 
+//     }
+//     // If all digits were 9, create a new array with leading 1
+//     let result = new Array(n + 1).fill(0);
+//     result[0] = 1;
+//     return result;
+// }
 
-console.log(plusOne([1, 2, 3]));   // Output: [1, 2, 4]
-console.log(plusOne([4, 3, 2, 1])); // Output: [4, 3, 2, 2]
-console.log(plusOne([9]));          // Output: [1, 0]
-console.log(plusOne([9, 9, 9]));    // Output: [1, 0, 0, 0]
+// console.log(plusOne([1, 2, 3]));   // Output: [1, 2, 4]
+// console.log(plusOne([4, 3, 2, 1])); // Output: [4, 3, 2, 2]
+// console.log(plusOne([9]));          // Output: [1, 0]
+// console.log(plusOne([9, 9, 9]));    // Output: [1, 0, 0, 0]
 
 
 
 // Kth Largest Element in an Array | Day 35 //Without sorting method // We have used priority Queue
-// function findKthLargestElement(nums, k) {
-//     for (let i = 0; i < k; i++) {
-//         let maxIndex = 0;
+function findKthLargestElement(nums, k) {
+    for (let i = 0; i < k; i++) {
+        let maxIndex = 0;
+        for (let j = 1; j < nums.length; j++) {
+            if (nums[j] > nums[maxIndex]) {
+                maxIndex = j;
+            }
+        }
+        if (i === k - 1) {
+            return nums[maxIndex];
+        }
+        nums[maxIndex] = -Infinity;
+    }
+}
 
-//         // Find the max element in the array
-//         for (let j = 1; j < nums.length; j++) {
-//             if (nums[j] > nums[maxIndex]) {
-//                 maxIndex = j;
-//             }
-//         }
+console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
+console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
 
-//         // If it's the k-th time, return the max element
-//         if (i === k - 1) {
-//             return nums[maxIndex];
-//         }
+function findKthLargestElement(nums, k) {
+    nums.sort((a, b) => b - a); // Sort in descending order
+    return nums[k - 1]; // Get the kth largest element
+}
 
-//         // Remove the max element by setting it to a very small value
-//         nums[maxIndex] = -Infinity;
-//     }
-// }
-
-// // Test cases
-// console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
-// console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
-
-// function findKthLargestElement(nums, k) {
-//     nums.sort((a, b) => b - a); // Sort in descending order
-//     return nums[k - 1]; // Get the kth largest element
-// }
-
-// // Test cases
-// console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
-// console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
+console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
+console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
 
 
-//  Average Salary | Day 36
+//  Average Salary Excluding the Minimum and Maximum Salary | Day 36
 
-// function averageSalary(arr) {
-//     if (arr.length <= 2) {
-//         return 0; 
-//     }
+function averageSalary(arr) {
+    if (arr.length <= 2) {
+        return 0; 
+    }
 
-//     let maxValue = arr[0];
-//     let minValue = arr[0];
-//     let sum = 0;
+    let maxValue = arr[0];
+    let minValue = arr[0];
+    let sum = 0;
 
-//     for (let i = 0; i < arr.length; i++) {
-//         sum += arr[i];
-//         if (arr[i] > maxValue) {
-//             maxValue = arr[i];
-//         }
-//         if (arr[i] < minValue) {
-//             minValue = arr[i];
-//         }
-//     }
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        if (arr[i] > maxValue) {
+            maxValue = arr[i];
+        }
+        if (arr[i] < minValue) {
+            minValue = arr[i];
+        }
+    }
 
-//     sum -= (maxValue + minValue);
+    sum -= (maxValue + minValue);
 
-//     let average = sum / (arr.length - 2);
-//     return average;
-// }
+    let average = sum / (arr.length - 2);
+    return average;
+}
 
-// console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
-// console.log(averageSalary([3000, 1000, 2000]));       //  2000
+console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
+console.log(averageSalary([3000, 1000, 2000]));       //  2000
 
-// // Time Complexity   O(n)
-// function averageSalary(arr) {
-//     const maxValue = Math.max(...arr);     
-//     const minValue = Math.min(...arr);    
-//     const sum = arr.reduce((acc, val) => acc + val, 0); 
+// Time Complexity   O(n)
+function averageSalary(arr) {
+    const maxValue = Math.max(...arr);     
+    const minValue = Math.min(...arr);    
+    const sum = arr.reduce((acc, val) => acc + val, 0); 
 
-//     const adjustedSum = sum - maxValue - minValue; 
-//     const average = adjustedSum / (arr.length - 2); 
+    const adjustedSum = sum - maxValue - minValue; 
+    const average = adjustedSum / (arr.length - 2); 
 
-//     return average.toFixed(5); 
-// }
-// console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
-// console.log(averageSalary([3000, 1000, 2000]));       //  2000
+    return average.toFixed(5); 
+}
+console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
+console.log(averageSalary([3000, 1000, 2000]));       //  2000
 
 // Min Stack | Day 37 
 // Time Complexity 
