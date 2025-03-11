@@ -1321,14 +1321,18 @@ function increTripletSub(arr){
 
 
 // Largest Number | Day 32 // Given a list of non negative integer // lexicographically sort 
-// Time Complexity O(n log n)
+
 // function largerNumber(arr){
 //     for(let i = 0; i <arr.length ; i++){
 //         arr[i]=arr[i] +''
 //     }
 //     arr.sort((a, b) => (b + a).localeCompare(a + b));
 //     if (arr[0] === '0') return '0';
+
+//     // Join sorted strings and return the result
 //     return arr.join('');
+    
+
 // }
 // console.log(largerNumber([10,2]))
 // console.log(largerNumber([3,30,34,5,9]))
@@ -1336,6 +1340,7 @@ function increTripletSub(arr){
 
 // Maximum count of Positive and Negative Integer | Day 33 
 // O(n) but need to O(logn)
+
 // function maxMumCount(arr){
 //     let positiveInt =0;
 //     let negInt =0;
@@ -1346,14 +1351,17 @@ function increTripletSub(arr){
 //             negInt++ 
 //         }
 //     } 
+
+    
 //     return Math.max(positiveInt, negInt);
+
 // }
-// console.log(maxMumCount([-2,-1,-1,1,2,3]))
-// console.log(maxMumCount([-3,-2,-1,0,0,1,2]))
-// console.log(maxMumCount([5,20,66,1314]))
+
 
 // function maxMumCount(arr) {
 //     let n = arr.length;
+
+//     // Find the first non-negative number using binary search
 //     let left = 0, right = n - 1;
 //     while (left <= right) {
 //         let mid = Math.floor((left + right) / 2);
@@ -1363,9 +1371,12 @@ function increTripletSub(arr){
 //             right = mid - 1;
 //         }
 //     }
+
 //     // `left` now points to the first non-negative number
 //     let negCount = left; // All elements before `left` are negative
 //     let posCount = n - left; // All elements from `left` onward are positive
+
+//     // Return the maximum count
 //     return Math.max(negCount, posCount);
 // }
 
@@ -1376,27 +1387,33 @@ function increTripletSub(arr){
 
 // Plus One | Day 34
 
-function plusOne(arr) { 
-    let n = arr.length;
+// function plusOne(arr) {
+//     let n = arr.length;
+//     // option for not going inside of condition 
+//     if (arr[n-1] !== 9) {
+//         arr[n-1] += 1;
+//         return arr; 
+//     }
+//     arr[n-1] = 0;
+//     for (let i = n - 1; i >= 0; i--) {
+//         if (arr[i] !== 9) {
+//             arr[i] += 1;
+//             return arr; 
+//         }
+//         arr[i] = 0;  
+//     }
+    
 
-    for (let i = n - 1; i >= 0; i--) {
-        if (arr[i] !== 9) {
-            arr[i] += 1;
-            return arr;  
-        }
-        arr[i] = 0; 
-    }
-    // If all digits were 9, create a new array with leading 1
-    let result = new Array(n + 1).fill(0);
-    result[0] = 1;
-    return result;
-}
+//     let result = new Array(n + 1).fill(0);
+//     result[0] = 1;
+//     return result;
+// }
 
-console.log(plusOne([1, 2, 3]));   // Output: [1, 2, 4]
-console.log(plusOne([4, 3, 2, 1])); // Output: [4, 3, 2, 2]
-console.log(plusOne([9]));          // Output: [1, 0]
-console.log(plusOne([9, 9, 9]));    // Output: [1, 0, 0, 0]
 
+// console.log(plusOne([1, 2, 3]));   // Output: [1, 2, 4]
+// console.log(plusOne([4, 3, 2, 1])); // Output: [4, 3, 2, 2]
+// console.log(plusOne([9]));          // Output: [1, 0]
+// console.log(plusOne([9, 9, 9])); 
 
 
 // Kth Largest Element in an Array | Day 35 //Without sorting method // We have used priority Queue
