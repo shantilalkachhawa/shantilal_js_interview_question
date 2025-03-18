@@ -167,14 +167,15 @@
 
 // componentDidMount(): This hook is called after the component is mounted to the DOM. It's equivalent to the first render of the component.
 // componentDidUpdate(): This hook is called after the component is updated. It's triggered when the component's props or state change.
-// componentWillUnmount(): This hook is called before the component is unmounted from the DOM. It's a good place to clean up any side effects or subscriptions.
+// componentWillUnmount(): This hook is called before the component is unmounted from the DOM. 
+// It's a good place to clean up any side effects or subscriptions.
 
 
 // 19 what is strict mode 
 
 // Benefits of Strict Mode:
-
-// Improved Code Quality: Strict Mode helps you write cleaner and more maintainable React code by identifying potential issues early in the development process.
+// Improved Code Quality: Strict Mode helps you write cleaner and more maintainable
+//  React code by identifying potential issues early in the development process.
 // Reduced Bugs: By detecting potential problems, Strict Mode can help you avoid bugs and errors in your application.
 // Enhanced Performance: Some of the warnings emitted by Strict Mode can help you improve the performance of your application.
 
@@ -215,14 +216,18 @@
 // *********
 
 // virtual Dom and Real Dom 
-// The Virtual DOM is a JavaScript object stored in memory that serves as a lightweight copy of the real DOM. React uses the Virtual DOM to efficiently update the real DOM, which improves performance. The Virtual DOM detects changes and applies only the necessary updates to the real DOM, making React applications faster and smoother
+// The Virtual DOM is a JavaScript object stored in memory that serves as a lightweight copy of the real DOM.
+//  React uses the Virtual DOM to efficiently update the real DOM, which improves performance.
+//  The Virtual DOM detects changes and applies only the necessary updates to the real DOM,
+//  making React applications faster and smoother
 
 // Lazy loading-
 // Lazy loading in React is a technique where components are loaded only when they are needed,
 // Lazy loading in React delays the loading of components until they are needed, improving performance.
 
 // Suspense-
-// The component might take some time to load, Suspense is used to show a fallback (like a loading spinner or message) while the lazy-loaded component is being fetched 
+// The component might take some time to load, Suspense is used to show a fallback (like a loading spinner or message)
+//  while the lazy-loaded component is being fetched 
 
 // Error boundaries catch errors in child components and display fallback UI, preventing the whole app from crashing.
 
@@ -251,7 +256,10 @@
 // Throttling -
 // Throttling is a technique to control how often a function is executed.
 // Use cases include handling scrolling, resizing, or any frequently occurring event.
-// Ex- Imagine a scenario where an event like window resizing or scrolling is triggered very frequently. Without throttling, the function handling these events may be called hundreds of times in a second, leading to performance issues like a slow or freezing UI. Throttling helps prevent this by limiting the number of times the function is executed.
+// Ex- Imagine a scenario where an event like window resizing or scrolling is triggered very frequently.
+//  Without throttling, the function handling these events may be called hundreds of times in a second, 
+// leading to performance issues like a slow or freezing UI.
+//  Throttling helps prevent this by limiting the number of times the function is executed.
 
 // function onScroll() {
 //     console.log('Scroll event triggered');
@@ -283,7 +291,8 @@
 
 // On the other hand, throttle uses the time delay to execute the callback function at regular intervals until the event trigger is active.
 
-// Currying in JavaScript transforms a function with multiple arguments into a nested series of functions, each taking a single argument. Currying helps you avoid passing the same variable multiple times, and it helps you create a higher order function.
+// Currying in JavaScript transforms a function with multiple arguments into a nested series of functions, each taking a single argument. 
+// Currying helps you avoid passing the same variable multiple times, and it helps you create a higher order function.
 // ex-
 // function curriedAdd(a) {
 //     return function(b) {
@@ -302,7 +311,8 @@
 
 
 // CLouser are a function that have  access to varaibles from an outer funnction .
-// Closures are functions that remember the lexical scope in which they were defined, allowing them to access variables from that scope even after the outer function has finished executing
+// Closures are functions that remember the lexical scope in which they were defined, 
+// allowing them to access variables from that scope even after the outer function has finished executing
 // this is lexical scope
 // function outer(){
 //     let value = 'shantilal'
@@ -328,9 +338,8 @@
 // value();
 // Note : fully return laxical scope
 
-// practical clouser ex-
-
-// we two button or more buttons, we want to change bg color to on click so that the we have used clouser
+// practical clouser ex:-
+// We have two  or more buttons, we want to change bg color to on click so that the we have used clouser
 // function clickHandler(color){
 //     return function(){
 //         document.body.style.backgroundColor = color
@@ -341,7 +350,8 @@
 // clickHandler('red')
 
 // hosting is used to when funtion or varible can be used before declaration.
-// Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compile phase. However, only the declarations are hoisted, not the initializations.
+// Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during 
+// the compile phase. However, only the declarations are hoisted, not the initializations.
 // JavaScript behind the scenes function declaration ko upar le jata hai, to sayHello function ko call kiya ja sakta hai pehle.
 // JavaScript hoisting me var ko declaration upar le jata hai, par initialization nahi.
 // ex-
@@ -371,7 +381,8 @@
 
 // higherOrderFunction(callbackFunction);
 
-// Event bubbling is the process where an event triggers on the innermost target element first and then successively triggers on ancestors (parents) in the same nesting hierarchy up to the outermost DOM element.
+// Event bubbling is the process where an event triggers on the innermost target element first and 
+// then successively triggers on ancestors (parents) in the same nesting hierarchy up to the outermost DOM element.
 
 // captering is same oopsite of bulling.
 
@@ -452,7 +463,8 @@
 
  
 
-// Promises are objects representing the eventual completion or failure of an asynchronous operation. They simplify asynchronous programming, offering a cleaner alternative to callback functions.
+// Promises are objects representing the eventual completion or failure of an asynchronous operation. They simplify asynchronous programming,
+// offering a cleaner alternative to callback functions.
 
 // const fetchData = () => {
 //     return new Promise((resolve, reject) => {
@@ -464,7 +476,8 @@
 //         }
 //     });
 // };
-// Promises provide better control flow and error handling compared to callbacks, avoiding callback hell and enabling easier chaining of asynchronous operations.
+// Promises provide better control flow and error handling compared to callbacks, 
+// avoiding callback hell and enabling easier chaining of asynchronous operations.
 
 // Example using promises
 // function fetchData() {
@@ -517,7 +530,8 @@
 
 
 // EVENT LOOP
-// The event loop is a mechanism that allows JavaScript to perform non-blocking I/O operations by offloading tasks to the browser's APIs and queuing up events in a loop. This ensures that JavaScript remains responsive to user interactions.
+// The event loop is a mechanism that allows JavaScript to perform non-blocking I/O operations by offloading tasks to the browser's APIs 
+// and queuing up events in a loop. This ensures that JavaScript remains responsive to user interactions.
 
 
 // function task2() {
@@ -612,7 +626,8 @@
 // console.log(product); // Output: 120  
 
 
-// Arrow functions are a concise way to write functions in JavaScript, with implicit return and lexical this. Function expressions define functions as values assigned to variables.
+// Arrow functions are a concise way to write functions in JavaScript, with implicit return and lexical this. 
+// Function expressions define functions as values assigned to variables.
 
 // const square = x => x * x;
 // const add = (a, b) => a + b;
@@ -625,7 +640,8 @@
 // console.log(greet('pushpendra'));
 
 
-// Rest parameters allow a function to accept an indefinite number of arguments as an array, while spread operators allow an array to be expanded into individual elements.
+// Rest parameters allow a function to accept an indefinite number of arguments as an array, 
+// while spread operators allow an array to be expanded into individual elements.
 
 // function sum(...numbers) {
 //     return numbers.reduce((acc, val) => acc + val, 0);
@@ -646,7 +662,9 @@
 // expression
 // declaration
 // Anonymous function
-// An anonymous function in JavaScript is a function without a name. It is typically used in situations where a function is only required once or passed as an argument to other functions. Here's an example of how you can use an anonymous function:
+// An anonymous function in JavaScript is a function without a name. It is typically used in situations
+// where a function is only required once or passed as an argument to other functions.
+// Here's an example of how you can use an anonymous function:
  
 
 // A function declaration defines a named function, and it is hoisted, meaning it can be called before it is defined in the code.
@@ -667,7 +685,8 @@
 
 
 // Event Propagation!
-// Capturing Phase (Event Capturing): The event starts from the window (the topmost element) and moves down to the target element (from parent to child).
+// Capturing Phase (Event Capturing): The event starts from the window (the topmost element)
+//  and moves down to the target element (from parent to child).
 // Bubbling Phase (Event Bubbling): The event starts from the target element and bubbles up to the window (from child to parent).
 // Event delegation: one listener for all <li> elements
 
