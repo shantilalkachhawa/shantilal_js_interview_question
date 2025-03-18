@@ -1400,76 +1400,76 @@ function increTripletSub(arr){
 
 
 // Kth Largest Element in an Array | Day 35 //Without sorting method // We have used priority Queue
-function findKthLargestElement(nums, k) {
-    for (let i = 0; i < k; i++) {
-        let maxIndex = 0;
-        for (let j = 1; j < nums.length; j++) {
-            if (nums[j] > nums[maxIndex]) {
-                maxIndex = j;
-            }
-        }
-        if (i === k - 1) {
-            return nums[maxIndex];
-        }
-        nums[maxIndex] = -Infinity;
-    }
-}
+// function findKthLargestElement(nums, k) {
+//     for (let i = 0; i < k; i++) {
+//         let maxIndex = 0;
+//         for (let j = 1; j < nums.length; j++) {
+//             if (nums[j] > nums[maxIndex]) {
+//                 maxIndex = j;
+//             }
+//         }
+//         if (i === k - 1) {
+//             return nums[maxIndex];
+//         }
+//         nums[maxIndex] = -Infinity;
+//     }
+// }
 
-console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
-console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
+// console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
+// console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
 
-function findKthLargestElement(nums, k) {
-    nums.sort((a, b) => b - a); // Sort in descending order
-    return nums[k - 1]; // Get the kth largest element
-}
+// function findKthLargestElement(nums, k) {
+//     nums.sort((a, b) => b - a); // Sort in descending order
+//     return nums[k - 1]; // Get the kth largest element
+// }
 
-console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
-console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
+// console.log(findKthLargestElement([3, 2, 1, 5, 6, 4], 2)); // Output: 5
+// console.log(findKthLargestElement([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)); // Output: 4
 
 
 //  Average Salary Excluding the Minimum and Maximum Salary | Day 36
 
-function averageSalary(arr) {
-    if (arr.length <= 2) {
-        return 0; 
-    }
+// function averageSalary(arr) {
+//     if (arr.length <= 2) {
+//         return 0; 
+//     }
 
-    let maxValue = arr[0];
-    let minValue = arr[0];
-    let sum = 0;
+//     let maxValue = arr[0];
+//     let minValue = arr[0];
+//     let sum = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-        if (arr[i] > maxValue) {
-            maxValue = arr[i];
-        }
-        if (arr[i] < minValue) {
-            minValue = arr[i];
-        }
-    }
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//         if (arr[i] > maxValue) {
+//             maxValue = arr[i];
+//         }
+//         if (arr[i] < minValue) {
+//             minValue = arr[i];
+//         }
+//     }
 
-    sum -= (maxValue + minValue);
+//     sum -= (maxValue + minValue);
 
-    let average = sum / (arr.length - 2);
-    return average;
-}
+//     let average = sum / (arr.length - 2);
+//     return average;
+// }
 
-console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
-console.log(averageSalary([3000, 1000, 2000]));       //  2000
+// console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
+// console.log(averageSalary([3000, 1000, 2000]));       //  2000
 
-// Time Complexity   O(n)
-function averageSalary(arr) {
-    const maxValue = Math.max(...arr);     
-    const minValue = Math.min(...arr);    
-    const sum = arr.reduce((acc, val) => acc + val, 0); 
+// // Time Complexity   O(n)
+// function averageSalary(arr) {
+//     const maxValue = Math.max(...arr);     
+//     const minValue = Math.min(...arr);    
+//     const sum = arr.reduce((acc, val) => acc + val, 0); 
 
-    const adjustedSum = sum - maxValue - minValue; 
-    const average = adjustedSum / (arr.length - 2); 
+//     const adjustedSum = sum - maxValue - minValue; 
+//     const average = adjustedSum / (arr.length - 2); 
 
-    return average.toFixed(5); 
-}
-console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
-console.log(averageSalary([3000, 1000, 2000]));       //  2000
+//     return average.toFixed(5); 
+// }
+// console.log(averageSalary([4000, 3000, 1000, 2000])); //  2500
+// console.log(averageSalary([3000, 1000, 2000]));       //  2000
 
 // Min Stack | Day 37 
 // Time Complexity 
@@ -1530,22 +1530,19 @@ console.log(averageSalary([3000, 1000, 2000]));       //  2000
 //         this.helperQueue = [];
 //     }
 //     push(val) {
-//         // Step 1: Push the new element into the helper queue
 //         this.helperQueue.push(val);
-//         // Step 2: Move all elements from mainQueue to helperQueue
 //         while (this.mainQueue.length > 0) {
 //             this.helperQueue.push(this.mainQueue.shift());
 //         }
-//         // Step 3: Swap the queues
 //         [this.mainQueue, this.helperQueue] = [this.helperQueue, this.mainQueue];
 //     }
 
 //     pop() {
-//         return this.mainQueue.shift(); // Remove and return top element
+//         return this.mainQueue.shift(); 
 //     }
 
 //     top() {
-//         return this.mainQueue[0]; // Return top element
+//         return this.mainQueue[0];
 //     }
 
 //     empty() {
@@ -1679,13 +1676,13 @@ console.log(averageSalary([3000, 1000, 2000]));       //  2000
 //             return arr[i];
 //         }
 //     }
-//     return -1; // If no duplicate found
+//     return -1; 
 // }
 
 // console.log(findDuplicate([1, 4, 3, 2, 2])); // Output: 2
 // console.log(findDuplicate([3, 1, 34, 2]));   // Output: -1 (No duplicate)
 
-// // Using HashSet (O(n))
+// // // Using HashSet (O(n))
 // function findDuplicate(arr) {
 //     let seen = new Set();
 //     for (let num of arr) {
@@ -1700,9 +1697,9 @@ console.log(averageSalary([3000, 1000, 2000]));       //  2000
 // console.log(findDuplicate([1, 4, 3, 2, 2])); // Output: 2
 // console.log(findDuplicate([3, 1, 34, 2]));   // Output: -1 (No duplicate)
 
-// // Floyd’s Algorithm
-// // Time Complexity: O(n)
-// // Space Complexity: O(1) 
+// Floyd’s Algorithm
+// Time Complexity: O(n)
+// Space Complexity: O(1) 
 // function findDuplicate(arr) {
 //     let slow = arr[0];
 //     let fast = arr[0];
@@ -1725,33 +1722,82 @@ console.log(averageSalary([3000, 1000, 2000]));       //  2000
 //     return slow; 
 // }
 
-// // Example test cases
 // console.log(findDuplicate([1, 4, 3, 2, 2])); // Output: 2
 // console.log(findDuplicate([3, 1, 3, 4, 2])); // Output: 3
 
-function findDuplicate(arr) {
-    let ans = 0;
+// function findDuplicate(arr) {
+//     let ans = 0;
     
-    for (let i = 0; i < arr.length; i++) {
-        let ele = Math.abs(arr[i]); 
+//     for (let i = 0; i < arr.length; i++) {
+//         let ele = Math.abs(arr[i]); 
         
-        if (arr[ele] > 0) {
-            arr[ele] = -arr[ele]; 
-        } else {
-            ans = ele; 
-            break;
+//         if (arr[ele] > 0) {
+//             arr[ele] = -arr[ele]; 
+//         } else {
+//             ans = ele; 
+//             break;
+//         }
+//     }
+
+//     for (let i = 0; i < arr.length; i++) {
+//         arr[i] = Math.abs(arr[i]);
+//     }
+
+//     return ans; 
+// }
+
+// console.log(findDuplicate([1, 4, 3, 2, 2])); // Output: 2
+// console.log(findDuplicate([3, 1, 3, 4, 2])); // Output: 3
+
+// Last Stone Weight 
+// Time complexity (nLogn)
+class LastStoneWeightSorter {
+    constructor(stones) {
+      this.stones = stones;
+    }
+    smashStones() {
+      while (this.stones.length > 1) {
+        this.stones.sort((a, b) => b - a); 
+        let stone1 = this.stones.shift(); 
+        let stone2 = this.stones.shift(); 
+        if (stone1 !== stone2) {
+          this.stones.push(stone1 - stone2);
         }
+      }
+    }
+    getLastStoneWeight() {
+      return this.stones.length === 0 ? 0 : this.stones[0];
+    }
+    solve() {
+      this.smashStones();
+      return this.getLastStoneWeight();
+    }
+  }
+  const sorterSolver = new LastStoneWeightSorter([2,7,4,1,8,1]);
+  console.log(sorterSolver.solve()); // Output: 1
+
+// Pivot Index
+// Time Complexity O(n)
+function pivotIndex(nums) {
+    let totalSum = nums.reduce((acc, num) => acc + num, 0);
+    let leftSum = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (leftSum === totalSum - leftSum - nums[i]) {
+            return i; 
+        }
+        leftSum += nums[i]; 
     }
 
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = Math.abs(arr[i]);
-    }
+    return -1;
+};
 
-    return ans; 
-}
+// Example usage:
+console.log(pivotIndex([1, 7, 3, 6, 5, 6])); // Output: 3
+console.log(pivotIndex([1, 2, 3])); // Output: -1
+console.log(pivotIndex([2, 1, -1])); // Output: 0
 
-console.log(findDuplicate([1, 4, 3, 2, 2])); // Output: 2
-console.log(findDuplicate([3, 1, 3, 4, 2])); // Output: 3
+  
 
 
 
