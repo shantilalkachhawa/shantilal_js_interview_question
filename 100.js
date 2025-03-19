@@ -1768,53 +1768,99 @@ function increTripletSub(arr){
 
 // Last Stone Weight 
 // Time complexity (nLogn)
-class LastStoneWeightSorter {
-    constructor(stones) {
-      this.stones = stones;
-    }
-    smashStones() {
-      while (this.stones.length > 1) {
-        this.stones.sort((a, b) => b - a); 
-        let stone1 = this.stones.shift(); 
-        let stone2 = this.stones.shift(); 
-        if (stone1 !== stone2) {
-          this.stones.push(stone1 - stone2);
-        }
-      }
-    }
-    getLastStoneWeight() {
-      return this.stones.length === 0 ? 0 : this.stones[0];
-    }
-    solve() {
-      this.smashStones();
-      return this.getLastStoneWeight();
-    }
-  }
-  const sorterSolver = new LastStoneWeightSorter([2,7,4,1,8,1]);
-  console.log(sorterSolver.solve()); // Output: 1
+// class LastStoneWeightSorter {
+//     constructor(stones) {
+//       this.stones = stones;
+//     }
+//     smashStones() {
+//       while (this.stones.length > 1) {
+//         this.stones.sort((a, b) => b - a); 
+//         let stone1 = this.stones.shift(); 
+//         let stone2 = this.stones.shift(); 
+//         if (stone1 !== stone2) {
+//           this.stones.push(stone1 - stone2);
+//         }
+//       }
+//     }
+//     getLastStoneWeight() {
+//       return this.stones.length === 0 ? 0 : this.stones[0];
+//     }
+//     solve() {
+//       this.smashStones();
+//       return this.getLastStoneWeight();
+//     }
+//   }
+//   const sorterSolver = new LastStoneWeightSorter([2,7,4,1,8,1]);
+//   console.log(sorterSolver.solve()); // Output: 1
 
-// Pivot Index
-// Time Complexity O(n)
-function pivotIndex(nums) {
-    let totalSum = nums.reduce((acc, num) => acc + num, 0);
-    let leftSum = 0;
+// // Pivot Index
+// // Time Complexity O(n)
+// function pivotIndex(nums) {
+//     let totalSum = nums.reduce((acc, num) => acc + num, 0);
+//     let leftSum = 0;
 
-    for (let i = 0; i < nums.length; i++) {
-        if (leftSum === totalSum - leftSum - nums[i]) {
-            return i; 
-        }
-        leftSum += nums[i]; 
-    }
+//     for (let i = 0; i < nums.length; i++) {
+//         if (leftSum === totalSum - leftSum - nums[i]) {
+//             return i; 
+//         }
+//         leftSum += nums[i]; 
+//     }
 
-    return -1;
-};
+//     return -1;
+// };
 
-// Example usage:
-console.log(pivotIndex([1, 7, 3, 6, 5, 6])); // Output: 3
-console.log(pivotIndex([1, 2, 3])); // Output: -1
-console.log(pivotIndex([2, 1, -1])); // Output: 0
+// // Example usage:
+// console.log(pivotIndex([1, 7, 3, 6, 5, 6])); // Output: 3
+// console.log(pivotIndex([1, 2, 3])); // Output: -1
+// console.log(pivotIndex([2, 1, -1])); // Output: 0
 
+
+// // Boats to Save People
+
+// function numRescueBoats(people, limit) {
+//   people.sort((a, b) => a - b);
+//   let left = 0;  // Pointer for the lightest person
+//   let right = people.length - 1;  // Pointer for the heaviest person
+//   let boats = 0;  // Count of boats required
+
+//   while (left <= right) {
+//       if (people[left] + people[right] <= limit) {
+//           left++;
+//       }
+//       right--;
+//       boats++;
+//   }
   
+//   return boats;
+// }
+
+// // Example usage:
+// console.log(numRescueBoats([1, 2], 3));  // Output: 1
+// console.log(numRescueBoats([3, 2, 2, 1], 3));  // Output: 3
+// console.log(numRescueBoats([3, 5, 3, 4], 5));  // Output: 4
+
+
+// Length of Last Word 
+// function lengthOfLastWord(word){
+//   let count = 0;
+
+//   for (let index = word.length -1; index < word.length; index--) {
+//     const char = word.charAt(index);
+//     if(char !==' '){
+//       count ++;
+//     }else if(count !==0){
+//       break
+//     }
+    
+//   }
+//   return count;
+
+// }
+// console.log(lengthOfLastWord('Hello World'))
+// console.log(lengthOfLastWord("   fly me   to   the moon  "))
+// console.log(lengthOfLastWord("luffy is still joyboy"))
+  
+// Remove Duplicate Letters
 
 
 
