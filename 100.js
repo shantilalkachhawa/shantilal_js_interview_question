@@ -1982,3 +1982,46 @@ function increTripletSub(arr){
 // console.log(canRedistribute(["aa", "bb", "ab"])); // true
 // console.log(canRedistribute(["abcd", "abcd", "abcd"])); // true
 
+
+//  Consecutive Characters 
+
+// function maxPower(s) {
+//     let maxCount = 1;
+//     let currentCount = 1;
+
+//     for (let i = 1; i < s.length; i++) {
+//         if (s[i] === s[i - 1]) {
+//             currentCount++; 
+//         } else {
+//             maxCount = Math.max(maxCount, currentCount);
+//             currentCount = 1; 
+//         }
+//     }
+
+//     return Math.max(maxCount, currentCount); // Ensure the last sequence is counted
+// }
+
+// console.log(maxPower("leetcode")); // Output: 2
+// console.log(maxPower("abbcccddddeeeeedcba")); // Output: 5
+// console.log(maxPower("a")); // Output: 1
+// console.log(maxPower("aaabbbccccccddddee")); // Output: 6
+// ✅ Uses a single pass through the string
+// ✅ Efficient and simple approach
+// ✅ Handles all edge cases (like single character strings)
+
+// Valid Palindrome
+function isPalindrome(str){
+    let formatedStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g,'')
+
+   for(let i=0,j=str.length-1; i<j;i++,j--){
+    if(formatedStr[i] === formatedStr[j]){
+        return true
+    }
+   }
+   return false
+    
+
+}
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+console.log(isPalindrome("No lemon, no melon!")); // true
+console.log(isPalindrome("Hello, World!")); // false
