@@ -1,12 +1,16 @@
 // In an Angular project, these files are part of the built code that the browser loads when you run the app. Here’s a simple explanation for each:
 
-// vendor.js: This file contains all the third-party libraries and dependencies that your app uses (like Angular itself, RxJS, or any other external libraries). It helps keep your code separate from these libraries.
+// vendor.js: This file contains all the third-party libraries and dependencies that
+//  your app uses (like Angular itself, RxJS, or any other external libraries). It helps keep your code separate from these libraries.
 
-// main.js: This is the main file that contains the code you write for your Angular app. It's where your application logic is bundled.
+// main.js: This is the main file that contains the code you write for your Angular app. 
+// It's where your application logic is bundled.
 
-// polyfills.js: This file helps your app run in different browsers by filling in features that some older browsers might not support. It ensures compatibility across various browsers.
+// Polyfills.js: This file helps your app run in different browsers by filling in features that some older browsers might not support.
+// It ensures compatibility across various browsers.
 
-// runtime.js: This file handles the loading and bootstrapping of the Angular app. It makes sure all the necessary modules are loaded properly when the app starts.
+// runtime.js: This file handles the loading and bootstrapping of the Angular app. 
+// It makes sure all the necessary modules are loaded properly when the app starts.
 
 
 // build working flow
