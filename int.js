@@ -66,8 +66,8 @@
 
 // comparisong propertie Object.is()
 
-// console.log(-0===0)
-// console.log(-0==0)
+// console.log(0===0)
+// console.log(0==0)
 // console.log(Object.is(-0,0))
 
 
@@ -93,7 +93,7 @@
 // return last value of array
 
 // const a=[1,2,3,4,5,6]
-// a.at(-1)
+// console.log(a.at(-1))
 
 //  how to clear timeer
 // let val= 0;
@@ -172,7 +172,7 @@
 
     // function isPalindrome(arr){
 
-    //     let cleanStr= arr.replace(/[^    -zA-Z0-9]/g,'').toLowerCase();
+    //     let cleanStr= arr.replace(/[^a-zA-Z0-9]/g,'').toLowerCase();
     //     for(let i=0, j = cleanStr.length - 1; i < j; i++,j--){
     //         if(cleanStr[i] !== cleanStr[j]){
     //             return false;

@@ -1862,5 +1862,166 @@ console.log(lengthOfLastWord("luffy is still joyboy"))
   
 // Remove Duplicate Letters
 
+// function removeDuplicateLetter(str){
+//     return [...new Set(str)].join('')
+
+// }
+// console.log(removeDuplicateLetter('shantilal'));
 
 
+// function removeDuplicateLetter(str){
+//     let uniqueChr =''
+//     for (let index = 0; index < str.length; index++) {
+//         if(!uniqueChr.includes(str[index])){
+//             uniqueChr += str[index];
+//         }
+//     }
+//     return uniqueChr;
+
+// }
+// console.log(removeDuplicateLetter('shantilal'));
+
+
+// Reverse Words in a String
+
+// O(n)
+// function reverseWordString(str){
+//     let formattedStr = str.trim().split(/\s+/); // Trim and split on multiple spaces
+//     return formattedStr.reverse().join(' ')
+
+// }
+// console.log(reverseWordString('  the     sky is blue'));
+
+// String Compression
+// function compressString(str) {
+//     let compressed = "";
+//     let count = 1;
+
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] === str[i + 1]) {
+//             count++; 
+//         } else {
+//             compressed += str[i] + count; 
+//             count = 1; 
+//         }
+//     }
+
+//     return compressed.length < str.length ? compressed : str;
+// }
+
+// console.log(compressString("aabcccccaaa")); // Output: "a2b1c5a3"
+// console.log(compressString("abcd"));       // Output: "abcd" (No compression applied)
+// console.log(compressString("aaabb"));      // Output: "a3b2"
+
+
+// Decode String
+// Time Complexity: O(n)
+// function decodeString(s, index = 0) {
+//     let decodedStr = "";
+//     let num = 0;
+//     while (index < s.length) {
+//         let char = s[index];
+//         if (!isNaN(char)) {
+//             num = num * 10 + parseInt(char); 
+//         } else if (char === "[") {
+//             let [decodedPart, newIndex] = decodeString(s, index + 1);
+//             decodedStr += decodedPart.repeat(num);
+//             num = 0; 
+//             index = newIndex; 
+//         } else if (char === "]") {
+//             return [decodedStr, index]; 
+//         } else {
+//             decodedStr += char; 
+//         }
+//         index++;
+//     }
+//     return decodedStr;
+// }
+
+// console.log(decodeString("3[a]2[bc]")); // Output: "aaabcbc"
+// console.log(decodeString("3[a2[c]]"));  // Output: "accaccacc"
+// console.log(decodeString("2[abc]3[cd]ef")); // Output: "abcabccdcdcdef"
+
+// // Time Complexity: n^2
+// function decodeString(s) {
+//     while (s.includes("[")) {
+//         s = s.replace(/(\d+)\[([a-zA-Z]*)\]/g, (_, num, str) => str.repeat(num));
+//     }
+//     return s;
+// }
+
+// // Test cases
+// console.log(decodeString("3[a]2[bc]")); // Output: "aaabcbc"
+// console.log(decodeString("3[a2[c]]"));  // Output: "accaccacc"
+// console.log(decodeString("2[abc]3[cd]ef")); // Output: "abcabccdcdcdef"
+
+// Redistribute Characters to make all Strings Equal |Day 50 
+
+// function canRedistribute(words) {
+//     let charCount = new Map();
+//     let n = words.length;
+
+//     // Count frequency of each character
+//     for (let word of words) {
+//         for (let char of word) {
+//             charCount.set(char, (charCount.get(char) || 0) + 1);
+//         }
+//     }
+
+//     // Check if all character counts are divisible by n
+//     for (let count of charCount.values()) {
+//         if (count % n !== 0) return false;
+//     }
+
+//     return true;
+// }
+
+// // Test cases
+// console.log(canRedistribute(["abc", "aabc", "bc"])); // true
+// console.log(canRedistribute(["ab", "a"])); // false
+// console.log(canRedistribute(["aa", "bb", "ab"])); // true
+// console.log(canRedistribute(["abcd", "abcd", "abcd"])); // true
+
+
+//  Consecutive Characters 
+
+// function maxPower(s) {
+//     let maxCount = 1;
+//     let currentCount = 1;
+
+//     for (let i = 1; i < s.length; i++) {
+//         if (s[i] === s[i - 1]) {
+//             currentCount++; 
+//         } else {
+//             maxCount = Math.max(maxCount, currentCount);
+//             currentCount = 1; 
+//         }
+//     }
+
+//     return Math.max(maxCount, currentCount); // Ensure the last sequence is counted
+// }
+
+// console.log(maxPower("leetcode")); // Output: 2
+// console.log(maxPower("abbcccddddeeeeedcba")); // Output: 5
+// console.log(maxPower("a")); // Output: 1
+// console.log(maxPower("aaabbbccccccddddee")); // Output: 6
+// ✅ Uses a single pass through the string
+// ✅ Efficient and simple approach
+// ✅ Handles all edge cases (like single character strings)
+
+// Valid Palindrome
+function isPalindrome(str){
+    let formatedStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g,'')
+
+   for(let i=0,j=str.length-1; i<j;i++,j--){
+    if(formatedStr[i] === formatedStr[j]){
+        return true
+    }
+   }
+   return false
+    
+
+}
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+console.log(isPalindrome("No lemon, no melon!")); // true
+console.log(isPalindrome("Hello, World!")); // false
