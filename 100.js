@@ -1841,24 +1841,24 @@ function increTripletSub(arr){
 
 
 // Length of Last Word 
-// function lengthOfLastWord(word){
-//   let count = 0;
+function lengthOfLastWord(word){
+  let count = 0;
 
-//   for (let index = word.length -1; index < word.length; index--) {
-//     const char = word.charAt(index);
-//     if(char !==' '){
-//       count ++;
-//     }else if(count !==0){
-//       break
-//     }
+  for (let index = word.length -1; index < word.length; index--) {
+    const char = word.charAt(index);
+    if(char !==' '){
+      count ++;
+    }else if(count !==0){
+      break
+    }
     
-//   }
-//   return count;
+  }
+  return count;
 
-// }
-// console.log(lengthOfLastWord('Hello World'))
-// console.log(lengthOfLastWord("   fly me   to   the moon  "))
-// console.log(lengthOfLastWord("luffy is still joyboy"))
+}
+console.log(lengthOfLastWord('Hello World'))
+console.log(lengthOfLastWord("   fly me   to   the moon  "))
+console.log(lengthOfLastWord("luffy is still joyboy"))
   
 // Remove Duplicate Letters
 
