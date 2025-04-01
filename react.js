@@ -729,7 +729,7 @@
 
 // interface -
 // intercae ke constructor nh hote h
-// non abstract function nh hota h like nameFun(){ }
+// non abstract function nh hota h like nameFoolun(){ }
 
 // interface ko extent nh karte h implements karte h 
 // interface nameOfInterface {
@@ -823,7 +823,6 @@ const handleClick = () => console.log('Clicked!');
 // 7. Use Context API Wisely
 // Avoid overusing context as it can lead to propagation of re-renders.
 // Use tools like Zustand, Recoil, or Jotai for state management when Context becomes complex.
-
 // 8. Enable Lazy Image Loading (Next.js Example)
 // Benefit: Prevents loading all images at once, improving performance.
 
@@ -844,7 +843,8 @@ const handleClick = () => console.log('Clicked!');
 //QUE 
 // How does "this" behave in Node.js? Is it the same as in a browser console?
 // In Node.js, this in the global scope refers to an empty object {}, not global.
-// this Inside a Function -In Node.js, calling a regular function in non-strict mode sets this to the global object (global). In strict mode ("use strict"), this is undefined
+// this Inside a Function -In Node.js, calling a regular function in non-strict mode sets this to the global object (global). 
+// In strict mode ("use strict"), this is undefined
 // In a browser, this in the global scope refers to the window object.
 // Conclusion
 // this behaves differently in the global scope in Node.js ({}) vs. browsers (window).
@@ -938,7 +938,6 @@ const handleClick = () => console.log('Clicked!');
 // Usage: Variables are used to store and retrieve data, and functions are used to group reusable logic.
 
 // Advantages of hooks and customs hooks
-
 // React Hooks:
 
 // Simplify state management and side effects in functional components.
