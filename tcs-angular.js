@@ -94,7 +94,7 @@
 // settings$.subscribe(settings => {
 //   console.log('App settings:', settings);
 // });
-// // Update settings
+//Update settings
 // settings$.next({ theme: 'dark', language: 'fr' });
 
 // Subject
@@ -111,12 +111,14 @@
 // subject.next(2); // Dono Subscriber 1 aur Subscriber 2 ko value 2 milegi
 
 
-// Standalone Components: Angular 15 introduced fully standalone components, allowing developers to create components without needing NgModules, simplifying the structure and dependencies of applications.
+// Standalone Components: Angular 15 introduced fully standalone components, allowing developers to create components without needing NgModules,
+//  simplifying the structure and dependencies of applications.
 
 
 
 // 1. Callback:
-// A callback is a function that you pass into another function as an argument. The second function (the one you passed the callback to) will "call back" or execute the passed-in function after it finishes its own work.
+// A callback is a function that you pass into another function as an argument. The second function 
+// (the one you passed the callback to) will "call back" or execute the passed-in function after it finishes its own work.
 // ex-
 // function readFile(callback) {
 //     setTimeout(() => {
@@ -131,7 +133,8 @@
 //   readFile(afterReading);  // Pass the callback function
   
 
-// A Promise is a special JavaScript object that represents the eventual completion or failure of an asynchronous operation. It can be in one of three states:
+// A Promise is a special JavaScript object that represents the eventual completion or failure of an asynchronous operation. 
+// It can be in one of three states:
 
 // Pending: The operation is still ongoing.
 // Fulfilled: The operation completed successfully.
