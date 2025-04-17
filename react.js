@@ -261,7 +261,7 @@
 // leading to performance issues like a slow or freezing UI.
 //  Throttling helps prevent this by limiting the number of times the function is executed.
 
-// function onScroll() {
+// function onScroll() {  
 //     console.log('Scroll event triggered');
 // }
 
@@ -399,7 +399,7 @@
 // Arrow Functions,
 // The ... Operator,
 // For/of,
-// Map Objects,
+// Map Objects,e
 // Set Objects,
 // Classes
 // Promises
@@ -499,7 +499,8 @@
 //       console.error('Error occurred:', error);
 //     })
 // Observables are a technique for event handling, asynchronous programming, and handling multiple values emitted over time.
-// A callback function in JavaScript is a function passed as an argument to another function, to be executed later, often after an asynchronous task completes.
+// A callback function in JavaScript is a function passed as an argument to another function, to be executed later, 
+// often after an asynchronous task completes.
 
 // function fetchData(callback) {
 //     setTimeout(function () {
@@ -513,7 +514,8 @@
 //     console.log(result); // Output: Fetched data
 //   }); 
 
-// Generators are functions that can be paused and resumed, allowing for the generation of a sequence of values lazily. Iterators are objects that implement the Iterable protocol, enabling iteration over collections such as arrays and sets.
+// Generators are functions that can be paused and resumed, allowing for the generation of a sequence of values lazily. 
+// Iterators are objects that implement the Iterable protocol, enabling iteration over collections such as arrays and sets.
 
 // function* generatorFunction() { // Here the * is important
 //     yield 1;
@@ -554,7 +556,8 @@
 // Promise.resolve().then(microtask1); // Schedules microtask1 to be executed as a microtask
 // Promise.resolve().then(microtask2); // Schedules microtask2 to be executed as a microtask 
 
-// Synchronous operations are executed sequentially, blocking further execution until they complete, while asynchronous operations allow the program to continue executing while waiting for a response.
+// Synchronous operations are executed sequentially, blocking further execution until they complete, 
+// while asynchronous operations allow the program to continue executing while waiting for a response.
 
 // console.log("Start");
 // function synchronousTask() {
@@ -757,10 +760,6 @@
 // });
 
 // export default Button;
-
-
-
-
 
 //2 Use useCallback and useMemo Hooks
 // When passing functions to child components to avoid unnecessary re-creation.
