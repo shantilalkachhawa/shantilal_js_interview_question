@@ -39,6 +39,12 @@ Directives modify DOM behavior or appearance.
 ### 5. What is Dependency Injection (DI)?
 A design pattern where components get their dependencies from an injector rather than creating them manually.
 
+Dependency Injection (DI) is a design pattern. DI is heavily used in Angular. 
+DI is a design pattern that aims to manage component dependencies by injecting them from external sources rather than 
+creating them within the component itself. 
+It is use to improved testability, make Components loose coupling.
+By default, Angular’s DI system creates singleton instances of services and shares them throughout the application. In AngularJs, function params are used for DI, From Angular 2, constructor param is used for DI.
+
 ---
 
 ### 6. What is data binding, and how many ways can it be implemented?
@@ -112,10 +118,23 @@ Used to query DOM or child component.
 - ngAfterViewInit/Checked
 - ngOnDestroy
 
+This is a important question. There are 8 life cycle hooks in Angular.
+ I have heavily used ngOnInit and ngOnDestroy in my previous work environment. 
+ ngOnInit is called when component initialize. It is called once. Mostly, I used for variable initialize and API call.
+  ngOnDestroy is called before detroying the component. I heavily used for unsubscribe the subscription to prevent the memory leak.
+
+Several times I have used ngOnChanges, ngAfterContentInit, ngAfterViewInit in my career. 
+ngOnChanges method is called once on component’s creation and then every time changes are detected in one of the component’s input properties.
+ It receives a SimpleChanges object as a parameter. 
+ ngAfterViewInit is called after the component view and its child views has been initialized. 
+ ngAfterContentInit is called after components external content (or from parent ) has been initialized.
+
+There are other hooks like ngDoCheck, ngAfterContentChecked, ngAfterViewChecked, I did not use them too much.
+
 ---
 
 ### 15. What is AOT compilation?
-AOT (Ahead-of-Time) compiles templates during build time.
+AOT (Ahead-of-Time) compiles templates and component during build time.
 
 **Benefits:**
 - Faster load
@@ -129,8 +148,86 @@ Generates source maps for debugging in browser dev tools.
 
 ---
 
+
 ### 17. What is RxJS?
-Reactive Extensions for JavaScript – handles asynchronous and event-based programs using Observables.
+
+**RxJS** (Reactive Extensions for JavaScript) is a library for **reactive programming using Observables**, allowing you to work with **asynchronous data streams** in a powerful and flexible way.
+
+Angular uses RxJS extensively—especially in handling **HTTP requests, events, routing, form changes, and more**.
+
+---
+
+## 🌟 Key Features of RxJS
+
+| Feature | Description |
+|--------|-------------|
+| **Observable** | Core building block representing a stream of data/events over time. |
+| **Operators** | Powerful functions for transforming, filtering, combining, and managing observables. |
+| **Subscription** | Mechanism to start listening to observable data. |
+| **Subjects** | Multicasting observable that acts as both observer and observable. |
+| **Schedulers** | Control when tasks run (async, queue, animation frame, etc.). |
+| **Unsubscription** | Cancels observable stream, useful for memory management (especially on `ngOnDestroy`). |
+
+---
+
+## 🔧 Common Use-Cases in Angular
+
+### 1. **HTTP Requests with `HttpClient`**
+```ts
+this.http.get('/api/data').subscribe(data => {
+  console.log(data);
+});
+```
+
+### 2. **Reactive Forms (valueChanges)**
+```ts
+this.form.get('email')?.valueChanges.subscribe(value => {
+  console.log('Email changed:', value);
+});
+```
+
+### 3. **Route Parameters**
+```ts
+this.route.params.subscribe(params => {
+  this.userId = params['id'];
+});
+```
+
+### 4. **Async Pipe**
+In templates to automatically subscribe/unsubscribe:
+```html
+<div *ngIf="user$ | async as user">
+  {{ user.name }}
+</div>
+```
+
+### 5. **Timer, Intervals, Delays**
+```ts
+import { timer } from 'rxjs';
+
+timer(2000).subscribe(() => {
+  console.log('Fired after 2 seconds');
+});
+```
+
+---
+
+## 🔁 Common RxJS Operators
+
+| Operator | Use |
+|----------|-----|
+| **map** | Transform emitted values |
+| **filter** | Filter values based on condition |
+| **tap** | Perform side effects (e.g., logging) |
+| **switchMap** | Cancel previous observable, switch to new one |
+| **mergeMap** | Merge multiple observables concurrently |
+| **concatMap** | Queue observables sequentially |
+| **forkJoin** | Combine final values of multiple observables |
+| **combineLatest** | Combine latest values from multiple observables |
+| **debounceTime** | Delay emissions, useful for search input |
+| **catchError** | Handle errors gracefully |
+
+
 
 ---
 
@@ -283,6 +380,36 @@ Yes, but DI won’t work without a constructor.
 
 ---
 
+
+### 1. What is Eager Loading?
+Feature modules under Eager Loading would be loaded before the application starts. This is the default module-loading strategy.
+
+### 2. What is Lazy Loading?
+Feature modules under Lazy Loading would be loaded on demand after the application starts. It helps to start application faster.
+
+### 3. What is Pre-Loading?
+Feature Modules under Pre-Loading would be loaded automatically after the application starts.
 ### 40. View Encapsulation
 Already covered in Question 8.
+
+// https://tusharghosh09006.medium.com/advanced-angular-interview-questions-d1573f1b350b
+
+// Security: I am very much concern about security. I will use Dom Sanitizer to sanitize input to prevent cross-site scripting (XSS).
+
+// What are some of the differences between a standard Angular component and a standalone component?
+// Standard components must be included in an NgModule to be used within an Angular application. 
+// Standalone components do not require this and can be used independently without being included in an NgModule.
+// Standard components require imports for Angular or third-party functionality to be declared in the NgModule. 
+// For instance, *ngFor directive usage necessitates importing CommonModule from @angular/common in the NgModule. 
+// In contrast, standalone components can directly import dependencies within their own files.
+
+### 40 Interceptor:
+ I can use HTTP interceptors to intercept outgoing requests and incoming responses. 
+ For example I can use interceptor to add token in header.
+
+
+
+
+
+// What is Dependency Injection?
 
