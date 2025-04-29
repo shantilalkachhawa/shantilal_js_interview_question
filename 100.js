@@ -2010,18 +2010,15 @@ console.log(lengthOfLastWord("luffy is still joyboy"))
 // ✅ Handles all edge cases (like single character strings)
 
 // Valid Palindrome
-function isPalindrome(str){
-    let formatedStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g,'')
-
-   for(let i=0,j=str.length-1; i<j;i++,j--){
-    if(formatedStr[i] === formatedStr[j]){
-        return true
-    }
-   }
-   return false
-    
-
-}
-console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
-console.log(isPalindrome("No lemon, no melon!")); // true
-console.log(isPalindrome("Hello, World!")); // false
+// function isPalindrome(str){
+//     let formatedStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g,'')
+//    for(let i=0,j=str.length-1; i<j;i++,j--){
+//     if(formatedStr[i] === formatedStr[j]){
+//         return true
+//     }
+//    }
+//    return false
+// }
+// console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+// console.log(isPalindrome("No lemon, no melon!")); // true
+// console.log(isPalindrome("Hello, World!")); // false

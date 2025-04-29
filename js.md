@@ -51,4 +51,43 @@
     Bundling: All JavaScript files were combined into a single bundle.js file.
     Optimization: Enabled with usedExports: true in the Webpack config.
 
-shantilal
+Feature | Object ({}) | Map (new Map()) | Set (new Set())
+🔑 Store kya karta hai? | Key-Value pairs | Key-Value pairs | Only Unique Values (no keys)
+📜 Key type | String or Symbol only | Any type (string, object, function...) | Only values, no key-value
+🚀 Order maintained? | No guaranteed order | Insertion order maintained | Insertion order maintained
+✅ Duplicate allowed? | No (overwrites same key) | No (overwrites same key) | No (duplicates automatically ignored)
+🔍 Search method | obj.hasOwnProperty(key) | map.has(key) | set.has(value)
+➡️ Iteration | for...in, Object.keys(), Object.values() | for...of map.entries(), forEach() | for...of set, forEach()
+🔄 Use case | Traditional objects, configs | Complex key-value, reliable iteration | Unique list of values  
+
+const person = { name: 'Lydia' };
+
+function sayHi(age) {
+  return `${this.name} is ${age}`;
+}
+
+console.log(sayHi.call(person, 21));
+console.log(sayHi.bind(person, 21));
+const a = sayHi.bind(person, 21)
+console.log(a());
+
+
+There are 8 falsy values:
+
+undefined
+null
+NaN
+false
+'' (empty string)
+0
+-0
+0n (BigInt(0))
+
+Tarika | Code | Output
+for...in + person[item] | console.log(person[item]) | Values ---- console.log(item)  | Keys 
+for...of + Object.values(person) | console.log(value) | Values
+
+Method | Kaam kya karta hai | Example
+Object.keys(obj) | Sab keys ka array deta hai | ["name", "age"]
+Object.values(obj) | Sab values ka array deta hai | ["Lydia", 21]
+Object.entries(obj) | [key, value] pairs ka array deta hai | [["name", "Lydia"], ["age", 21]]

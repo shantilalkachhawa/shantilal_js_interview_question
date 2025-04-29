@@ -261,7 +261,7 @@
 // leading to performance issues like a slow or freezing UI.
 //  Throttling helps prevent this by limiting the number of times the function is executed.
 
-// function onScroll() {
+// function onScroll() {  
 //     console.log('Scroll event triggered');
 // }
 
@@ -399,7 +399,7 @@
 // Arrow Functions,
 // The ... Operator,
 // For/of,
-// Map Objects,
+// Map Objects,e
 // Set Objects,
 // Classes
 // Promises
@@ -499,7 +499,8 @@
 //       console.error('Error occurred:', error);
 //     })
 // Observables are a technique for event handling, asynchronous programming, and handling multiple values emitted over time.
-// A callback function in JavaScript is a function passed as an argument to another function, to be executed later, often after an asynchronous task completes.
+// A callback function in JavaScript is a function passed as an argument to another function, to be executed later, 
+// often after an asynchronous task completes.
 
 // function fetchData(callback) {
 //     setTimeout(function () {
@@ -513,7 +514,8 @@
 //     console.log(result); // Output: Fetched data
 //   }); 
 
-// Generators are functions that can be paused and resumed, allowing for the generation of a sequence of values lazily. Iterators are objects that implement the Iterable protocol, enabling iteration over collections such as arrays and sets.
+// Generators are functions that can be paused and resumed, allowing for the generation of a sequence of values lazily. 
+// Iterators are objects that implement the Iterable protocol, enabling iteration over collections such as arrays and sets.
 
 // function* generatorFunction() { // Here the * is important
 //     yield 1;
@@ -554,7 +556,8 @@
 // Promise.resolve().then(microtask1); // Schedules microtask1 to be executed as a microtask
 // Promise.resolve().then(microtask2); // Schedules microtask2 to be executed as a microtask 
 
-// Synchronous operations are executed sequentially, blocking further execution until they complete, while asynchronous operations allow the program to continue executing while waiting for a response.
+// Synchronous operations are executed sequentially, blocking further execution until they complete, 
+// while asynchronous operations allow the program to continue executing while waiting for a response.
 
 // console.log("Start");
 // function synchronousTask() {
@@ -729,7 +732,7 @@
 
 // interface -
 // intercae ke constructor nh hote h
-// non abstract function nh hota h like nameFun(){ }
+// non abstract function nh hota h like nameFoolun(){ }
 
 // interface ko extent nh karte h implements karte h 
 // interface nameOfInterface {
@@ -757,10 +760,6 @@
 // });
 
 // export default Button;
-
-
-
-
 
 //2 Use useCallback and useMemo Hooks
 // When passing functions to child components to avoid unnecessary re-creation.
@@ -823,7 +822,6 @@ const handleClick = () => console.log('Clicked!');
 // 7. Use Context API Wisely
 // Avoid overusing context as it can lead to propagation of re-renders.
 // Use tools like Zustand, Recoil, or Jotai for state management when Context becomes complex.
-
 // 8. Enable Lazy Image Loading (Next.js Example)
 // Benefit: Prevents loading all images at once, improving performance.
 
@@ -844,7 +842,8 @@ const handleClick = () => console.log('Clicked!');
 //QUE 
 // How does "this" behave in Node.js? Is it the same as in a browser console?
 // In Node.js, this in the global scope refers to an empty object {}, not global.
-// this Inside a Function -In Node.js, calling a regular function in non-strict mode sets this to the global object (global). In strict mode ("use strict"), this is undefined
+// this Inside a Function -In Node.js, calling a regular function in non-strict mode sets this to the global object (global). 
+// In strict mode ("use strict"), this is undefined
 // In a browser, this in the global scope refers to the window object.
 // Conclusion
 // this behaves differently in the global scope in Node.js ({}) vs. browsers (window).
@@ -938,7 +937,6 @@ const handleClick = () => console.log('Clicked!');
 // Usage: Variables are used to store and retrieve data, and functions are used to group reusable logic.
 
 // Advantages of hooks and customs hooks
-
 // React Hooks:
 
 // Simplify state management and side effects in functional components.
@@ -1096,3 +1094,19 @@ const handleClick = () => console.log('Clicked!');
 // weakMap.delete(obj);
 // console.log(weakMap.has(obj)); // false
 
+
+// AngularJS, developed by Google, is an open-source structural framework used to build dynamic web apps, while ReactJS, developed by Facebook, is an open-source library that allows you to build UI components.
+// ReactJS is a lightweight library that helps you build UI components with a virtual DOM and JSX syntax, whereas Angularis a comprehensive framework that offers multiple features like two-way data binding, TypeScript support, MVC architecture, and dependency injection.
+// React JS is a JavaScript-based library, whereas Angular is a TypeScript-based web application framework
+// Angular is best suited for complex, enterprise-level applications that require a structured framework, while React.js is ideal for dynamic, high-performance single-page applications (SPAs) requiring fast updates and scalability.
+// While talking about React JS vs Angular, Angular is a JS framework built using TypeScript, whereas React JS is a JS library built using JSX.
+// React.js is mostly used to build interactive UI components with frequently variable data, whereas Angular.js is used to build complex enterprise apps like progressive web apps and single-page apps.
+// While comparing Angular JS vs React JS, Angular JS is used to build single-page applications using HTML and TypeScript. React JS is commonly used to create user interfaces for single-page applications from isolated components.
+
+// Real DOM is the actual structure represented in the User Interface and the virtual DOM object is the same as a real DOM object, 
+// except that it is a lightweight copy.
+// https://www.geeksforgeeks.org/difference-between-virtual-dom-and-real-dom/
+
+
+// System Design is the process of designing the architecture, components, and interfaces for a system so that it meets the end-user requirements. 
+// This specifically designed System Design tutorial will help you to learn and master System Design concepts in the most efficient way from basics to advanced level.

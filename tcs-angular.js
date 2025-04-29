@@ -94,7 +94,7 @@
 // settings$.subscribe(settings => {
 //   console.log('App settings:', settings);
 // });
-// // Update settings
+//Update settings
 // settings$.next({ theme: 'dark', language: 'fr' });
 
 // Subject
@@ -111,12 +111,14 @@
 // subject.next(2); // Dono Subscriber 1 aur Subscriber 2 ko value 2 milegi
 
 
-// Standalone Components: Angular 15 introduced fully standalone components, allowing developers to create components without needing NgModules, simplifying the structure and dependencies of applications.
+// Standalone Components: Angular 15 introduced fully standalone components, allowing developers to create components without needing NgModules,
+//  simplifying the structure and dependencies of applications.
 
 
 
 // 1. Callback:
-// A callback is a function that you pass into another function as an argument. The second function (the one you passed the callback to) will "call back" or execute the passed-in function after it finishes its own work.
+// A callback is a function that you pass into another function as an argument. The second function 
+// (the one you passed the callback to) will "call back" or execute the passed-in function after it finishes its own work.
 // ex-
 // function readFile(callback) {
 //     setTimeout(() => {
@@ -131,7 +133,8 @@
 //   readFile(afterReading);  // Pass the callback function
   
 
-// A Promise is a special JavaScript object that represents the eventual completion or failure of an asynchronous operation. It can be in one of three states:
+// A Promise is a special JavaScript object that represents the eventual completion or failure of an asynchronous operation. 
+// It can be in one of three states:
 
 // Pending: The operation is still ongoing.
 // Fulfilled: The operation completed successfully.
@@ -191,3 +194,44 @@
 
 
 // https://daily.dev/blog/angular-17-everything-you-need-to-know-in-one-place
+
+
+// https://tusharghosh09006.medium.com/advanced-angular-interview-questions-d1573f1b350b
+
+// Security: I am very much concern about security. I will use Dom Sanitizer to sanitize input to prevent cross-site scripting (XSS).
+
+// What are some of the differences between a standard Angular component and a standalone component?
+// Standard components must be included in an NgModule to be used within an Angular application. 
+// Standalone components do not require this and can be used independently without being included in an NgModule.
+// Standard components require imports for Angular or third-party functionality to be declared in the NgModule. 
+// For instance, *ngFor directive usage necessitates importing CommonModule from @angular/common in the NgModule. 
+// In contrast, standalone components can directly import dependencies within their own files.
+
+// Interceptor: I can use HTTP interceptors to intercept outgoing requests and incoming responses. 
+// For example I can use interceptor to add token in header.
+
+
+// This is a important question. There are 8 life cycle hooks in Angular.
+//  I have heavily used ngOnInit and ngOnDestroy in my previous work environment. 
+//  ngOnInit is called when component initialize. It is called once. Mostly, I used for variable initialize and API call.
+//   ngOnDestroy is called before detroying the component. I heavily used for unsubscribe the subscription to prevent the memory leak.
+
+// Several times I have used ngOnChanges, ngAfterContentInit, ngAfterViewInit in my career. 
+// ngOnChanges method is called once on component’s creation and then every time changes are detected in one of the component’s input properties.
+//  It receives a SimpleChanges object as a parameter. 
+//  ngAfterViewInit is called after the component view and its child views has been initialized. 
+//  ngAfterContentInit is called after components external content (or from parent ) has been initialized.
+
+// There are other hooks like ngDoCheck, ngAfterContentChecked, ngAfterViewChecked, I did not use them too much.
+
+
+// What is Dependency Injection?
+
+
+// Dependency Injection (DI) is a design pattern. DI is heavily used in Angular. 
+// DI is a design pattern that aims to manage component dependencies by injecting them from external sources rather than 
+// creating them within the component itself. 
+// It is use to improved testability, make Components loose coupling.
+
+// By default, Angular’s DI system creates singleton instances of services and shares them throughout the application. 
+// In AngularJs, function params are used for DI, From Angular 2, constructor param is used for DI.
