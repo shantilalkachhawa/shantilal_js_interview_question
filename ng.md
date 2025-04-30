@@ -413,3 +413,85 @@ Already covered in Question 8.
 
 // What is Dependency Injection?
 
+
+
+1. exec() – Chhoti output ke liye best (buffered output)
+js
+Copy
+Edit
+const { exec } = require('child_process');
+
+exec('ls -la', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`Error: ${error.message}`);
+    return;
+  }
+  console.log(`Output: ${stdout}`);
+});
+📝 Isme pura output ek baar mein milta hai (as buffer), lekin agar output zyada badi hui to crash ho sakta hai.
+
+2. spawn() – Large ya continuous output ke liye best (streamed output)
+js
+Copy
+Edit
+const { spawn } = require('child_process');
+
+const child = spawn('ping', ['google.com']);
+
+child.stdout.on('data', (data) => {
+  console.log(`stdout: ${data}`);
+});
+
+child.stderr.on('data', (data) => {
+  console.error(`stderr: ${data}`);
+});
+
+child.on('close', (code) => {
+  console.log(`Process khatam hua with code ${code}`);
+});
+✅ Ye real-time output deta hai, jo streaming tasks ke liye best hai.
+
+3. fork() – Jab aap dusra Node.js file/process run karwana chahte ho
+js
+Copy
+Edit
+// parent.js
+const { fork } = require('child_process');
+
+const child = fork('child.js');
+
+child.on('message', (msg) => {
+  console.log('Message from child:', msg);
+});
+
+child.send({ hello: 'world' });
+js
+Copy
+Edit
+// child.js
+process.on('message', (msg) => {
+  console.log('Parent ne bola:', msg);
+  process.send({ response: 'Hi Parent!' });
+});
+📡 Isme parent aur child process easily message pass kar sakte hain (IPC channel ke through).
+
+4. execFile() – Direct kisi script ya executable ko run karne ke liye
+js
+Copy
+Edit
+const { execFile } = require('child_process');
+
+execFile('node', ['--version'], (error, stdout) => {
+  if (error) throw error;
+  console.log(stdout);
+});
+🧩 Isme shell launch nahi hota, toh thoda faster aur secure hota hai.
+
+⚡ Use Cases:
+Image/video processing (e.g., ffmpeg)
+
+Heavy calculation ko background mein karwana
+
+Python ya C++ scripts ko run karwana
+
+Shell commands automation

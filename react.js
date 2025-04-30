@@ -1110,3 +1110,8 @@ const handleClick = () => console.log('Clicked!');
 
 // System Design is the process of designing the architecture, components, and interfaces for a system so that it meets the end-user requirements. 
 // This specifically designed System Design tutorial will help you to learn and master System Design concepts in the most efficient way from basics to advanced level.
+
+// setImmediate() schedules a callback function to be executed in the next iteration of the event loop.
+// setTimeout() schedules a callback function to be executed after a specified delay.
+// process.nextTick() schedules a callback function to be executed immediately after the current operation completes, 
+// before the event loop continues.
