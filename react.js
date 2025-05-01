@@ -98,7 +98,7 @@
 
 // 11 Callbacks 
 // A callback function is a function that is passed as an argument to another function
-// Asynchronous Operation,Delayed Execution,Function as Argument
+// Asynchronous Operation,Delayed Execution,Function as Argument,hell back
 
 // Common Use
 // Event Handling: Attaching event listeners to elements and executing callbacks when the events occur (e.g., click, keypress, mouseover).
@@ -701,6 +701,9 @@
 // ******************OPPS
 
 // polymerfizm
+// Polymorphism, meaning "many forms", is a core concept in object-oriented programming that allows objects of different classes to be treated 
+// as objects of a common type. It enables a single action to be performed in different ways, depending on the specific object involved. 
+// Think of it as a situation where the same message can lead to different behaviors based on the object receiving the messag
 // run time polyfism - use can use on inheritence 
 // show error on run time
 
