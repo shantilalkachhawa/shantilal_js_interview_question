@@ -2022,3 +2022,29 @@ console.log(lengthOfLastWord("luffy is still joyboy"))
 // console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
 // console.log(isPalindrome("No lemon, no melon!")); // true
 // console.log(isPalindrome("Hello, World!")); // false
+
+// Valid Parentheses | Day 53
+function isValid(s) {
+  const stack = [];
+  const map = {
+      ')': '(',
+      ']': '[',
+      '}': '{'
+  };
+
+  for (let char of s) {
+      if (char === '(' || char === '[' || char === '{') {
+          stack.push(char);
+      } else {
+          if (stack.pop() !== map[char]) {  
+              return false;
+          }
+      }
+  }
+
+  return stack.length === 0;
+}
+console.log(isValid("()"));       // true
+console.log(isValid("()[]{}"));   // true
+console.log(isValid("(]"));       // false
+console.log(isValid("([])"));     // true
