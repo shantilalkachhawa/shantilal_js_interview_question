@@ -1841,24 +1841,24 @@ function increTripletSub(arr){
 
 
 // Length of Last Word 
-// function lengthOfLastWord(word){
-//   let count = 0;
+function lengthOfLastWord(word){
+  let count = 0;
 
-//   for (let index = word.length -1; index < word.length; index--) {
-//     const char = word.charAt(index);
-//     if(char !==' '){
-//       count ++;
-//     }else if(count !==0){
-//       break
-//     }
+  for (let index = word.length -1; index < word.length; index--) {
+    const char = word.charAt(index);
+    if(char !==' '){
+      count ++;
+    }else if(count !==0){
+      break
+    }
     
-//   }
-//   return count;
+  }
+  return count;
 
-// }
-// console.log(lengthOfLastWord('Hello World'))
-// console.log(lengthOfLastWord("   fly me   to   the moon  "))
-// console.log(lengthOfLastWord("luffy is still joyboy"))
+}
+console.log(lengthOfLastWord('Hello World'))
+console.log(lengthOfLastWord("   fly me   to   the moon  "))
+console.log(lengthOfLastWord("luffy is still joyboy"))
   
 // Remove Duplicate Letters
 
@@ -2022,3 +2022,29 @@ function increTripletSub(arr){
 // console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
 // console.log(isPalindrome("No lemon, no melon!")); // true
 // console.log(isPalindrome("Hello, World!")); // false
+
+// Valid Parentheses | Day 53
+function isValid(s) {
+  const stack = [];
+  const map = {
+      ')': '(',
+      ']': '[',
+      '}': '{'
+  };
+
+  for (let char of s) {
+      if (char === '(' || char === '[' || char === '{') {
+          stack.push(char);
+      } else {
+          if (stack.pop() !== map[char]) {  
+              return false;
+          }
+      }
+  }
+
+  return stack.length === 0;
+}
+console.log(isValid("()"));       // true
+console.log(isValid("()[]{}"));   // true
+console.log(isValid("(]"));       // false
+console.log(isValid("([])"));     // true
