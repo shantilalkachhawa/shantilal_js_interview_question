@@ -1841,24 +1841,24 @@ function increTripletSub(arr){
 
 
 // Length of Last Word 
-function lengthOfLastWord(word){
-  let count = 0;
+// function lengthOfLastWord(word){
+//   let count = 0;
 
-  for (let index = word.length -1; index < word.length; index--) {
-    const char = word.charAt(index);
-    if(char !==' '){
-      count ++;
-    }else if(count !==0){
-      break
-    }
+//   for (let index = word.length -1; index < word.length; index--) {
+//     const char = word.charAt(index);
+//     if(char !==' '){
+//       count ++;
+//     }else if(count !==0){
+//       break
+//     }
     
-  }
-  return count;
+//   }
+//   return count;
 
-}
-console.log(lengthOfLastWord('Hello World'))
-console.log(lengthOfLastWord("   fly me   to   the moon  "))
-console.log(lengthOfLastWord("luffy is still joyboy"))
+// }
+// console.log(lengthOfLastWord('Hello World'))
+// console.log(lengthOfLastWord("   fly me   to   the moon  "))
+// console.log(lengthOfLastWord("luffy is still joyboy"))
   
 // Remove Duplicate Letters
 
@@ -2024,27 +2024,145 @@ console.log(lengthOfLastWord("luffy is still joyboy"))
 // console.log(isPalindrome("Hello, World!")); // false
 
 // Valid Parentheses | Day 53
-function isValid(s) {
-  const stack = [];
-  const map = {
-      ')': '(',
-      ']': '[',
-      '}': '{'
-  };
+// function isValid(s) {
+//   const stack = [];
+//   const map = {
+//       ')': '(',
+//       ']': '[',
+//       '}': '{'
+//   };
 
-  for (let char of s) {
-      if (char === '(' || char === '[' || char === '{') {
-          stack.push(char);
-      } else {
-          if (stack.pop() !== map[char]) {  
-              return false;
-          }
-      }
-  }
+//   for (let char of s) {
+//       if (char === '(' || char === '[' || char === '{') {
+//           stack.push(char);
+//       } else {
+//           if (stack.pop() !== map[char]) {  
+//               return false;
+//           }
+//       }
+//   }
 
-  return stack.length === 0;
+//   return stack.length === 0;
+// }
+// console.log(isValid("()"));       // true
+// console.log(isValid("()[]{}"));   // true
+// console.log(isValid("(]"));       // false
+// console.log(isValid("([])"));     // true
+
+// Minimum Add to Make Parentheses Valid | Day 54 
+
+// function minAddToMakeValid(s) {
+//     let open = 0;
+//     let add = 0;
+  
+//     for (let char of s) {
+//       if (char === '(') {
+//         open++;
+//       } else {
+//         if (open > 0) {
+//           open--; // match with previous '('
+//         } else {
+//           add++; // no '(' to match, need one
+//         }
+//       }
+//     }
+  
+//     return add + open;
+//   }
+//   console.log(minAddToMakeValid("())"));     // Output: 1
+//   console.log(minAddToMakeValid("((("));     // Output: 3
+//   console.log(minAddToMakeValid("()"));      // Output: 0
+//   console.log(minAddToMakeValid("()))(("));  // Output: 4
+
+
+// function minAddToMakeValid(s) {
+//     const stack = [];
+  
+//     for (let char of s) {
+//       if (char === '(') {
+//         stack.push(char);
+//       } else if (char === ')') {
+//         if (stack.length > 0 && stack[stack.length - 1] === '(') {
+//           stack.pop(); // matched pair
+//         } else {
+//           stack.push(char); // unmatched )
+//         }
+//       }
+//     }
+  
+//     return stack.length; // unmatched parentheses
+//   }
+  //   console.log(minAddToMakeValid("())"));     // Output: 1
+//   console.log(minAddToMakeValid("((("));     // Output: 3
+//   console.log(minAddToMakeValid("()"));      // Output: 0
+//   console.log(minAddToMakeValid("()))(("));  // Output: 4
+// ✅  Single Pass → Better Performance
+// ✅  No Extra Space → More Efficient
+// ✅  Simple and Readable
+// ✅  Handles Edge Cases Gracefully
+
+
+// Valid Anagram 
+// function isAnagram(s, t) {
+//     if (s.length !== t.length) return false;
+//     return s.split('').sort().join('') === t.split('').sort().join('');
+// }
+// Time complexity: O(n log n) for sorting
+// Space complexity: O(n) due to string manipulation
+
+
+// function isAnagram(s, t) {
+//     if (s.length !== t.length) return false;
+
+//     const count = {};
+
+//     for (let char of s) {
+//         count[char] = (count[char] || 0) + 1;
+//     }
+
+//     for (let char of t) {
+//         if (!count[char]) return false;
+//         count[char]--;
+//     }
+
+//     return true;
+// }
+// Time complexity: O(n)
+// Space complexity: O(1) if character set is fixed (like lowercase English); O(n) for Unicode
+
+
+// Matrix Diagonal Sum | Day 56 |
+// let  mat = [[1,2,3],
+//               [4,5,6],
+//               [7,8,9]]
+              
+// function sumOfMat(mat){
+//     let n=mat[0].length;
+//     let sum =0 ;
+//     for(let i=0;i<n;i++){
+//         for(let j=0; j < n;j++){
+//             if(i=== j || i+j ===n-1){
+//                 sum+=mat[i][j]
+//             }
+//         }
+//     }
+//     return sum;
+// }
+// console.log(sumOfMat(mat))
+let  mat = [[1,2,3],
+              [4,5,6],
+              [7,8,9]]
+function sumOfMat(mat) {
+    const n = mat.length;
+    let sum = 0;
+
+    for (let i = 0; i < n; i++) {
+        sum += mat[i][i]; // primary diagonal
+        if (i !== n - 1 - i) {
+            sum += mat[i][n - 1 - i]; // secondary diagonal (avoid double-counting center)
+        }
+    }
+    return sum;
 }
-console.log(isValid("()"));       // true
-console.log(isValid("()[]{}"));   // true
-console.log(isValid("(]"));       // false
-console.log(isValid("([])"));     // true
+
+console.log(sumOfMat(mat)); // Output: 25
