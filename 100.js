@@ -2149,20 +2149,69 @@ function increTripletSub(arr){
 //     return sum;
 // }
 // console.log(sumOfMat(mat))
-let  mat = [[1,2,3],
-              [4,5,6],
-              [7,8,9]]
-function sumOfMat(mat) {
-    const n = mat.length;
-    let sum = 0;
+// let  mat = [[1,2,3],
+//               [4,5,6],
+//               [7,8,9]]
+// function sumOfMat(mat) {
+//     const n = mat.length;
+//     let sum = 0;
 
-    for (let i = 0; i < n; i++) {
-        sum += mat[i][i]; // primary diagonal
-        if (i !== n - 1 - i) {
-            sum += mat[i][n - 1 - i]; // secondary diagonal (avoid double-counting center)
-        }
-    }
-    return sum;
-}
+//     for (let i = 0; i < n; i++) {
+//         sum += mat[i][i]; // primary diagonal
+//         if (i !== n - 1 - i) {
+//             sum += mat[i][n - 1 - i]; // secondary diagonal (avoid double-counting center)
+//         }
+//     }
+//     return sum;
+// }
 
-console.log(sumOfMat(mat)); // Output: 25
+// console.log(sumOfMat(mat)); // Output: 25
+
+
+// Transpose Matrix | Day 57
+
+// function transpose(mat){
+//     let row = mat.length
+//     let col = mat[0].length
+
+//     for(let i=0; i < row ;i++){
+//         for(let j=i;j < row; j++){
+//             const temp = mat[i][j];
+//             mat[i][j] = mat[j][i];
+//             mat[j][i]=temp;
+//         }
+//     }
+//     return mat;
+// }
+// let  mat = [[1,2,3],
+//               [4,5,6],
+//               [7,8,9]];
+// console.log(transpose(mat))
+
+
+// function transpose(mat) {
+//     const row = mat.length;
+//     const col = mat[0].length;
+//     const result = [];
+
+//     for (let i = 0; i < col; i++) {
+//         result[i] = [];
+//         for (let j = 0; j < row; j++) {
+//             result[i][j] = mat[j][i];
+//         }
+//     }
+
+//     return result;
+// }
+
+// let mat = [
+//   [1, 2],
+//   [4, 5],
+//   [6, 7]
+// ];
+
+// console.log(transpose(mat));
+// Output: [ [1, 4, 6], [2, 5, 7] ]
+
+
+// Spiral Matrix II | Day 58
