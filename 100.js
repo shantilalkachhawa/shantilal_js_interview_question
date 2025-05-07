@@ -2166,3 +2166,52 @@ function increTripletSub(arr){
 // }
 
 // console.log(sumOfMat(mat)); // Output: 25
+
+
+// Transpose Matrix | Day 57
+
+// function transpose(mat){
+//     let row = mat.length
+//     let col = mat[0].length
+
+//     for(let i=0; i < row ;i++){
+//         for(let j=i;j < row; j++){
+//             const temp = mat[i][j];
+//             mat[i][j] = mat[j][i];
+//             mat[j][i]=temp;
+//         }
+//     }
+//     return mat;
+// }
+// let  mat = [[1,2,3],
+//               [4,5,6],
+//               [7,8,9]];
+// console.log(transpose(mat))
+
+
+// function transpose(mat) {
+//     const row = mat.length;
+//     const col = mat[0].length;
+//     const result = [];
+
+//     for (let i = 0; i < col; i++) {
+//         result[i] = [];
+//         for (let j = 0; j < row; j++) {
+//             result[i][j] = mat[j][i];
+//         }
+//     }
+
+//     return result;
+// }
+
+// let mat = [
+//   [1, 2],
+//   [4, 5],
+//   [6, 7]
+// ];
+
+// console.log(transpose(mat));
+// Output: [ [1, 4, 6], [2, 5, 7] ]
+
+
+// Spiral Matrix II | Day 58
