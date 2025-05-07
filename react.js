@@ -28,7 +28,7 @@
 //  maintainable, and easier to test.
 // Virtual DOM
 // Optimized Rendering: Only the components that actually change are re-rendered, which improves performance,
-//  especially in large applications.
+// especially in large applications.
 // Simplified State Management: You don’t need to worry about manually updating the DOM; 
 // React automatically updates the UI based on changes in component state and props.
 // Unidirectional Data Flow-
@@ -1118,3 +1118,8 @@ const handleClick = () => console.log('Clicked!');
 // setTimeout() schedules a callback function to be executed after a specified delay.
 // process.nextTick() schedules a callback function to be executed immediately after the current operation completes, 
 // before the event loop continues.
+
+
+
+
+// Flux is an architectural pattern introduced by “Facebook” to work with React. It is a slight modification of the observer-observable pattern and it is not a library or a framework. The main feature in Flux is the concept of uni-directional data flow.
