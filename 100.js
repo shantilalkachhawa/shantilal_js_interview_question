@@ -2148,21 +2148,21 @@ function increTripletSub(arr){
 //     }
 //     return sum;
 // }
-// console.log(sumOfMat(mat))
-let  mat = [[1,2,3],
-              [4,5,6],
-              [7,8,9]]
-function sumOfMat(mat) {
-    const n = mat.length;
-    let sum = 0;
+// console.log(sumOfMat(mat))// Output: 25
+// let  mat = [[1,2,3],
+//               [4,5,6],
+//               [7,8,9]]
+// function sumOfMat(mat) {
+//     const n = mat.length;
+//     let sum = 0;
 
-    for (let i = 0; i < n; i++) {
-        sum += mat[i][i]; // primary diagonal
-        if (i !== n - 1 - i) {
-            sum += mat[i][n - 1 - i]; // secondary diagonal (avoid double-counting center)
-        }
-    }
-    return sum;
-}
+//     for (let i = 0; i < n; i++) {
+//         sum += mat[i][i]; // primary diagonal
+//         if (i !== n - 1 - i) {
+//             sum += mat[i][n - 1 - i]; // secondary diagonal (avoid double-counting center)
+//         }
+//     }
+//     return sum;
+// }
 
-console.log(sumOfMat(mat)); // Output: 25
+// console.log(sumOfMat(mat)); // Output: 25
