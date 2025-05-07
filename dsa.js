@@ -5,7 +5,7 @@
 // for (let row =1; row<= 5; row++){
 // let output=''
 //     for (let col=1;col<=5; col++){
-//         // console.log(col);
+//        //  console.log(col);
 //         output+=col
 
 //     }
@@ -205,7 +205,6 @@
 // }
 
 //Print a number pyramid.
-
 //     1
 //    2 2
 //   3 3 3
@@ -313,7 +312,7 @@
     
 // }
 
-// New key have used to be created memory sapce.
+// New() key have used to be created memory sapce.
 
 // Print matrix
 // let data=[
@@ -376,7 +375,7 @@
 //     }
 //     return arr;
 // }
-let arr=[7,23,8,2,8,1,4]
+// let arr=[7,23,8,2,8,1,4]
 
 // bubleShort(arr);
 // console.log(bubleShort(arr))
