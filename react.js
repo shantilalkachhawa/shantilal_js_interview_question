@@ -1,5 +1,6 @@
 // What are the major features of React
 // It uses VirtualDOM instead of RealDOM considering that RealDOM manipulations are expensive.
+// Real DOM is the actual structure represented in the User Interface and the virtual DOM object is the same as a real DOM object,
 // Supports server-side rendering.
 // Follows Unidirectional data flow or data binding.
 // Uses reusable/composable UI components to develop the view.
@@ -60,6 +61,14 @@
 // Performance
 // Code complexity
 // Code duplication
+
+// useState	- Manages component state	Form inputs, toggles, counters
+// useEffect -	Handles side effects	Fetching data, event listeners
+// useReducer - Manages complex state logic	Authentication, forms
+// useCallback - Memoizes functions	Preventing unnecessary re-renders
+// useContext -	Shares global state	Theme, authentication
+// useRef -	References DOM elements, persists values	Focus input, storing previous values
+
 
 
 // 7 Pure Components
@@ -822,6 +831,7 @@ const handleClick = () => console.log('Clicked!');
 // };
 
 
+
 // 7. Use Context API Wisely
 // Avoid overusing context as it can lead to propagation of re-renders.
 // Use tools like Zustand, Recoil, or Jotai for state management when Context becomes complex.
@@ -1005,12 +1015,6 @@ const handleClick = () => console.log('Clicked!');
 
 
 
-// useState	- Manages component state	Form inputs, toggles, counters
-// useEffect -	Handles side effects	Fetching data, event listeners
-// useReducer - Manages complex state logic	Authentication, forms
-// useCallback - Memoizes functions	Preventing unnecessary re-renders
-// useContext -	Shares global state	Theme, authentication
-// useRef -	References DOM elements, persists values	Focus input, storing previous values
 
 
 // Set, WeakSet, and WeakMap in JavaScript
@@ -1106,7 +1110,7 @@ const handleClick = () => console.log('Clicked!');
 // React.js is mostly used to build interactive UI components with frequently variable data, whereas Angular.js is used to build complex enterprise apps like progressive web apps and single-page apps.
 // While comparing Angular JS vs React JS, Angular JS is used to build single-page applications using HTML and TypeScript. React JS is commonly used to create user interfaces for single-page applications from isolated components.
 
-// Real DOM is the actual structure represented in the User Interface and the virtual DOM object is the same as a real DOM object, 
+ 
 // except that it is a lightweight copy.
 // https://www.geeksforgeeks.org/difference-between-virtual-dom-and-real-dom/
 
