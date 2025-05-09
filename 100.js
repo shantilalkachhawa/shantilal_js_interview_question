@@ -511,19 +511,19 @@
 // Increasing Triplet Subsequence|
 //Time Complexicity 0(n^3) 
 // Using Nested Loops (Brute Force) 
-function increTripletSub(arr){
-    for(let i=0; i < arr.length; i ++){
-        for(let j=i+1; j < arr.length; j++){
-            for(let k=j+1; k < arr.length ; k++){
-                if( arr[i]< arr[j] && arr[j] < arr[k]){
-                    return true;
-                }
-            }
-        }
-    }
-    return false;
+// function increTripletSub(arr){
+//     for(let i=0; i < arr.length; i ++){
+//         for(let j=i+1; j < arr.length; j++){
+//             for(let k=j+1; k < arr.length ; k++){
+//                 if( arr[i]< arr[j] && arr[j] < arr[k]){
+//                     return true;
+//                 }
+//             }
+//         }
+//     }
+//     return false;
 
-}
+// }
 // Optimized Linear Scan
 // Time Complexicity 0(n)
 // function increTripletSub(arr){
@@ -2260,3 +2260,56 @@ function generateMatrix(n) {
 // Example usage:
 console.log(generateMatrix(3));
 
+
+// function searchMatrix(matrix, target) {
+//     if (!matrix.length || !matrix[0].length) return false;
+//     const rows = matrix.length;
+//     const cols = matrix[0].length;
+//     let left = 0;
+//     let right = rows * cols - 1;
+//     while (left <= right) {
+//         const mid = Math.floor((left + right) / 2);
+//         const midValue = matrix[Math.floor(mid / cols)][mid % cols];
+//         if (midValue === target) {
+//             return true;
+//         } else if (midValue < target) {
+//             left = mid + 1;
+//         } else {
+//             right = mid - 1;
+//         }
+//     }
+//     return false;
+// }
+// const mat = [
+//  [1, 3, 5, 7],
+//  [10, 11, 16, 20],
+//  [23, 30, 34, 60]
+// ];
+
+// console.log(searchMatrix(mat, 3));  // true
+// console.log(searchMatrix(mat, 13)); // false
+
+
+function searchMatrix(matrix, target) {
+    let rows = 0;
+    let cols = matrix[0].length -1;
+ 
+    while (rows < matrix.length && cols >=0) {
+        if (matrix[rows][cols] === target) {
+            return true;
+        } else if (matrix[rows][cols] < target) {
+            rows ++;
+        } else {
+            cols--;
+        }
+    }
+    return false;
+}
+const mat = [
+ [1, 3, 5, 7],
+ [10, 11, 16, 20],
+ [23, 30, 34, 60]
+];
+
+console.log(searchMatrix(mat, 3));  // true
+console.log(searchMatrix(mat, 13)); // false
