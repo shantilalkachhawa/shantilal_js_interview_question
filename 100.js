@@ -2216,100 +2216,236 @@
 
 // Spiral Matrix II | Day 58
 
-function generateMatrix(n) {
-    const matrix = Array.from({ length: n }, () => Array(n).fill(0));
-    let num = 1;
-    let top = 0;
-    let bottom = n - 1;
-    let left = 0;
-    let right = n - 1;
+// function generateMatrix(n) {
+//     const matrix = Array.from({ length: n }, () => Array(n).fill(0));
+//     let num = 1;
+//     let top = 0;
+//     let bottom = n - 1;
+//     let left = 0;
+//     let right = n - 1;
 
-    while (top <= bottom && left <= right) {
-        // Left ➔ Right
-        for (let i = left; i <= right; i++) {
-            matrix[top][i] = num++;
-        }
-        top++;
+//     while (top <= bottom && left <= right) {
+//         // Left ➔ Right
+//         for (let i = left; i <= right; i++) {
+//             matrix[top][i] = num++;
+//         }
+//         top++;
 
-        // Top ➔ Bottom
-        for (let i = top; i <= bottom; i++) {
-            matrix[i][right] = num++;
-        }
-        right--;
+//         // Top ➔ Bottom
+//         for (let i = top; i <= bottom; i++) {
+//             matrix[i][right] = num++;
+//         }
+//         right--;
 
-        // Right ➔ Left
-        if (top <= bottom) {
-            for (let i = right; i >= left; i--) {
-                matrix[bottom][i] = num++;
-            }
-            bottom--;
-        }
+//         // Right ➔ Left
+//         if (top <= bottom) {
+//             for (let i = right; i >= left; i--) {
+//                 matrix[bottom][i] = num++;
+//             }
+//             bottom--;
+//         }
 
-        // Bottom ➔ Top
-        if (left <= right) {
-            for (let i = bottom; i >= top; i--) {
-                matrix[i][left] = num++;
-            }
-            left++;
-        }
-    }
+//         // Bottom ➔ Top
+//         if (left <= right) {
+//             for (let i = bottom; i >= top; i--) {
+//                 matrix[i][left] = num++;
+//             }
+//             left++;
+//         }
+//     }
 
-    return matrix;
-}
+//     return matrix;
+// }
 
 // Example usage:
-console.log(generateMatrix(3));
+// console.log(generateMatrix(3));
 
 
-function searchMatrix(matrix, target) {
-    if (!matrix.length || !matrix[0].length) return false;
-    const rows = matrix.length;
-    const cols = matrix[0].length;
-    let left = 0;
-    let right = rows * cols - 1;
-    while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
-        const midValue = matrix[Math.floor(mid / cols)][mid % cols];
-        if (midValue === target) {
-            return true;
-        } else if (midValue < target) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
-    }
-    return false;
-}
-const mat = [
- [1, 3, 5, 7],
- [10, 11, 16, 20],
- [23, 30, 34, 60]
-];
+// function searchMatrix(matrix, target) {
+//     if (!matrix.length || !matrix[0].length) return false;
+//     const rows = matrix.length;
+//     const cols = matrix[0].length;
+//     let left = 0;
+//     let right = rows * cols - 1;
+//     while (left <= right) {
+//         const mid = Math.floor((left + right) / 2);
+//         const midValue = matrix[Math.floor(mid / cols)][mid % cols];
+//         if (midValue === target) {
+//             return true;
+//         } else if (midValue < target) {
+//             left = mid + 1;
+//         } else {
+//             right = mid - 1;
+//         }
+//     }
+//     return false;
+// }
+// const mat = [
+//  [1, 3, 5, 7],
+//  [10, 11, 16, 20],
+//  [23, 30, 34, 60]
+// ];
 
-console.log(searchMatrix(mat, 3));  // true
-console.log(searchMatrix(mat, 13)); // false
+// console.log(searchMatrix(mat, 3));  // true
+// console.log(searchMatrix(mat, 13)); // false
 
 
-function searchMatrix(matrix, target) {
-    let rows = 0;
-    let cols = matrix[0].length -1;
+// function searchMatrix(matrix, target) {
+//     let rows = 0;
+//     let cols = matrix[0].length -1;
  
-    while (rows < matrix.length && cols >=0) {
-        if (matrix[rows][cols] === target) {
-            return true;
-        } else if (matrix[rows][cols] < target) {
-            rows ++;
+//     while (rows < matrix.length && cols >=0) {
+//         if (matrix[rows][cols] === target) {
+//             return true;
+//         } else if (matrix[rows][cols] < target) {
+//             rows ++;
+//         } else {
+//             cols--;
+//         }
+//     }
+//     return false;
+// }
+// const mat = [
+//  [1, 3, 5, 7],
+//  [10, 11, 16, 20],
+//  [23, 30, 34, 60]
+// ];
+
+// console.log(searchMatrix(mat, 3));  // true
+// console.log(searchMatrix(mat, 13)); // false
+
+// Rotate Image | Day 60
+// Method - Transpose (colum convert into row) -then reverse 
+
+// function imageRotate(mat){
+//     let n = mat.length;
+//     for(let i=0; i < n ; i++){
+//         for(let j =i ; j < n; j++){
+//             const temp = mat[i][j];
+//             mat[i][j] = mat[j][i];
+//             mat[j][i] = temp;
+//         }
+//          reverseMatrix(mat[i]);
+//     }
+//     return mat
+
+// }
+// function reverseMatrix(revMat){
+//     let start =0 ;
+//     let end = revMat.length-1;
+//     while(start <= end){
+//         const temp = revMat[start];
+//         revMat[start] = revMat[end];
+//         revMat[end] = temp
+//         start ++;
+//         end --
+//     }
+//     return revMat;
+// }
+
+// const mat = [
+//  [1, 2, 3],
+//  [4, 5, 6],
+//  [7, 8, 9]
+// ];
+
+// console.log(imageRotate(mat));
+
+
+// function isPalindrome(head) {
+//     const values = [];
+//     let current = head;
+
+//     // Store linked list into an array
+//     while (current) {
+//         values.push(current.val);
+//         current = current.next;
+//     }
+
+//     // Two pointer check
+//     let start = 0, end = values.length - 1;
+//     while (start < end) {
+//         if (values[start] !== values[end]) {
+//             return false;
+//         }
+//         start++;
+//         end--;
+//     }
+
+//     return true;
+// }
+// console.log(isPalindrome(head))
+
+// merge-two-arry
+// function mergeTwoLists(list1, list2) {
+//     // Create a dummy node to start
+//     let dummy = { val: -1, next: null };
+//     let current = dummy;
+
+//     // Traverse both lists
+//     while (list1 !== null && list2 !== null) {
+//         if (list1.val < list2.val) {
+//             current.next = list1;
+//             list1 = list1.next;
+//         } else {
+//             current.next = list2;
+//             list2 = list2.next;
+//         }
+//         current = current.next; // move forward
+//     }
+
+//     // Connect the remaining part
+//     if (list1 !== null) {
+//         current.next = list1;
+//     }
+//     if (list2 !== null) {
+//         current.next = list2;
+//     }
+
+//     return dummy.next; // skip dummy node
+// }
+// Remove Duplicates from sorted Linked List
+
+function deleteDuplicates(head) {
+    let current = head;
+    while (current && current.next) {
+        if (current.val === current.next.val) {
+            // Skip the next node
+            current.next = current.next.next;
         } else {
-            cols--;
+            // Move to next node normally
+            current = current.next;
         }
     }
-    return false;
-}
-const mat = [
- [1, 3, 5, 7],
- [10, 11, 16, 20],
- [23, 30, 34, 60]
-];
 
-console.log(searchMatrix(mat, 3));  // true
-console.log(searchMatrix(mat, 13)); // false
+    return head;
+}
+
+// Add Two Numbers
+function addTwoNumbers(l1, l2) {
+    let dummy = { val: 0, next: null };
+    let current = dummy;
+    let carry = 0;
+
+    while (l1 !== null || l2 !== null || carry !== 0) {
+        let sum = carry;
+
+        if (l1 !== null) {
+            sum += l1.val;
+            l1 = l1.next;
+        }
+
+        if (l2 !== null) {
+            sum += l2.val;
+            l2 = l2.next;
+        }
+
+        // Update carry for next addition
+        carry = Math.floor(sum / 10);
+        // Create new node with digit part
+        current.next = { val: sum % 10, next: null };
+        current = current.next;
+    }
+
+    return dummy.next;
+}
