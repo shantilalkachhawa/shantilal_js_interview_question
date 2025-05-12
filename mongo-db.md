@@ -306,3 +306,50 @@ db.collection_name.aggregate([
         data:"$$NOW"
     }}
 ])
+
+Object.keys(this) // this envirment return many types of key value 
+you can set object of globel uses like
+
+hyndai={make:"abc"}
+
+then we can use direct 
+db.collection_name.find(hyndai)  // return all filterd result 
+
+# Data modeling 
+how to join one table data to another table
+#lookup
+
+db.collection_name.aggregate([
+    {$lookup :{
+        "from":"orders",
+        "localField":"_id",
+        "foreignField":"user_id",
+        as:"orders"
+
+    }}
+])
+
+db.users.aggregate([
+    {$lookup:{
+        "from":"orders",
+        "localField":"_id",
+        "foreignField":"user_id",
+        as:"users"
+    }}
+])
+# Embeded document ( only for limited data)
+max doc size limit is 16MB 
+nesting depth limit is 100levels deep
+
+# Referenced Document ( use for different table)
+like users and orders
+
+# Index
+We can create a indexing for field bases, not creates for all only create for you want to search 
+
+db.collection_name.createIndex({name:1}) // create a index with seprate file store
+
+db.collection.getIndexes()
+db.collection.dropIndex('name')
+
+db.collection.find({title:'the ace of hearos'}).explain(''executionaStats)
