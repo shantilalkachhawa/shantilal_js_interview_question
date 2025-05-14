@@ -2406,46 +2406,131 @@
 // }
 // Remove Duplicates from sorted Linked List
 
-function deleteDuplicates(head) {
-    let current = head;
-    while (current && current.next) {
-        if (current.val === current.next.val) {
-            // Skip the next node
-            current.next = current.next.next;
-        } else {
-            // Move to next node normally
-            current = current.next;
-        }
-    }
+// function deleteDuplicates(head) {
+//     let current = head;
+//     while (current && current.next) {
+//         if (current.val === current.next.val) {
+//             // Skip the next node
+//             current.next = current.next.next;
+//         } else {
+//             // Move to next node normally
+//             current = current.next;
+//         }
+//     }
 
-    return head;
-}
+//     return head;
+// }
 
 // Add Two Numbers
-function addTwoNumbers(l1, l2) {
-    let dummy = { val: 0, next: null };
-    let current = dummy;
-    let carry = 0;
+// function addTwoNumbers(l1, l2) {
+//     let dummy = { val: 0, next: null };
+//     let current = dummy;
+//     let carry = 0;
 
-    while (l1 !== null || l2 !== null || carry !== 0) {
-        let sum = carry;
+//     while (l1 !== null || l2 !== null || carry !== 0) {
+//         let sum = carry;
 
-        if (l1 !== null) {
-            sum += l1.val;
-            l1 = l1.next;
-        }
+//         if (l1 !== null) {
+//             sum += l1.val;
+//             l1 = l1.next;
+//         }
 
-        if (l2 !== null) {
-            sum += l2.val;
-            l2 = l2.next;
-        }
+//         if (l2 !== null) {
+//             sum += l2.val;
+//             l2 = l2.next;
+//         }
 
-        // Update carry for next addition
-        carry = Math.floor(sum / 10);
-        // Create new node with digit part
-        current.next = { val: sum % 10, next: null };
-        current = current.next;
-    }
+//         // Update carry for next addition
+//         carry = Math.floor(sum / 10);
+//         // Create new node with digit part
+//         current.next = { val: sum % 10, next: null };
+//         current = current.next;
+//     }
 
-    return dummy.next;
-}
+//     return dummy.next;
+// }
+
+
+// function oddEvenList(head) {
+//   if (!head || !head.next) return head;
+
+//   let odd = head;
+//   let even = head.next;
+//   let evenHead = even;
+
+//   while (even && even.next) {
+//     odd.next = even.next;
+//     odd = odd.next;
+
+//     even.next = odd.next;
+//     even = even.next;
+//   }
+
+//   odd.next = evenHead;
+//   return head;
+// }
+
+
+// Output: 1 -> 3 -> 5 -> 2 -> 4
+
+
+//  Delete Node in a Linked List
+// function deleteNode(node: ListNode | null): void {
+//     if (node === null || node.next === null) return;
+
+//     node.val = node.next.val;
+//     node.next = node.next.next;
+// }
+// List: 4 → 5 → 1 → 9
+
+// Call: deleteNode(5)
+// Result: 4 → 1 → 9
+
+//  Linked List Cycle
+// function hasCycle(head: ListNode | null): boolean {
+
+//   if (head == null || head.next == null) return false;
+
+//     let slowNode = head;
+//     let fastNode = head;
+    
+//     while (fastNode !== null && fastNode.next !== null) {
+//         slowNode = slowNode.next;
+//         fastNode = fastNode.next.next;
+
+//         if (slowNode === fastNode) {
+//             return true; // Cycle detected
+//         }
+//     }
+
+//     return false; // No cycle
+    
+// };
+// Input: head = [3,2,0,-4], pos = 1
+// Output: true
+
+//  Linked List Cycle II
+
+// function detectCycle(head: ListNode | null): ListNode | null {
+//     if(head == null) return null
+
+//     let fast = head;
+//     let slow = head;
+//     let pt = head;
+
+//     while(fast !=null && fast.next != null){
+//         slow = slow.next;
+//         fast = fast.next.next;
+//         if(slow === fast){
+//             while(slow != pt){
+//                 pt = pt.next;
+//                 slow =slow.next;
+//             }
+//             return pt
+//         }
+//     }
+//     return null;
+    
+// };
+// Input: head = [3,2,0,-4], pos = 1
+// Output: tail connects to node index 1
