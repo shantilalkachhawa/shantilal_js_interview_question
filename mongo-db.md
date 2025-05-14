@@ -353,3 +353,13 @@ db.collection.getIndexes()
 db.collection.dropIndex('name')
 
 db.collection.find({title:'the ace of hearos'}).explain(''executionaStats)
+
+db.createCollection('user',{
+    validator:{
+        $jsonSchema:{
+            bjson:"object",
+            required:['name','age']
+        }
+    }
+})
+db.collection_name.createIndex({maker:1})
