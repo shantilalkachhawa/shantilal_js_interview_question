@@ -2534,3 +2534,255 @@
 // };
 // Input: head = [3,2,0,-4], pos = 1
 // Output: tail connects to node index 1
+
+// Remove Linked List Elements 
+
+// function removeElements(head: ListNode | null, val: number): ListNode | null {
+//     if(head == null){
+//         return null;
+//     }
+    
+//     let dummy = new  ListNode(-1)
+//     dummy.next = head;
+//     let curr = dummy;
+//     while(curr.next != null){
+//         if(curr.next.val == val){
+//             curr.next =curr.next.next;
+//         }else{
+//             curr = curr.next;
+//         }
+//     }
+//     return dummy.next;
+// };
+// Input: head = [1,2,6,3,4,5,6], val = 6
+// Output: [1,2,3,4,5]
+
+// Next Greater Node in Linked List 
+
+// function nextLargerNodes(head: ListNode | null): number[] {
+
+//     let values: number[] = [];
+//     let current = head;
+
+//     // Step 1: Convert linked list to array
+//     while (current !== null) {
+//         values.push(current.val);
+//         current = current.next;
+//     }
+
+//     let result = new Array(values.length).fill(0);
+//     let stack: number[] = []; // stack of indices
+
+//     // Step 2: Monotonic stack
+//     for (let i = 0; i < values.length; i++) {
+//         while (stack.length > 0 && values[i] > values[stack[stack.length - 1]]) {
+//             const idx = stack.pop()!;
+//             result[idx] = values[i];
+//         }
+//         stack.push(i);
+//     }
+//     return result;
+// };
+
+// Input: head = [2,1,5]
+// Output: [5,5,0]
+
+//  Delete The Middle Node of a Linked List
+
+// function deleteMiddle(head: ListNode | null): ListNode | null {
+//     if (head === null || head.next === null) {
+//         return null;
+//     }
+
+//     let fast = head;
+//     let slow = head;
+//     let pre: ListNode | null = null;
+
+//     while (fast !== null && fast.next !== null) {
+//         pre = slow;
+//         slow = slow.next!;
+//         fast = fast.next.next;
+//     }
+
+//     // Delete the middle node by skipping it
+//     if (pre !== null) {
+//         pre.next = slow.next;
+//     }
+
+//     return head;
+// }
+
+
+// Input: head = [1,3,4,7,1,2,6]
+// Output: [1,3,4,1,2,6]
+
+// Merge Nodes in Between Zeros
+// function mergeNodes(head: ListNode | null): ListNode | null {
+//     let dummy = new ListNode(-1);
+//     let ans = dummy;
+
+//     let curr = head?.next; // skip the first 0 node
+//     let sum = 0;
+
+//     while (curr !== null) {
+//         if (curr.val !== 0) {
+//             sum += curr.val;
+//         } else {
+//             // Only add a node if we've accumulated a sum
+//             ans.next = new ListNode(sum);
+//             ans = ans.next;
+//             sum = 0;
+//         }
+//         curr = curr.next;
+//     }
+
+//     return dummy.next;
+// }
+
+// Input: head = [0,3,1,0,4,5,2,0]
+// Output: [4,11]
+
+
+// Univalued Binary Tree
+// function helper(root: TreeNode | null, val: number): boolean {
+//     if (root == null) return true;
+
+//     if (root.val !== val) return false;
+
+//     const leftNode: boolean = helper(root.left, val);
+//     const rightNode: boolean = helper(root.right, val);
+
+//     return leftNode && rightNode;
+// }
+
+// function isUnivalTree(root: TreeNode | null): boolean {
+//     if (root == null) return true;
+//     return helper(root,root.val)
+    
+// };
+// Input: root = [1,1,1,1,1,null,1]
+// Output: true
+// Input: root = [2,2,2,5,2]
+// Output: false
+
+
+// Count Complete Tree Nodes
+// function countNodes(root: TreeNode | null): number {
+//     if(root == null ) return 0;
+
+//     const leftNode =countNodes(root.left);
+//     const rightNode =countNodes(root.right);
+//     return leftNode + rightNode +1;
+    
+// };
+// Input: root = [1,2,3,4,5,6]
+// Output: 6
+
+// Input: root = []
+// Output: 0
+
+// Symmetric Tree
+
+// function helper(root1:TreeNode,root2 :TreeNode){
+//     if(root1 == null || root2 == null){
+//         return root1 == root2
+//     }
+//      if (root1.val !== root2.val) return false;
+//     const ans1  = helper(root1.left,root2.right);
+//     const ans2 = helper(root1.right,root2.left);
+//     return ans1 && ans2;
+// }
+
+// function isSymmetric(root: TreeNode | null): boolean {
+//     if(root == null) return true
+//     return helper(root.left,root.right)   
+// };
+
+// Input: root = [1,2,2,3,4,4,3]
+// Output: true
+
+
+// Binary Tree Postorder Traversal
+// function postorderTraversal(root: TreeNode | null): number[] {
+//    let list: number[] = [];
+//     helper(root, list);
+//     return list;
+    
+// };
+// function helper(root:TreeNode,list:number[]){
+//     if(root == null) return 
+
+//     helper(root.left,list);
+//     helper(root.right,list);
+//     list.push(root.val);
+// }
+// Input: root = [1,null,2,3]
+// Output: [3,2,1]
+
+// Input: root = [1,2,3,4,5,null,8,null,null,6,7,9]
+// Output: [4,6,7,5,2,9,8,3,1]
+
+// Binary Tree Level Order Traversal
+
+// function levelOrder(root: TreeNode | null): number[][] {
+//     const result: number[][] = [];
+//     if (root === null) return result;
+
+//     const queue: TreeNode[] = [root];
+
+//     while (queue.length > 0) {
+//         const levelSize = queue.length;
+//         const currentLevel: number[] = [];
+
+//         for (let i = 0; i < levelSize; i++) {
+//             const node = queue.shift()!;
+//             currentLevel.push(node.val);
+
+//             if (node.left) queue.push(node.left);
+//             if (node.right) queue.push(node.right);
+//         }
+
+//         result.push(currentLevel);
+//     }
+
+//     return result;
+// }
+
+// Input: root = [3,9,20,null,null,15,7]
+// Output: [[3],[9,20],[15,7]]
+
+// Input: root = [1]
+// Output: [[1]]  
+
+// Binary Tree Paths 
+
+// function binaryTreePaths(root: TreeNode | null): string[] {
+//     let ans: string[] = [];
+
+//     if (root === null) {
+//         return ans;
+//     }
+
+//     if (root.left === null && root.right === null) {
+//         ans.push(`${root.val}`);
+//         return ans;
+//     }
+
+//     const leftPaths = binaryTreePaths(root.left);
+//     const rightPaths = binaryTreePaths(root.right);
+
+//     for (let path of leftPaths) {
+//         ans.push(`${root.val}->${path}`);
+//     }
+//     for (let path of rightPaths) {
+//         ans.push(`${root.val}->${path}`);
+//     }
+//     return ans;
+// }
+
+
+// Input: root = [1,2,3,null,5]
+// Output: ["1->2->5","1->3"]
+
+// Input: root = [1]
+// Output: ["1"]
