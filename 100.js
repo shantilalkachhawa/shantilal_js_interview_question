@@ -2786,3 +2786,151 @@
 
 // Input: root = [1]
 // Output: ["1"]
+
+// Binary Tree Zigzag Level Order Traversal
+// function(root) {
+//     if (!root) return [];
+
+//     const result = [];
+//     const queue = [root];
+//     let leftToRight = true;
+
+//     while (queue.length > 0) {
+//         const levelSize = queue.length;
+//         const level = [];
+
+//         for (let i = 0; i < levelSize; i++) {
+//             const node = queue.shift();
+
+//             // Insert node's value based on direction
+//             if (leftToRight) {
+//                 level.push(node.val);
+//             } else {
+//                 level.unshift(node.val);
+//             }
+
+//             // Add child nodes to queue
+//             if (node.left) queue.push(node.left);
+//             if (node.right) queue.push(node.right);
+//         }
+
+//         result.push(level);
+//         leftToRight = !leftToRight; // Toggle direction
+//     }
+
+//     return result;
+// };
+
+// Input: root = [3,9,20,null,null,15,7]
+// Output: [[3],[20,9],[15,7]]
+
+// Balanced Binary Tree
+// function isBalanced(root: TreeNode | null): boolean {  
+
+//     let isBalancedTree: boolean = true;
+
+//     function height(node: TreeNode | null): number {
+//         if (node === null) return 0;
+
+//         const leftHeight = height(node.left);
+//         const rightHeight = height(node.right);
+
+//         if (Math.abs(leftHeight - rightHeight) > 1) {
+//             isBalancedTree = false;
+//         }
+
+//         return Math.max(leftHeight, rightHeight) + 1;
+//     }
+
+//     height(root);
+//     return isBalancedTree;
+    
+// };
+// Input: root = [3,9,20,null,null,15,7]
+// Output: true
+
+// Kth Smallest Element in a BST
+// function kthSmallest(root: TreeNode | null, k: number): number {
+//     let count = 0;
+//     let ans = 0;
+//     function helper(root, k){
+//         if(root === null){
+//             return ;
+//         }
+//         helper(root.left,k)
+//         count ++;
+//         if( count === k ){
+//             ans = root.val 
+//         }
+//         helper(root.right,k)
+
+//     }
+//     helper(root,k)
+//     return ans;
+  
+// };
+
+// Input: root = [3,1,4,null,2], k = 1
+// Output: 1
+
+// Kth largest Element in a BST
+// function kthLargest(root: TreeNode | null, k: number): number {
+//     let count = 0;
+//     let ans = 0;
+//     function helper(root, k){
+//         if(root === null){
+//             return ;
+//         }
+//         helper(root.right,k)
+//         count ++;
+//         if( count === k ){
+//             ans = root.val 
+//         }
+//         helper(root.left,k)
+
+//     }
+//     helper(root,k)
+//     return ans;
+  
+// };
+
+// Input: root = [3,1,4,null,2], k = 1
+// Output: 4
+// Path Sum
+// function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
+//     if(root == null){
+//         return false
+//     }
+//     if(root.left == null && root.right == null && targetSum == root.val){
+//         return true;
+//     }
+//     let ans1 = hasPathSum(root.left,targetSum-root.val);
+//     let ans2 = hasPathSum(root.right,targetSum-root.val)
+//     return ans1 || ans2;
+
+// };
+// Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+// Output: true
+
+// Binary Tree Right Side View
+// function rightSideView(root: TreeNode | null): number[] {
+//     let ans =[];
+   
+//     helper(root,ans,0)
+//     return ans;
+// // Treverser -Node - Right - Left
+//     function helper(root,ans,level){
+//         if(root == null){
+//             return;
+//         }
+//         if(ans.length == level){
+//             ans.push(root.val)
+//         }
+//         helper(root.right,ans,level+1);
+//         helper(root.left,ans,level+1);
+//     }
+// };
+
+// Input: root = [1,null,3]
+
+// Output: [1,3]
