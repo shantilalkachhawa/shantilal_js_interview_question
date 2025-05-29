@@ -1,5 +1,4 @@
 # RDS
-
 # read repllica 
   Just for debbuging purpouse , copy of prod DB. 
 # database zone goes down (when OS patcing & sercurity Update,network connectivity loss )[Multi-AZ -enable ]
