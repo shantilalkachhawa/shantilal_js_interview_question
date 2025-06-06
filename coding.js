@@ -637,19 +637,19 @@
 //   }
 // }
 
-// let length=0;
-// let element ;
-// let str ='my annnnna mom is called annna!'
-// str.split(' ').map((item)=>{
+let length=0;
+let element ;
+let str ='my annnnna mom is called annna!'
+str.split(' ').map((item)=>{
    
-//     let revesrseValue =item.split('').reverse().join('')
-//     if(item == revesrseValue){
-//         length =length > item.length ? length : item.length;
-//         element=length > item.length ? element : item
-//     }
+    let revesrseValue =item.split('').reverse().join('')
+    if(item == revesrseValue){
+        length =length > item.length ? length : item.length;
+        element=length > item.length ? element : item
+    }
     
-// })
-//  console.log(element,length)
+})
+ console.log(element,length)
 
 
 

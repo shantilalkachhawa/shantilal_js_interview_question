@@ -1102,13 +1102,19 @@ const handleClick = () => console.log('Clicked!');
 // console.log(weakMap.has(obj)); // false
 
 
-// AngularJS, developed by Google, is an open-source structural framework used to build dynamic web apps, while ReactJS, developed by Facebook, is an open-source library that allows you to build UI components.
-// ReactJS is a lightweight library that helps you build UI components with a virtual DOM and JSX syntax, whereas Angularis a comprehensive framework that offers multiple features like two-way data binding, TypeScript support, MVC architecture, and dependency injection.
+// AngularJS, developed by Google, is an open-source structural framework used to build dynamic web apps, 
+// while ReactJS, developed by Facebook, is an open-source library that allows you to build UI components.
+// ReactJS is a lightweight library that helps you build UI components with a virtual DOM and JSX syntax, 
+// whereas Angularis a comprehensive framework that offers multiple features like two-way data binding, 
+// TypeScript support, MVC architecture, and dependency injection.
 // React JS is a JavaScript-based library, whereas Angular is a TypeScript-based web application framework
-// Angular is best suited for complex, enterprise-level applications that require a structured framework, while React.js is ideal for dynamic, high-performance single-page applications (SPAs) requiring fast updates and scalability.
+// Angular is best suited for complex, enterprise-level applications that require a structured framework, 
+// while React.js is ideal for dynamic, high-performance single-page applications (SPAs) requiring fast updates and scalability.
 // While talking about React JS vs Angular, Angular is a JS framework built using TypeScript, whereas React JS is a JS library built using JSX.
-// React.js is mostly used to build interactive UI components with frequently variable data, whereas Angular.js is used to build complex enterprise apps like progressive web apps and single-page apps.
-// While comparing Angular JS vs React JS, Angular JS is used to build single-page applications using HTML and TypeScript. React JS is commonly used to create user interfaces for single-page applications from isolated components.
+// React.js is mostly used to build interactive UI components with frequently variable data, 
+// whereas Angular.js is used to build complex enterprise apps like progressive web apps and single-page apps.
+// While comparing Angular JS vs React JS, Angular JS is used to build single-page applications using HTML and TypeScript. 
+// React JS is commonly used to create user interfaces for single-page applications from isolated components.
 
  
 // except that it is a lightweight copy.
@@ -1116,7 +1122,8 @@ const handleClick = () => console.log('Clicked!');
 
 
 // System Design is the process of designing the architecture, components, and interfaces for a system so that it meets the end-user requirements. 
-// This specifically designed System Design tutorial will help you to learn and master System Design concepts in the most efficient way from basics to advanced level.
+// This specifically designed System Design tutorial will help you to learn and 
+// master System Design concepts in the most efficient way from basics to advanced level.
 
 // setImmediate() schedules a callback function to be executed in the next iteration of the event loop.
 // setTimeout() schedules a callback function to be executed after a specified delay.
@@ -1126,4 +1133,6 @@ const handleClick = () => console.log('Clicked!');
 
 
 
-// Flux is an architectural pattern introduced by “Facebook” to work with React. It is a slight modification of the observer-observable pattern and it is not a library or a framework. The main feature in Flux is the concept of uni-directional data flow.
+// Flux is an architectural pattern introduced by “Facebook” to work with React. 
+// It is a slight modification of the observer-observable pattern and it is not a library or a framework. 
+// The main feature in Flux is the concept of uni-directional data flow.
