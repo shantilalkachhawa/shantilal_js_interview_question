@@ -1127,3 +1127,6 @@ const handleClick = () => console.log('Clicked!');
 
 
 // Flux is an architectural pattern introduced by “Facebook” to work with React. It is a slight modification of the observer-observable pattern and it is not a library or a framework. The main feature in Flux is the concept of uni-directional data flow.
+
+
+// Async and differ in js; 
