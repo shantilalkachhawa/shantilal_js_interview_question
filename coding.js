@@ -10,7 +10,8 @@
 // - Users can signup/signin and add their family memebers.
 // - Users can visualize their family in a tree structure
 // - I have built a custom solution to make family tree, and developed my own npm package and published it.
-// - I have also developed a customer management portal for the system, where admin can see some analytics like users information, control master content, add/update terms & condition / policy
+// - I have also developed a customer management portal for the system, where admin can see some analytics like users information, 
+//   control master content, add/update terms & condition / policy
 // preserve your family history with our family tree management
 // Implemented push notification while using one signal and real-time chat with socket,
 // manage RBAC role-based access control user ,
@@ -636,19 +637,19 @@
 //   }
 // }
 
-// let length=0;
-// let element ;
-// let str ='my annnnna mom is called annna!'
-// str.split(' ').map((item)=>{
+let length=0;
+let element ;
+let str ='my annnnna mom is called annna!'
+str.split(' ').map((item)=>{
    
-//     let revesrseValue =item.split('').reverse().join('')
-//     if(item == revesrseValue){
-//         length =length > item.length ? length : item.length;
-//         element=length > item.length ? element : item
-//     }
+    let revesrseValue =item.split('').reverse().join('')
+    if(item == revesrseValue){
+        length =length > item.length ? length : item.length;
+        element=length > item.length ? element : item
+    }
     
-// })
-//  console.log(element,length)
+})
+ console.log(element,length)
 
 
 
@@ -1049,3 +1050,32 @@
 // let result1 = longestPallindrome('My mom is called annnna')
 // let result2 = longestPallindrome('My dad is a racecar athelete')
 
+
+
+// Quince
+// Union/inseration,
+
+// Election winner,
+// function findWinner(items){
+//     const charc ={};
+//     for(let char of items){
+//         charc[char]=(charc[char] || 0) + 1;
+//     }
+//     // return charc;
+//     let maxVotes=0;
+//     let candidate=''
+    
+//     for(let item in charc){
+//         if(charc[item] > maxVotes){
+//             candidate = item;
+//             maxVotes = charc[item]
+            
+//         }
+//         return {maxVotes,candidate }
+        
+//     }
+    
+    
+// }
+// console.log(findWinner(['a','b','c','a','a','d','d']))
+// js Execution
