@@ -149,3 +149,54 @@
 // }
 // const a = ["flower","flow","floght"]
 // console.log(longPrefix(a))
+
+//10 Valid Anagram
+
+// function validAnagram(s,t){
+//    let fst= s.split('').sort().join('');
+//   let lst= t.split('').sort().join('');
+//    if(fst == lst){
+//        return true
+//    }
+//    return false;
+    
+// }
+// s = "anagram", t = "nagaram"
+// console.log(validAnagram(s,t))
+
+// function validAnagram(s,t){
+//     if(s.length != t.length){
+//         return false;
+//     }
+//  let count = {};
+//  for(let i = 0 ; i < s.length ; i ++){
+//     let char = s[i];
+//     count[char]= (count[char] || 0) +1;
+//  }
+//  for(let j = 0; j < t.length ; j++){
+//     let char = t[j];
+//     if(!count[char]){
+//         return false;
+//     }
+//  }
+//  return true
+// }
+// // 11 Repeated String Match
+// function repetedString(a,b){
+//     let repeat =a;
+//     let count = 1;
+//     while(repeat.length < b.length){
+//         repeat+=a;
+//         count ++;
+//     }
+//     if(repeat.includes(b))return count;
+//     repeat+= a;
+//     count ++;
+    
+//     if(repeat.includes(b))return count;
+//     return -1;
+ 
+// }
+// console.log(repetedString('abcd','cdabcdab'))
+
+// 12 Roman to Integer
