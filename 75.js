@@ -200,3 +200,30 @@
 // console.log(repetedString('abcd','cdabcdab'))
 
 // 12 Roman to Integer
+// function romanToInt(str){
+    
+//     let romanValues={
+//         I: 1, V: 5, X: 10,
+//     L: 50, C: 100,
+//     D: 500, M: 1000
+//     }
+//     let toatal =0 ;
+    
+//     for(let i = 0; i < str.length; i ++){
+//         const curr = romanValues[str[i]];
+//         const next = romanValues[str[i+1]];
+//         if(next > curr){
+//             toatal += (next -curr);
+//             i ++;
+//         }else{
+//             toatal += curr;
+//         }
+//     }
+//     return toatal;
+    
+// }
+// console.log(romanToInt("III"));     // 3 
+// console.log(romanToInt("IV"));      // 4
+// console.log(romanToInt("IX"));      // 9
+// console.log(romanToInt("LVIII"));   // 58
+// console.log(romanToInt("MCMXCIV")); // 1994
