@@ -2934,3 +2934,226 @@
 // Input: root = [1,null,3]
 
 // Output: [1,3]
+
+// Invert Binary Tree
+// function invertTree(root: TreeNode | null): TreeNode | null {
+//     if(root == null){
+//         return root;
+//     }
+//     let left = invertTree(root.left);
+//     let right = invertTree(root.right);
+//     root.right = left;
+//     root.left = right;
+//     return root; 
+// };
+
+// Input: root = [4,2,7,1,3,6,9]
+// Output: [4,7,2,9,6,3,1]
+
+// Diameter of Binary Tree
+
+// function diameterOfBinaryTree(root: TreeNode | null): number {
+
+//     let dia = 0;
+//     function height(root){
+//         if(root == null){
+//             return 0;
+//         }
+//         let lh = height(root.left);
+//         let rh = height(root.right);
+//         // diameter 
+//         dia = Math.max(lh+rh,dia);
+//         return Math.max(lh,rh)+1; 
+//     }
+//      if(root == null){
+//         return 0;
+//      }
+//      let h = height(root);
+//      return dia;
+    
+// };
+// Input: root = [1,2,3,4,5]
+// Output: 3
+
+// Convert Sorted Array to Binary Search Tree
+
+// function sortedArrayToBST(nums: number[]): TreeNode | null {
+//     let n = nums.length -1
+//     return helper(nums,0,n)
+
+//     function helper(nums, start,end){
+
+//         let mid =Math.floor((start+end)/2);
+//         if(start > end){
+//            return null;
+//         }
+//         let root = new TreeNode(nums[mid])
+//         root.left = helper(nums,start,mid-1);
+//         root.right = helper(nums,mid+1,end);
+//         return root
+//     }
+// };
+
+// Input: nums = [-10,-3,0,5,9]
+// Output: [0,-3,9,-10,null,5]
+
+// Merge two Binary Trees
+
+// function mergeTrees(root1: TreeNode | null, root2: TreeNode | null): TreeNode | null {
+//     if(root1 == null && root2 == null){
+//         return null;
+//     }else if(root1 == null){
+//         return root2;
+//     }else if(root2 == null ){
+//         return root1
+//     }
+//     let root = new TreeNode(root1.val + root2.val);
+//     root.left = mergeTrees(root1.left,root2.left);
+//     root.right = mergeTrees(root1.right,root2.right);
+//     return  root;
+    
+// };
+// Input: root1 = [1,3,2,5], root2 = [2,1,3,null,4,null,7]
+// Output: [3,4,5,5,4,null,7]
+
+// Search in a Binary Search Tree
+
+// function searchBST(root: TreeNode | null, val: number): TreeNode | null {
+//     let temp = root;
+//     while(temp != null){
+//     if(temp.val == val){
+//         break;
+//     }else if(temp.val > val){
+//         temp= temp.left;
+//     }else{
+//         temp = temp.right
+//     }
+//     }
+//     return temp;
+    
+// };
+// Input: root = [4,2,7,1,3], val = 2
+// Output: [2,1,3]
+
+// Insert into a Binary Search Tree
+
+// function insertIntoBST(root: TreeNode | null, val: number): TreeNode | null {
+//     if(root == null){
+//         let ans = new TreeNode(val);
+//         return ans;
+//     }
+//     if(root.val > val){
+//        root.left = insertIntoBST(root.left,val);
+//     }else{
+//         root.right = insertIntoBST(root.right,val)
+//     }
+//     return root;
+
+// };
+// Input: root = [4,2,7,1,3], val = 5
+// Output: [4,2,7,1,3,5]
+
+// Lowest Common Ancestor of a Binary Search Tree
+
+// function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: TreeNode | null): TreeNode | null {
+//     if(root == null){
+//         return null;
+//     }
+//     let temp = root;
+//     while(temp != null){
+//     if(temp.val > p.val && temp.val > q.val){
+//         temp = temp.left;
+
+//     }else if(temp.val < p.val && temp.val < q.val){
+//         temp = temp.right;
+//     }else{
+//         break;
+//     }
+//     }
+//     return temp;
+// };
+// Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+// Output: 6
+
+//  Validate Binary Search Tree 
+// function isValidBST(root: TreeNode | null): boolean {
+//    return helper(root, -Infinity, Infinity);
+
+//     function helper(node: TreeNode | null, min: number, max: number): boolean {
+//         if (node === null) return true;
+
+//         if (node.val <= min || node.val >= max) return false;
+
+//         return helper(node.left, min, node.val) && helper(node.right, node.val, max);
+//     }
+    
+// };
+// Input: root = [2,1,3]
+// Output: true
+
+// Convert Sorted List to Binary Search Tree
+// function sortedListToBST(head: ListNode | null): TreeNode | null {
+//     if (head === null) return null;
+
+//     if (head.next === null) return new TreeNode(head.val);
+
+//     const mid = midPoint(head);
+//     const root = new TreeNode(mid.val);
+//     root.left = sortedListToBST(head);
+//     root.right = sortedListToBST(mid.next);
+
+//     return root;
+
+//     function midPoint(head: ListNode): ListNode {
+//         let prev: ListNode | null = null;
+//         let slow: ListNode | null = head;
+//         let fast: ListNode | null = head;
+
+//         while (fast !== null && fast.next !== null) {
+//             prev = slow;
+//             slow = slow!.next;
+//             fast = fast.next.next;
+//         }
+
+//         // Disconnect left half from mid
+//         if (prev !== null) {
+//             prev.next = null;
+//         }
+
+//         return slow!;
+//     }
+// }
+// Input: head = [-10,-3,0,5,9]
+// Output: [0,-3,9,-10,null,5]
+
+
+// function balanceBST(root: TreeNode | null): TreeNode | null {
+//        const nodes: number[] = [];
+
+//     // Step 1: In-order traversal to get sorted values
+//     function inorder(node: TreeNode | null): void {
+//         if (node === null) return;
+//         inorder(node.left);
+//         nodes.push(node.val);
+//         inorder(node.right);
+//     }
+
+//     // Step 2: Build balanced BST from sorted array
+//     function buildBST(start: number, end: number): TreeNode | null {
+//         if (start > end) return null;
+
+//         const mid = Math.floor((start + end) / 2);
+//         const root = new TreeNode(nodes[mid]);
+
+//         root.left = buildBST(start, mid - 1);
+//         root.right = buildBST(mid + 1, end);
+
+//         return root;
+//     }
+
+//     inorder(root);
+//     return buildBST(0, nodes.length - 1);
+    
+// };
+// Input: root = [1,null,2,null,3,null,4,null,null]
+// Output: [2,1,3,null,null,null,4]
