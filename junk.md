@@ -61,4 +61,44 @@
      
        
 
-    
+# Virtual DoM
+Virtual Dom is nothing but copy of real DOM 
+Create a new Dom then change 
+Behind the sence react use fiber algorithm.
+While using the diiffing algo then patch changes to update on real dom ,
+(Once in React known somthing has changes then react update those and only those object on the real dom)
+DOM SAYS- I have no idea what changed so i will rerender everything and see's what diffrent now .
+
+# Reconciliation
+It is a recursion algorithm
+The algorithm React uses to diff one tree with another to determine which parts need to be changed.(Actual tree & browser tree)
+# Shadow Dom 
+ Shadow DOM let us  create a custom components or in others word create a scope DOM tree inside  our element.
+ like video tag
+
+# which one better React or Angular.
+# React -
+  ✅ Advantages:
+     Flexibility- you want using additional libraries (e.g., Redux, React Router).
+     Component-Based: React’s reusable components make UI development fast and organized.
+     Performance: Efficient virtual DOM and faster re-rendering.
+  Limitations - 
+     Too much freedom: It doesn’t provide a fixed project structure, which can lead to inconsistencies across teams if not carefully managed.
+     Boilerplate with state management: Complex state (Redux or context) often increases code and learning overhead.
+     SEO (before Next.js): React SPAs initially had poor SEO capabilities unless SSR (like Next.js) was used.
+
+
+# Angular - 
+   Complete Framework: Comes with everything built-in – routing, HTTP client, forms, validation, dependency injection, etc.
+   TypeScript by default: Type safety, auto-complete, and tooling support are great for large-scale enterprise applications.
+   Strong Architecture: Enforces structure (MVC), scalable codebase, and clean separation of concerns.
+   Tooling: Angular CLI is extremely powerful for scaffolding, testing, and building apps.
+   Two-Way Data Binding: Useful in form-heavy or real-time data applications.
+   
+   Limitations:
+    Steeper Learning Curve: Concepts like decorators, RxJS (observables), modules, and dependency injection take time to master.
+    Verbose Code: More boilerplate compared to React; development feels heavy for small projects.
+    Performance (in large DOMs): Might need optimization for change detection in large apps.
+
+
+
