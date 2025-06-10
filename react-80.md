@@ -841,3 +841,6 @@ React compares Virtual DOM trees and applies minimal real DOM changes.
 
 **Use Case in Projects:**
 In a kanban board, moving cards updates only affected columns efficiently.
+
+# Error Boundary? (use only class comp)
+React provides lifecycle methods (componentDidCatch and getDerivedStateFromError) for class components to implement error boundaries.
