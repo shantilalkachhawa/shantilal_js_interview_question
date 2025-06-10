@@ -227,3 +227,12 @@
 // console.log(romanToInt("IX"));      // 9
 // console.log(romanToInt("LVIII"));   // 58
 // console.log(romanToInt("MCMXCIV")); // 1994
+//13 Subsets II
+//14 Palindrome Partitioning
+//15 Combination Sum II
+//16 Power of Two
+//17 Different Ways to Add Parentheses
+//18 Sudoku Solver
+//19 Reverse Linked List
+//20 Middle of the Linked List
+//21 Merge Two Sorted Lists
