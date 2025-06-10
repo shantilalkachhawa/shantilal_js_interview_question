@@ -52,7 +52,7 @@ Triggered when state or props change.
 
 **Why it's popular:**
 
-* Component-based architecture
+* Component-based architecture (View of MVC) ng is(Complete MVC)
 * Virtual DOM improves performance
 * Strong ecosystem (Redux, React Router, etc.)
 * Backed by Facebook
@@ -112,13 +112,40 @@ function Hello() {
 
 ## 6. useState() vs useReducer()
 
+**Use Case:** `useReducer` is better for forms or complex states.
+One or two state variables with simple updates	✅ useState()
+Need a quick and simple component state	✅ useState()
+Complex state object with multiple updates or dependent state	✅ useReducer()
+Need to reuse state logic or unit test state transitions	✅ useReducer()
+
 ```jsx
 const [count, setCount] = useState(0); // useState
 
-const [state, dispatch] = useReducer(reducer, initialState); // useReducer
-```
 
-**Use Case:** `useReducer` is better for forms or complex states.
+const [state, dispatch] = useReducer(reducer, initialState); // useReducer
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+    </>
+  );
+}
+```
 
 ---
 
@@ -164,9 +191,11 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 ```jsx
 // Controlled
+// A controlled component is one where the form input’s value is controlled by React state.
 <input value={value} onChange={e => setValue(e.target.value)} />
 
 // Uncontrolled
+// An uncontrolled component lets the DOM handle the form input. You use refs to access the value.
 <input ref={inputRef} />
 ```
 
@@ -288,6 +317,7 @@ Use Context, Redux, Zustand, Recoil.
 ## 21. Purpose of keys in lists
 
 ```jsx
+DOM reordering - Optimized, State preservation for Accurate,Performance	faster.
 {items.map(item => <div key={item.id}>{item.name}</div>)}
 ```
 
@@ -397,6 +427,31 @@ const { id } = useParams();
 
 React uses `SyntheticEvent`.
 
+Common Synthetic Event Methods and Properties
+event.preventDefault():
+Prevents the default action associated with the event (e.g., preventing form submission, link navigation).
+event.stopPropagation():
+Prevents the event from bubbling up to parent elements (stops the event from propagating).
+event.target:
+The DOM element that triggered the event (similar to the native event.target).
+event.currentTarget:
+The DOM element that the event handler is currently attached to (this is useful in event delegation).
+event.type:
+The type of the event (e.g., click, submit, change).
+event.persist():
+Call this method to remove an event from the React event pool. This allows you to access the event properties asynchronously,
+ for example, after a setTimeout or when handling a promise.
+Types of Events in React:
+React’s synthetic event system works with various types of events, such as:
+
+Mouse Events: onClick, onDoubleClick, onMouseEnter, onMouseLeave, etc.
+Keyboard Events: onKeyDown, onKeyUp, onKeyPress, etc.
+Form Events: onChange, onSubmit, onFocus, onBlur, etc.
+Focus Events: onFocus, onBlur, etc.
+Touch Events: onTouchStart, onTouchMove, onTouchEnd, etc.
+Clipboard Events: onCopy, onPaste, etc.
+Media Events: onPlay, onPause, onVolumeChange, etc.
+
 ---
 
 ## 34. Performance Optimization
@@ -408,6 +463,8 @@ React uses `SyntheticEvent`.
 ---
 
 ## 35. Reconciliation
+It is a recursion algorithm
+The algorithm React uses to diff one tree with another to determine which parts need to be changed.(Actual tree & browser tree)
 
 **Answer:** Diffing old and new VDOM trees to apply minimal DOM updates.
 
@@ -455,16 +512,47 @@ function withAuth(Component) {
 
 ## 40. Lifting State Up
 
-Move shared state to common ancestor.
+Lifting state up means moving shared state to the closest common ancestor of the components that need access to it
 
 **Example:** Form input shared across siblings.
+Use Case
+Form with multiple fields (name, email) → parent tracks all input.
+
+Filters (checkboxes, sliders) affecting a common product list.
+
+Tabs or toggle buttons that need to update shared display.
+// 
+function Parent() {
+  const [value, setValue] = useState('');
+
+  return (
+    <>
+      <Input value={value} onChange={setValue} label="A" />
+      <Input value={value} onChange={setValue} label="B" />
+    </>
+  );
+}
+
+function Input({ value, onChange, label }) {
+  return (
+    <div>
+      <label>{label}</label>
+      <input value={value} onChange={e => onChange(e.target.value)} />
+    </div>
+  );
+}
 
 ---
 
 ## 41. React.memo
 
+React.memo is a higher-order component used to optimize performance by memoizing functional components — i.e., it prevents unnecessary re-renders when the component’s props haven’t changed.
 ```jsx
 const MemoComponent = React.memo(MyComponent);
+
+Avoid re-rendering functional components if their props stay the same.
+
+Similar to shouldComponentUpdate in class components.
 ```
 
 ---
@@ -483,7 +571,7 @@ useEffect(() => {
 
 ## 43. Securing React Apps
 
-* Avoid XSS
+* Avoid XSS(Cross-Site Scripting)
 * Use HTTPS
 * Store tokens securely
 

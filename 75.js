@@ -38,6 +38,24 @@
 // console.log(numIdenticalPairs([1,2,3,1,1,3]))
 // console.log(numIdenticalPairs([[1,1,1,1]]))
 
+// function numIdenticalPairs(arr){
+//     let count =0 ;
+//     let freq ={};
+//     for(let i = 0; i < arr.length ; i ++){
+//         let char = arr[i];
+//         if(freq[char]){
+//             count +=freq[char];
+//             freq[char]++;
+//         }else{
+//             freq[char] =1;
+//         }
+ 
+//     }
+//     return {freq,count}
+    
+// }
+// console.log(numIdenticalPairs([1,2,3,1,3,1]))
+
 //4 Pascal's Triangle
 // function tringle(n){
 //     let tringle =[];
@@ -72,6 +90,7 @@
 //     }
 //     return maxSum;   
 // };
+// console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])) // 6
 
 //6 Best Time to Buy and Sell Stock
 // function maxProfit(prices: number[]): number {
@@ -227,7 +246,32 @@
 // console.log(romanToInt("IX"));      // 9
 // console.log(romanToInt("LVIII"));   // 58
 // console.log(romanToInt("MCMXCIV")); // 1994
+
 //13 Subsets II
+
+// function subsetsWithDup(nums) {
+//     nums.sort();  // Sort to handle duplicates
+//     let result = [];
+    
+//     function backtrack(start, path) {
+//         result.push([...path]);
+
+//         for (let i = start; i < nums.length; i++) {
+//             // Skip duplicates
+//             if (i > start && nums[i] === nums[i - 1]) continue;
+
+//             path.push(nums[i]);
+//             backtrack(i + 1, path);
+//             path.pop();
+//         }
+//     }
+
+//     backtrack(0, []);
+//     return result;
+// }
+
+// console.log(subsetsWithDup([1, 2, 2]));
+
 //14 Palindrome Partitioning
 //15 Combination Sum II
 //16 Power of Two
