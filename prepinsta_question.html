@@ -1,45 +1,45 @@
-
 // -------- BY shantilal kachhawa --------
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <script>
-// 1. Find Largest element in an array 
+    // 1. Find Largest element in an array 
 
-const arr = [10, 20, 15, 5, 8];
-// let  maxValue =arr[0];
-// for (let i=1; i<arr.length; i++){
-//     if(arr[i] > maxValue){
-//         maxValue = arr[i];
-//     }
-//     console.log(maxValue,'maxValue');
-    
-// }
-// 
-// 
-// debugger
-// const a = Math.max(...arr)
-// reduce method
+    // const arr = [10, 20, 15, 5, 8];
+    // let  maxValue =arr[0];
+    // for (let i=1; i<arr.length; i++){
+    //     if(arr[i] > maxValue){
+    //         maxValue = arr[i];
+    //     }
+    //     console.log(maxValue,'maxValue');
 
-// let a = arr.reduce((max,current)=>{
-//    return  current > max ? current : max;
-// }, arr[0]);
+    // }
+    // 
+    // 
+    // debugger
+    // const a = Math.max(...arr)
+    // reduce method
 
-// apply bind
-// let a = Math.max.apply(null,arr);
+    // let a = arr.reduce((max,current)=>{
+    //    return  current > max ? current : max;
+    // }, arr[0]);
+
+    // apply bind
+    // let a = Math.max.apply(null,arr);
 
 
-// sort bind
-// let a = arr.sort((a,b)=>b-a)[0];
-// console.log(a);
+    // sort bind
+    // let a = arr.sort((a,b)=>b-a)[0];
+    // console.log(a);
 
-// function findMaxInStream(dataStream) {
+    // function findMaxInStream(dataStream) {
     // let max = -Infinity;  
     // dataStream.forEach(data => {
     //     if (data > max) {
@@ -47,50 +47,57 @@ const arr = [10, 20, 15, 5, 8];
     //     }
     // });
 
-//     return max;
-// }
+    //     return max;
+    // }
 
-// --------------------------Find Smallest & largest Element in an Array--------------------------------------
+    // --------------------------Find Smallest & largest Element in an Array--------------------------------------
 
 
-// let maxValue = arr[0];
-// let minValue=arr[0];
+    // let maxValue = arr[0];
+    // let minValue=arr[0];
 
-// for(let i=1; i<arr.length; i++){
-//     if(arr[i] > maxValue){
-//         maxValue = arr[i];
-//     }else{
-//         minValue = arr[i];
+    // for(let i=1; i<arr.length; i++){
+    //     if(arr[i] > maxValue){
+    //         maxValue = arr[i];
+    //     }else{
+    //         minValue = arr[i];
+    //     }
+    // }
+    // console.log(maxValue, minValue);
+
+
+    // Calculate the sum of elements in an array-----
+
+
+    // let sum = arr.reduce((a,b)=>{
+    //     debugger;
+    //     return  a + b;  
+    // },0);
+
+    // let sum = arr[0]
+    // for(let i=1; i<arr.length; i++){
+    //     sum+=arr[i];
+    // }
+    // debugger
+    // let sum= eval(arr);
+    // console.log(sum,'sum');
+//     function show(a) {
+// // debugger
+//         console.log(a);
+//         if (a > 0) {
+//             show(a - 1);
+//         }
+//         console.log(a);
 //     }
-// }
-// console.log(maxValue, minValue);
-
-
-// Calculate the sum of elements in an array-----
-
-
-// let sum = arr.reduce((a,b)=>{
-//     debugger;
-//     return  a + b;  
-// },0);
-
-// let sum = arr[0]
-// for(let i=1; i<arr.length; i++){
-//     sum+=arr[i];
-// }
-// debugger
-let sum= eval(arr);
-console.log(sum,'sum');
+//     show(5)
 
 
 </script>
+
 <body>
-    
 
-    
+
+
 </body>
+
 </html>
-
-
-
-

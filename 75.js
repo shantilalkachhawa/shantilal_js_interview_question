@@ -93,7 +93,7 @@
 // console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])) // 6
 
 //6 Best Time to Buy and Sell Stock
-// function maxProfit(prices: number[]): number {
+// function maxProfit(prices) {
 //     let minPrice= prices[0];
 //     let maxProfit = 0;
 //     for(let i =1 ; i < prices.length; i++){
@@ -107,7 +107,9 @@
 
     
 // };
-// prices = [7,1,5,3,6,4]
+// console.log(maxProfit([7,1,5,3,6,4])); // Output: 5 (Buy at 1, sell at 6)
+// console.log(maxProfit([7,6,4,3,1]));   // Output: 0 (No profit possible)
+
 
 //7 Reverse Words in a String
 // function reversStr(str){
@@ -117,7 +119,7 @@
 // console.log(reversStr("the sky is blue"))
 
 // function reversStr(str){
-//     let result= '';
+//     let result= '';  
 //     let word = '';
 // for(let i = str.length - 1; i >= 0; i --){
 //     if(str[i] !=' '){

@@ -307,10 +307,10 @@ Use Context, Redux, Zustand, Recoil.
 
 ---
 
-## 20. Redux vs Context API
+## 20. Redux vs Context API (they are prevention of  prop driling )
 
-* Redux: Complex, scalable state logic
-* Context: Lightweight global state
+* Redux: Complex, scalable state logic, global state managment lib
+* Context: Lightweight global state, Dependencies injection machenism
 
 ---
 
