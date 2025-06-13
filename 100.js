@@ -3157,3 +3157,72 @@
 // };
 // Input: root = [1,null,2,null,3,null,4,null,null]
 // Output: [2,1,3,null,null,null,4]
+
+// Deepest Leaves Sum
+
+// function height(root){
+//   if(root == null){
+//       return 0;
+//   }
+//   let lh = height(root.left);
+//    let rh = height(root.right);
+//    return Math.max(lh,rh)+1;
+// }
+
+// var deepestLeavesSum = function(root) {
+//   let ans = { sum: 0 };
+//   let h = height(root);
+//   helper(root,h,ans);
+//   return ans.sum;
+// };
+// function helper(root,h,ans){
+//   if(root === null){
+//       return 
+//   }
+//   if(h === 1){
+//       ans.sum += root.val
+//   }
+//   helper(root.left,h-1,ans);
+//   helper(root.right,h-1,ans);
+
+// }
+// Input: root = [1,2,3,4,5,null,6,7,null,null,null,null,8]
+// Output: 15
+
+// Binary Search Tree to Greater Sum Tree
+// var bstToGst = function(root) {
+//   let result = {sum:0};
+//   helper(root,result)
+//   return root;
+  
+// };
+// function helper(root,result){
+//   if(root === null){
+//       return 
+//   }
+//   helper(root.right,result)
+//   result.sum +=root.val;
+//   root.val = result.sum;
+//   helper(root.left,result);
+
+// }
+// Input: root = [4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
+// Output: [30,36,21,36,35,26,15,null,null,null,33,null,null,null,8]
+
+//6 Best Time to Buy and Sell Stock
+// function maxProfit(prices) {
+//     let minPrice= prices[0];
+//     let maxProfit = 0;
+//     for(let i =1 ; i < prices.length; i++){
+//         if(prices[i] < minPrice){
+//             minPrice = prices[i];
+//         }else{
+//             maxProfit = Math.max(maxProfit,prices[i] - minPrice )
+//         }
+//     }
+//     return maxProfit;
+
+    
+// };
+// console.log(maxProfit([7,1,5,3,6,4])); // Output: 5 (Buy at 1, sell at 6)
+// console.log(maxProfit([7,6,4,3,1])); 
