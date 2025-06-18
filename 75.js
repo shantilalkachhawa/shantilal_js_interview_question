@@ -274,6 +274,134 @@
 
 // console.log(subsetsWithDup([1, 2, 2]));
 
+
+
+// Subset 
+// function subSet(arr){
+//     let result =[[]];
+//     for(let i = 0 ; i < arr.length ; i ++){
+//         let n = result.length;
+//         for(let j = 0 ; j < n; j ++){
+//             let temp = [...result[j],arr[i]];
+                //  let newSubset = result[j].slice(); // make a copy
+                // newSubset.push(arr[i]); 
+//             result.push(temp);
+//         }
+//     }
+//     return result;
+// }
+// console.log(subSet([1,2,3]))
+
+// function subSet(num) {
+//     let result = [];
+//     getSubSet(0, num, [], result);
+//     return result;
+
+//     function getSubSet(ind, num, currArr, result) {
+//         result.push([...currArr]); // Push a copy of current subset
+//         for (let i = ind; i < num.length; i++) {
+//             currArr.push(num[i]);                    // Choose
+//             getSubSet(i + 1, num, currArr, result);  // Explore
+//             currArr.pop();                           // Un-choose (backtrack)
+//         }
+//     }
+// }
+
+// console.log(subSet([1, 2, 3]));
+// Combination
+// function combition(n,k){
+//     let subSet = [];
+//     recursion(1,n,k,[],subSet);
+//     return subSet;
+//     function recursion(start,n,k,currArr,subSet){
+//         if(currArr.length === k){
+//            subSet.push([...currArr]);
+//         return;
+//         }
+//         for(let i = start; i <= n ; i ++){
+//             currArr.push(i);
+//             recursion(i+1,n,k,currArr,subSet);
+//             currArr.pop()
+//         }
+//     }
+// }
+// console.log(combition(5,2))
+
+// Combination Sum III
+
+// function combinationSum(k,n){
+//     let subSet =[];
+//     genrateCombin(1,9,[],subSet,k,n);
+//     return subSet;
+//     function genrateCombin(ind,end,currArr,subSet,k,target){
+//         if(currArr.length == k && target === 0){
+//         subSet.push([...currArr]);
+//         return ;
+//         }
+//         for(let i = ind ; i <= end ; i++ ){
+//             currArr.push(i);
+//             genrateCombin(i+1,end,currArr,subSet,k ,target-i)
+//             currArr.pop();
+//         }
+//     }
+    
+// }
+// console.log(combinationSum(3,9)) // [ [ 1, 2, 6 ], [ 1, 3, 5 ], [ 2, 3, 4 ] ]
+// Combination Sum II
+
+// function combinationSum(arr,k){
+//     let subSet =[];
+//     arr.sort((a, b) => a - b); 
+//     getSubset(0,arr,[],subSet,k)
+//     return subSet;
+    
+//     function getSubset(start,arr,currArr,subSet,target){
+//         if( target === 0){
+//         subSet.push([...currArr]);
+//         return;
+//         }
+//         if(target < 0 ) return;
+//         for(let i = start; i < arr.length ; i++){
+//             // skip duplication
+//             if (i > start && arr[i] === arr[i - 1]) continue;
+//             currArr.push(arr[i]);
+//             getSubset(i+1,arr,currArr,subSet,target-arr[i]);
+//             currArr.pop();
+//         }
+//     }
+// }
+// console.log(combinationSum([10,1,2,7,6,1,5],8)) // [ [ 1, 1, 6 ], [ 1, 2, 5 ], [ 1, 7 ], [ 2, 6 ] ]
+
+// Combination Sum 
+// function combination(arr,k){
+//     let subSet =[];
+//     getCombination(0,[],subSet,arr,k)
+//     return subSet;
+//     function getCombination(start,currArr,subSet,arr,target){
+//         if( target === 0){
+//             subSet.push([...currArr]);
+//             return ;
+//         }
+//         if(target < 0){
+//             return ;
+//         }
+
+//         for(let i = start; i < arr.length ; i++){
+//             currArr.push(arr[i]);
+//             getCombination(i,currArr,subSet,arr,target - arr[i]);
+//             currArr.pop()
+//         }
+        
+//     }
+
+// }
+// console.log(combination([2,3,6,7],7)) //[ [ 2, 2, 3 ], [ 7 ] ]
+
+
+
+// Permutation
+// Permutation 2
+
 //14 Palindrome Partitioning
 //15 Combination Sum II
 //16 Power of Two
