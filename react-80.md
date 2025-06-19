@@ -159,6 +159,43 @@ function Counter() {
 useEffect(() => {
   fetchData();
 }, []);
+
+import { useEffect, useState } from "react";
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Effect 1 - No deps");
+    return () => console.log("Cleanup 1");
+  });
+
+  useEffect(() => {
+    console.log("Effect 2 - With deps", count);
+    return () => console.log("Cleanup 2");
+  }, [count]);
+
+  useEffect(() => {
+    console.log("Effect 3 - Empty deps");
+    return () => console.log("Cleanup 3");
+  }, []);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+// Output on first render:
+// Effect 1 - No deps
+// Effect 2 - With deps 0
+// Effect 3 - Empty deps
+// Output on button click (state change):
+// Cleanup 1
+// Effect 1 - No deps
+// Cleanup 2
+// Effect 2 - With deps 1
+
 ```
 
 **Use Cases:** Fetching data, subscriptions, DOM updates.
@@ -357,7 +394,8 @@ ReactDOM.createPortal(<Modal />, document.getElementById('modal-root'));
 
 ## 25. useLayoutEffect vs useEffect
 
-* `useLayoutEffect`: Runs before paint
+* `useLayoutEffect`: Runs before paint , OR - useLayoutEffect executes synchronously immediately 
+after all DOM mutations have been performed by React,
 * `useEffect`: After paint
 
 ---
