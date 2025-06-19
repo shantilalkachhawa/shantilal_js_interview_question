@@ -91,7 +91,7 @@ Controls CSS encapsulation for components.
 ---
 
 ### 11. What happens when you use a `<script>` tag in a template?
-Angular sanitizes and removes it to prevent XSS attacks.
+Angular sanitizes and removes it to prevent XSS( Cross-site scripting ) attacks.
 
 ---
 
