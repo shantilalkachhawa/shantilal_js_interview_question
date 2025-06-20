@@ -733,6 +733,23 @@ str.split(' ').map((item)=>{
 // }
 // console.log(rec(array))
 
+// function floten(arr){
+//     let copyArr = [...arr];
+//     let res =[];
+//     while(copyArr.length > 0){
+//          let item = copyArr.pop();
+//          if(Array.isArray(item)){
+//              copyArr.push(...item)
+//          }else{
+//          res.push(item)
+//          }
+//     }
+    
+//     return res.reverse();
+    
+// }
+// console.log(floten(a))
+
 
         // selection sort Algorithm
         // let data=[20,12,53,3]
