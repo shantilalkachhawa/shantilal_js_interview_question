@@ -94,7 +94,8 @@
 // Form Handling: They are commonly used for forms, where the input values are controlled by the parent component.
 // Two-Way Data Binding: Changes to the input values are reflected in the parent component's state, and vice versa.
 // Explicit Updates: Updates to the input values must be triggered explicitly using setState or by passing new props.
-// Validation and Error Handling: Controlled components offer greater control over validation and error handling, as the parent component can directly manage the input values.
+// Validation and Error Handling: Controlled components offer greater control over validation and error handling, 
+// as the parent component can directly manage the input values.
 
 // 10 Uncontrolled Components:
 
@@ -381,7 +382,7 @@
 // function callbackFunction(){
 //     console.log('I am  a callback function');
 // }
-
+ 
 // // higher order function
 // function higherOrderFunction(func){
 //     console.log('I am higher order function')
@@ -397,7 +398,7 @@
 
 // Event delegation is a technique where you attach  an  event listener to a parent element insted of individual child element.   
 
-// var- function scoped-variable ,reassigned the value.	
+// var- function scoped-variable ,reassigned the value.	 
 // let- block scoped-variable   element ,reassigned the value.
 // const- block scoped-variable  element, cannot be reassign the value.
 
@@ -1133,10 +1134,14 @@ const handleClick = () => console.log('Clicked!');
 
 
 
-// Flux is an architectural pattern introduced by “Facebook” to work with React. It is a slight modification of the observer-observable pattern and it is not a library or a framework. The main feature in Flux is the concept of uni-directional data flow.
+// Flux is an architectural pattern introduced by “Facebook” to work with React. 
+// It is a slight modification of the observer-observable pattern and it is not a library or a framework. The main feature in Flux is the concept of uni-directional data flow.
 
 
 // Async and differ in js; 
 // Flux is an architectural pattern introduced by “Facebook” to work with React. 
 // It is a slight modification of the observer-observable pattern and it is not a library or a framework. 
 // The main feature in Flux is the concept of uni-directional data flow.
+
+
+// Event loop - Pushes the task form the callback Que to call Stack, and execution one by one.

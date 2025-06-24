@@ -91,3 +91,37 @@ Method | Kaam kya karta hai | Example
 Object.keys(obj) | Sab keys ka array deta hai | ["name", "age"]
 Object.values(obj) | Sab values ka array deta hai | ["Lydia", 21]
 Object.entries(obj) | [key, value] pairs ka array deta hai | [["name", "Lydia"], ["age", 21]]
+
+# What are the possible ways to create objects in JavaScript
+1. Object literal syntax:
+var object = {
+  name: "Sudheer",
+  age: 34,
+};
+
+
+2. Object constructor:
+var object = new Object();
+
+3. Object's create method:
+var object = Object.create(null);
+
+4. Function constructor:
+function Person(name) {
+  this.name = name;
+  this.age = 21;
+}
+var object = new Person("Sudheer");
+
+5. Function constructor with prototype:
+
+function Person() {}
+Person.prototype.name = "Sudheer";
+var object = new Person();
+
+6. Object's assign method:
+const orgObject = { company: "XYZ Corp" };
+const carObject = { name: "Toyota" };
+const staff = Object.assign({}, orgObject, carObject);
+
+7. Singleton pattern:
