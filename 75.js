@@ -57,39 +57,39 @@
 // console.log(numIdenticalPairs([1,2,3,1,3,1]))
 
 //4 Pascal's Triangle
-// function tringle(n){
-//     let tringle =[];
-//     for(let i =0 ; i < n ; i ++){
-//         let res = [];
-//         for(let j = 0; j <=i; j ++){
-//              // First and last elements are always 1
-//             if(j === 0 || j === i){
-//                 res.push(1);
-//             }else{
-//               // Sum of the two numbers directly above
-//                res.push(tringle[i-1][j-1] + tringle[i - 1][j]) 
-//             }
+function tringle(n){
+    let tringle =[];
+    for(let i =0 ; i < n ; i ++){
+        let res = [];
+        for(let j = 0; j <=i; j ++){
+             // First and last elements are always 1
+            if(j === 0 || j === i){
+                res.push(1);
+            }else{
+              // Sum of the two numbers directly above
+               res.push(tringle[i-1][j-1] + tringle[i - 1][j]) 
+            }
             
-//         }
-//          tringle.push(res);
+        }
+         tringle.push(res);
         
-//     }
-//     return  tringle; 
-// }
-// console.log(tringle(6))
-// [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+    }
+    return  tringle; 
+}
+console.log(tringle(6))
+[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
 
 
 //5 Maximum Subarray
-// function maxSubArray(nums) {
-//     let maxSum = nums[0];
-//     let currentSum = nums[0];
-//     for (let i = 1; i < nums.length; i++) {
-//         currentSum = Math.max(nums[i], currentSum + nums[i]);
-//         maxSum = Math.max(maxSum, currentSum)
-//     }
-//     return maxSum;   
-// };
+function maxSubArray(nums) {
+    let maxSum = nums[0];
+    let currentSum = nums[0];
+    for (let i = 1; i < nums.length; i++) {
+        currentSum = Math.max(nums[i], currentSum + nums[i]);
+        maxSum = Math.max(maxSum, currentSum)
+    }
+    return maxSum;   
+};
 // console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])) // 6
 
 //6 Best Time to Buy and Sell Stock
@@ -325,7 +325,7 @@
 //         }
 //     }
 // }
-// console.log(combition(5,2))
+// console.log(combition(5,2)) // Output: [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
 
 // Combination Sum III
 
@@ -373,28 +373,28 @@
 // console.log(combinationSum([10,1,2,7,6,1,5],8)) // [ [ 1, 1, 6 ], [ 1, 2, 5 ], [ 1, 7 ], [ 2, 6 ] ]
 
 // Combination Sum 
-// function combination(arr,k){
-//     let subSet =[];
-//     getCombination(0,[],subSet,arr,k)
-//     return subSet;
-//     function getCombination(start,currArr,subSet,arr,target){
-//         if( target === 0){
-//             subSet.push([...currArr]);
-//             return ;
-//         }
-//         if(target < 0){
-//             return ;
-//         }
+function combination(arr,k){
+    let subSet =[];
+    getCombination(0,[],subSet,arr,k)
+    return subSet;
+    function getCombination(start,currArr,subSet,arr,target){
+        if( target === 0){
+            subSet.push([...currArr]);
+            return ;
+        }
+        if(target < 0){
+            return ;
+        }
 
-//         for(let i = start; i < arr.length ; i++){
-//             currArr.push(arr[i]);
-//             getCombination(i,currArr,subSet,arr,target - arr[i]);
-//             currArr.pop()
-//         }
+        for(let i = start; i < arr.length ; i++){
+            currArr.push(arr[i]);
+            getCombination(i,currArr,subSet,arr,target - arr[i]);
+            currArr.pop()
+        }
         
-//     }
+    }
 
-// }
+}
 // console.log(combination([2,3,6,7],7)) //[ [ 2, 2, 3 ], [ 7 ] ]
 
 
