@@ -373,33 +373,94 @@ function maxSubArray(nums) {
 // console.log(combinationSum([10,1,2,7,6,1,5],8)) // [ [ 1, 1, 6 ], [ 1, 2, 5 ], [ 1, 7 ], [ 2, 6 ] ]
 
 // Combination Sum 
-function combination(arr,k){
-    let subSet =[];
-    getCombination(0,[],subSet,arr,k)
-    return subSet;
-    function getCombination(start,currArr,subSet,arr,target){
-        if( target === 0){
-            subSet.push([...currArr]);
-            return ;
-        }
-        if(target < 0){
-            return ;
-        }
+// function combination(arr,k){
+//     let subSet =[];
+//     getCombination(0,[],subSet,arr,k)
+//     return subSet;
+//     function getCombination(start,currArr,subSet,arr,target){
+//         if( target === 0){
+//             subSet.push([...currArr]);
+//             return ;
+//         }
+//         if(target < 0){
+//             return ;
+//         }
 
-        for(let i = start; i < arr.length ; i++){
-            currArr.push(arr[i]);
-            getCombination(i,currArr,subSet,arr,target - arr[i]);
-            currArr.pop()
-        }
+//         for(let i = start; i < arr.length ; i++){
+//             currArr.push(arr[i]);
+//             getCombination(i,currArr,subSet,arr,target - arr[i]);
+//             currArr.pop()
+//         }
         
-    }
+//     }
 
-}
+// }
 // console.log(combination([2,3,6,7],7)) //[ [ 2, 2, 3 ], [ 7 ] ]
+
+// function subString(str) {
+//     let result = [];
+
+//     function subSet(str, ind, currStr) {
+//         result.push(currStr.join("")); // Convert character array to string
+
+//         for (let i = ind; i < str.length; i++) {
+//             currStr.push(str[i]);
+//             subSet(str, i + 1, currStr);
+//             currStr.pop(); // backtrack
+//         }
+//     }
+
+//     subSet(str, 0, []);
+//     return result;
+// }
+
+// console.log(subString('abc')); // ['', 'a', 'ab', 'abc', 'ac', 'b', 'bc', 'c']
+
 
 
 
 // Permutation
+// function permutation(str){
+//     let result =[];
+//     helper(str,'')
+//     return result;
+//     function helper(str,res){
+//         if(str.length ===0){
+//             result.push(res)
+//         }
+//         for(let i=0; i <str.length; i ++){
+//             let curStr = str[i];
+//             let subStr = str.substring(0,i) + str.substring(i+1);
+//             helper(subStr,res+curStr)
+            
+//         }
+        
+//     }
+// }
+// console.log(permutation('abc','')) //[ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+
+// function permutaion(arr){;
+//     let result = [];
+//     helper(arr,[])
+//     return result;
+//     function helper(arr, currArr) {
+//         if (arr.length === 0) {
+//             result.push([...currArr]);
+//             return;
+//         }
+
+//         for (let i = 0; i < arr.length; i++) {
+//             let cur = arr[i];
+//             let subArr = arr.slice(0, i).concat(arr.slice(i + 1));
+
+//             currArr.push(cur);        
+//             helper(subArr, currArr);   
+//             currArr.pop();             
+//         }
+//     }
+    
+// }
+// console.log(permutaion([1,2,3])) //[ [ 1, 2, 3 ],[ 1, 3, 2 ],[ 2, 1, 3 ],[ 2, 3, 1 ],[ 3, 1, 2 ],[ 3, 2, 1 ]]
 // Permutation 2
 
 //14 Palindrome Partitioning

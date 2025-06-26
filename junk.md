@@ -100,5 +100,246 @@ The algorithm React uses to diff one tree with another to determine which parts 
     Verbose Code: More boilerplate compared to React; development feels heavy for small projects.
     Performance (in large DOMs): Might need optimization for change detection in large apps.
 
+# Promises- 
+
+
+
+
+
+    | Method                 | Kaam kya karta hai (Hinglish)                                              |
+| ---------------------- | -------------------------------------------------------------------------- |
+| `Promise.all()`        | Sabhi promises complete ho to result dega, ek bhi fail ho to reject karega |
+| `Promise.allSettled()` | Sabhi ka result dega, chahe success ya fail                                |
+| `Promise.race()`       | Jo sabse pehle complete ho (success/fail), wahi return hoga                |
+| `Promise.any()`        | Jo pehla success ho, wahi return; sab fail ho to error                     |
+| `Promise.resolve()`    | Ek resolved promise banata hai kisi value se                               |
+| `Promise.reject()`     | Ek rejected promise return karta hai  
+                                     |
+
+🔹 1. Promise.all()
+Definition:
+Promise.all() ek method hai jo multiple promises ko ek sath run karta hai aur tabhi resolve hota hai jab sabhi promises successfully complete ho jayein. Agar ek bhi promise reject ho gaya to ye pura reject ho jata hai.
+
+// const p1 = Promise.resolve(10);
+// const p2 = Promise.resolve(20);
+// const p3 = Promise.resolve(30);
+
+// Promise.all([p1, p2, p3])
+//   .then(result => {
+//     console.log(result,'All'); // [10, 20, 30]
+// });
+
+🔹 2. Promise.allSettled()
+Definition:
+Promise.allSettled() method sabhi promises ke result ka wait karta hai, chahe wo resolve ho ya reject. Ye hamesha array return karta hai jisme har promise ka status (fulfilled ya rejected) aur uska value ya reason hota hai.
+  
+// const p1 = Promise.resolve("Success");
+// const p2 = Promise.reject("Failed");
+
+// Promise.allSettled([p1, p2]).then(results => {
+//   console.log(results);
+// });
+
+🔹 3. Promise.race()
+Definition:
+Promise.race() un promises me se jo pehle complete hota hai (resolve ya reject), usi ka result return karta hai. Baaki promises ko ignore kar deta hai.
+
+// const p1 = new Promise(resolve => setTimeout(() => resolve("First"), 200));
+// const p2 = new Promise(resolve => setTimeout(() => resolve("Second"), 100));
+
+// Promise.race([p1, p2]).then(result => {
+//   console.log(result); // "First"
+// });
+
+🔹 4. Promise.any()
+Definition:
+Promise.any() un sabhi promises me se jo pehla successfully resolve hota hai, usi ka result return karta hai. Agar sabhi promises reject ho jayein, to ye AggregateError deta hai.
+
+// const p1 = Promise.reject("Error1");
+// const p2 = Promise.resolve("Success");
+// const p3 = Promise.reject("Error3");
+
+// Promise.any([p1, p2, p3]).then(result => {
+//   console.log(result); // "Success"
+// });
+
+
+🔹 5. Promise.resolve()
+Definition:
+Promise.resolve() kisi bhi value ko ek resolved promise me convert karta hai. Iska use synchronous value ko promise ke form me wrap karne ke liye hota hai.
+
+// const p = Promise.resolve("Resolved value");
+// p.then(res => console.log(res)); // "Resolved value"
+
+🔹 6. Promise.reject()
+Definition:
+Promise.reject() kisi bhi reason ke saath ek rejected promise create karta hai. Ye mostly error handle karne ke use cases me use hota hai.
+
+
+// const p = Promise.reject("Something went wrong");
+// p.catch(err => console.log(err)); // "Something went wrong"
+
+
+
+let arr = [1,2,[3,4]]
+// let copyArr = arr
+// let copyArr = [...arr]; //shasllow coppy
+let copyArr = JSON.parse(JSON.stringify(arr)) // deep coppy
+// copyArr.push(5); 
+copyArr[2].push(5)
+console.log(arr,'main Arr');
+console.log(copyArr,'copy Arr')
+
+
+
+# var, let, const in JavaScript - 
+-> Declare variables in JavaScript
+
+    Function-scoped (NOT block-scoped).
+    Hoisted with initialization to undefined.
+    Can be redeclared and updated.
+# Var 
+  # Hoisting with var
+    console.log(a); // undefined
+    var a = 10;
+  #  Function Scope
+  function test() {
+    if (true) {
+      var x = 100;
+    }
+    console.log(x); // ✅ 100
+  }
+  test(); 
+  # Redeclaration Allowed
+  var a = 10;
+  var a = 20; // ✅ Allowed
+  console.log(a); // 20
+
+# Let
+      Block-scoped.
+      Hoisted but not initialized → leads to Temporal Dead Zone (TDZ).
+      Can be updated but not redeclared in the same scope.
+    
+  # Block Scope
+
+      if (true) {
+      let x = 10;
+    }
+    console.log(x); // ❌ ReferenceError
+  # No Redeclaration
+    let a = 5;
+    let a = 10; // ❌ SyntaxError: Identifier 'a' has already been declared
+
+  # TDZ (Temporal Dead Zone)
+    console.log(a); // ❌ ReferenceError
+    let a = 10;
+
+# Const
+ 
+    Block-scoped like let.
+    Hoisted but not initialized (TDZ applies).
+    Cannot be reassigned or redeclared.
+    For objects and arrays, values can be mutated (but reference cannot change).
+  # Cannot Reassign
+   const a = 10;
+   a = 20; // ❌ TypeError: Assignment to constant variable
+
+  # Object Mutation is Allowed
+    const user = { name: "Shantilal" };
+    user.name = "Kachhawa"; // ✅ Allowed
+    console.log(user.name); // Kachhawa
+  # Array Mutation
+    const arr = [1, 2, 3];
+    arr.push(4); // ✅ Allowed
+    console.log(arr); // [1, 2, 3, 4]
+
+
+  # No Redeclaration
+   const a = 10;
+   const a = 20; // ❌ SyntaxError
+
+
+🔹 1. What is a Mono-repo?
+✅ Definition:
+A Mono-repo (monolithic repository) is a single code repository that contains multiple projects or packages (e.g., frontend, backend, shared libraries) — all living together in the same Git repository.
+
+
+🔹 2. What is a Multi-repo?
+✅ Definition:
+In a Multi-repo setup, each service, project, or package lives in its own separate Git repository.
+
+🧪 Example (Node.js Project):
+You have separate repos like:
+frontend-app/ → React/Next.js
+backend-api/ → Node.js API
+shared-utils/ → NPM package used by both
+
+
+# What is socket.io?
+✅ Definition:
+Socket.IO is a JavaScript library built on top of WebSockets (but not limited to them).
+It provides an event-based API and fallback support (like long polling) to ensure real-time communication even if WebSocket is not supported.
+
+📌 Think of Socket.IO as:
+
+"WebSocket + reconnect + fallback + rooms + broadcasting + easy events"
+Socket communication is often built using WebSockets protocol.
+
+
+# Common Events in socket.io
+| Event        | Description                       |
+| ------------ | --------------------------------- |
+| `connection` | When a client connects            |
+| `disconnect` | When a client disconnects         |
+| `emit()`     | To send data                      |
+| `on()`       | To receive/listen to events       |
+| `broadcast`  | Send message to all except sender |
+
+
+
+
+
+
+#  How Socket Works (Step by Step)
+1. Client connects to server via socket
+2. Server listens for connections
+3. Both can emit and listen to messages continuously
+4. Connection stays open until manually closed or disconnected
+📌 Unlike HTTP, socket doesn't need to request-response each time.
+
+
+# 1. What is WebSocket?
+✅ Definition:
+WebSocket is a protocol (like HTTP or FTP) that enables full-duplex, two-way communication between the client and the server over a single, persistent connection.
+
+📌 Example Use Case:
+Chat, games, stock tickers, real-time updates.
+
+const ws = new WebSocket('ws://localhost:3000');
+ws.send("Hello Server!");
+
+
+Q: What's the difference between WebSocket and socket.io?
+A: WebSocket is the protocol. socket.io is a library that uses WebSocket under the hood, and provides:
+  Reconnection
+  Fallbacks
+  Rooms/namespaces
+  Events API
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
