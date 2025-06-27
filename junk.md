@@ -181,6 +181,8 @@ Promise.reject() kisi bhi reason ke saath ek rejected promise create karta hai. 
 
 
 
+# Shallowcopy deepcopy
+```jsx
 let arr = [1,2,[3,4]]
 // let copyArr = arr
 // let copyArr = [...arr]; //shasllow coppy
@@ -189,6 +191,8 @@ let copyArr = JSON.parse(JSON.stringify(arr)) // deep coppy
 copyArr[2].push(5)
 console.log(arr,'main Arr');
 console.log(copyArr,'copy Arr')
+
+```
 
 
 
@@ -308,7 +312,7 @@ Socket communication is often built using WebSockets protocol.
 📌 Unlike HTTP, socket doesn't need to request-response each time.
 
 
-# 1. What is WebSocket?
+#  What is WebSocket?
 ✅ Definition:
 WebSocket is a protocol (like HTTP or FTP) that enables full-duplex, two-way communication between the client and the server over a single, persistent connection.
 
@@ -327,19 +331,183 @@ A: WebSocket is the protocol. socket.io is a library that uses WebSocket under t
   Events API
 
 
+## How does useEffect() work? Use cases?
+
+**Answer:** Runs side effects after rendering.
+
+**Example:**
+
+```jsx
+useEffect(() => {
+  fetchData();
+}, []);
+
+import { useEffect, useState } from "react";
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Effect 1 - No deps");
+    return () => console.log("Cleanup 1");
+  });
+
+  useEffect(() => {
+    console.log("Effect 2 - With deps", count);
+    return () => console.log("Cleanup 2");
+  }, [count]);
+
+  useEffect(() => {
+    console.log("Effect 3 - Empty deps");
+    return () => console.log("Cleanup 3");
+  }, []);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+// Output on first render:
+// Effect 1 - No deps
+// Effect 2 - With deps 0
+// Effect 3 - Empty deps
+// Output on button click (state change):
+// Cleanup 1
+// Effect 1 - No deps
+// Cleanup 2
+// Effect 2 - With deps 1
+
+```
+
+**Use Cases:** Fetching data, subscriptions, DOM updates.
+
+---
+
+##  What is React.memo?
+✅ Definition:
+React.memo is a Higher-Order Component (HOC) used to memoize a React component — it prevents unnecessary re-rendering if the props haven't changed.
+
+📌 Use case: Optimizing functional components that receive the same props but still re-render due to parent re-rendering.
+```jsx
+
+const Child = React.memo(({ name }) => {
+  console.log("Child rendered");
+  return <p>Hello, {name}</p>;
+});
+
+function Parent() {
+  const [count, setCount] = React.useState(0);
+
+  return (
+    <div>
+      <Child name="Shantilal" />
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+##  2. What is useMemo?
+✅ Definition:
+useMemo is a React Hook that memoizes the result of a function — used to avoid expensive calculations unless dependencies change.
+
+📌 Use case: Optimizing heavy functions or computed values during rendering.
+
+```jsx
+function ExpensiveComponent({ num }) {
+  const expensiveValue = React.useMemo(() => {
+    console.log("Calculating...");
+    let result = 0;
+    for (let i = 0; i < 1e9; i++) {
+      result += i;
+    }
+    return result + num;
+  }, [num]);
+
+  return <p>Expensive result: {expensiveValue}</p>;
+}
+
+
+```
+
+| Feature       | `React.memo`                          | `useMemo`                                    |
+| ------------- | ------------------------------------- | -------------------------------------------- |
+| Type          | Higher-Order Component (HOC)          | React Hook                                   |
+| Purpose       | Memoize entire **component**          | Memoize **calculated value**                 |
+| Prevents      | Unnecessary **component re-renders**  | Unnecessary **function re-executions**       |
+| Dependencies  | **Props** of the component            | **Dependency array** inside `useMemo`        |
+| Use Case      | Functional components receiving props | Expensive computations (maps, filters, etc.) |
+| React version | React 16.6+                           | React 16.8+                                  |
+
+
+##  What is useCallback?
+✅ Definition:
+useCallback is a React Hook that memoizes a function — it returns the same function instance unless its dependencies change.
+
+📌 Hinglish Explanation:
+Agar aap ek function ko baar-baar render ke time redefine kar rahe ho, aur wo function child component ko as prop pass ho raha ho — to unnecessary re-render hote hain.
+useCallback isko rokta hai by giving you same function reference unless dependencies change.
+
+
+```jsx
+function Parent() {
+  const [count, setCount] = React.useState(0);
+
+  const handleClick = React.useCallback(() => {
+    console.log("Clicked");
+  }, []);
+
+  return (
+    <div>
+      <Child onClick={handleClick} />
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+```
+| Feature              | `useMemo`                      | `useCallback`                       |
+| -------------------- | ------------------------------ | ----------------------------------- |
+| Memoizes             | **Return value** of a function | **Function itself** (its reference) |
+| Returns              | Cached **value**               | Cached **function**                 |
+| Use Case             | Expensive calculation          | Passing stable function to children |
+| Returns same object? | Only value                     | ✅ Same function reference           |
+
+
+## What is Debounce?
+✅ Definition:
+Debouncing means:
+“Wait until the user stops triggering an event, then execute the function after a delay.”
+
+📌 Hinglish Explanation:
+
+Jab user baar-baar koi event trigger kare (jaise typing), to function tab tak nahi chalega jab tak user ruk na jaye. Jaise hi user rukta hai, function ek delay ke baad run hota hai.
+
+
+## What is Throttle?
+✅ Definition:
+Throttling means:
+“Execute the function at regular intervals, no matter how many times the event is triggered.”
+
+📌 Hinglish Explanation:
+
+Agar user baar-baar koi event trigger kare, to function sirf fixed time gap ke baad hi chalega.
+
+
+| Feature          | Debounce                             | Throttle                                 |
+| ---------------- | ------------------------------------ | ---------------------------------------- |
+| Behavior         | Waits for silence, then fires        | Fires at regular intervals               |
+| When runs        | After **user stops** triggering      | While **user is still** triggering       |
+| Common use cases | Search inputs, text fields, autosave | Scroll, resize, mouse movement           |
+| Example timing   | Run **after 300ms** of no typing     | Run **once every 300ms** regardless      |
+| Calls frequency  | **Only once** after burst            | **Many times**, but at limited frequency |
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Task                    | Use This   |
+| ----------------------- | ---------- |
+| Search box              | `debounce` |
+| Scroll animation/effect | `throttle` |
+| Form autosave           | `debounce` |
+| Drag and move UI        | `throttle` |
+| Resize event            | `throttle` |
