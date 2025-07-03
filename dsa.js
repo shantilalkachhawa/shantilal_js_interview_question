@@ -947,3 +947,16 @@
 //  NOTE- 
 // For search use array list 
 // For insert use link list 
+
+// Avoid if,elseIf or switch 
+
+// const data ={
+//     a:100,
+//     b:200,
+//     c:300  
+// }
+
+// function getData(value){
+//     return data[value] || 0
+// }
+// console.log(getData('c'))

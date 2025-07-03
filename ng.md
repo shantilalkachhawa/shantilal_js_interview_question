@@ -38,6 +38,7 @@ Directives modify DOM behavior or appearance.
 
 ### 5. What is Dependency Injection (DI)?
 A design pattern where components get their dependencies from an injector rather than creating them manually.
+
 DI is a core mechanism that manages and provides dependencies to components, services, and other classes. This promotes loose coupling, modularity, and testability
 
 Dependency Injection (DI) is a design pattern. DI is heavily used in Angular. 
