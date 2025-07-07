@@ -620,7 +620,7 @@
 // const numbers = [1, 2, 3, 4, 5];
 // const squared = numbers.map(x => x ** 2);
 // console.log(squared); // Output: [1, 4, 9, 16, 25]
-// console.log(numbers,'numbers'); // Output: [1, 4, 9, 16, 25]
+// console.log(numbers,'numbers'); // Output: [ 1, 2, 3, 4, 5 ]
 //  numbers.forEach(x => x + 2);
 // // console.log(squared); // Output: [1, 4, 9, 16, 25]
 // console.log(numbers,'numbers'); // Output: [1, 4, 9, 16, 25]
@@ -639,7 +639,7 @@
 // console.log(product); // Output: 120  
 
 
-// Arrow functions are a concise way to write functions in JavaScript, with implicit return and lexical this. 
+// Arrow functions are a concise way to write functions in JavaScript, with implicit return and lexical this and not not working this key word in => fn. 
 // Function expressions define functions as values assigned to variables.
 
 // const square = x => x * x;

@@ -62,8 +62,7 @@
        
 
 # Virtual DoM
-Virtual Dom is nothing but copy of real DOM 
-Create a new Dom then change 
+Virtual Dom is nothing but copy of real DOM Create a new Dom then change 
 Behind the sence react use fiber algorithm.
 While using the diiffing algo then patch changes to update on real dom ,
 (Once in React known somthing has changes then react update those and only those object on the real dom)
@@ -114,6 +113,19 @@ The algorithm React uses to diff one tree with another to determine which parts 
 | `Promise.any()`        | Jo pehla success ho, wahi return; sab fail ho to error                     |
 | `Promise.resolve()`    | Ek resolved promise banata hai kisi value se                               |
 | `Promise.reject()`     | Ek rejected promise return karta hai  
+
+Promise.all()
+👉 Waits for all promises to resolve.
+👉 If any fails, the whole fails.
+Promise.allSettled()
+👉 Waits for all promises to complete, regardless of success or failure.
+Returns result of each with {status: 'fulfilled' | 'rejected'}
+Promise.race()
+👉 Returns first ``promise to settle`` (resolve or reject).
+
+Promise.any() (ES2021)
+👉 Resolves as soon as any ``one promise resolves``.
+👉 If all reject, then it rejects.
                                      |
 
 🔹 1. Promise.all()
@@ -182,6 +194,14 @@ Promise.reject() kisi bhi reason ke saath ek rejected promise create karta hai. 
 
 
 # Shallowcopy deepcopy
+
+Shallow Copy
+👉 A shallow copy only copies the top-level properties.
+👉 If the property is a reference (object/array), it still points to the same memory.
+
+Deep Copy
+👉 A deep copy copies everything recursively, including nested objects/arrays.
+👉 Changes to the copy will not affect the original at any level.
 ```jsx
 let arr = [1,2,[3,4]]
 // let copyArr = arr
