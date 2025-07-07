@@ -199,13 +199,20 @@ console.log(copyArr,'copy Arr')
 # var, let, const in JavaScript - 
 -> Declare variables in JavaScript
 
+# Var 
     Function-scoped (NOT block-scoped).
     Hoisted with initialization to undefined.
     Can be redeclared and updated.
-# Var 
+
   # Hoisting with var
     console.log(a); // undefined
-    var a = 10;
+    var a = 10; useEffect(() => { useEffect(() => {
+    console.log("Effect 1 - No deps");
+    return () => console.log("Cleanup 1");
+  });
+    console.log("Effect 1 - No deps");
+    return () => console.log("Cleanup 1");
+  });
   #  Function Scope
   function test() {
     if (true) {
@@ -368,6 +375,15 @@ export default function App() {
     </div>
   );
 }
+
+useEffect(() => {
+  //componentDidMount
+  console.log("Component mounted");
+  return () =>
+  //componentWillUnmount
+   console.log("Component unmounted");
+}, []);
+
 // Output on first render:
 // Effect 1 - No deps
 // Effect 2 - With deps 0
@@ -511,3 +527,92 @@ Agar user baar-baar koi event trigger kare, to function sirf fixed time gap ke b
 | Form autosave           | `debounce` |
 | Drag and move UI        | `throttle` |
 | Resize event            | `throttle` |
+
+
+## type of hooks
+| Hook                 | Description                                       | Example                         |
+| -------------------- | ------------------------------------------------- | ------------------------------- |
+| `useLayoutEffect`    | Like `useEffect`, but runs **before** paint       | `useLayoutEffect(() => {}, [])` |
+| `useInsertionEffect` | Used for **styling libraries** before DOM updates | `useInsertionEffect(() => {})`  |
+
+## useLayoutEffect
+✅ Definition:
+useLayoutEffect runs synchronously after all DOM mutations but before the browser paints the screen.
+It blocks the paint, so any DOM reads/writes you do will be seen immediately by the user.
+
+Use Cases:
+Measuring DOM elements (offsetHeight, scrollWidth, etc.)
+Updating layout or scroll position
+Preventing flicker during re-render (like animation, modal focus)
+
+## useInsertionEffect (introduced in React 18)
+✅ Definition:
+A low-level hook that runs before DOM mutations — specifically designed for styling libraries like Emotion or styled-components to inject styles at the right time.
+
+ Use Cases:
+Critical CSS injection
+Styling order control
+Styling library internals (not typical app code)
+
+## Other Utilities
+| Hook                   | Description                            | Example                                  |
+| ---------------------- | -------------------------------------- | ---------------------------------------- |
+| `useContext`           | Consume context data                   | `const theme = useContext(ThemeContext)` |
+| `useReducer`           | Like `useState` but with reducer logic | `useReducer(reducer, initialState)`      |
+| `useId`                | Unique ID for accessibility or labels  | `const id = useId()`                     |
+| `useTransition`        | Handle UI state transition smoothly    | `startTransition(() => doWork())`        |
+| `useDeferredValue`     | Defer non-urgent updates               | `const deferred = useDeferredValue(val)` |
+| `useImperativeHandle`  | Customize ref exposure (for parents)   | Used with `forwardRef`                   |
+| `useSyncExternalStore` | Used for external state management     | Like Redux store sync                    |
+
+
+## Third-Party Hooks (Popular)
+| Library        | Hook Example                 | Purpose                 |
+| -------------- | ---------------------------- | ----------------------- |
+| `react-router` | `useNavigate`, `useParams`   | Routing                 |
+| `react-redux`  | `useSelector`, `useDispatch` | Redux state and actions |
+| `react-query`  | `useQuery`, `useMutation`    | Data fetching & caching |
+| `zustand`      | `useStore`                   | Global state with hooks |
+| `formik`       | `useFormik`                  | Forms management        |
+
+
+## 🎓 Summary: All React Hook Types
+| Category         | Hooks                                                         |
+| ---------------- | ------------------------------------------------------------- |
+| State Management | `useState`, `useReducer`                                      |
+| Side Effects     | `useEffect`, `useLayoutEffect`, `useInsertionEffect`          |
+| Performance      | `useMemo`, `useCallback`, `useTransition`, `useDeferredValue` |
+| DOM/Refs         | `useRef`, `useImperativeHandle`                               |
+| Context          | `useContext`                                                  |
+| External Store   | `useSyncExternalStore`, `useId`                               |
+| Custom           | `useYourOwnHookName()`                                        |
+
+## reducers and 
+
+| Feature          | `reducers`                                        | `extraReducers`                                                     |
+| ---------------- | ------------------------------------------------- | ------------------------------------------------------------------- |
+| ✅ Use case       | Handle **sync logic** within the slice            | Handle **external actions** like async thunks (`createAsyncThunk`)  |
+| 🔁 Action type   | Auto-generated from the slice itself              | Must be handled manually or via builder syntax                      |
+| ✍️ Defined in    | `reducers: { actionName: (state, action) => {} }` | `extraReducers: (builder) => { builder.addCase(...).addCase(...) }` |
+| 📦 Action access | Slice-generated actions (e.g., `increment`)       | External actions like thunks (`fetchUsers.fulfilled`, etc.)         |
+
+
+
+## MVC &&  MVVM Model
+
+MVC (Model-View-Controller) and MVVM (Model-View-ViewModel) are both architectural patterns used in software development to separate an application's concerns, improving maintainability and testability. MVC divides the application into three interconnected parts: the Model (data and business logic), the View (user interface), and the Controller (handles user input and updates the Model and View). MVVM builds upon MVC by adding a ViewModel, an intermediary between the View and Model, that exposes data and commands for the View to bind to, facilitating two-way communication and simplifying UI updates
+
+## Redux and Zustand
+
+| Feature                 | **Redux**                               | **Zustand**                                    |
+| ----------------------- | --------------------------------------- | ---------------------------------------------- |
+| 📦 Package size         | \~13KB (core) + setup                   | \~1KB (very lightweight)                       |
+| 🛠 Boilerplate          | High (actions, reducers, types, etc.)   | Very minimal                                   |
+| 🔁 API Complexity       | Verbose, requires configuration         | Simple, hook-based                             |
+| 💡 Learning Curve       | Steeper                                 | Very easy                                      |
+| 🧠 State Design Pattern | Flux (action → reducer → state)         | Mutate state directly via functions            |
+| ⚛️ React Binding        | Requires react-redux                    | Native hooks (no provider required)            |
+| 🔌 Middleware           | Built-in support via middleware system  | Custom middleware or Zustand middleware        |
+| 🧵 Async Support        | With middleware (e.g. thunk, saga, RTK) | Built-in with async functions in store         |
+| 🔥 Usage in small apps  | Overkill sometimes                      | Perfect fit                                    |
+| 🔥 Usage in large apps  | Excellent with Redux Toolkit            | Can be used but may need more manual structure |

@@ -471,3 +471,28 @@ function maxSubArray(nums) {
 //19 Reverse Linked List
 //20 Middle of the Linked List
 //21 Merge Two Sorted Lists
+
+
+
+// const input =[
+//     {name:'A',age:20,city:'BLR'},
+//     {name:'A',age:20,city:'DEL'},
+//     {name:'A',age:20,city:'BLR'},
+//     ]
+    
+// function group(arr){
+//     let result = {};
+    
+//     for(let i =0 ; i < arr.length ; i ++){
+//         let currObj = arr[i];
+//         let checkCity =currObj.city; 
+//         if(result[checkCity]){
+//             result[checkCity].push(currObj);
+//         }else{
+//             result[checkCity] = [currObj]
+//         }
+//     }
+    
+//     return result;
+// }
+// console.log(group(input))
