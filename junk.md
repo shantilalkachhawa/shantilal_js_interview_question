@@ -161,7 +161,6 @@ Promise.race() un promises me se jo pehle complete hota hai (resolve ya reject),
 
 // Promise.race([p1, p2]).then(result => {
 //   console.log(result); // "First"
-// });
 
 🔹 4. Promise.any()
 Definition:
